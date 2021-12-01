@@ -1,9 +1,9 @@
-local hlgroups = require("kanagawa.hlgroups")
 local M = {}
 
 function M.load()
+    local hlgroups = require("kanagawa.hlgroups")
 
-	if vim.g.colors_name ~= "kanagawa" then
+	if vim.g.colors_name then
 		vim.cmd("hi clear")
 	end
 
@@ -24,6 +24,22 @@ function M.load()
             end
         end
 	end
+end
+
+M.config = {
+    undercurl = true,
+    commentStyle = "italic",
+    functionStyle = "NONE",
+    keywordStyle = "italic",
+    typeStyle = 'italic',
+    transparent = false,
+    colors = {},
+    overrides = {},
+    -- bg_contrast = 'light'
+}
+
+function M.setup(opts)
+    M.config = vim.tbl_extend("force", M.config, opts or {})
 end
 
 return M

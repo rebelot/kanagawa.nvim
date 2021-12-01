@@ -1,4 +1,5 @@
 local c = require("kanagawa.colors")
+local config = require("kanagawa").config
 
 -- Type non convince
 -- statement troppo chiaro
@@ -8,9 +9,10 @@ local c = require("kanagawa.colors")
 -- search nn convince
 -- nontext troppo chiaro
 -- keyword/statment/operator con lo stesso colore potrebbe avere senso! (vedi git)
+-- LspReferenceText must be different from visual or search
 
 local hlgroups = {
-	Comment                        = { fg = c.comment, style = "italic" },
+	Comment                        = { fg = c.comment, style = config.commentStyle },
 	ColorColumn                    = { bg = c.bg_light },
 	Conceal                        = {},
 	Cursor                         = { fg = c.bg, bg = c.fg },
@@ -19,10 +21,10 @@ local hlgroups = {
 	CursorLine                     = { bg = c.bg_light },
 	CursorColumn                   = { link = "CursorLine" },
 	Directory                      = { fg = c.dragonBlue },
-	DiffAdd                        = { bg = c.diff.add },
-	DiffChange                     = { bg = c.diff.change },
-	DiffDelete                     = { bg = c.diff.delete },
-	DiffText                       = { bg = c.diff.text },
+	DiffAdd                        = { fg = c.fg_dark, bg = c.diff.add },
+	DiffChange                     = { fg = c.fg_dark, bg = c.diff.change },
+	DiffDelete                     = { fg = c.comment, bg = c.diff.delete },
+	DiffText                       = { fg = c.fg_dark, bg = c.diff.text },
 	EndOfBuffer                    = { fg = c.bg },
 	-- TermCursor                  = {},
 	-- TermCursorNC                = {},
@@ -40,8 +42,8 @@ local hlgroups = {
 	MsgArea                        = { fg = c.fg, bg = c.bg},
 	-- MsgSeparator                = {},
 	MoreMsg                        = { fg = c.boatBrown, bg = c.bg, style='NONE' },
-	NonText                        = { fg = c.steelGray },
-	Normal                         = { fg = c.fg, bg = c.bg },
+	NonText                        = { fg = c.voidGray },
+	Normal                         = { fg = c.fg, bg = not config.transparent and c.bg or 'NONE' },
 	NormalNC                       = { link = "Normal" },
 	NormalSB                       = { link = "Normal" },
 	NormalFloat                    = { fg = c.fg, bg = c.bg_float },
@@ -67,7 +69,7 @@ local hlgroups = {
 	Title                          = { fg = c.dragonBlue, style = "bold" },
 	Visual                         = { bg = c.bg_visual },
 	VisualNOS                      = { link = "Visual" },
-	WarningMsg                     = { bg = c.diag.warning },
+	WarningMsg                     = { bg = c.diag.error, fg = c.fg },
 	Whitespace                     = { fg = c.steelGray },
 	WildMenu                       = { link = "Pmenu" },
 
@@ -79,13 +81,13 @@ local hlgroups = {
 	Float                          = { link = "Number" },
 
 	Identifier                     = { fg = c.goldYellow },
-	Function                       = { fg = c.foamBlue },
-	Statement                      = { fg = c.foamBlue, style = "bold" },
+	Function                       = { fg = c.foamBlue, style = config.functionStyle },
+	Statement                      = { fg = c.dragonBlue, style = "bold" },
 	-- Conditional                 = {},
 	-- Repeat                      = {},
 	Label                          = { fg = c.autumnOrange },
 	Operator                       = { fg = c.boatBrown },
-	Keyword                        = { fg = c.oniViolet, style='italic' },
+	Keyword                        = { fg = c.oniViolet, style = config.keywordStyle },
 	-- Exception                   = {},
 
 	PreProc                        = { fg = c.sunsetOrange },
@@ -94,7 +96,7 @@ local hlgroups = {
 	-- Macro                       = {},
 	-- PreCondit                   = {},
 
-	Type                           = { fg = c.boatBrownDark, style = "italic" },
+	Type                           = { fg = c.boatBrownDark, style = config.typeStyle },
 	-- StorageClass                = {},
 	-- Structure                   = {},
 	-- Typedef                     = {},
@@ -224,30 +226,30 @@ local hlgroups = {
 	-- TSLiteral                   = {},
 	-- TSURI                       = {},
 
-	-- Lua                         = {},
+	-- Lua
 	-- luaTSProperty               = {},
 
-	-- LspTrouble                  = {},
+	-- LspTrouble
 	-- LspTroubleText              = {},
 	-- LspTroubleCount             = {},
 	-- LspTroubleNormal            = {},
 
-	-- Illuminate                  = {},
+	-- Illuminate
 	-- illuminatedWord             = {},
 	-- illuminatedCurWord          = {},
 
-	-- diff                        = {},
+	-- Git
 	diffAdded                      = { fg = c.diff.add },
 	diffDeleted                    = { fg = c.diff.delete },
 	diffRemoved                    = { fg = c.diff.delete },
 	diffChanged                    = { fg = c.diff.change },
-	diffOldFile                    = { fg = c.steelGray },
-	diffNewFile                    = { fg = c.steelGray },
-	diffFile                       = { fg = c.steelGray },
-	diffLine                       = { fg = c.steelGray },
-	diffIndexLine                  = { fg = c.steelGray },
+	-- diffOldFile                    = { fg = c.diff.delete },
+	-- diffNewFile                    = { fg = c.diff.add },
+	-- diffFile                       = { fg = c.steelGray },
+	-- diffLine                       = { fg = c.steelGray },
+	-- diffIndexLine                  = { link = 'Identifier' },
 
-	-- Neogit                      = {},
+	-- Neogit
 	-- NeogitBranch                = {},
 	-- NeogitRemote                = {},
 	-- NeogitHunkHeader            = {},
@@ -256,12 +258,12 @@ local hlgroups = {
 	-- NeogitDiffDeleteHighlight   = {},
 	-- NeogitDiffAddHighlight      = {},
 
-	-- GitGutter                   = {},
+	-- GitGutter
 	-- GitGutterAdd                = {},
 	-- GitGutterChange             = {},
 	-- GitGutterDelete             = {},
 
-	GitSigns                       = {},
+	-- GitSigns
 	GitSignsAdd                    = { link = "diffAdded" },
 	GitSignsChange                 = { link = "diffChanged" },
 	GitSignsDelete                 = { link = "diffDeleted" },
@@ -282,7 +284,7 @@ local hlgroups = {
 	NvimTreeSymlink                = { fg = c.waveAqua },
 	NvimTreeFolderName             = { link = "Directory" },
 
-	-- Fern                        = {},
+	-- Fern
 	-- FernBranchText              = {},
 
 	-- glyph palette               = {},
@@ -301,7 +303,6 @@ local hlgroups = {
 	DashboardFooter                = { fg = c.steelGray },
 
 	-- WhichKey                    = {},
-	-- WhichKey                    = {},
 	-- WhichKeyGroup               = {},
 	-- WhichKeyDesc                = {},
 	-- WhichKeySeperator           = {},
@@ -309,7 +310,7 @@ local hlgroups = {
 	-- WhichKeyFloat               = {},
 	-- WhichKeyValue               = {},
 
-	-- LspSaga                     = {},
+	-- LspSaga
 	-- DiagnosticWarning           = {},
 	-- DiagnosticInformation       = {},
 
@@ -335,7 +336,7 @@ local hlgroups = {
 	healthSuccess                  = {fg = c.springGreen},
 	healthWarning                  = {fg = c.diag.warning},
 
-	-- BufferLine                  = {},
+	-- BufferLine
 	-- BufferLineIndicatorSelected = {},
 	-- BufferLineFill              = {},
 
@@ -358,11 +359,11 @@ local hlgroups = {
 	-- BufferTabpages              = {},
 	-- BufferTabpage               = {},
 
-	-- Sneak                       = {},
+	-- Sneak
 	-- Sneak                       = {},
 	-- SneakScope                  = {},
 
-	-- Hop                         = {},
+	-- Hop
 	-- HopNextKey                  = {},
 	-- HopNextKey1                 = {},
 	-- HopNextKey2                 = {},
@@ -418,6 +419,16 @@ local hlgroups = {
 	CmpItemKindEvent       = {},
 	CmpItemKindColor       = {},
 
+	-- IndentBlankline
+    IndentBlanklineChar = { fg = c.voidGray},
+    IndentBlanklineSpaceChar = { fg = c.voidGray},
+    IndentBlanklineSpaceCharBlankline = { fg = c.voidGray},
+    IndentBlanklineContextChar = { fg = c.oceanBlue },
+    IndentBlanklineContextStart = { guisp = c.oceanBlue, style = 'underline'},
 }
+
+for group, colors in pairs(config.overrides) do
+    hlgroups[group] = vim.tbl_extend('force', hlgroups[group] or {}, colors)
+end
 
 return hlgroups
