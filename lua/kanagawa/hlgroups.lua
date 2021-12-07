@@ -1,18 +1,12 @@
-local c = require("kanagawa.colors")
+local p, c = unpack(require("kanagawa.colors"))
 local config = require("kanagawa").config
 
--- Type non convince
--- statement troppo chiaro
--- cambiare stetemnt e type sicuro
--- function troppo chiaro anzi forse ok
--- numeri troppo scuri
--- search nn convince
--- nontext troppo chiaro
--- keyword/statment/operator con lo stesso colore potrebbe avere senso! (vedi git)
--- LspReferenceText must be different from visual or search
+-- linenr possono essere scuriti un po'
+-- sunsetOrange va schiarito
+-- deepblue sta meglio come popup
 
 local hlgroups = {
-	Comment                        = { fg = c.comment, style = config.commentStyle },
+	Comment                        = { fg = c.fg_comment, style = config.commentStyle },
 	ColorColumn                    = { bg = c.bg_light },
 	Conceal                        = {},
 	Cursor                         = { fg = c.bg, bg = c.fg },
@@ -20,102 +14,102 @@ local hlgroups = {
 	CursorIM                       = { link = "Cursor" },
 	CursorLine                     = { bg = c.bg_light },
 	CursorColumn                   = { link = "CursorLine" },
-	Directory                      = { fg = c.dragonBlue },
-	DiffAdd                        = { fg = c.fg_dark, bg = c.diff.add },
-	DiffChange                     = { fg = c.fg_dark, bg = c.diff.change },
-	DiffDelete                     = { fg = c.comment, bg = c.diff.delete },
-	DiffText                       = { fg = c.fg_dark, bg = c.diff.text },
+	Directory                      = { fg = c.fn },
+	DiffAdd                        = { fg = 'NONE', bg = c.diff.add },
+	DiffChange                     = { fg = 'NONE', bg = c.diff.change },
+	DiffDelete                     = { fg = c.diff.delete, bg = c.diff.delete },
+	DiffText                       = { fg = 'NONE', bg = c.diff.text },
 	EndOfBuffer                    = { fg = c.bg },
 	-- TermCursor                  = {},
 	-- TermCursorNC                = {},
 	ErrorMsg                       = { fg = c.diag.error, bg = c.bg },
-	VertSplit                      = { bg = c.deepBlue, fg = c.bg },
-	Folded                         = { fg = c.foamBlue, bg = c.bg_light },
-	FoldColumn                     = { fg = c.steelGray, bg = c.bg },
-	SignColumn                     = { fg = c.steelGray, bg = c.bg },
+	VertSplit                      = { fg = c.bg_status, style='NONE'},
+	Folded                         = { fg = c.fg_comment, bg = c.bg_light },
+	FoldColumn                     = { fg = c.bg_lighter, bg = c.bg },
+	SignColumn                     = { fg = c.comment, bg = c.bg },
 	SignColumnSB                   = { link = "SignColumn" },
-	Substitute                     = { fg = c.fg, bg = c.tantoRed },
-	LineNr                         = { fg = c.inkBlack3 },
-	CursorLineNr                   = { fg = c.carpYellow, bg = c.bg, style = "bold" },
-	MatchParen                     = { fg = c.autumnYellow, bg = "NONE", style = "bold" },
-	ModeMsg                        = { fg = c.carpYellow, style = "bold", bg = c.bg},
+	Substitute                     = { fg = c.fg, bg = c.git.removed },
+	LineNr                         = { fg = c.bg_lighter },
+	CursorLineNr                   = { fg = c.diag.warning, bg = c.bg, style = "bold" },
+	MatchParen                     = { fg = c.diag.warning, bg = "NONE", style = "bold" },
+	ModeMsg                        = { fg = c.diag.warning, style = "bold", bg = c.bg},
 	MsgArea                        = { fg = c.fg, bg = c.bg},
 	-- MsgSeparator                = {},
-	MoreMsg                        = { fg = c.boatBrown, bg = c.bg, style='NONE' },
-	NonText                        = { fg = c.voidGray },
+	MoreMsg                        = { fg = c.diag.info, bg = c.bg, style='NONE' },
+	NonText                        = { fg = c.fg_comment },
 	Normal                         = { fg = c.fg, bg = not config.transparent and c.bg or 'NONE' },
 	NormalNC                       = { link = "Normal" },
 	NormalSB                       = { link = "Normal" },
-	NormalFloat                    = { fg = c.fg, bg = c.bg_float },
-	FloatBorder                    = { fg = c.float_border, bg = c.bg},
-	Pmenu                          = { fg = c.fg, bg = c.bg_float },
-	PmenuSel                       = { fg = c.fg, bg = c.oceanBlue },
+	NormalFloat                    = { fg = c.fg, bg = c.bg_dark },
+	FloatBorder                    = { fg = c.fg_border, bg = 'NONE'},
+	Pmenu                          = { fg = c.fg, bg = c.bg_menu },
+	PmenuSel                       = { fg = 'NONE', bg = c.bg_menu_sel },
 	PmenuSbar                      = { link = "Pmenu" },
-	PmenuThumb                     = { bg = c.dragonBlue },
+	PmenuThumb                     = { bg = c.bg_search },
 	Question                       = { link = "MoreMsg" },
 	QuickFixLine                   = { link = "CursorLine" },
 	Search                         = { fg = c.fg, bg = c.bg_search },
-	IncSearch                      = { fg = c.deepBlue, bg = c.carpYellow, gui='NONE' },
+	IncSearch                      = { fg = c.bg_visual, bg = c.diag.warning, style='NONE' },
 	SpecialKey                     = { link = "NonText" },
 	SpellBad                       = { style = "undercurl", guisp = c.diag.error },
 	SpellCap                       = { style = "undercurl", guisp = c.diag.warning },
 	SpellLocal                     = { style = "undercurl", guisp = c.diag.warning },
 	SpellRare                      = { style = "undercurl", guisp = c.diag.warning },
-	StatusLine                     = { fg = c.fg, bg = c.bg_status, style='NONE' },
-	StatusLineNC                   = { fg = c.steelGray, bg = c.bg_status, style='NONE' },
+	StatusLine                     = { fg = c.fg_dark, bg = c.bg_status, style='NONE' },
+	StatusLineNC                   = { fg = c.comment, bg = c.bg_status, style='NONE' },
 	TabLine                        = { link = "StatusLineNC" },
 	TabLineFill                    = { bg = c.bg },
-	TabLineSel                     = { fg = c.steelGray, bg = c.bg_light },
-	Title                          = { fg = c.dragonBlue, style = "bold" },
+	TabLineSel                     = { fg = c.fg_comment, bg = c.bg_light },
+	Title                          = { fg = c.sm, style = "bold" },
 	Visual                         = { bg = c.bg_visual },
 	VisualNOS                      = { link = "Visual" },
-	WarningMsg                     = { bg = c.diag.error, fg = c.fg },
-	Whitespace                     = { fg = c.steelGray },
+	WarningMsg                     = { bg = c.diag.warn, fg = c.fg_dark },
+	Whitespace                     = { fg = c.fg_comment },
 	WildMenu                       = { link = "Pmenu" },
 
-	Constant                       = { fg = c.sunsetOrange },
-	String                         = { fg = c.springGreen },
-	Character                      = { fg = c.sunsetOrange },
-	Number                         = { fg = c.geishaPink },
-	Boolean                        = { fg = c.waveAqua, style = "bold" },
+	Constant                       = { fg = c.co },
+	String                         = { fg = c.st },
+	Character                      = { link = 'String' },
+	Number                         = { fg = c.nu },
+	Boolean                        = { fg = c.co, style = "bold" },
 	Float                          = { link = "Number" },
 
-	Identifier                     = { fg = c.goldYellow },
-	Function                       = { fg = c.foamBlue, style = config.functionStyle },
-	Statement                      = { fg = c.dragonBlue, style = "bold" },
+	Identifier                     = { fg = c.id },
+	Function                       = { fg = c.fn, style = config.functionStyle },
+	Statement                      = { fg = c.sm, style = config.statementStyle },
 	-- Conditional                 = {},
 	-- Repeat                      = {},
-	Label                          = { fg = c.autumnOrange },
-	Operator                       = { fg = c.boatBrown },
-	Keyword                        = { fg = c.oniViolet, style = config.keywordStyle },
+	-- Label                          = { link = 'Statement' }, --TODO: check default
+	Operator                       = { fg = c.op },
+	Keyword                        = { fg = c.kw, style = config.keywordStyle },
 	-- Exception                   = {},
 
-	PreProc                        = { fg = c.sunsetOrange },
+	PreProc                        = { fg = c.pp },
 	-- Include                     = {},
 	-- Define                      = {},
 	-- Macro                       = {},
 	-- PreCondit                   = {},
 
-	Type                           = { fg = c.boatBrownDark, style = config.typeStyle },
+	Type                           = { fg = c.ty, style = config.typeStyle },
 	-- StorageClass                = {},
 	-- Structure                   = {},
 	-- Typedef                     = {},
 
-	Special                        = { fg = c.springBlue },
+	Special                        = { fg = c.sp },
 	-- SpecialChar                 = {},
 	-- Tag                         = {},
 	-- Delimiter                   = {},
 	-- SpecialComment              = {},
 	-- Debug                       = {},
 
-	Underlined                     = { fg = c.springBlue, style = "undercurl" },
+	Underlined                     = { fg = c.sp, style = "underline" },
 	Bold                           = { style = "bold" },
 	Italic                         = { style = "italic" },
 
 	-- Ignore                      = {},
 
 	Error                          = { fg = c.diag.error, bg = c.bg },
-	Todo                           = { fg = c.fg, bg = c.diag.info },
+	Todo                           = { fg = c.fg_reverse, bg = c.diag.info, style='bold'},
 
 	qfLineNr                       = { link = "lineNr" },
 	qfFileName                     = { link = "Directory" },
@@ -138,9 +132,9 @@ local hlgroups = {
 	markdownLinkText               = {},
 
 	debugPC                        = { link = "CursorLine" },
-	debugBreakpoint                = { fg = c.autumnGreen },
+	debugBreakpoint                = { fg = c.sp },
 
-	LspReferenceText               = { bg = c.deepBlue },
+	LspReferenceText               = { bg = c.diff.text},
 	LspReferenceRead               = { link = "LspReferenceText" },
 	LspReferenceWrite              = { link = "LspReferenceText" },
 
@@ -164,31 +158,31 @@ local hlgroups = {
 	DiagnosticUnderlineInfo        = { style = "undercurl", guisp = c.diag.info },
 	DiagnosticUnderlineHint        = { style = "undercurl", guisp = c.diag.hint },
 
-	LspSignatureActiveParameter    = { fg = c.autumnOrange },
-	LspCodeLens                    = { fg = c.fujiGray },
+	LspSignatureActiveParameter    = { fg = c.diag.warning },
+	LspCodeLens                    = { fg = c.fg_comment },
 
 	-- ALEErrorSign                = {},
 	-- ALEWarningSign              = {},
 
 	-- TSAnnotation                = {},
-	-- TSAttribute                 = {},
+	TSAttribute                    = {link = 'Constant'},
 	-- TSBoolean                   = {},
 	-- TSCharacter                 = {},
 	-- TSComment                   = {},
-	TSNote                         = {},
-	TSWarning                      = {},
-	TSDanger                       = {},
-	TSConstructor                  = {},
+	-- TSNote                         = { fg = c.fg_dark, bg = c.diag.hint, style = 'nocombine,bold'}, -- links to SpecialComment -> Special
+	TSWarning                      = { link = 'Todo'}, --default
+	TSDanger                       = { link = 'WarningMsg' }, --default
+	TSConstructor                  = { link = 'Function'}, -- or special?
 	-- TSConditional               = {},
 	-- TSConstant                  = {},
 	-- TSConstBuiltin              = {},
 	-- TSConstMacro                = {},
 	-- TSError                     = {},
 	-- TSException                 = {},
-	TSField                        = {},
+	TSField                        = { link = 'Identifier'}, -- default
 	-- TSFloat                     = {},
 	-- TSFunction                  = {},
-	-- TSFuncBuiltin               = {},
+    -- TSFuncBuiltin                  = {link = "Function" },
 	-- TSFuncMacro                 = {},
 	-- TSInclude                   = {},
 	TSKeyword                      = { link = "Keyword" },
@@ -199,21 +193,21 @@ local hlgroups = {
 	-- TSNone                      = {},
 	-- TSNumber                    = {},
 	TSOperator                     = { link = "Operator" },
-	TSParameter                    = {},
+	TSParameter                    = { link = 'Identifier' }, -- default
 	-- TSParameterReference        = {},
-	TSProperty                     = {},
-	TSPunctDelimiter               = {},
-	TSPunctBracket                 = {},
-	TSPunctSpecial                 = {},
+	TSProperty                     = { link = 'Identifier' }, -- default
+	TSPunctDelimiter               = { fg = c.br},
+	TSPunctBracket                 = { fg = c.br },
+	TSPunctSpecial                 = { fg = c.br},
 	-- TSRepeat                    = {},
 	-- TSString                    = {},
-	TSStringRegex                  = { fg = "boatBrown" },
-	TSStringEscape                 = { fg = "boatBrownDark" },
+	TSStringRegex                  = { fg = c.re },
+	TSStringEscape                 = { fg = c.re, style='bold' },
 	-- TSSymbol                    = {},
 	-- TSType                      = {},
 	-- TSTypeBuiltin               = {},
-	TSVariable                     = {},
-	TSVariableBuiltin              = { fg = c.geishaPink3, style='italic' },
+	TSVariable                     = { fg = c.fg },
+	TSVariableBuiltin              = { fg = c.sp2, style='italic' },
 
 	-- TSTag                       = {},
 	-- TSTagDelimiter              = {},
@@ -239,12 +233,12 @@ local hlgroups = {
 	-- illuminatedCurWord          = {},
 
 	-- Git
-	diffAdded                      = { fg = c.diff.add },
-	diffDeleted                    = { fg = c.diff.delete },
-	diffRemoved                    = { fg = c.diff.delete },
-	diffChanged                    = { fg = c.diff.change },
-	-- diffOldFile                    = { fg = c.diff.delete },
-	-- diffNewFile                    = { fg = c.diff.add },
+	diffAdded                      = { fg = c.git.added },
+	diffRemoved                    = { fg = c.git.removed },
+	diffDeleted                    = { fg = c.git.removed },
+	diffChanged                    = { fg = c.git.changed },
+	diffOldFile                    = { fg = c.git.deleted },
+	diffNewFile                    = { fg = c.git.added },
 	-- diffFile                       = { fg = c.steelGray },
 	-- diffLine                       = { fg = c.steelGray },
 	-- diffIndexLine                  = { link = 'Identifier' },
@@ -272,16 +266,16 @@ local hlgroups = {
 	TelescopeBorder                = { link = "FloatBorder" },
 
 	-- NvimTree                    = {},
-	NvimTreeNormal                 = { fg = c.fg, bg = c.bg },
+	NvimTreeNormal                 = { fg = c.fg, bg = c.bg_dark },
 	-- NvimTreeNormalNC            = {},
-	NvimTreeRootFolder             = { fg = c.oniViolet, style='bold'},
+	NvimTreeRootFolder             = { fg = c.id, style='bold'},
 	-- NvimTreeGitDirty            = {},
 	-- NvimTreeGitNew              = {},
 	-- NvimTreeGitDeleted          = {},
 	-- NvimTreeSpecialFile         = {},
 	-- NvimTreeIndentMarker        = {},
 	-- NvimTreeImageFile           = {},
-	NvimTreeSymlink                = { fg = c.waveAqua },
+	NvimTreeSymlink                = { link = "Directory" },
 	NvimTreeFolderName             = { link = "Directory" },
 
 	-- Fern
@@ -297,10 +291,10 @@ local hlgroups = {
 	-- GlyphPalette9               = {},
 
 	-- Dashboard
-	DashboardShortCut              = { fg = c.oniViolet },
-	DashboardHeader                = { fg = c.tantoRed },
-	DashboardCenter                = { fg = c.boatBrown },
-	DashboardFooter                = { fg = c.steelGray },
+	DashboardShortCut              = { fg = c.sp },
+	DashboardHeader                = { fg = c.sp2 },
+	DashboardCenter                = { fg = c.id },
+	DashboardFooter                = { fg = c.fn },
 
 	-- WhichKey                    = {},
 	-- WhichKeyGroup               = {},
@@ -372,16 +366,17 @@ local hlgroups = {
 	-- LightspeedGreyWash          = {},
 
     -- Cmp
-    CmpDocumentation       = { fg = c.fg, bg = c.bg_float },
-    CmpDocumentationBorder = { fg = c.float_border, bg = c.bg },
+    CmpDocumentation       = { fg = c.fg, bg = c.bg_popup },
+    CmpDocumentationBorder = { fg = c.bg_light, bg = c.bg },
 
     CmpItemAbbr            = { fg = c.fg, bg = "NONE" },
     CmpItemAbbrDeprecated  = { fg = c.comment, bg = "NONE", style = "strikethrough" },
-    CmpItemAbbrMatch       = { fg = c.springBlue, bg = "NONE" },
-    CmpItemAbbrMatchFuzzy  = { fg = c.springBlue, bg = "NONE" },
 
-    CmpItemKindDefault     = { fg = c.steelGray, bg = "NONE" },
-    CmpItemMenu            = { fg = c.comment, bg = "NONE" },
+    CmpItemAbbrMatch       = { fg = c.fn, bg = "NONE" },
+    CmpItemAbbrMatchFuzzy  = { link = 'CmpItemAbbrMatch' },
+
+    CmpItemKindDefault     = { fg = c.dep, bg = "NONE" },
+    CmpItemMenu            = { fg = c.fg_comment, bg = "NONE" },
 
     CmpItemKindVariable    = { link = 'TSVariable' },
 
@@ -398,7 +393,7 @@ local hlgroups = {
     CmpItemKindField       = { link = "TSField" },
 	CmpItemKindEnum        = { link = 'Identifier'},
 
-    CmpItemKindSnippet     = { fg = c.comment, bg = "NONE" },
+    CmpItemKindSnippet     = { fg = c.sp, bg = "NONE" },
 
     CmpItemKindText        = { link = "TSText"},
 
@@ -420,11 +415,11 @@ local hlgroups = {
 	CmpItemKindColor       = {},
 
 	-- IndentBlankline
-    IndentBlanklineChar = { fg = c.voidGray},
-    IndentBlanklineSpaceChar = { fg = c.voidGray},
-    IndentBlanklineSpaceCharBlankline = { fg = c.voidGray},
-    IndentBlanklineContextChar = { fg = c.oceanBlue },
-    IndentBlanklineContextStart = { guisp = c.oceanBlue, style = 'underline'},
+    IndentBlanklineChar = { fg = c.bg_light},
+    IndentBlanklineSpaceChar = { fg = c.bg_light},
+    IndentBlanklineSpaceCharBlankline = { fg = c.bg_light},
+    IndentBlanklineContextChar = { fg = p.foamBlue },
+    IndentBlanklineContextStart = { guisp = p.foamBlue, style = 'underline'},
 }
 
 for group, colors in pairs(config.overrides) do
