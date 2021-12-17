@@ -1,18 +1,15 @@
 local p, c = unpack(require("kanagawa.colors"))
 local config = require("kanagawa").config
 
--- linenr possono essere scuriti un po'
--- sunsetOrange va schiarito
--- deepblue sta meglio come popup
 
 local hlgroups = {
 	Comment                        = { fg = c.fg_comment, style = config.commentStyle },
 	ColorColumn                    = { bg = c.bg_light },
-	Conceal                        = {},
+	Conceal                        = { fg = c.bg_light3, bg = 'NONE', style = 'bold' },
 	Cursor                         = { fg = c.bg, bg = c.fg },
 	lCursor                        = { link = "Cursor" },
 	CursorIM                       = { link = "Cursor" },
-	CursorLine                     = { bg = c.bg_light },
+	CursorLine                     = { bg = c.bg_light1 },
 	CursorColumn                   = { link = "CursorLine" },
 	Directory                      = { fg = c.fn },
 	DiffAdd                        = { fg = 'NONE', bg = c.diff.add },
@@ -23,20 +20,20 @@ local hlgroups = {
 	-- TermCursor                  = {},
 	-- TermCursorNC                = {},
 	ErrorMsg                       = { fg = c.diag.error, bg = c.bg },
-	VertSplit                      = { fg = c.bg_status, style='NONE'},
-	Folded                         = { fg = c.fg_comment, bg = c.bg_light },
-	FoldColumn                     = { fg = c.bg_lighter, bg = c.bg },
+	VertSplit                      = { fg = c.bg_status, bg = c.bg_status, style='NONE'},
+	Folded                         = { fg = c.bg_light3, bg = c.bg_light0 },
+	FoldColumn                     = { fg = c.bg_light2, bg = c.bg },
 	SignColumn                     = { fg = c.comment, bg = c.bg },
 	SignColumnSB                   = { link = "SignColumn" },
 	Substitute                     = { fg = c.fg, bg = c.git.removed },
-	LineNr                         = { fg = c.bg_lighter },
+	LineNr                         = { fg = c.bg_light2 },
 	CursorLineNr                   = { fg = c.diag.warning, bg = c.bg, style = "bold" },
 	MatchParen                     = { fg = c.diag.warning, bg = "NONE", style = "bold" },
 	ModeMsg                        = { fg = c.diag.warning, style = "bold", bg = c.bg},
 	MsgArea                        = { fg = c.fg, bg = c.bg},
 	-- MsgSeparator                = {},
 	MoreMsg                        = { fg = c.diag.info, bg = c.bg, style='NONE' },
-	NonText                        = { fg = c.fg_comment },
+	NonText                        = { fg = c.bg_light2 },
 	Normal                         = { fg = c.fg, bg = not config.transparent and c.bg or 'NONE' },
 	NormalNC                       = { link = "Normal" },
 	NormalSB                       = { link = "Normal" },
@@ -57,14 +54,14 @@ local hlgroups = {
 	SpellRare                      = { style = "undercurl", guisp = c.diag.warning },
 	StatusLine                     = { fg = c.fg_dark, bg = c.bg_status, style='NONE' },
 	StatusLineNC                   = { fg = c.comment, bg = c.bg_status, style='NONE' },
-	TabLine                        = { link = "StatusLineNC" },
-	TabLineFill                    = { bg = c.bg },
-	TabLineSel                     = { fg = c.fg_comment, bg = c.bg_light },
-	Title                          = { fg = c.sm, style = "bold" },
+	TabLine                        = { bg = c.bg_dark, fg = c.bg_light3, style='NONE' },
+	TabLineFill                    = { bg = c.bg, style='NONE' },
+	TabLineSel                     = { fg = c.fg_dark, bg = c.bg_light1, style='NONE' },
+	Title                          = { fg = c.fn, style = "bold" },
 	Visual                         = { bg = c.bg_visual },
 	VisualNOS                      = { link = "Visual" },
 	WarningMsg                     = { bg = c.diag.warn, fg = c.fg_dark },
-	Whitespace                     = { fg = c.fg_comment },
+	Whitespace                     = { fg = c.bg_light2 },
 	WildMenu                       = { link = "Pmenu" },
 
 	Constant                       = { fg = c.co },
@@ -82,7 +79,7 @@ local hlgroups = {
 	-- Label                          = { link = 'Statement' }, --TODO: check default
 	Operator                       = { fg = c.op },
 	Keyword                        = { fg = c.kw, style = config.keywordStyle },
-	-- Exception                   = {},
+	Exception                      = { fg = c.sp2 },
 
 	PreProc                        = { fg = c.pp },
 	-- Include                     = {},
@@ -98,7 +95,7 @@ local hlgroups = {
 	Special                        = { fg = c.sp },
 	-- SpecialChar                 = {},
 	-- Tag                         = {},
-	-- Delimiter                   = {},
+	-- Delimiter                      = { fg = c.br},
 	-- SpecialComment              = {},
 	-- Debug                       = {},
 
@@ -172,33 +169,39 @@ local hlgroups = {
 	-- TSNote                         = { fg = c.fg_dark, bg = c.diag.hint, style = 'nocombine,bold'}, -- links to SpecialComment -> Special
 	TSWarning                      = { link = 'Todo'}, --default
 	TSDanger                       = { link = 'WarningMsg' }, --default
-	TSConstructor                  = { link = 'Function'}, -- or special?
+	TSConstructor                  = { fg = c.kw }, -- Function/Special/Statement/Keyword
 	-- TSConditional               = {},
 	-- TSConstant                  = {},
 	-- TSConstBuiltin              = {},
 	-- TSConstMacro                = {},
-	-- TSError                     = {},
-	-- TSException                 = {},
+	TSError                        = { fg = c.diag.error},
+	-- TSException                    = { link = 'Exception' }, -- default, -> statement
+	TSException                    = { fg = c.sp2 },
 	TSField                        = { link = 'Identifier'}, -- default
+	-- TSField                        = { link = 'Variable'},
 	-- TSFloat                     = {},
 	-- TSFunction                  = {},
     -- TSFuncBuiltin                  = {link = "Function" },
 	-- TSFuncMacro                 = {},
 	-- TSInclude                   = {},
 	TSKeyword                      = { link = "Keyword" },
-	TSKeywordFunction              = { link = "Keyword" },
+	-- TSKeywordFunction              = { link = "Keyword" }, -- default
+	-- TSKeywordFunction              = { link = "Function" },
+	TSKeywordReturn                = { fg = c.sp3, style = 'italic' },
 	TSLabel                        = { link = "Label" },
 	TSMethod                       = { link = "Function" },
 	-- TSNamespace                 = {},
 	-- TSNone                      = {},
 	-- TSNumber                    = {},
 	TSOperator                     = { link = "Operator" },
+	-- TSKeywordOperator              = {},
 	TSParameter                    = { link = 'Identifier' }, -- default
 	-- TSParameterReference        = {},
 	TSProperty                     = { link = 'Identifier' }, -- default
-	TSPunctDelimiter               = { fg = c.br},
+	-- TSPunctDelimiter               = { fg = c.op },
+	TSPunctDelimiter               = { fg = c.br },
 	TSPunctBracket                 = { fg = c.br },
-	TSPunctSpecial                 = { fg = c.br},
+	TSPunctSpecial                 = { fg = c.br },
 	-- TSRepeat                    = {},
 	-- TSString                    = {},
 	TSStringRegex                  = { fg = c.re },
@@ -237,7 +240,7 @@ local hlgroups = {
 	diffRemoved                    = { fg = c.git.removed },
 	diffDeleted                    = { fg = c.git.removed },
 	diffChanged                    = { fg = c.git.changed },
-	diffOldFile                    = { fg = c.git.deleted },
+	diffOldFile                    = { fg = c.git.removed },
 	diffNewFile                    = { fg = c.git.added },
 	-- diffFile                       = { fg = c.steelGray },
 	-- diffLine                       = { fg = c.steelGray },
@@ -292,7 +295,7 @@ local hlgroups = {
 
 	-- Dashboard
 	DashboardShortCut              = { fg = c.sp },
-	DashboardHeader                = { fg = c.sp2 },
+	DashboardHeader                = { fg = c.git.removed },
 	DashboardCenter                = { fg = c.id },
 	DashboardFooter                = { fg = c.fn },
 
@@ -367,7 +370,7 @@ local hlgroups = {
 
     -- Cmp
     CmpDocumentation       = { fg = c.fg, bg = c.bg_popup },
-    CmpDocumentationBorder = { fg = c.bg_light, bg = c.bg },
+    CmpDocumentationBorder = { fg = c.fg_border, bg = c.bg },
 
     CmpItemAbbr            = { fg = c.fg, bg = "NONE" },
     CmpItemAbbrDeprecated  = { fg = c.comment, bg = "NONE", style = "strikethrough" },
@@ -415,11 +418,11 @@ local hlgroups = {
 	CmpItemKindColor       = {},
 
 	-- IndentBlankline
-    IndentBlanklineChar = { fg = c.bg_light},
-    IndentBlanklineSpaceChar = { fg = c.bg_light},
-    IndentBlanklineSpaceCharBlankline = { fg = c.bg_light},
-    IndentBlanklineContextChar = { fg = p.foamBlue },
-    IndentBlanklineContextStart = { guisp = p.foamBlue, style = 'underline'},
+    IndentBlanklineChar = { fg = c.bg_light2},
+    IndentBlanklineSpaceChar = { fg = c.bg_light2},
+    IndentBlanklineSpaceCharBlankline = { fg = c.bg_light2},
+    IndentBlanklineContextChar = { fg = c.bg_light3 },
+    IndentBlanklineContextStart = { guisp = c.bg_light3, style = 'underline'},
 }
 
 for group, colors in pairs(config.overrides) do
