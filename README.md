@@ -64,13 +64,13 @@ You can change the colors of existing hl-groups as well as creating new ones. Su
 ```lua
 overrides = {
     MyHlGroup1 = { fg = "red", bg = "#AAAAAA", style=underline,bold, guisp=blue },
-    VertSplit  = { fg = "red", bg = "#AAAAAA", style=underline,bold, guisp=blue },
+    VertSplit  = { fg = "black", bg = "NONE" }
     TSError    = { link = "Error" },
 }
 
 colors = {
     sumiInk1 = "black",
-    fujiWhite = "white"
+    fujiWhite = "#FFFFFF"
 }
 ```
 
