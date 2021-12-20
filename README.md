@@ -59,12 +59,13 @@ vim.cmd[[colorscheme kanagawa]]
 
 ### Customize highlight groups and colors
 
-You can change the colors of existing hl-groups as well as creating new ones.
+You can change the colors of existing hl-groups as well as creating new ones. Supported keywords: `fg`, `bg`, `style`, `guisp`, `link`.
 
 ```lua
 overrides = {
-    MyHlGroup1 = { fg = red, bg = #AAAAAA, style=underline,bold, guisp=blue },
-    VertSplit  = { fg = red, bg = #AAAAAA, style=underline,bold, guisp=blue },
+    MyHlGroup1 = { fg = "red", bg = "#AAAAAA", style=underline,bold, guisp=blue },
+    VertSplit  = { fg = "red", bg = "#AAAAAA", style=underline,bold, guisp=blue },
+    TSError    = { link = "Error" },
 }
 
 colors = {
