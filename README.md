@@ -84,7 +84,7 @@ local palette, colors = unpack(require("kanagawa.colors"))
 
 ### Extras
 
-* [kitty](extras/kitty.conf)
+* [kitty](extras/kanagawa.conf)
 
 # Acknowledgments
 
