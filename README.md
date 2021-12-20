@@ -76,9 +76,15 @@ colors = {
 
 ### Accessing palette colors
 
+You can find all the palette colors [here](lua/kanagawa/colors.lua).
+
 ```lua
 local palette, colors = unpack(require("kanagawa.colors"))
 ```
+
+### Extras
+
+* [kitty](extras/kitty.conf)
 
 # Acknowledgments
 
