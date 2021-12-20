@@ -54,7 +54,7 @@ require'kanagawa'.setup({
 })
 
 -- setup must be called before loading
-vim.cmd[[colorscheme tokyonight]]
+vim.cmd[[colorscheme kanagawa]]
 ```
 
 ### Customize highlight groups and colors
