@@ -2,11 +2,11 @@
   <h2 align="center">🌊 KANAGAWA.nvim 🌊</h2>
 </p>
 
-<p align="center">NeoVim dark colorscheme inspired by the colors of the famous painting by Katsushika Hokusai.</p>
-
 <p align="center">
   <img src="kanagawa@2x.png">
 </p>
+
+<p align="center">NeoVim dark colorscheme inspired by the colors of the famous painting by Katsushika Hokusai.</p>
 
 # Installation
 
@@ -85,6 +85,8 @@ local palette, colors = unpack(require("kanagawa.colors"))
 ### Extras
 
 * [kitty](extras/kanagawa.conf)
+
+🎉 Bonus, you win a tiny [python script](palette.py)🎨🐍 to extract color palettes from pictures! 🥳
 
 # Acknowledgments
 
