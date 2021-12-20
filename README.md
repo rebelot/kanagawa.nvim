@@ -9,7 +9,7 @@
 <p align="center">NeoVim dark colorscheme inspired by the colors of the famous painting by Katsushika Hokusai.</p>
 
 <p align="center">
-  <img src="screenshot.png">
+  <h2 align="center"><img src="screenshot.png"></h2>
 </p>
 
 # Installation
