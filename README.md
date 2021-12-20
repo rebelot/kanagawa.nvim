@@ -88,7 +88,7 @@ local palette, colors = unpack(require("kanagawa.colors"))
 
 🎉 Bonus, you win a tiny [python script](palette.py)🎨🐍 to extract color palettes from pictures! 🥳
 
-# Acknowledgments
+# Acknowledgements
 
 * [Tokyonight](https://github.com/folke/tokyonight.nvim)
 * [Gruvbox](https://github.com/morhetz/gruvbox)
