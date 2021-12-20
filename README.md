@@ -5,7 +5,7 @@
 <p align="center">NeoVim dark colorscheme inspired by the colors of the famous painting by Katsushika Hokusai.</p>
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/rebelot/kanagawa/kanagawa@2x.png">
+  <img src="kanagawa@2x.png">
 </p>
 
 # Installation
