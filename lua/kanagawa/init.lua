@@ -3,16 +3,15 @@ local M = {}
 function M.load()
     local hlgroups = require("kanagawa.hlgroups")
 
-	if vim.g.colors_name then
-		vim.cmd("hi clear")
-	end
+    if vim.g.colors_name then
+        vim.cmd("hi clear")
+    end
 
-	vim.g.colors_name = "kanagawa"
-	vim.o.termguicolors = true
+    vim.g.colors_name = "kanagawa"
+    vim.o.termguicolors = true
 
-
-	for group, colors in pairs(hlgroups) do
-	    if not vim.tbl_isempty(colors) then
+    for group, colors in pairs(hlgroups) do
+        if not vim.tbl_isempty(colors) then
             if colors.link then
                 vim.cmd("highlight! link " .. group .. " " .. colors.link)
             else
@@ -20,10 +19,10 @@ function M.load()
                 local bg = colors.bg and "guibg=" .. colors.bg .. " " or ""
                 local style = colors.style and "gui=" .. colors.style .. " " or ""
                 local guisp = colors.guisp and "guisp=" .. colors.guisp .. " " or ""
-                    vim.cmd("highlight " .. group .. " " .. fg .. bg .. style .. guisp)
+                vim.cmd("highlight " .. group .. " " .. fg .. bg .. style .. guisp)
             end
         end
-	end
+    end
 end
 
 M.config = {
@@ -32,7 +31,7 @@ M.config = {
     functionStyle = "NONE",
     keywordStyle = "italic",
     statementStyle = "bold",
-    typeStyle = 'NONE',
+    typeStyle = "NONE",
     transparent = false,
     colors = {},
     overrides = {},

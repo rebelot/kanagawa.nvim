@@ -45,7 +45,7 @@ There is no need to call setup if you are ok with the defaults.
 
 ```lua
 -- Default options:
-require'kanagawa'.setup({
+require('kanagawa').setup({
     undercurl = true,
     commentStyle = "italic",
     functionStyle = "NONE",
@@ -58,7 +58,7 @@ require'kanagawa'.setup({
 })
 
 -- setup must be called before loading
-vim.cmd[[colorscheme kanagawa]]
+vim.cmd("colorscheme kanagawa")
 ```
 
 ### Customize highlight groups and colors
@@ -67,6 +67,8 @@ You can change the colors of existing hl-groups as well as creating new ones. Su
 
 You can define your own colors or use the theme colors (see example below).
 All the palette colors can be found [here](lua/kanagawa/colors.lua).
+
+Example:
 
 ```lua
 local default_colors = require("kanagawa.colors")
@@ -84,6 +86,7 @@ local colors = {
 }
 
 require'kanagawa'.setup({ overrides = overrides, colors = colors })
+vim.cmd("colorscheme kanagawa")
 ```
 
 ### Extras
