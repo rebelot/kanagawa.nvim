@@ -1,4 +1,4 @@
-local p, c = unpack(require("kanagawa.colors"))
+local c = require("kanagawa.colors")
 local config = require("kanagawa").config
 
 

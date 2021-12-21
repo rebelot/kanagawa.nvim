@@ -14,7 +14,7 @@
 
 local config = require("kanagawa").config
 
-local palette = {
+local colors = {
 
 	-- Bg Shades
     sumiInk0      = "#16161D",
@@ -73,67 +73,68 @@ local palette = {
 }
 
 for name, color in pairs(config.colors) do
-    palette[name] = color
+    colors[name] = color
 end
 
-local colors = {
-    bg          = palette.sumiInk1, -- Default Background
-    bg_dark     = palette.sumiInk0,
-    bg_light0   = palette.sumiInk2,
-    bg_light1   = palette.sumiInk3,
-    bg_light2   = palette.sumiInk4,
-    bg_light3   = palette.springViolet1,
+colors.bg          = colors.sumiInk1 -- Default Background
+colors.bg_dark     = colors.sumiInk0
+colors.bg_light0   = colors.sumiInk2
+colors.bg_light1   = colors.sumiInk3
+colors.bg_light2   = colors.sumiInk4
+colors.bg_light3   = colors.springViolet1
 
-    -- bg_menu     = palette.abyssBlue,
-    bg_menu     = palette.waveBlue1,
-    bg_menu_sel = palette.waveBlue2,
+    -- bg_menu     = palette.abyssBlue
+colors.bg_menu     = colors.waveBlue1
+colors.bg_menu_sel = colors.waveBlue2
 
-    bg_status   = palette.sumiInk0,
-    bg_visual   = palette.waveBlue1,
-    bg_search   = palette.waveBlue2,
+colors.bg_status   = colors.sumiInk0
+colors.bg_visual   = colors.waveBlue1
+colors.bg_search   = colors.waveBlue2
 
-    fg_border   = palette.sumiInk4,
-    fg_dark     = palette.oldWhite,
-    fg_reverse  = palette.waveBlue1,
+colors.fg_border   = colors.sumiInk4
+colors.fg_dark     = colors.oldWhite
+colors.fg_reverse  = colors.waveBlue1
 
-    fg_comment  = palette.fujiGray,      -- Comments, Invisibles, Line Highlighting
-    fg          = palette.fujiWhite,     -- Default Foreground, Caret, Delimiters, Operators
-    -- fg_light   = palette.waveBlue2,     -- Light Foreground (Not often used)
+colors.fg_comment  = colors.fujiGray      -- Comments, Invisibles, Line Highlighting
+colors.fg          = colors.fujiWhite     -- Default Foreground, Caret, Delimiters, Operators
+-- fg_light   = palette.waveBlue2     -- Light Foreground (Not often used)
 
-    co = palette.surimiOrange,  -- Boolean, Constants, XML Attributes, Markup Link Url
-    st = palette.springGreen,   -- Strings,
-    nu = palette.sakuraPink,    -- Numbers
-    id = palette.carpYellow,      -- Identifier
-    fn = palette.crystalBlue,      -- Functions, Methods, Attribute IDs, Headings
-    sm = palette.oniViolet,     -- Statement: Label, Conditional, Repeat
-    kw = palette.oniViolet,     -- Keywords, Exceptions
-    op = palette.boatYellow2,  -- Operator
-    pp = palette.surimiOrange,  -- PreProc: Include, Define, Macro, PreCondit
-    ty = palette.waveAqua2,     -- Type: StroareClass, Structure, Typedef
-    sp = palette.springBlue,     -- Special: Tag, Delimiter, SpecialComment, Debug, SpecialChar, Builtin
-    sp2 = palette.waveRed,   -- Special Variables (cls, self, etc...)
-    sp3 = palette.peachRed,
-    br = palette.springViolet2,       -- TSPunct*
-    re = palette.boatYellow2,     -- Regular Expressions, Escape Characters
-    dep = palette.katanaGray,     -- Deprecated, Opening/Closing Embedded Language Tags, e.g. <?php ?>
+colors.co = colors.surimiOrange  -- Boolean, Constants, XML Attributes, Markup Link Url
+colors.st = colors.springGreen   -- Strings,
+colors.nu = colors.sakuraPink    -- Numbers
+colors.id = colors.carpYellow      -- Identifier
+colors.fn = colors.crystalBlue      -- Functions, Methods, Attribute IDs, Headings
+colors.sm = colors.oniViolet     -- Statement: Label, Conditional, Repeat
+colors.kw = colors.oniViolet     -- Keywords, Exceptions
+colors.op = colors.boatYellow2  -- Operator
+colors.pp = colors.surimiOrange  -- PreProc: Include, Define, Macro, PreCondit
+colors.ty = colors.waveAqua2     -- Type: StroareClass, Structure, Typedef
+colors.sp = colors.springBlue     -- Special: Tag, Delimiter, SpecialComment, Debug, SpecialChar, Builtin
+colors.sp2 = colors.waveRed   -- Special Variables (cls, self, etc...)
+colors.sp3 = colors.peachRed
+colors.br = colors.springViolet2       -- TSPunct*
+colors.re = colors.boatYellow2     -- Regular Expressions, Escape Characters
+colors.dep = colors.katanaGray     -- Deprecated, Opening/Closing Embedded Language Tags, e.g. <?php ?>
 
-    diag = {
-        error = palette.samuraiRed,
-        warning = palette.roninYellow,
-        info = palette.dragonBlue,
-        hint = palette.waveAqua1,
-    },
-    diff = {
-        add = palette.winterGreen,
-        delete = palette.winterRed,
-        change = palette.winterBlue,
-        text = palette.winterYellow,
-    },
-    git = {
-        added = palette.autumnGreen,
-        removed = palette.autumnRed,
-        changed = palette.autumnYellow,
-    }
+colors.diag = {
+    error = colors.samuraiRed,
+    warning = colors.roninYellow,
+    info = colors.dragonBlue,
+    hint = colors.waveAqua1,
 }
 
-return {palette, colors}
+colors.diff = {
+    add = colors.winterGreen,
+    delete = colors.winterRed,
+    change = colors.winterBlue,
+    text = colors.winterYellow,
+}
+
+colors.git = {
+    added = colors.autumnGreen,
+    removed = colors.autumnRed,
+    changed = colors.autumnYellow,
+}
+
+
+return colors

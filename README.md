@@ -22,7 +22,7 @@ use "rebelot/kanagawa.nvim"
 
 # Usage
 
-Simple as writing (pasting) `:colo kanagawa` !
+Simple as writing (pasting) `colorscheme kanagawa` !
 
 ```vim
 colorscheme kanagawa
@@ -65,32 +65,32 @@ vim.cmd[[colorscheme kanagawa]]
 
 You can change the colors of existing hl-groups as well as creating new ones. Supported keywords: `fg`, `bg`, `style`, `guisp`, `link`.
 
+You can define your own colors or use the theme colors (see example below).
+All the palette colors can be found [here](lua/kanagawa/colors.lua).
+
 ```lua
-overrides = {
-    MyHlGroup1 = { fg = "red", bg = "#AAAAAA", style=underline,bold, guisp=blue },
-    VertSplit  = { fg = "black", bg = "NONE" }
+local default_colors = require("kanagawa.colors")
+
+local overrides = {
+    MyHlGroup1 = { fg = default_colors.waveRed, bg = "#AAAAAA", style="underline,bold", guisp="blue" },
+    VertSplit  = { fg = default_colors.bg_dark, bg = "NONE" },
     TSError    = { link = "Error" },
 }
 
-colors = {
+-- this will affect all the hl-groups where the redefined colors are used
+local colors = {
     sumiInk1 = "black",
     fujiWhite = "#FFFFFF"
 }
-```
 
-### Accessing palette colors
-
-You can find all the palette colors [here](lua/kanagawa/colors.lua).
-
-```lua
-local palette, colors = unpack(require("kanagawa.colors"))
+require'kanagawa'.setup({ overrides = overrides, colors = colors })
 ```
 
 ### Extras
 
 * [kitty](extras/kanagawa.conf)
 
-🎉 Bonus, you win a tiny [python script](palette.py)🎨🐍 to extract color palettes from pictures! 🥳
+🎉 Bonus! You win a tiny [python script](palette.py)🐍 to extract color palettes 🎨 from images! 🥳
 
 # Acknowledgements
 
