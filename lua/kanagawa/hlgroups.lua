@@ -175,7 +175,7 @@ local hlgroups = {
     -- TSConstMacro                   = {},
     TSError                           = { fg = c.diag.error },
     -- TSException                    = { link = 'Exception' }, -- default, -> statement
-    TSException                       = { fg = c.sp2 },
+    TSException                       = { fg = config.specialException and c.sp3 or c.sm, style = config.statementStyle },
     TSField                           = { link = "Identifier" }, -- default
     -- TSField                        = { link = 'Variable'},
     -- TSFloat                        = {},
@@ -186,14 +186,14 @@ local hlgroups = {
     TSKeyword                         = { link = "Keyword" },
     -- TSKeywordFunction              = { link = "Keyword" }, -- default
     -- TSKeywordFunction              = { link = "Function" },
-    TSKeywordReturn                   = { fg = c.sp3, style = "italic" },
+    TSKeywordReturn                   = { fg = config.specialReturn and c.sp3 or c.kw, style = config.keywordStyle },
     TSLabel                           = { link = "Label" },
     TSMethod                          = { link = "Function" },
     -- TSNamespace                    = {},
     -- TSNone                         = {},
     -- TSNumber                       = {},
     TSOperator                        = { link = "Operator" },
-    -- TSKeywordOperator              = {},
+    TSKeywordOperator                 = { fg = c.op, style = 'bold' },
     TSParameter                       = { link = "Identifier" }, -- default
     -- TSParameterReference           = {},
     TSProperty                        = { link = "Identifier" }, -- default

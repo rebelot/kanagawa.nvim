@@ -64,6 +64,8 @@ require('kanagawa').setup({
     keywordStyle = "italic",
     statementStyle = "bold",
     typeStyle = "NONE",
+    specialReturn = true,
+    specialException = true,
     transparent = false,
     colors = {},
     overrides = {},
