@@ -49,7 +49,7 @@ vim.cmd("colorscheme kanagawa")
 - [Indent Blankline](https://github.com/lukas-reineke/indent-blankline.nvim)
 - [Dashboard](https://github.com/glepnir/dashboard-nvim)
 
-And many others should _"just work"!
+And many others should _"just work"_!
 
 ## Configuration
 
@@ -64,6 +64,7 @@ require('kanagawa').setup({
     keywordStyle = "italic",
     statementStyle = "bold",
     typeStyle = "NONE",
+    variablebuiltinStyle = "italic",
     specialReturn = true,
     specialException = true,
     transparent = false,
