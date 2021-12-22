@@ -20,12 +20,22 @@ Download with your favorite package manager.
 use "rebelot/kanagawa.nvim"
 ```
 
+## Requirements
+
+* neovim >= 0.6
+* truecolor terminal support
+* undercurl terminal support (optional)
+
 # Usage
 
-Simple as writing (pasting) `colorscheme kanagawa` !
+As simple as writing (pasting)
 
 ```vim
 colorscheme kanagawa
+```
+
+```lua
+vim.cmd("colorscheme kanagawa")
 ```
 
 ## Plugin Support
