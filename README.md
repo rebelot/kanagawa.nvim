@@ -40,7 +40,7 @@ vim.cmd("colorscheme kanagawa")
 
 ## Plugin Support
 
-* [nvim-cmp](https://github.com/hrsh7th/nvim-cmp)
+* [cmp](https://github.com/hrsh7th/nvim-cmp)
 - [TreeSitter](https://github.com/nvim-treesitter/nvim-treesitter)
 - [LSP Diagnostics](https://neovim.io/doc/user/lsp.html)
 - [Git Signs](https://github.com/lewis6991/gitsigns.nvim)
