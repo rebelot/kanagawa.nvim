@@ -107,6 +107,7 @@ vim.cmd("colorscheme kanagawa")
 ## Extras
 
 * [kitty](extras/kanagawa.conf)
+* [iTerm](extras/kanagawa.itermcolors)
 * 🎉 Bonus! You win a tiny [python script](palette.py)🐍 to extract color palettes 🎨 from images! 🥳
 
 ## Acknowledgements
