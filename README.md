@@ -40,7 +40,6 @@ vim.cmd("colorscheme kanagawa")
 
 ## Plugin Support
 
-* [cmp](https://github.com/hrsh7th/nvim-cmp)
 - [TreeSitter](https://github.com/nvim-treesitter/nvim-treesitter)
 - [LSP Diagnostics](https://neovim.io/doc/user/lsp.html)
 - [Git Signs](https://github.com/lewis6991/gitsigns.nvim)
@@ -49,7 +48,7 @@ vim.cmd("colorscheme kanagawa")
 - [Indent Blankline](https://github.com/lukas-reineke/indent-blankline.nvim)
 - [Dashboard](https://github.com/glepnir/dashboard-nvim)
 
-And many others should _"just work"_ ootb ;)
+And many others should _"just work"!
 
 ## Configuration
 
