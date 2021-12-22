@@ -61,7 +61,7 @@ require('kanagawa').setup({
     functionStyle = "NONE",
     keywordStyle = "italic",
     statementStyle = "bold",
-    typeStyle = 'NONE',
+    typeStyle = "NONE",
     transparent = false,
     colors = {},
     overrides = {},
@@ -102,8 +102,7 @@ vim.cmd("colorscheme kanagawa")
 ### Extras
 
 * [kitty](extras/kanagawa.conf)
-
-🎉 Bonus! You win a tiny [python script](palette.py)🐍 to extract color palettes 🎨 from images! 🥳
+* 🎉 Bonus! You win a tiny [python script](palette.py)🐍 to extract color palettes 🎨 from images! 🥳
 
 # Acknowledgements
 
