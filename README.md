@@ -58,16 +58,16 @@ There is no need to call setup if you are ok with the defaults.
 ```lua
 -- Default options:
 require('kanagawa').setup({
-    undercurl = true,
+    undercurl = true,           -- enable undercurls
     commentStyle = "italic",
     functionStyle = "NONE",
     keywordStyle = "italic",
     statementStyle = "bold",
     typeStyle = "NONE",
     variablebuiltinStyle = "italic",
-    specialReturn = true,
-    specialException = true,
-    transparent = false,
+    specialReturn = true,       -- special highlight for the return keyword
+    specialException = true,    -- special highlight for exception handling keywords 
+    transparent = false,        -- do not set background color
     colors = {},
     overrides = {},
 })
