@@ -106,7 +106,7 @@ vim.cmd("colorscheme kanagawa")
 * [kitty](extras/kanagawa.conf)
 * 🎉 Bonus! You win a tiny [python script](palette.py)🐍 to extract color palettes 🎨 from images! 🥳
 
-# Acknowledgements
+## Acknowledgements
 
 * [Tokyonight](https://github.com/folke/tokyonight.nvim)
 * [Gruvbox](https://github.com/morhetz/gruvbox)
