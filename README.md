@@ -3,7 +3,7 @@
 </p>
 
 <p align="center">
-  <img src="kanagawa@2x.png">
+  <img src="kanagawa@2x.png" width="400" height="400">
 </p>
 
 <p align="center">NeoVim dark colorscheme inspired by the colors of the famous painting by Katsushika Hokusai.</p>
