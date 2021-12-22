@@ -209,7 +209,7 @@ local hlgroups = {
     -- TSType                         = {},
     -- TSTypeBuiltin                  = {},
     TSVariable                        = { fg = c.fg },
-    TSVariableBuiltin                 = { fg = c.sp2, style = "italic" },
+    TSVariableBuiltin                 = { fg = c.sp2, style = config.variablebuiltinStyle },
 
     -- TSTag                          = {},
     -- TSTagDelimiter                 = {},

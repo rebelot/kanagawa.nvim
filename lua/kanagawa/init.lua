@@ -32,6 +32,7 @@ M.config = {
     keywordStyle = "italic",
     statementStyle = "bold",
     typeStyle = "NONE",
+    variablebuiltinStyle = "italic",
     specialReturn = true,
     specialException = true,
     transparent = false,
