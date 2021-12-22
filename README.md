@@ -12,7 +12,7 @@
   <h2 align="center"><img src="screenshot.png"></h2>
 </p>
 
-# Installation
+## Installation
 
 Download with your favorite package manager.
 
@@ -26,7 +26,7 @@ use "rebelot/kanagawa.nvim"
 * truecolor terminal support
 * undercurl terminal support (optional)
 
-# Usage
+## Usage
 
 As simple as writing (pasting)
 
@@ -40,14 +40,16 @@ vim.cmd("colorscheme kanagawa")
 
 ## Plugin Support
 
+* [nvim-cmp](https://github.com/hrsh7th/nvim-cmp)
 - [TreeSitter](https://github.com/nvim-treesitter/nvim-treesitter)
 - [LSP Diagnostics](https://neovim.io/doc/user/lsp.html)
-- [LSP Trouble](https://github.com/folke/lsp-trouble.nvim)
 - [Git Signs](https://github.com/lewis6991/gitsigns.nvim)
 - [Telescope](https://github.com/nvim-telescope/telescope.nvim)
 - [NvimTree](https://github.com/kyazdani42/nvim-tree.lua)
 - [Indent Blankline](https://github.com/lukas-reineke/indent-blankline.nvim)
 - [Dashboard](https://github.com/glepnir/dashboard-nvim)
+
+And many others should _"just work"_ ootb ;)
 
 ## Configuration
 
@@ -99,7 +101,7 @@ require'kanagawa'.setup({ overrides = overrides, colors = colors })
 vim.cmd("colorscheme kanagawa")
 ```
 
-### Extras
+## Extras
 
 * [kitty](extras/kanagawa.conf)
 * 🎉 Bonus! You win a tiny [python script](palette.py)🐍 to extract color palettes 🎨 from images! 🥳
