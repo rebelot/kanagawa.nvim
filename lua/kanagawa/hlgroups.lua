@@ -3,7 +3,7 @@ local config = require("kanagawa").config
 
 local hlgroups = {
     Comment                           = { fg = c.fg_comment, style = config.commentStyle },
-    ColorColumn                       = { bg = c.bg_light },
+    ColorColumn                       = { bg = c.bg_light0 },
     Conceal                           = { fg = c.bg_light3, bg = "NONE", style = "bold" },
     Cursor                            = { fg = c.bg, bg = c.fg },
     lCursor                           = { link = "Cursor" },
