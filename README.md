@@ -48,6 +48,7 @@ vim.cmd("colorscheme kanagawa")
 - [NvimTree](https://github.com/kyazdani42/nvim-tree.lua)
 - [Indent Blankline](https://github.com/lukas-reineke/indent-blankline.nvim)
 - [Dashboard](https://github.com/glepnir/dashboard-nvim)
+- [Lualine](https://github.com/nvim-lualine/lualine.nvim)
 
 And many others should _"just work"_!
 
@@ -120,3 +121,6 @@ vim.cmd("colorscheme kanagawa")
 * [Tokyonight](https://github.com/folke/tokyonight.nvim)
 * [Gruvbox](https://github.com/morhetz/gruvbox)
 * [Affinity Designer](https://affinity.serif.com/designer/)
+
+## Related projects
+* [kanagawa.vim](https://github.com/guigui64/kanawaga.vim) - unaffiliated vimscript port of kanagawa.nvim
