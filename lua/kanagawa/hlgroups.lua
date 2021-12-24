@@ -263,6 +263,7 @@ local hlgroups = {
     GitSignsAdd                       = { link = "diffAdded" },
     GitSignsChange                    = { link = "diffChanged" },
     GitSignsDelete                    = { link = "diffDeleted" },
+    GitSignsDeleteLn                  = { fg = 'NONE', bg = c.diff.delete },
 
     -- Telescope                      = {},
     TelescopeBorder                   = { link = "FloatBorder" },
