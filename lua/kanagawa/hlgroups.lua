@@ -102,7 +102,7 @@ local hlgroups = {
     Bold                              = { style = "bold" },
     Italic                            = { style = "italic" },
 
-    -- Ignore                         = {},
+    Ignore                            = { link = 'NonText'},
 
     Error                             = { fg = c.diag.error, bg = c.bg },
     Todo                              = { fg = c.fg_reverse, bg = c.diag.info, style = "bold" },
