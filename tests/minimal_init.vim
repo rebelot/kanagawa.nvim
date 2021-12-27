@@ -13,13 +13,6 @@ set packpath=$dependencies
 lua require("luassertx")
 packloadall
 
-lua <<EOF
-local Path = require("plenary.path")
-function LoadFixture(file)
-    local path = Path:new { vim.loop.cwd(), "tests", "fixtures", file }
-end
-EOF
-
 function! RunTests() abort
     lua <<EOF
     require("plenary.test_harness").test_directory(os.getenv("FILE") or "./tests", {
