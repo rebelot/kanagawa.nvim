@@ -109,7 +109,7 @@ require'kanagawa'.setup({ overrides = overrides, colors = colors })
 vim.cmd("colorscheme kanagawa")
 ```
 
-### Color Palette
+## Color Palette
 
 | NAME          | HEX     | IMG                                                          |
 |---------------|---------|--------------------------------------------------------------|
