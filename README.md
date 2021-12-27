@@ -87,7 +87,7 @@ All the palette colors can be found [here](lua/kanagawa/colors.lua).
 Example:
 
 ```lua
-local default_colors = require("kanagawa.colors")
+local default_colors = require("kanagawa").colors
 
 local overrides = {
     -- create a new hl-group using default palette colors and/or new ones

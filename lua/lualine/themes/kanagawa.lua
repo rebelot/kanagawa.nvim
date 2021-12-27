@@ -1,4 +1,4 @@
-local colors = require("kanagawa.colors")
+local colors = require("kanagawa").colors
 
 local kanagawa = {}
 
