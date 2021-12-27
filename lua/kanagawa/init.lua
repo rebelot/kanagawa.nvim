@@ -45,13 +45,25 @@ M.config = {
     -- bg_contrast = 'light'
 }
 
+---Extends the dest table with the src table, but _only_ one level deep (i.e., root values only).
+local function extend(dest, src)
+    for k, v in pairs(src) do
+        if dest[k] then
+            dest[k] = vim.tbl_extend("force", dest[k], v)
+        else
+            dest[k] = v
+        end
+    end
+    return dest
+end
+
 function M.setup(config)
     M.config = vim.tbl_extend("force", M.config, config or {}) -- override default config
-    local colors = vim.tbl_extend("force", require("kanagawa.colors"), M.config.colors) -- override palette colors
+    local colors = extend(require("kanagawa.colors"), M.config.colors) -- override palette colors
     colors:make_theme() -- generate semantic colors
-    colors = vim.tbl_extend("force", colors, M.config.colors) -- override semantic colors
+    colors = extend(colors, M.config.colors) -- override semantic colors
     M.colors = colors -- generate final color table
-    M.hlgroups = vim.tbl_extend("force", require("kanagawa.hlgroups"), M.config.overrides)
+    M.hlgroups = extend(require("kanagawa.hlgroups"), M.config.overrides)
 end
 
 return M
