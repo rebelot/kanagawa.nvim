@@ -1,14 +1,18 @@
 local M = {}
 
-function M.load()
-    local hlgroups = require("kanagawa.hlgroups")
+M.colors = require'kanagawa.colors'
+M.colors:make_theme()
+M.hlgroups = nil
 
+function M.load()
     if vim.g.colors_name then
         vim.cmd("hi clear")
     end
 
     vim.g.colors_name = "kanagawa"
     vim.o.termguicolors = true
+
+    local hlgroups = M.hlgroups or require'kanagawa.hlgroups' -- M.hlgroups set by setup()
 
     for group, colors in pairs(hlgroups) do
         if not vim.tbl_isempty(colors) then
@@ -41,8 +45,13 @@ M.config = {
     -- bg_contrast = 'light'
 }
 
-function M.setup(opts)
-    M.config = vim.tbl_extend("force", M.config, opts or {})
+function M.setup(config)
+    M.config = vim.tbl_extend("force", M.config, config or {}) -- override default config
+    local colors = vim.tbl_extend("force", require("kanagawa.colors"), M.config.colors) -- override palette colors
+    colors:make_theme() -- generate semantic colors
+    colors = vim.tbl_extend("force", colors, M.config.colors) -- override semantic colors
+    M.colors = colors -- generate final color table
+    M.hlgroups = vim.tbl_extend("force", require("kanagawa.hlgroups"), M.config.overrides)
 end
 
 return M

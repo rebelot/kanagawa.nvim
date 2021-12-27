@@ -1,4 +1,4 @@
-local c = require("kanagawa.colors")
+local c = require"kanagawa".colors
 local config = require("kanagawa").config
 
 local hlgroups = {
@@ -427,9 +427,5 @@ local hlgroups = {
     IndentBlanklineContextChar        = { fg = c.bg_light3 },
     IndentBlanklineContextStart       = { guisp = c.bg_light3, style = "underline" },
 }
-
-for group, colors in pairs(config.overrides) do
-    hlgroups[group] = vim.tbl_extend("force", hlgroups[group] or {}, colors)
-end
 
 return hlgroups
