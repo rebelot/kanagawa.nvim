@@ -13,7 +13,7 @@ local hlgroups = {
     Directory                         = { fg = c.fn },
     DiffAdd                           = { fg = "NONE", bg = c.diff.add },
     DiffChange                        = { fg = "NONE", bg = c.diff.change },
-    DiffDelete                        = { fg = c.git.removed, bg = c.diff.delete },
+    DiffDelete                        = { fg = c.git.removed, bg = c.diff.delete, style = 'none' },
     DiffText                          = { fg = "NONE", bg = c.diff.text },
     EndOfBuffer                       = { fg = c.bg },
     -- TermCursor                     = {},
