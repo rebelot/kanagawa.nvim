@@ -109,6 +109,48 @@ require'kanagawa'.setup({ overrides = overrides, colors = colors })
 vim.cmd("colorscheme kanagawa")
 ```
 
+### Color Palette
+
+| NAME          | HEX     | IMG                                                          |
+|---------------|---------|--------------------------------------------------------------|
+| sumiInk0      | #16161D | ![sumiInk0](https://place-hold.it/100x24/16161D?text=+)      |
+| sumiInk1      | #1F1F28 | ![sumiInk1](https://place-hold.it/100x24/1F1F28?text=+)      |
+| sumiInk2      | #2A2A37 | ![sumiInk2](https://place-hold.it/100x24/2A2A37?text=+)      |
+| sumiInk3      | #363646 | ![sumiInk3](https://place-hold.it/100x24/363646?text=+)      |
+| sumiInk4      | #54546D | ![sumiInk4](https://place-hold.it/100x24/54546D?text=+)      |
+| waveBlue1     | #223249 | ![waveBlue1](https://place-hold.it/100x24/223249?text=+)     |
+| waveBlue2     | #2D4F67 | ![waveBlue2](https://place-hold.it/100x24/2D4F67?text=+)     |
+| winterGreen   | #2B3328 | ![winterGreen](https://place-hold.it/100x24/2B3328?text=+)   |
+| winterYellow  | #49443C | ![winterYellow](https://place-hold.it/100x24/49443C?text=+)  |
+| winterRed     | #43242B | ![winterRed](https://place-hold.it/100x24/43242B?text=+)     |
+| winterBlue    | #252535 | ![winterBlue](https://place-hold.it/100x24/252535?text=+)    |
+| autumnGreen   | #76946A | ![autumnGreen](https://place-hold.it/100x24/76946A?text=+)   |
+| autumnRed     | #C34043 | ![autumnRed](https://place-hold.it/100x24/C34043?text=+)     |
+| autumnYellow  | #DCA561 | ![autumnYellow](https://place-hold.it/100x24/DCA561?text=+)  |
+| samuraiRed    | #E82424 | ![samuraiRed](https://place-hold.it/100x24/E82424?text=+)    |
+| roninYellow   | #FF9E3B | ![roninYellow](https://place-hold.it/100x24/FF9E3B?text=+)   |
+| waveAqua1     | #6A9589 | ![waveAqua1](https://place-hold.it/100x24/6A9589?text=+)     |
+| dragonBlue    | #658594 | ![dragonBlue](https://place-hold.it/100x24/658594?text=+)    |
+| oldWhite      | #C8C093 | ![oldWhite](https://place-hold.it/100x24/C8C093?text=+)      |
+| fujiWhite     | #DCD7BA | ![fujiWhite](https://place-hold.it/100x24/DCD7BA?text=+)     |
+| fujiGray      | #727169 | ![fujiGray](https://place-hold.it/100x24/727169?text=+)      |
+| springViolet1 | #938AA9 | ![springViolet1](https://place-hold.it/100x24/938AA9?text=+) |
+| oniViolet     | #957FB8 | ![oniViolet](https://place-hold.it/100x24/957FB8?text=+)     |
+| crystalBlue   | #7E9CD8 | ![crystalBlue](https://place-hold.it/100x24/7E9CD8?text=+)   |
+| springViolet2 | #9CABCA | ![springViolet2](https://place-hold.it/100x24/9CABCA?text=+) |
+| springBlue    | #7FB4CA | ![springBlue](https://place-hold.it/100x24/7FB4CA?text=+)    |
+| lightBlue     | #A3D4D5 | ![lightBlue](https://place-hold.it/100x24/A3D4D5?text=+)     |
+| waveAqua2     | #7AA89F | ![waveAqua2](https://place-hold.it/100x24/7AA89F?text=+)     |
+| springGreen   | #98BB6C | ![springGreen](https://place-hold.it/100x24/98BB6C?text=+)   |
+| boatYellow1   | #938056 | ![boatYellow1](https://place-hold.it/100x24/938056?text=+)   |
+| boatYellow2   | #C0A36E | ![boatYellow2](https://place-hold.it/100x24/C0A36E?text=+)   |
+| carpYellow    | #E6C384 | ![carpYellow](https://place-hold.it/100x24/E6C384?text=+)    |
+| sakuraPink    | #D27E99 | ![sakuraPink](https://place-hold.it/100x24/D27E99?text=+)    |
+| waveRed       | #E46876 | ![waveRed](https://place-hold.it/100x24/E46876?text=+)       |
+| peachRed      | #FF5D62 | ![peachRed](https://place-hold.it/100x24/FF5D62?text=+)      |
+| surimiOrange  | #FFA066 | ![surimiOrange](https://place-hold.it/100x24/FFA066?text=+)  |
+| katanaGray    | #717C7C | ![katanaGray](https://place-hold.it/100x24/717C7C?text=+)    |
+
 ## Extras
 
 * [kitty](extras/kanagawa.conf)
