@@ -1,0 +1,190 @@
+highlight Bold gui=bold
+highlight Boolean guifg=#FFA066 gui=bold
+highlight CmpDocumentation guifg=#DCD7BA
+highlight CmpDocumentationBorder guifg=#54546D guibg=#1F1F28
+highlight CmpItemAbbr guifg=#DCD7BA guibg=NONE
+highlight CmpItemAbbrDeprecated guibg=NONE gui=strikethrough
+highlight CmpItemAbbrMatch guifg=#7E9CD8 guibg=NONE
+highlight CmpItemKindDefault guifg=#717C7C guibg=NONE
+highlight CmpItemKindSnippet guifg=#7FB4CA guibg=NONE
+highlight CmpItemMenu guifg=#727169 guibg=NONE
+highlight ColorColumn guibg=#2A2A37
+highlight Comment guifg=#727169 gui=italic
+highlight Conceal guifg=#938AA9 guibg=NONE gui=bold
+highlight Constant guifg=#FFA066
+highlight Cursor guifg=#1F1F28 guibg=#DCD7BA
+highlight CursorLine guibg=#363646
+highlight CursorLineNr guifg=#FF9E3B guibg=#1F1F28 gui=bold
+highlight DashboardCenter guifg=#E6C384
+highlight DashboardFooter guifg=#7E9CD8
+highlight DashboardHeader guifg=#C34043
+highlight DashboardShortCut guifg=#7FB4CA
+highlight DiagnosticError guifg=#E82424
+highlight DiagnosticHint guifg=#6A9589
+highlight DiagnosticInfo guifg=#658594
+highlight DiagnosticUnderlineError gui=undercurl guisp=#E82424
+highlight DiagnosticUnderlineHint gui=undercurl guisp=#6A9589
+highlight DiagnosticUnderlineInfo gui=undercurl guisp=#658594
+highlight DiagnosticUnderlineWarn gui=undercurl guisp=#FF9E3B
+highlight DiagnosticWarn guifg=#FF9E3B
+highlight DiffAdd guifg=NONE guibg=#2B3328
+highlight DiffChange guifg=NONE guibg=#252535
+highlight DiffDelete guifg=#C34043 guibg=#43242B gui=none
+highlight DiffText guifg=NONE guibg=#49443C
+highlight Directory guifg=#7E9CD8
+highlight EndOfBuffer guifg=#1F1F28
+highlight Error guifg=#E82424 guibg=#1F1F28
+highlight ErrorMsg guifg=#E82424 guibg=#1F1F28
+highlight Exception guifg=#E46876
+highlight FloatBorder guifg=#54546D guibg=NONE
+highlight FoldColumn guifg=#54546D guibg=#1F1F28
+highlight Folded guifg=#938AA9 guibg=#2A2A37
+highlight Function guifg=#7E9CD8 gui=NONE
+highlight GitSignsDeleteLn guifg=NONE guibg=#43242B
+highlight Identifier guifg=#E6C384
+highlight IncSearch guifg=#223249 guibg=#FF9E3B gui=NONE
+highlight IndentBlanklineChar guifg=#54546D
+highlight IndentBlanklineContextChar guifg=#938AA9
+highlight IndentBlanklineContextStart gui=underline guisp=#938AA9
+highlight IndentBlanklineSpaceChar guifg=#54546D
+highlight IndentBlanklineSpaceCharBlankline guifg=#54546D
+highlight Italic gui=italic
+highlight Keyword guifg=#957FB8 gui=italic
+highlight LineNr guifg=#54546D
+highlight LspCodeLens guifg=#727169
+highlight LspReferenceText guibg=#49443C
+highlight LspSignatureActiveParameter guifg=#FF9E3B
+highlight MatchParen guifg=#FF9E3B guibg=NONE gui=bold
+highlight ModeMsg guifg=#FF9E3B guibg=#1F1F28 gui=bold
+highlight MoreMsg guifg=#658594 guibg=#1F1F28 gui=NONE
+highlight MsgArea guifg=#DCD7BA guibg=#1F1F28
+highlight NonText guifg=#54546D
+highlight Normal guifg=#DCD7BA guibg=#1F1F28
+highlight NormalFloat guifg=#DCD7BA guibg=#16161D
+highlight Number guifg=#D27E99
+highlight NvimTreeExecFile guifg=#98BB6C gui=bold
+highlight NvimTreeGitDeleted guifg=#C34043
+highlight NvimTreeGitDirty guifg=#DCA561
+highlight NvimTreeGitNew guifg=#76946A
+highlight NvimTreeGitStaged guifg=#76946A
+highlight NvimTreeImageFile guifg=#E46876
+highlight NvimTreeNormal guifg=#DCD7BA guibg=#1F1F28
+highlight NvimTreeOpenedFile guifg=#7FB4CA gui=italic
+highlight NvimTreeRootFolder guifg=#E6C384 gui=bold
+highlight NvimTreeSpecialFile guifg=#7FB4CA
+highlight Operator guifg=#C0A36E
+highlight Pmenu guifg=#DCD7BA guibg=#223249
+highlight PmenuSel guifg=NONE guibg=#2D4F67
+highlight PmenuThumb guibg=#2D4F67
+highlight PreProc guifg=#FFA066
+highlight Search guifg=#DCD7BA guibg=#2D4F67
+highlight SignColumn guibg=#1F1F28
+highlight Special guifg=#7FB4CA
+highlight SpellBad gui=undercurl guisp=#E82424
+highlight SpellCap gui=undercurl guisp=#FF9E3B
+highlight SpellLocal gui=undercurl guisp=#FF9E3B
+highlight SpellRare gui=undercurl guisp=#FF9E3B
+highlight Statement guifg=#957FB8 gui=bold
+highlight StatusLine guifg=#C8C093 guibg=#16161D gui=NONE
+highlight StatusLineNC guibg=#16161D gui=NONE
+highlight String guifg=#98BB6C
+highlight Substitute guifg=#DCD7BA guibg=#C34043
+highlight TSConstructor guifg=#957FB8
+highlight TSError guifg=#E82424
+highlight TSException guifg=#FF5D62 gui=bold
+highlight TSKeywordOperator guifg=#C0A36E gui=bold
+highlight TSKeywordReturn guifg=#FF5D62 gui=italic
+highlight TSPunctBracket guifg=#9CABCA
+highlight TSPunctDelimiter guifg=#9CABCA
+highlight TSPunctSpecial guifg=#9CABCA
+highlight TSStringEscape guifg=#C0A36E gui=bold
+highlight TSStringRegex guifg=#C0A36E
+highlight TSVariable guifg=#DCD7BA
+highlight TSVariableBuiltin guifg=#E46876 gui=italic
+highlight TabLine guifg=#938AA9 guibg=#16161D gui=NONE
+highlight TabLineFill guibg=#1F1F28 gui=NONE
+highlight TabLineSel guifg=#C8C093 guibg=#363646 gui=NONE
+highlight Title guifg=#7E9CD8 gui=bold
+highlight Todo guifg=#223249 guibg=#658594 gui=bold
+highlight Type guifg=#7AA89F gui=NONE
+highlight Underlined guifg=#7FB4CA gui=underline
+highlight VertSplit guifg=#16161D guibg=#16161D gui=NONE
+highlight Visual guibg=#223249
+highlight WarningMsg guifg=#C8C093
+highlight Whitespace guifg=#54546D
+highlight debugBreakpoint guifg=#7FB4CA
+highlight diffAdded guifg=#76946A
+highlight diffChanged guifg=#DCA561
+highlight diffDeleted guifg=#C34043
+highlight diffNewFile guifg=#76946A
+highlight diffOldFile guifg=#C34043
+highlight diffRemoved guifg=#C34043
+highlight healthError guifg=#E82424
+highlight healthSuccess guifg=#98BB6C
+highlight healthWarning guifg=#FF9E3B
+highlight! link Character String
+highlight! link CmpItemAbbrMatchFuzzy CmpItemAbbrMatch
+highlight! link CmpItemKindClass Type
+highlight! link CmpItemKindConstant Constant
+highlight! link CmpItemKindConstructor TSConstructor
+highlight! link CmpItemKindEnum Identifier
+highlight! link CmpItemKindEnumMember TSField
+highlight! link CmpItemKindField TSField
+highlight! link CmpItemKindFile Directory
+highlight! link CmpItemKindFolder Directory
+highlight! link CmpItemKindFunction Function
+highlight! link CmpItemKindInterface Type
+highlight! link CmpItemKindKeyword TSKeyword
+highlight! link CmpItemKindMethod Function
+highlight! link CmpItemKindModule TSInclude
+highlight! link CmpItemKindOperator Operator
+highlight! link CmpItemKindProperty TSProperty
+highlight! link CmpItemKindReference TSParameterReference
+highlight! link CmpItemKindStruct Type
+highlight! link CmpItemKindText TSText
+highlight! link CmpItemKindTypeParameter Identifier
+highlight! link CmpItemKindValue String
+highlight! link CmpItemKindVariable TSVariable
+highlight! link CursorColumn CursorLine
+highlight! link CursorIM Cursor
+highlight! link DiagnosticSignError DiagnosticError
+highlight! link DiagnosticSignHint DiagnosticHint
+highlight! link DiagnosticSignInfo DiagnosticInfo
+highlight! link DiagnosticSignWarn DiagnosticWarn
+highlight! link DiagnosticVirtualTextError DiagnosticError
+highlight! link DiagnosticVirtualTextHint DiagnosticHint
+highlight! link DiagnosticVirtualTextInfo DiagnosticInfo
+highlight! link DiagnosticVirtualTextWarn DiagnosticWarn
+highlight! link Float Number
+highlight! link GitSignsAdd diffAdded
+highlight! link GitSignsChange diffChanged
+highlight! link GitSignsDelete diffDeleted
+highlight! link Ignore NonText
+highlight! link LspReferenceRead LspReferenceText
+highlight! link LspReferenceWrite LspReferenceText
+highlight! link NormalNC Normal
+highlight! link NormalSB Normal
+highlight! link NvimTreeFolderName Directory
+highlight! link NvimTreeSymlink Type
+highlight! link PmenuSbar Pmenu
+highlight! link Question MoreMsg
+highlight! link QuickFixLine CursorLine
+highlight! link SignColumnSB SignColumn
+highlight! link SpecialKey NonText
+highlight! link TSAttribute Constant
+highlight! link TSDanger WarningMsg
+highlight! link TSField Identifier
+highlight! link TSKeyword Keyword
+highlight! link TSLabel Label
+highlight! link TSMethod Function
+highlight! link TSOperator Operator
+highlight! link TSParameter Identifier
+highlight! link TSProperty Identifier
+highlight! link TSWarning Todo
+highlight! link TelescopeBorder FloatBorder
+highlight! link VisualNOS Visual
+highlight! link WildMenu Pmenu
+highlight! link debugPC CursorLine
+highlight! link lCursor Cursor
+highlight! link qfFileName Directory
+highlight! link qfLineNr lineNr
