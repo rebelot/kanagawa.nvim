@@ -1,4 +1,4 @@
-local colors = {
+local palette_colors = {
 
     -- Bg Shades
     sumiInk0      = "#16161D",
@@ -56,66 +56,17 @@ local colors = {
     katanaGray    = "#717C7C",
 }
 
-function colors:make_theme()
-    self.bg = self.sumiInk1 -- Default Background
-    self.bg_dark = self.sumiInk0
-    self.bg_light0 = self.sumiInk2
-    self.bg_light1 = self.sumiInk3
-    self.bg_light2 = self.sumiInk4
-    self.bg_light3 = self.springViolet1
+local M = {}
 
-    -- bg_menu     = palette.abyssBlue
-    self.bg_menu = self.waveBlue1
-    self.bg_menu_sel = self.waveBlue2
-
-    self.bg_status = self.sumiInk0
-    self.bg_visual = self.waveBlue1
-    self.bg_search = self.waveBlue2
-
-    self.fg_border = self.sumiInk4
-    self.fg_dark = self.oldWhite
-    self.fg_reverse = self.waveBlue1
-
-    self.fg_comment = self.fujiGray -- Comments, Invisibles, Line Highlighting
-    self.fg = self.fujiWhite -- Default Foreground, Caret, Delimiters, Operators
-    -- fg_light   = palette.waveBlue2     -- Light Foreground (Not often used)
-
-    self.co = self.surimiOrange -- Boolean, Constants, XML Attributes, Markup Link Url
-    self.st = self.springGreen -- Strings,
-    self.nu = self.sakuraPink -- Numbers
-    self.id = self.carpYellow -- Identifier
-    self.fn = self.crystalBlue -- Functions, Methods, Attribute IDs, Headings
-    self.sm = self.oniViolet -- Statement: Label, Conditional, Repeat
-    self.kw = self.oniViolet -- Keywords, Exceptions
-    self.op = self.boatYellow2 -- Operator
-    self.pp = self.surimiOrange -- PreProc: Include, Define, Macro, PreCondit
-    self.ty = self.waveAqua2 -- Type: StroareClass, Structure, Typedef
-    self.sp = self.springBlue -- Special: Tag, Delimiter, SpecialComment, Debug, SpecialChar, Builtin
-    self.sp2 = self.waveRed -- Special Variables (cls, self, etc...)
-    self.sp3 = self.peachRed
-    self.br = self.springViolet2 -- TSPunct*
-    self.re = self.boatYellow2 -- Regular Expressions, Escape Characters
-    self.dep = self.katanaGray -- Deprecated, Opening/Closing Embedded Language Tags, e.g. <?php ?>
-
-    self.diag = {
-        error = self.samuraiRed,
-        warning = self.roninYellow,
-        info = self.dragonBlue,
-        hint = self.waveAqua1,
-    }
-
-    self.diff = {
-        add = self.winterGreen,
-        delete = self.winterRed,
-        change = self.winterBlue,
-        text = self.winterYellow,
-    }
-
-    self.git = {
-        added = self.autumnGreen,
-        removed = self.autumnRed,
-        changed = self.autumnYellow,
-    }
+--- generate color table
+-- @param config config options containing colors and theme fields (optional)
+-- @return table of palette colors and theme colors merged with config.colors
+function M.setup(config)
+    config = vim.tbl_extend("force", require("kanagawa").config, config or {})
+    local colors = vim.tbl_extend("force", palette_colors, config.colors)
+    local theme = require("kanagawa.themes")[config.theme](colors)
+    theme = vim.tbl_extend("force", theme, config.colors)
+    return vim.tbl_extend("force", theme, colors)
 end
 
-return colors
+return M

@@ -1,19 +1,6 @@
 local M = {}
 
-M.colors = require'kanagawa.colors'
-M.colors:make_theme()
-M.hlgroups = nil
-
-function M.load()
-    if vim.g.colors_name then
-        vim.cmd("hi clear")
-    end
-
-    vim.g.colors_name = "kanagawa"
-    vim.o.termguicolors = true
-
-    local hlgroups = M.hlgroups or require'kanagawa.hlgroups' -- M.hlgroups set by setup()
-
+local function set_highlights(hlgroups)
     for group, colors in pairs(hlgroups) do
         if not vim.tbl_isempty(colors) then
             if colors.link then
@@ -29,6 +16,7 @@ function M.load()
     end
 end
 
+--- default config
 M.config = {
     undercurl = true,
     commentStyle = "italic",
@@ -42,16 +30,29 @@ M.config = {
     transparent = false,
     colors = {},
     overrides = {},
-    -- bg_contrast = 'light'
+    theme = "default" -- only one theme atm
 }
 
+--- update global configuration with user settings
+--@param config user configuration
+--@return nil
 function M.setup(config)
-    M.config = vim.tbl_extend("force", M.config, config or {}) -- override default config
-    local colors = vim.tbl_extend("force", require("kanagawa.colors"), M.config.colors) -- override palette colors
-    colors:make_theme() -- generate semantic colors
-    colors = vim.tbl_extend("force", colors, M.config.colors) -- override semantic colors
-    M.colors = colors -- generate final color table
-    M.hlgroups = vim.tbl_extend("force", require("kanagawa.hlgroups"), M.config.overrides)
+    M.config = vim.tbl_extend("force", M.config, config or {})
+end
+
+--- load the colorscheme
+function M.load()
+    if vim.g.colors_name then
+        vim.cmd("hi clear")
+    end
+
+    vim.g.colors_name = "kanagawa"
+    vim.o.termguicolors = true
+
+    local colors = require("kanagawa.colors").setup()
+    local hlgroups = require("kanagawa.hlgroups").setup(colors)
+
+    set_highlights(hlgroups)
 end
 
 return M
