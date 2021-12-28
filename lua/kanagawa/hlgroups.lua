@@ -1,10 +1,10 @@
 local M = {}
 
 --- generate highlights table
--- @param  colors color (theme) color table created by require("kanagawa.colors").setup()
--- @param config global configuration (optional)
+-- @param colors color (theme) color table created by require("kanagawa.colors").setup()
+-- @param config config options (optional)
 function M.setup(colors, config)
-    config = config or require("kanagawa").config
+    config = vim.tbl_extend("force", require("kanagawa").config, config or {})
 
     local hlgroups = {
         Comment                           = { fg = colors.fg_comment, style = config.commentStyle },

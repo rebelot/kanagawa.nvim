@@ -59,13 +59,13 @@ local palette_colors = {
 local M = {}
 
 --- generate color table
--- @param config global configuration (optional)
--- @return table of palette colors and theme colors
+-- @param config config options containing colors and theme fields (optional)
+-- @return table of palette colors and theme colors merged with config.colors
 function M.setup(config)
-    config = config or require("kanagawa").config
-    local colors = vim.tbl_extend("force", palette_colors, config.colors or {})
+    config = vim.tbl_extend("force", require("kanagawa").config, config or {})
+    local colors = vim.tbl_extend("force", palette_colors, config.colors)
     local theme = require("kanagawa.themes")[config.theme](colors)
-    theme = vim.tbl_extend("force", theme, config.colors or {})
+    theme = vim.tbl_extend("force", theme, config.colors)
     return vim.tbl_extend("force", theme, colors)
 end
 
