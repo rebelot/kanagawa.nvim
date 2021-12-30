@@ -389,7 +389,7 @@ function M.setup(colors, config)
         CmpItemKindDefault                = { fg = colors.dep, bg = "NONE" },
         CmpItemMenu                       = { fg = colors.fg_comment, bg = "NONE" },
 
-        CmpItemKindVariable               = { link = "TSVariable" },
+        CmpItemKindVariable               = { fg = colors.fg_dark, bg = "NONE" },
 
         CmpItemKindFunction               = { link = "Function" },
         CmpItemKindMethod                 = { link = "Function" },
