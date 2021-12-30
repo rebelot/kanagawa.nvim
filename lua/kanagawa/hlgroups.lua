@@ -23,7 +23,7 @@ function M.setup(colors, config)
         EndOfBuffer                       = { fg = colors.bg },
         -- TermCursor                     = {},
         -- TermCursorNC                   = {},
-        ErrorMsg                          = { fg = colors.diag.error, bg = colors.bg },
+        ErrorMsg                          = { fg = colors.diag.error, bg = "NONE" },
         VertSplit                         = { fg = colors.bg_status, bg = colors.bg_status, style = "NONE" },
         Folded                            = { fg = colors.bg_light3, bg = colors.bg_light0 },
         FoldColumn                        = { fg = colors.bg_light2, bg = "NONE" },
@@ -31,10 +31,10 @@ function M.setup(colors, config)
         SignColumnSB                      = { link = "SignColumn" },
         Substitute                        = { fg = colors.fg, bg = colors.git.removed },
         LineNr                            = { fg = colors.bg_light2 },
-        CursorLineNr                      = { fg = colors.diag.warning, bg = colors.bg, style = "bold" },
+        CursorLineNr                      = { fg = colors.diag.warning, bg = "NONE", style = "bold" },
         MatchParen                        = { fg = colors.diag.warning, bg = "NONE", style = "bold" },
-        ModeMsg                           = { fg = colors.diag.warning, style = "bold", bg = colors.bg },
-        MsgArea                           = { fg = colors.fg, bg = colors.bg },
+        ModeMsg                           = { fg = colors.diag.warning, style = "bold", bg = "NONE" },
+        MsgArea                           = { fg = colors.fg_dark, bg = "NONE" },
         -- MsgSeparator                   = {},
         MoreMsg                           = { fg = colors.diag.info, bg = colors.bg, style = "NONE" },
         NonText                           = { fg = colors.bg_light2 },
@@ -109,7 +109,7 @@ function M.setup(colors, config)
 
         Ignore                            = { link = 'NonText'},
 
-        Error                             = { fg = colors.diag.error, bg = colors.bg },
+        Error                             = { fg = colors.diag.error, bg = "NONE" },
         Todo                              = { fg = colors.fg_reverse, bg = colors.diag.info, style = "bold" },
 
         qfLineNr                          = { link = "lineNr" },
@@ -274,7 +274,7 @@ function M.setup(colors, config)
         TelescopeBorder                   = { link = "FloatBorder" },
 
         -- NvimTree                       = {},
-        NvimTreeNormal                    = { fg = colors.fg, bg = colors.bg },
+        NvimTreeNormal                    = { fg = colors.fg, bg = "NONE" },
         -- NvimTreeNormalNC               = {},
         NvimTreeRootFolder                = { fg = colors.id, style = "bold" },
         NvimTreeGitDirty                  = { fg = colors.git.changed },
@@ -378,7 +378,7 @@ function M.setup(colors, config)
 
         -- Cmp
         CmpDocumentation                  = { fg = colors.fg, bg = colors.bg_popup },
-        CmpDocumentationBorder            = { fg = colors.fg_border, bg = colors.bg },
+        CmpDocumentationBorder            = { fg = colors.fg_border, bg = "NONE" },
 
         CmpItemAbbr                       = { fg = colors.fg, bg = "NONE" },
         CmpItemAbbrDeprecated             = { fg = colors.fg_comment, bg = "NONE", style = "strikethrough" },
