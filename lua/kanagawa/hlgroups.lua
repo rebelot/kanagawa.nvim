@@ -437,6 +437,9 @@ function M.setup(colors, config)
     }
 
     for hl, specs in pairs(config.overrides) do
+        if hlgroups[hl] and not vim.tbl_isempty(specs) then
+            hlgroups[hl].link = nil
+        end
         hlgroups[hl] = vim.tbl_extend("force", hlgroups[hl] or {}, specs)
     end
 
