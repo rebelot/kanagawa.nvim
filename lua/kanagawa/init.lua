@@ -30,7 +30,7 @@ M.config = {
     transparent = false,
     colors = {},
     overrides = {},
-    theme = "default" -- only one theme atm
+    theme = "default", -- only one theme atm
 }
 
 --- update global configuration with user settings
