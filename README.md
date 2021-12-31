@@ -49,6 +49,7 @@ vim.cmd("colorscheme kanagawa")
 - [Indent Blankline](https://github.com/lukas-reineke/indent-blankline.nvim)
 - [Dashboard](https://github.com/glepnir/dashboard-nvim)
 - [Lualine](https://github.com/nvim-lualine/lualine.nvim)
+- [FloaTerm](https://github.com/voldikss/vim-floaterm)
 
 And many others should _"just work"_!
 

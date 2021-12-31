@@ -336,6 +336,9 @@ function M.setup(colors, config)
         -- ReferencesIcon                 = {},
         -- TargetWord                     = {},
 
+        -- Floaterm
+        FloatermBorder                    = { fg = colors.bg_light3},
+
         -- NeoVim                         = {},
         healthError                       = { fg = colors.diag.error },
         healthSuccess                     = { fg = colors.springGreen },
