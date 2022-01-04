@@ -3,9 +3,9 @@ return {
 		foreground = "#dcd7ba",
 		background = "#1f1f28",
 
-		cursor_bg = "#1f1f28",
+		cursor_bg = "#c8c093",
 		cursor_fg = "#c8c093",
-		cursor_border = "#1f1f28",
+		cursor_border = "#c8c093",
 
 		selection_fg = "#c8c093",
 		selection_bg = "#2d4f67",
