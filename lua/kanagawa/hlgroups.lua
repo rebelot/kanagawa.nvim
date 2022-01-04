@@ -39,7 +39,7 @@ function M.setup(colors, config)
         MoreMsg                           = { fg = colors.diag.info, bg = colors.bg, style = "NONE" },
         NonText                           = { fg = colors.bg_light2 },
         Normal                            = { fg = colors.fg, bg = not config.transparent and colors.bg or "NONE" },
-        NormalNC                          = { link = "Normal" },
+        NormalNC                          = config.dimInactive and { fg = colors.fg_dark, bg = colors.bg_dim } or { link = "Normal" },
         NormalSB                          = { link = "Normal" },
         NormalFloat                       = { fg = colors.fg, bg = colors.bg_dark },
         FloatBorder                       = { fg = colors.fg_border, bg = "NONE" },
