@@ -274,8 +274,8 @@ function M.setup(colors, config)
         TelescopeBorder                   = { link = "FloatBorder" },
 
         -- NvimTree                       = {},
-        NvimTreeNormal                    = { fg = colors.fg, bg = "NONE" },
-        -- NvimTreeNormalNC               = {},
+        NvimTreeNormal                    = { link = "Normal"},
+        NvimTreeNormalNC                  = { link = "NormalNC"},
         NvimTreeRootFolder                = { fg = colors.id, style = "bold" },
         NvimTreeGitDirty                  = { fg = colors.git.changed },
         NvimTreeGitNew                    = { fg = colors.git.added},
