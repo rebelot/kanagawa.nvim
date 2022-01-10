@@ -57,7 +57,7 @@ local palette_colors = {
     katanaGray    = "#717C7C",
 }
 
-local M = {}
+local M = palette_colors
 
 --- generate color table
 -- @param config config options containing colors and theme fields (optional)
