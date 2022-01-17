@@ -70,6 +70,7 @@ require('kanagawa').setup({
     specialReturn = true,       -- special highlight for the return keyword
     specialException = true,    -- special highlight for exception handling keywords 
     transparent = false,        -- do not set background color
+    dimInactive = false,        -- dim inactive window `:h hl-NormalNC`
     colors = {},
     overrides = {},
 })
@@ -162,12 +163,13 @@ vim.cmd("colorscheme kanagawa")
 
 ## Extras
 
-* [kitty](extras/kanagawa.conf)
-* [iTerm](extras/kanagawa.itermcolors)
 * [alacritty](extras/alacritty_kanagawa.yml)
+* [foot](extras/foot_kanagawa.ini)
+* [iTerm](extras/kanagawa.itermcolors)
+* [kitty](extras/kanagawa.conf)
 * [pywal](extras/pywal-theme.json)
 * [wezterm](extras/wezterm.lua)
-* 🎉 Bonus! You win a tiny [python script](palette.py)🐍 to extract color palettes 🎨 from images! 🥳
+* 🎉 Bonus! You win a tiny [python script](palette.py)🐍 to extract color palettes 🎨 from any image! 🥳
 
 ## Acknowledgements
 

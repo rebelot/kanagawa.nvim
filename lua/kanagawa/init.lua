@@ -28,6 +28,7 @@ M.config = {
     specialReturn = true,
     specialException = true,
     transparent = false,
+    dimInactive = false,
     colors = {},
     overrides = {},
     theme = "default", -- only one theme atm

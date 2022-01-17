@@ -2,6 +2,7 @@ return {
     default = function(colors)
         return {
             bg = colors.sumiInk1,
+            bg_dim = colors.sumiInk1b,
             bg_dark = colors.sumiInk0,
             bg_light0 = colors.sumiInk2,
             bg_light1 = colors.sumiInk3,
