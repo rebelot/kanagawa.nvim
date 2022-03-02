@@ -164,6 +164,7 @@ vim.cmd("colorscheme kanagawa")
 ## Extras
 
 * [alacritty](extras/alacritty_kanagawa.yml)
+* [base16](extras/base16-theme.yaml)
 * [fish](extras/kanagawa.fish)
 * [foot](extras/foot_kanagawa.ini)
 * [iTerm](extras/kanagawa.itermcolors)
