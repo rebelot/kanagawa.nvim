@@ -42,7 +42,7 @@ function M.setup(colors, config)
         NormalNC                          = config.dimInactive and { fg = colors.fg_dark, bg = colors.bg_dim } or { link = "Normal" },
         NormalSB                          = { link = "Normal" },
         NormalFloat                       = { fg = colors.fg, bg = colors.bg_dark },
-        FloatBorder                       = { fg = colors.fg_border, bg = "NONE" },
+        FloatBorder                       = { fg = colors.fg_border, bg = colors.bg_dark },
         Pmenu                             = { fg = colors.fg, bg = colors.bg_menu },
         PmenuSel                          = { fg = "NONE", bg = colors.bg_menu_sel },
         PmenuSbar                         = { link = "Pmenu" },
@@ -271,7 +271,7 @@ function M.setup(colors, config)
         GitSignsDeleteLn                  = { fg = 'NONE', bg = colors.diff.delete },
 
         -- Telescope                      = {},
-        TelescopeBorder                   = { link = "FloatBorder" },
+        TelescopeBorder                   = { fg = colors.fg_border, bg = colors.bg },
 
         -- NvimTree                       = {},
         NvimTreeNormal                    = { link = "Normal"},
@@ -337,7 +337,7 @@ function M.setup(colors, config)
         -- TargetWord                     = {},
 
         -- Floaterm
-        FloatermBorder                    = { fg = colors.bg_light3},
+        FloatermBorder                    = { fg = colors.fg_border, bg = colors.bg },
 
         -- NeoVim                         = {},
         healthError                       = { fg = colors.diag.error },
@@ -381,7 +381,7 @@ function M.setup(colors, config)
 
         -- Cmp
         CmpDocumentation                  = { fg = colors.fg, bg = colors.bg_popup },
-        CmpDocumentationBorder            = { fg = colors.fg_border, bg = "NONE" },
+        CmpDocumentationBorder            = { fg = colors.fg_border, bg = colors.bg_popup },
 
         CmpItemAbbr                       = { fg = colors.fg, bg = "NONE" },
         CmpItemAbbrDeprecated             = { fg = colors.fg_comment, bg = "NONE", style = "strikethrough" },

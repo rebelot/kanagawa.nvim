@@ -164,6 +164,7 @@ vim.cmd("colorscheme kanagawa")
 ## Extras
 
 * [alacritty](extras/alacritty_kanagawa.yml)
+* [base16](extras/base16-theme.yaml)
 * [broot](extras/broot_kanagawa.toml)
 * [fish](extras/kanagawa.fish)
 * [foot](extras/foot_kanagawa.ini)
@@ -181,3 +182,8 @@ vim.cmd("colorscheme kanagawa")
 
 ## Related projects
 * [kanagawa.vim](https://github.com/guigui64/kanawaga.vim) - unaffiliated vimscript port of kanagawa.nvim
+
+### Donate
+Buy me coffee and support my work ;)
+
+[![Donate](https://img.shields.io/badge/Donate-PayPal-green.svg)](https://www.paypal.com/donate/?business=VNQPHGW4JEM3S&no_recurring=0&item_name=Buy+me+coffee+and+support+my+work+%3B%29&currency_code=EUR)
