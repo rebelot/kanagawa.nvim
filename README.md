@@ -181,14 +181,15 @@ vim.cmd("colorscheme kanagawa")
 
 ## Extras
 
-- [alacritty](extras/alacritty_kanagawa.yml)
-- [fish](extras/kanagawa.fish)
-- [foot](extras/foot_kanagawa.ini)
-- [iTerm](extras/kanagawa.itermcolors)
-- [kitty](extras/kanagawa.conf)
-- [pywal](extras/pywal-theme.json)
-- [wezterm](extras/wezterm.lua)
-- 🎉 Bonus! You win a tiny [python script](palette.py)🐍 to extract color palettes 🎨 from any image! 🥳
+* [alacritty](extras/alacritty_kanagawa.yml)
+* [base16](extras/base16-theme.yaml)
+* [fish](extras/kanagawa.fish)
+* [foot](extras/foot_kanagawa.ini)
+* [iTerm](extras/kanagawa.itermcolors)
+* [kitty](extras/kanagawa.conf)
+* [pywal](extras/pywal-theme.json)
+* [wezterm](extras/wezterm.lua)
+* 🎉 Bonus! You win a tiny [python script](palette.py)🐍 to extract color palettes 🎨 from any image! 🥳
 
 ## Acknowledgements
 
