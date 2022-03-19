@@ -71,7 +71,7 @@ require('kanagawa').setup({
     specialException = true,    -- special highlight for exception handling keywords
     transparent = false,        -- do not set background color
     dimInactive = false,        -- dim inactive window `:h hl-NormalNC`
-    globalStatus = false,       -- adjust window separators highlight for laststsatus=3
+    globalStatus = false,       -- adjust window separators highlight for laststatus=3
     colors = {},
     overrides = {},
 })
@@ -123,7 +123,7 @@ vim.cmd("colorscheme kanagawa")
 Example for **Global Statusline**. Note: it works really nice with `dimInactive = true` option.
 
 ```lua
-vim.opt.laststsatus = 3
+vim.opt.laststatus = 3
 vim.opt.fillchars:append({
     horiz = '━',
     horizup = '┻',
