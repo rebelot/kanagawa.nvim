@@ -77,6 +77,7 @@ function M.setup(colors, config)
 
         Identifier                        = { fg = colors.id },
         Function                          = { fg = colors.fn, style = config.functionStyle },
+        Method                            = { link = 'Function' },
         Statement                         = { fg = colors.sm, style = config.statementStyle },
         -- Conditional                    = {},
         -- Repeat                         = {},
@@ -92,6 +93,7 @@ function M.setup(colors, config)
         -- PreCondit                      = {},
 
         Type                              = { fg = colors.ty, style = config.typeStyle },
+        Struct                            = { link = 'Type' },
         -- StorageClass                   = {},
         -- Structure                      = {},
         -- Typedef                        = {},
@@ -272,6 +274,9 @@ function M.setup(colors, config)
 
         -- Telescope                      = {},
         TelescopeBorder                   = { fg = colors.fg_border, bg = colors.bg },
+        TelescopeResultsClass             = { link = 'TSType' },
+        TelescopeResultsStruct            = { link = 'TSType' },
+        TelescopeResultsVariable          = { link = 'TSVariable' },
 
         -- NvimTree                       = {},
         NvimTreeNormal                    = { link = "Normal"},
