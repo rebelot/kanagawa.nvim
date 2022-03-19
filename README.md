@@ -22,9 +22,9 @@ use "rebelot/kanagawa.nvim"
 
 ## Requirements
 
-* neovim >= 0.6
-* truecolor terminal support
-* undercurl terminal support (optional)
+- neovim >= 0.6
+- truecolor terminal support
+- undercurl terminal support (optional)
 
 ## Usage
 
@@ -68,9 +68,10 @@ require('kanagawa').setup({
     typeStyle = "NONE",
     variablebuiltinStyle = "italic",
     specialReturn = true,       -- special highlight for the return keyword
-    specialException = true,    -- special highlight for exception handling keywords 
+    specialException = true,    -- special highlight for exception handling keywords
     transparent = false,        -- do not set background color
     dimInactive = false,        -- dim inactive window `:h hl-NormalNC`
+    globalStatus = false,       -- adjust window separators highlight for laststsatus=3
     colors = {},
     overrides = {},
 })
@@ -119,69 +120,88 @@ require'kanagawa'.setup({ overrides = overrides, colors = my_colors })
 vim.cmd("colorscheme kanagawa")
 ```
 
+Example for **Global Statusline**. Note: it works really nice with `dimInactive = true` option.
+
+```lua
+vim.opt.laststsatus = 3
+vim.opt.fillchars:append({
+    horiz = '━',
+    horizup = '┻',
+    horizdown = '┳',
+    vert = '┃',
+    vertleft = '┨',
+    vertright = '┣',
+    verthoriz = '╋',
+})
+require'kanagawa'.setup({ globalStatus = true, ... })
+vim.cmd("colorscheme kanagawa")
+```
+
 ## Color palette
 
-|                                                         | Name          | Hex       | Usage                                                                             |
-| :-----------------------------------------------------: | :------------ | :-------: | :-------------------------                                                        |
-| <img src="assets/circles/fujiWhite.svg" width="40">     | fujiWhite     | `#DCD7BA` | Default foreground                                                                |
-| <img src="assets/circles/oldWhite.svg" width="40">      | oldWhite      | `#C8C093` | Dark foreground (statuslines)                                                     |
-| <img src="assets/circles/sumiInk0.svg" width="40">      | sumiInk0      | `#16161D` | Dark background (statuslines and floating windows)                                |
-| <img src="assets/circles/sumiInk1.svg" width="40">      | sumiInk1      | `#1F1F28` | Default background                                                                |
-| <img src="assets/circles/sumiInk2.svg" width="40">      | sumiInk2      | `#2A2A37` | Lighter background (colorcolumn, folds)                                           |
-| <img src="assets/circles/sumiInk3.svg" width="40">      | sumiInk3      | `#363646` | Lighter background (cursorline)                                                   |
-| <img src="assets/circles/sumiInk4.svg" width="40">      | sumiInk4      | `#54546D` | Darker foreground (line numbers, fold column, non-text characters), float borders |
-| <img src="assets/circles/waveBlue1.svg" width="40">     | waveBlue1     | `#223249` | Popup background, visual selection background                                     |
-| <img src="assets/circles/waveBlue2.svg" width="40">     | waveBlue2     | `#2D4F67` | Popup selection background, search background                                     |
-| <img src="assets/circles/winterGreen.svg" width="40">   | winterGreen   | `#2B3328` | Diff Add (background)                                                             |
+|                                                         | Name          |    Hex    | Usage                                                                             |
+| :-----------------------------------------------------: | :------------ | :-------: | :-------------------------------------------------------------------------------- |
+|   <img src="assets/circles/fujiWhite.svg" width="40">   | fujiWhite     | `#DCD7BA` | Default foreground                                                                |
+|   <img src="assets/circles/oldWhite.svg" width="40">    | oldWhite      | `#C8C093` | Dark foreground (statuslines)                                                     |
+|   <img src="assets/circles/sumiInk0.svg" width="40">    | sumiInk0      | `#16161D` | Dark background (statuslines and floating windows)                                |
+|   <img src="assets/circles/sumiInk1.svg" width="40">    | sumiInk1      | `#1F1F28` | Default background                                                                |
+|   <img src="assets/circles/sumiInk2.svg" width="40">    | sumiInk2      | `#2A2A37` | Lighter background (colorcolumn, folds)                                           |
+|   <img src="assets/circles/sumiInk3.svg" width="40">    | sumiInk3      | `#363646` | Lighter background (cursorline)                                                   |
+|   <img src="assets/circles/sumiInk4.svg" width="40">    | sumiInk4      | `#54546D` | Darker foreground (line numbers, fold column, non-text characters), float borders |
+|   <img src="assets/circles/waveBlue1.svg" width="40">   | waveBlue1     | `#223249` | Popup background, visual selection background                                     |
+|   <img src="assets/circles/waveBlue2.svg" width="40">   | waveBlue2     | `#2D4F67` | Popup selection background, search background                                     |
+|  <img src="assets/circles/winterGreen.svg" width="40">  | winterGreen   | `#2B3328` | Diff Add (background)                                                             |
 | <img src="assets/circles/winterYellow.svg" width="40">  | winterYellow  | `#49443C` | Diff Change (background)                                                          |
-| <img src="assets/circles/winterRed.svg" width="40">     | winterRed     | `#43242B` | Diff Deleted (background)                                                         |
-| <img src="assets/circles/winterBlue.svg" width="40">    | winterBlue    | `#252535` | Diff Line (background)                                                            |
-| <img src="assets/circles/autumnGreen.svg" width="40">   | autumnGreen   | `#76946A` | Git Add                                                                           |
-| <img src="assets/circles/autumnRed.svg" width="40">     | autumnRed     | `#C34043` | Git Delete                                                                        |
+|   <img src="assets/circles/winterRed.svg" width="40">   | winterRed     | `#43242B` | Diff Deleted (background)                                                         |
+|  <img src="assets/circles/winterBlue.svg" width="40">   | winterBlue    | `#252535` | Diff Line (background)                                                            |
+|  <img src="assets/circles/autumnGreen.svg" width="40">  | autumnGreen   | `#76946A` | Git Add                                                                           |
+|   <img src="assets/circles/autumnRed.svg" width="40">   | autumnRed     | `#C34043` | Git Delete                                                                        |
 | <img src="assets/circles/autumnYellow.svg" width="40">  | autumnYellow  | `#DCA561` | Git Change                                                                        |
-| <img src="assets/circles/samuraiRed.svg" width="40">    | samuraiRed    | `#E82424` | Diagnostic Error                                                                  |
-| <img src="assets/circles/roninYellow.svg" width="40">   | roninYellow   | `#FF9E3B` | Diagnostic Warning                                                                |
-| <img src="assets/circles/waveAqua1.svg" width="40">     | waveAqua1     | `#6A9589` | Diagnostic Info                                                                   |
-| <img src="assets/circles/dragonBlue.svg" width="40">    | dragonBlue    | `#658594` | Diagnostic Hint                                                                   |
-| <img src="assets/circles/fujiGray.svg" width="40">      | fujiGray      | `#727169` | Comments                                                                          |
+|  <img src="assets/circles/samuraiRed.svg" width="40">   | samuraiRed    | `#E82424` | Diagnostic Error                                                                  |
+|  <img src="assets/circles/roninYellow.svg" width="40">  | roninYellow   | `#FF9E3B` | Diagnostic Warning                                                                |
+|   <img src="assets/circles/waveAqua1.svg" width="40">   | waveAqua1     | `#6A9589` | Diagnostic Info                                                                   |
+|  <img src="assets/circles/dragonBlue.svg" width="40">   | dragonBlue    | `#658594` | Diagnostic Hint                                                                   |
+|   <img src="assets/circles/fujiGray.svg" width="40">    | fujiGray      | `#727169` | Comments                                                                          |
 | <img src="assets/circles/springViolet1.svg" width="40"> | springViolet1 | `#938AA9` | Light foreground                                                                  |
-| <img src="assets/circles/oniViolet.svg" width="40">     | oniViolet     | `#957FB8` | Statements and Keywords                                                           |
-| <img src="assets/circles/crystalBlue.svg" width="40">   | crystalBlue   | `#7E9CD8` | Functions and Titles                                                              |
+|   <img src="assets/circles/oniViolet.svg" width="40">   | oniViolet     | `#957FB8` | Statements and Keywords                                                           |
+|  <img src="assets/circles/crystalBlue.svg" width="40">  | crystalBlue   | `#7E9CD8` | Functions and Titles                                                              |
 | <img src="assets/circles/springViolet2.svg" width="40"> | springViolet2 | `#9CABCA` | Brackets and punctuation                                                          |
-| <img src="assets/circles/springBlue.svg" width="40">    | springBlue    | `#7FB4CA` | Specials and builtin functions                                                    |
-| <img src="assets/circles/lightBlue.svg" width="40">     | lightBlue     | `#A3D4D5` | Not used                                                                          |
-| <img src="assets/circles/waveAqua2.svg" width="40">     | waveAqua2     | `#7AA89F` | Types                                                                             |
-| <img src="assets/circles/springGreen.svg" width="40">   | springGreen   | `#98BB6C` | Strings                                                                           |
-| <img src="assets/circles/boatYellow1.svg" width="40">   | boatYellow1   | `#938056` | Not used                                                                          |
-| <img src="assets/circles/boatYellow2.svg" width="40">   | boatYellow2   | `#C0A36E` | Operators, RegEx                                                                  |
-| <img src="assets/circles/carpYellow.svg" width="40">    | carpYellow    | `#E6C384` | Identifiers                                                                       |
-| <img src="assets/circles/sakuraPink.svg" width="40">    | sakuraPink    | `#D27E99` | Numbers                                                                           |
-| <img src="assets/circles/waveRed.svg" width="40">       | waveRed       | `#E46876` | Standout specials 1 (builtin variables)                                           |
-| <img src="assets/circles/peachRed.svg" width="40">      | peachRed      | `#FF5D62` | Standout specials 2 (exception handling, return)                                  |
+|  <img src="assets/circles/springBlue.svg" width="40">   | springBlue    | `#7FB4CA` | Specials and builtin functions                                                    |
+|   <img src="assets/circles/lightBlue.svg" width="40">   | lightBlue     | `#A3D4D5` | Not used                                                                          |
+|   <img src="assets/circles/waveAqua2.svg" width="40">   | waveAqua2     | `#7AA89F` | Types                                                                             |
+|  <img src="assets/circles/springGreen.svg" width="40">  | springGreen   | `#98BB6C` | Strings                                                                           |
+|  <img src="assets/circles/boatYellow1.svg" width="40">  | boatYellow1   | `#938056` | Not used                                                                          |
+|  <img src="assets/circles/boatYellow2.svg" width="40">  | boatYellow2   | `#C0A36E` | Operators, RegEx                                                                  |
+|  <img src="assets/circles/carpYellow.svg" width="40">   | carpYellow    | `#E6C384` | Identifiers                                                                       |
+|  <img src="assets/circles/sakuraPink.svg" width="40">   | sakuraPink    | `#D27E99` | Numbers                                                                           |
+|    <img src="assets/circles/waveRed.svg" width="40">    | waveRed       | `#E46876` | Standout specials 1 (builtin variables)                                           |
+|   <img src="assets/circles/peachRed.svg" width="40">    | peachRed      | `#FF5D62` | Standout specials 2 (exception handling, return)                                  |
 | <img src="assets/circles/surimiOrange.svg" width="40">  | surimiOrange  | `#FFA066` | Constants, imports, booleans                                                      |
-| <img src="assets/circles/katanaGray.svg" width="40">    | katanaGray    | `#717C7C` | Deprecated                                                                        |
+|  <img src="assets/circles/katanaGray.svg" width="40">   | katanaGray    | `#717C7C` | Deprecated                                                                        |
 
 ## Extras
 
-* [alacritty](extras/alacritty_kanagawa.yml)
-* [fish](extras/kanagawa.fish)
-* [foot](extras/foot_kanagawa.ini)
-* [iTerm](extras/kanagawa.itermcolors)
-* [kitty](extras/kanagawa.conf)
-* [pywal](extras/pywal-theme.json)
-* [wezterm](extras/wezterm.lua)
-* 🎉 Bonus! You win a tiny [python script](palette.py)🐍 to extract color palettes 🎨 from any image! 🥳
+- [alacritty](extras/alacritty_kanagawa.yml)
+- [fish](extras/kanagawa.fish)
+- [foot](extras/foot_kanagawa.ini)
+- [iTerm](extras/kanagawa.itermcolors)
+- [kitty](extras/kanagawa.conf)
+- [pywal](extras/pywal-theme.json)
+- [wezterm](extras/wezterm.lua)
+- 🎉 Bonus! You win a tiny [python script](palette.py)🐍 to extract color palettes 🎨 from any image! 🥳
 
 ## Acknowledgements
 
-* [Tokyonight](https://github.com/folke/tokyonight.nvim)
-* [Gruvbox](https://github.com/morhetz/gruvbox)
-* [Affinity Designer](https://affinity.serif.com/designer/)
+- [Tokyonight](https://github.com/folke/tokyonight.nvim)
+- [Gruvbox](https://github.com/morhetz/gruvbox)
+- [Affinity Designer](https://affinity.serif.com/designer/)
 
 ## Related projects
-* [kanagawa.vim](https://github.com/guigui64/kanawaga.vim) - unaffiliated vimscript port of kanagawa.nvim
+
+- [kanagawa.vim](https://github.com/guigui64/kanawaga.vim) - unaffiliated vimscript port of kanagawa.nvim
 
 ### Donate
+
 Buy me coffee and support my work ;)
 
 [![Donate](https://img.shields.io/badge/Donate-PayPal-green.svg)](https://www.paypal.com/donate/?business=VNQPHGW4JEM3S&no_recurring=0&item_name=Buy+me+coffee+and+support+my+work+%3B%29&currency_code=EUR)

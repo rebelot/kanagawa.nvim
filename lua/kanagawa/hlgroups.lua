@@ -25,6 +25,7 @@ function M.setup(colors, config)
         -- TermCursorNC                   = {},
         ErrorMsg                          = { fg = colors.diag.error, bg = "NONE" },
         VertSplit                         = { fg = colors.bg_status, bg = colors.bg_status, style = "NONE" },
+        WinSeparator                      = config.globalStatus and { fg = colors.bg_light1, bg = config.dimInactive and colors.bg_dim or 'NONE' } or { link = 'VertSplit' },
         Folded                            = { fg = colors.bg_light3, bg = colors.bg_light0 },
         FoldColumn                        = { fg = colors.bg_light2, bg = "NONE" },
         SignColumn                        = { fg = colors.bg_light2, bg = "NONE" },
