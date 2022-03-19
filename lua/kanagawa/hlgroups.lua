@@ -25,6 +25,7 @@ function M.setup(colors, config)
         -- TermCursorNC                   = {},
         ErrorMsg                          = { fg = colors.diag.error, bg = "NONE" },
         VertSplit                         = { fg = colors.bg_status, bg = colors.bg_status, style = "NONE" },
+        WinSeparator                      = config.globalStatus and { fg = colors.bg_light1, bg = config.dimInactive and colors.bg_dim or 'NONE' } or { link = 'VertSplit' },
         Folded                            = { fg = colors.bg_light3, bg = colors.bg_light0 },
         FoldColumn                        = { fg = colors.bg_light2, bg = "NONE" },
         SignColumn                        = { fg = colors.bg_light2, bg = "NONE" },
@@ -77,6 +78,7 @@ function M.setup(colors, config)
 
         Identifier                        = { fg = colors.id },
         Function                          = { fg = colors.fn, style = config.functionStyle },
+        Method                            = { link = 'Function' },
         Statement                         = { fg = colors.sm, style = config.statementStyle },
         -- Conditional                    = {},
         -- Repeat                         = {},
@@ -92,6 +94,7 @@ function M.setup(colors, config)
         -- PreCondit                      = {},
 
         Type                              = { fg = colors.ty, style = config.typeStyle },
+        Struct                            = { link = 'Type' },
         -- StorageClass                   = {},
         -- Structure                      = {},
         -- Typedef                        = {},
@@ -272,6 +275,9 @@ function M.setup(colors, config)
 
         -- Telescope                      = {},
         TelescopeBorder                   = { fg = colors.fg_border, bg = colors.bg },
+        TelescopeResultsClass             = { link = 'TSType' },
+        TelescopeResultsStruct            = { link = 'TSType' },
+        TelescopeResultsVariable          = { link = 'TSVariable' },
 
         -- NvimTree                       = {},
         NvimTreeNormal                    = { link = "Normal"},
