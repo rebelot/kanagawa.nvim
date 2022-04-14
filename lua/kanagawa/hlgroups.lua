@@ -386,8 +386,13 @@ function M.setup(colors, config)
         -- LightspeedGreyWash             = {},
 
         -- Cmp
-        CmpDocumentation                  = { fg = colors.fg, bg = colors.bg_popup },
-        CmpDocumentationBorder            = { fg = colors.fg_border, bg = colors.bg_popup },
+        CmpDocumentation                  = { link = "NormalFloat" },
+        CmpDocumentationBorder            = { link = "FloatBorder" },
+        CmpCompletion                     = { link = "Pmenu" },
+        CmpCompletionSel                  = { link = "PmenuSel" },
+        CmpCompletionBorder               = { fg = colors.bg_search, bg = colors.bg_menu },
+        CmpCompletionThumb                = { link = "PmenuThumb" },
+        CmpCompletionSbar                 = { link = "PmenuSbar" },
 
         CmpItemAbbr                       = { fg = colors.fg, bg = "NONE" },
         CmpItemAbbrDeprecated             = { fg = colors.fg_comment, bg = "NONE", style = "strikethrough" },
