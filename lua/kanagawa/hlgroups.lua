@@ -51,6 +51,7 @@ function M.setup(colors, config)
         Question                          = { link = "MoreMsg" },
         QuickFixLine                      = { link = "CursorLine" },
         Search                            = { fg = colors.fg, bg = colors.bg_search },
+        CurSearch                         = { link = 'Search' --[[ IncSearch ]] },
         IncSearch                         = { fg = colors.bg_visual, bg = colors.diag.warning, style = "NONE" },
         SpecialKey                        = { link = "NonText" },
         SpellBad                          = { style = "undercurl", guisp = colors.diag.error },
