@@ -181,7 +181,7 @@ function M.setup(colors, config)
         -- TSConstant                     = {},
         -- TSConstBuiltin                 = {},
         -- TSConstMacro                   = {},
-        TSError                           = { fg = colors.diag.error },
+        -- TSError                           = { fg = colors.diag.error },
         -- TSException                    = { link = 'Exception' }, -- default, -> statement
         TSException                       = { fg = config.specialException and colors.sp3 or colors.sm, style = config.statementStyle },
         TSField                           = { link = "Identifier" }, -- default
