@@ -44,8 +44,8 @@ function M.setup(colors, config)
         NormalSB                          = { link = "Normal" },
         NormalFloat                       = { fg = colors.fg, bg = colors.bg_dark },
         FloatBorder                       = { fg = colors.fg_border, bg = colors.bg_dark },
-        Pmenu                             = { fg = colors.fg, bg = colors.bg_menu },
-        PmenuSel                          = { fg = "NONE", bg = colors.bg_menu_sel },
+        Pmenu                             = { fg = colors.fg_menu, bg = colors.bg_menu },
+        PmenuSel                          = { fg = colors.fg_menu, bg = colors.bg_menu_sel },
         PmenuSbar                         = { link = "Pmenu" },
         PmenuThumb                        = { bg = colors.bg_search },
         Question                          = { link = "MoreMsg" },
@@ -137,7 +137,7 @@ function M.setup(colors, config)
         -- markdownH2                        = {},
         -- markdownLinkText                  = {},
 
-        debugPC                           = { link = "CursorLine" },
+        debugPC                           = { bg = colors.diff.delete },
         debugBreakpoint                   = { fg = colors.sp },
 
         LspReferenceText                  = { bg = colors.diff.text },
@@ -396,7 +396,7 @@ function M.setup(colors, config)
         CmpCompletionThumb                = { link = "PmenuThumb" },
         CmpCompletionSbar                 = { link = "PmenuSbar" },
 
-        CmpItemAbbr                       = { fg = colors.fg, bg = "NONE" },
+        CmpItemAbbr                       = { fg = colors.fg_menu, bg = "NONE" },
         CmpItemAbbrDeprecated             = { fg = colors.fg_comment, bg = "NONE", style = "strikethrough" },
 
         CmpItemAbbrMatch                  = { fg = colors.fn, bg = "NONE" },

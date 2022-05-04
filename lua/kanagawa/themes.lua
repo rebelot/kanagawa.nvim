@@ -22,6 +22,7 @@ return {
 
             fg_comment = colors.fujiGray,
             fg = colors.fujiWhite,
+            fg_menu = colors.fujiWhite,
 
             co = colors.surimiOrange,
             st = colors.springGreen,
