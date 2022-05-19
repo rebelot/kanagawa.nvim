@@ -218,7 +218,7 @@ function M.setup(colors, config)
         -- TSSymbol                       = {},
         -- TSType                         = {},
         -- TSTypeBuiltin                  = {},
-        TSVariable                        = { link = 'Normal' },
+        TSVariable                        = { fg = colors.fg },
         TSVariableBuiltin                 = { fg = colors.sp2, style = config.variablebuiltinStyle },
 
         -- TSTag                          = {},
