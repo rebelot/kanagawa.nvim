@@ -85,7 +85,8 @@ vim.cmd("colorscheme kanagawa")
 
 ### Customize highlight groups and colors
 
-You can change the colors of existing hl-groups as well as creating new ones. Supported keywords: `fg`, `bg`, `style`, `guisp`, `link`.
+You can change the colors of existing hl-groups as well as creating new ones.
+Supported keywords are the same for `:h nvim_set_hl` `{val}` parameter.
 
 You can define your own colors or use the theme colors (see example below).
 All the palette colors can be found [here](lua/kanagawa/colors.lua).
