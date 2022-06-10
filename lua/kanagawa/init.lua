@@ -3,15 +3,36 @@ local M = {}
 local function set_highlights(hlgroups)
     for group, colors in pairs(hlgroups) do
         if not vim.tbl_isempty(colors) then
-            if colors.link then
-                vim.cmd("highlight! link " .. group .. " " .. colors.link)
-            else
-                local fg = colors.fg and "guifg=" .. colors.fg .. " " or ""
-                local bg = colors.bg and "guibg=" .. colors.bg .. " " or ""
-                local style = colors.style and "gui=" .. colors.style .. " " or ""
-                local guisp = colors.guisp and "guisp=" .. colors.guisp .. " " or ""
-                vim.cmd("highlight " .. group .. " " .. fg .. bg .. style .. guisp)
-            end
+            vim.api.nvim_set_hl(0, group, colors)
+        end
+    end
+end
+
+local function check_config(config)
+    local style_opts = {
+        "commentStyle",
+        "functionStyle",
+        "keywordStyle",
+        "typeStyle",
+        "statementStyle",
+        "variablebuiltinStyle",
+    }
+    for _, opt in ipairs(style_opts) do
+        if type(config[opt]) ~= "table" then
+            config[opt] = {}
+            vim.notify_once(
+                "Kanagawa: deprecated format for Style option in config.xxxStyle: use a table like { italic = true } instead. See README.md for more info.",
+                vim.log.levels.ERROR
+            )
+        end
+    end
+    for _, hl in pairs(config.overrides) do
+        if hl.style then
+            hl.style = nil
+            vim.notify_once(
+                "Kanagawa: deprecated format for highlight style in config.overrides: use the syntax { italic = true } instead. See README.md for more info.",
+                vim.log.levels.ERROR
+            )
         end
     end
 end
@@ -19,12 +40,12 @@ end
 --- default config
 M.config = {
     undercurl = true,
-    commentStyle = "italic",
-    functionStyle = "NONE",
-    keywordStyle = "italic",
-    statementStyle = "bold",
-    typeStyle = "NONE",
-    variablebuiltinStyle = "italic",
+    commentStyle = { italic = true },
+    functionStyle = {},
+    keywordStyle = { italic = true },
+    statementStyle = { bold = true },
+    typeStyle = {},
+    variablebuiltinStyle = { italic = true },
     specialReturn = true,
     specialException = true,
     transparent = false,
@@ -40,6 +61,7 @@ M.config = {
 --@return nil
 function M.setup(config)
     M.config = vim.tbl_extend("force", M.config, config or {})
+    check_config(M.config)
 end
 
 --- load the colorscheme

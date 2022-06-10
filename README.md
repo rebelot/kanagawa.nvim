@@ -64,12 +64,12 @@ There is no need to call setup if you are ok with the defaults.
 -- Default options:
 require('kanagawa').setup({
     undercurl = true,           -- enable undercurls
-    commentStyle = "italic",
-    functionStyle = "NONE",
-    keywordStyle = "italic",
-    statementStyle = "bold",
-    typeStyle = "NONE",
-    variablebuiltinStyle = "italic",
+    commentStyle = { italic = true },
+    functionStyle = {},
+    keywordStyle = { italic = true},
+    statementStyle = { bold = true },
+    typeStyle = {},
+    variablebuiltinStyle = { italic = true},
     specialReturn = true,       -- special highlight for the return keyword
     specialException = true,    -- special highlight for exception handling keywords
     transparent = false,        -- do not set background color
@@ -110,12 +110,12 @@ local my_colors = {
 
 local overrides = {
     -- create a new hl-group using default palette colors and/or new ones
-    MyHlGroup1 = { fg = default_colors.waveRed, bg = "#AAAAAA", style="underline,bold", guisp="blue" },
+    MyHlGroup1 = { fg = default_colors.waveRed, bg = "#AAAAAA", underline = true, bold = true, guisp="blue" },
 
     -- override existing hl-groups, the new keywords are merged with existing ones
     VertSplit  = { fg = default_colors.bg_dark, bg = "NONE" },
     TSError    = { link = "Error" },
-    TSKeywordOperator = { style = 'bold'},
+    TSKeywordOperator = { bold = true},
     StatusLine = { fg = my_colors.new_color }
 }
 
@@ -184,16 +184,16 @@ vim.cmd("colorscheme kanagawa")
 
 ## Extras
 
-* [alacritty](extras/alacritty_kanagawa.yml)
-* [base16](extras/base16-theme.yaml)
-* [fish](extras/kanagawa.fish)
-* [foot](extras/foot_kanagawa.ini)
-* [iTerm](extras/kanagawa.itermcolors)
-* [kitty](extras/kanagawa.conf)
-* [pywal](extras/pywal-theme.json)
-* [wezterm](extras/wezterm.lua)
-* [Windows Terminal](extras/windows_terminal.json)
-* 🎉 Bonus! You win a tiny [python script](palette.py)🐍 to extract color palettes 🎨 from any image! 🥳
+- [alacritty](extras/alacritty_kanagawa.yml)
+- [base16](extras/base16-theme.yaml)
+- [fish](extras/kanagawa.fish)
+- [foot](extras/foot_kanagawa.ini)
+- [iTerm](extras/kanagawa.itermcolors)
+- [kitty](extras/kanagawa.conf)
+- [pywal](extras/pywal-theme.json)
+- [wezterm](extras/wezterm.lua)
+- [Windows Terminal](extras/windows_terminal.json)
+- 🎉 Bonus! You win a tiny [python script](palette.py)🐍 to extract color palettes 🎨 from any image! 🥳
 
 ## Acknowledgements
 
