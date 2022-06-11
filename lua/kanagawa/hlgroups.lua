@@ -7,7 +7,7 @@ function M.setup(colors, config)
     config = vim.tbl_extend("force", require("kanagawa").config, config or {})
 
     local hlgroups = {
-        Comment = { fg = colors.fg_comment, unpack(config.commentStyle) },
+        Comment = vim.tbl_extend("force", { fg = colors.fg_comment }, config.commentStyle),
         ColorColumn = { bg = colors.bg_light0 },
         Conceal = { fg = colors.bg_light3, bold = true },
         Cursor = { fg = colors.bg, bg = colors.fg },
@@ -83,14 +83,14 @@ function M.setup(colors, config)
         Float = { link = "Number" },
 
         Identifier = { fg = colors.id },
-        Function = { fg = colors.fn, unpack(config.functionStyle) },
+        Function = vim.tbl_extend("force", { fg = colors.fn }, config.functionStyle),
         Method = { link = "Function" },
-        Statement = { fg = colors.sm, unpack(config.statementStyle) },
+        Statement = vim.tbl_extend("force", { fg = colors.sm }, config.statementStyle),
         -- Conditional = {},
         -- Repeat = {},
         -- Label = { link = 'Statement' }, --TODO: check default
         Operator = { fg = colors.op },
-        Keyword = { fg = colors.kw, unpack(config.keywordStyle) },
+        Keyword = vim.tbl_extend("force", { fg = colors.kw }, config.keywordStyle),
         Exception = { fg = colors.sp2 },
 
         PreProc = { fg = colors.pp },
@@ -99,7 +99,7 @@ function M.setup(colors, config)
         -- Macro = {},
         -- PreCondit = {},
 
-        Type = { fg = colors.ty, unpack(config.typeStyle) },
+        Type = vim.tbl_extend("force", { fg = colors.ty }, config.typeStyle),
         Struct = { link = "Type" },
         -- StorageClass = {},
         -- Structure = {},
@@ -190,7 +190,7 @@ function M.setup(colors, config)
         -- TSConstMacro = {},
         -- TSError = { fg = colors.diag.error },
         -- TSException = { link = 'Exception' }, -- default, -> statement
-        TSException = { fg = config.specialException and colors.sp3 or colors.sm, unpack(config.statementStyle) },
+        TSException = vim.tbl_extend("force", { fg = config.specialException and colors.sp3 or colors.sm }, config.statementStyle),
         TSField = { link = "Identifier" }, -- default
         -- TSField = { link = 'Variable'},
         -- TSFloat = {},
@@ -201,7 +201,7 @@ function M.setup(colors, config)
         TSKeyword = { link = "Keyword" },
         -- TSKeywordFunction = { link = "Keyword" }, -- default
         -- TSKeywordFunction = { link = "Function" },
-        TSKeywordReturn = { fg = config.specialReturn and colors.sp3 or colors.kw, unpack(config.keywordStyle) },
+        TSKeywordReturn = vim.tbl_extend("force", { fg = config.specialReturn and colors.sp3 or colors.kw }, config.keywordStyle),
         TSLabel = { link = "Label" },
         TSMethod = { link = "Function" },
         -- TSNamespace = {},
@@ -224,7 +224,7 @@ function M.setup(colors, config)
         -- TSType = {},
         -- TSTypeBuiltin = {},
         TSVariable = { fg = colors.fg },
-        TSVariableBuiltin = { fg = colors.sp2, unpack(config.variablebuiltinStyle) },
+        TSVariableBuiltin = vim.tbl_extend("force", { fg = colors.sp2 }, config.variablebuiltinStyle),
 
         -- TSTag = {},
         -- TSTagDelimiter = {},
