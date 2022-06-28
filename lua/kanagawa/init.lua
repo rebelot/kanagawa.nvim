@@ -1,6 +1,8 @@
 local M = {}
 
 local function set_highlights(hlgroups)
+    vim.cmd("highlight Normal guibg=" .. hlgroups.Normal.bg .. " guifg=" .. hlgroups.Normal.fg)
+    hlgroups.Normal = nil
     for group, colors in pairs(hlgroups) do
         if not vim.tbl_isempty(colors) then
             vim.api.nvim_set_hl(0, group, colors)
