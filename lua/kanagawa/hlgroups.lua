@@ -452,6 +452,57 @@ function M.setup(colors, config)
         IndentBlanklineSpaceCharBlankline = { fg = colors.bg_light2 },
         IndentBlanklineContextChar = { fg = colors.bg_light3 },
         IndentBlanklineContextStart = { sp = colors.bg_light3, underline = true },
+
+        -- Mini
+        MiniCompletionActiveParameter = { underline = true },
+
+        MiniCursorword = { underline = true },
+        MiniCursorwordCurrent = { underline = true },
+
+        MiniIndentscopeSymbol = { fg = colors.bg_light3 },
+        MiniIndentscopePrefix = { nocombine = true }, -- Make it invisible
+
+        MiniJump = { link = "SpellRare" },
+
+        MiniJump2dSpot = { fg = colors.diag.warning, bold = true, nocombine = true },
+
+        MiniStarterCurrent = { nocombine = true },
+        MiniStarterFooter = { fg = colors.fn },
+        MiniStarterHeader = { fg = colors.git.removed },
+        MiniStarterInactive = { link = "Comment" },
+        MiniStarterItem = { link = "Normal" },
+        MiniStarterItemBullet = { fg = colors.fg_border },
+        MiniStarterItemPrefix = { fg = colors.diag.warning },
+        MiniStarterSection = {  fg = colors.sp },
+        MiniStarterQuery = { fg = colors.diag.info },
+
+        MiniStatuslineDevinfo = { fg = colors.fg_dark, bg = colors.bg_light0 },
+        MiniStatuslineFileinfo = { fg = colors.fg_dark, bg = colors.bg_light0 },
+        MiniStatuslineFilename = { fg = colors.fg_dark, bg = colors.bg_status },
+        MiniStatuslineInactive = { fg = colors.fujiGray, bg = colors.bg_status },
+        MiniStatuslineModeCommand = { fg = colors.bg_dark, bg = colors.boatYellow2, bold = true },
+        MiniStatuslineModeInsert = { fg = colors.bg_dark, bg = colors.autumnGreen, bold = true },
+        MiniStatuslineModeNormal = { fg = colors.bg_dark, bg = colors.crystalBlue, bold = true },
+        MiniStatuslineModeOther = { fg = colors.bg_dark, bg = colors.katanaGray, bold = true },
+        MiniStatuslineModeReplace = { fg = colors.bg_dark, bg = colors.autumnRed, bold = true },
+        MiniStatuslineModeVisual = { fg = colors.bg_dark, bg = colors.oniViolet, bold = true },
+
+        MiniSurround = { link = "IncSearch" },
+
+        MiniTablineCurrent = { fg = colors.fg_dark, bg = colors.bg_light1, bold = true },
+        MiniTablineFill = { link = "TabLineFill" },
+        MiniTablineHidden = { fg = colors.bg_light3, bg = colors.bg_dark },
+        MiniTablineModifiedCurrent = { fg = colors.bg_light1, bg = colors.fg_dark, bold = true },
+        MiniTablineModifiedHidden = { fg = colors.bg_dark, bg = colors.bg_light3 },
+        MiniTablineModifiedVisible = { fg = colors.bg_light0, bg = colors.fg_dark },
+        MiniTablineTabpagesection = { fg = colors.fg, bg = colors.bg_search, bold = true },
+        MiniTablineVisible = { fg = colors.fg_dark, bg = colors.bg_light0 },
+
+        MiniTestEmphasis = { bold = true },
+        MiniTestFail = { fg = colors.git.removed, bold = true },
+        MiniTestPass = { fg = colors.git.added, bold = true },
+
+        MiniTrailspace = { bg = colors.git.removed },
     }
 
     for hl, specs in pairs(config.overrides) do

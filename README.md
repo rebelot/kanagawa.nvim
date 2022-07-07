@@ -53,6 +53,7 @@ vim.cmd("colorscheme kanagawa")
 - [Dashboard](https://github.com/glepnir/dashboard-nvim)
 - [Lualine](https://github.com/nvim-lualine/lualine.nvim)
 - [FloaTerm](https://github.com/voldikss/vim-floaterm)
+- [Mini](https://github.com/echasnovski/mini.nvim)
 
 And many others should _"just work"_!
 
