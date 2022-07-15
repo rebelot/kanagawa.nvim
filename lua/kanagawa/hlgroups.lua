@@ -1,5 +1,26 @@
 local M = {}
 
+local function setup_terminal_colors(colors)
+    vim.g.terminal_color_0  = "#090618"             -- black
+    vim.g.terminal_color_1  = colors.autumnRed      -- red
+    vim.g.terminal_color_2  = colors.autumnGreen    -- green
+    vim.g.terminal_color_3  = colors.boatYellow2    -- yellow
+    vim.g.terminal_color_4  = colors.crystalBlue    -- blue
+    vim.g.terminal_color_5  = colors.oniViolet      -- magenta
+    vim.g.terminal_color_6  = colors.waveAqua1      -- cyan
+    vim.g.terminal_color_7  = colors.oldWhite       -- white
+    vim.g.terminal_color_8  = colors.fujiGray       -- bright black
+    vim.g.terminal_color_9  = colors.samuraiRed     -- bright red
+    vim.g.terminal_color_10 = colors.springGreen    -- bright green
+    vim.g.terminal_color_11 = colors.carpYellow     -- bright yellow
+    vim.g.terminal_color_12 = colors.springBlue     -- bright blue
+    vim.g.terminal_color_13 = colors.springViolet1  -- bright magenta
+    vim.g.terminal_color_14 = colors.waveAqua2      -- bright cyan
+    vim.g.terminal_color_15 = colors.fujiWhite      -- bright white
+    vim.g.terminal_color_16 = colors.surimiOrange   -- extended color 1
+    vim.g.terminal_color_17 = colors.peachRed       -- extended color 2
+end
+
 --- generate highlights table
 -- @param colors color (theme) color table created by require("kanagawa.colors").setup()
 -- @param config config options (optional)
@@ -459,6 +480,10 @@ function M.setup(colors, config)
             hlgroups[hl].link = nil
         end
         hlgroups[hl] = vim.tbl_extend("force", hlgroups[hl] or {}, specs)
+    end
+
+    if config.terminalColors then
+        setup_terminal_colors(colors)
     end
 
     return hlgroups

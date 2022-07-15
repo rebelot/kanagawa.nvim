@@ -53,6 +53,7 @@ M.config = {
     transparent = false,
     dimInactive = false,
     globalStatus = false,
+    terminalColors = true,
     colors = {},
     overrides = {},
     theme = "default", -- only one theme atm
