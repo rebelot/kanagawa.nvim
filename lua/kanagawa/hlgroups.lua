@@ -291,9 +291,9 @@ function M.setup(colors, config)
         -- NeogitDiffAddHighlight = {},
 
         -- GitGutter
-        -- GitGutterAdd = {},
-        -- GitGutterChange = {},
-        -- GitGutterDelete = {},
+        GitGutterAdd = {link = "diffAdded"},
+        GitGutterChange = { link = "diffChanged" },
+        GitGutterDelete = { link = "diffDeleted" },
 
         -- GitSigns
         GitSignsAdd = { link = "diffAdded" },
