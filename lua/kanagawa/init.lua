@@ -40,6 +40,7 @@ local function check_config(config)
 end
 
 --- default config
+---@class KanagawaConfig
 M.config = {
     undercurl = true,
     commentStyle = { italic = true },
@@ -54,14 +55,15 @@ M.config = {
     dimInactive = false,
     globalStatus = false,
     terminalColors = true,
+    ---@type KanagawaColors
     colors = {},
+    ---@type KanagawaColors
     overrides = {},
     theme = "default", -- only one theme atm
 }
 
 --- update global configuration with user settings
---@param config user configuration
---@return nil
+---@param config KanagawaConfig? user configuration
 function M.setup(config)
     M.config = vim.tbl_extend("force", M.config, config or {})
     check_config(M.config)
