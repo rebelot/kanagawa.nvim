@@ -467,6 +467,8 @@ function M.setup(colors, config)
         -- CmpItemKindEvent = {},
         -- CmpItemKindColor = {},
 
+        CmpItemKindCopilot = { link = "String" },
+
         -- IndentBlankline
         IndentBlanklineChar = { fg = colors.bg_light2 },
         IndentBlanklineSpaceChar = { fg = colors.bg_light2 },
