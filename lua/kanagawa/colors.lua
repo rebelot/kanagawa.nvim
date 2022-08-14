@@ -1,3 +1,4 @@
+---@class KanagawaColors
 local palette_colors = {
 
     -- Bg Shades
@@ -60,8 +61,8 @@ local palette_colors = {
 local M = {}
 
 --- generate color table
--- @param config config options containing colors and theme fields (optional)
--- @return table of palette colors and theme colors merged with config.colors
+---@param config table<string, string>? Config options containing colors and theme fields (optional)
+---@return KanagawaColors # Palette colors and theme colors merged with config.colors
 function M.setup(config)
     config = vim.tbl_extend("force", require("kanagawa").config, config or {})
     local colors = vim.tbl_extend("force", palette_colors, config.colors)
