@@ -1,3 +1,17 @@
+-- Adapted from: https://github.com/yuri/lua-colors
+
+-----------------------------------------------------------------------------
+-- Provides support for color manipulation in HSL color space.
+--
+-- http://sputnik.freewisdom.org/lib/colors/
+--
+-- License: MIT/X
+-- 
+-- (c) 2008 Yuri Takhteyev (yuri@freewisdom.org) *
+--
+-- * rgb_to_hsl() implementation was contributed by Markus Fleck-Graffe.
+-----------------------------------------------------------------------------
+
 local function rgb_to_hsl(r, g, b)
     --r, g, b = r/255, g/255, b/255
     local min = math.min(r, g, b)
@@ -132,16 +146,6 @@ function Color:hue(r)
     self.H = H
     return self
 end
-
--- function M.lighten(hex, r)
---     h, s, l = rgb_string_to_hsl(hex)
---     return rgb_to_hex(hsl_to_rgb(h, s, l * r))
--- end
---
--- function M.saturate(hex, r)
---     h, s, l = rgb_string_to_hsl(hex)
---     return rgb_to_hex(hsl_to_rgb(h, s * r, l))
--- end
 
 local M = {}
 return setmetatable(M, {
