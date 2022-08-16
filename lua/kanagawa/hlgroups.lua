@@ -22,7 +22,7 @@ local function setup_terminal_colors(colors)
 end
 
 --- generate highlights table
----@param colors ThemeColors theme color table created by require("kanagawa.colors").setup()
+---@param colors ThemeColors|KanagawaColors theme color table created by require("kanagawa.colors").setup()
 ---@param config table? config options (optional)
 function M.setup(colors, config)
     config = vim.tbl_extend("force", require("kanagawa").config, config or {})
