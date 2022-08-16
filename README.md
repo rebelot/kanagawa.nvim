@@ -78,6 +78,7 @@ require('kanagawa').setup({
     terminalColors = true,      -- define vim.g.terminal_color_{0,17}
     colors = {},
     overrides = {},
+    theme = "default"           -- Load "default" theme or the experimental "light" theme
 })
 
 -- setup must be called before loading
