@@ -2,13 +2,13 @@ local c = require("kanagawa.color")
 --TODO: standardize theme color names
 
 ---@class ThemeColors
----@field bg KanagawaColors
----@field bg_dim KanagawaColors
----@field bg_dark KanagawaColors
----@field bg_light0 KanagawaColors
----@field bg_light1 KanagawaColors
----@field bg_light2 KanagawaColors
----@field bg_light3 KanagawaColors
+---@field bg KanagawaColors default background
+---@field bg_dim KanagawaColors dimmed background
+---@field bg_dark KanagawaColors dark background (float)
+---@field bg_light0 KanagawaColors Fold/ColorColumn background
+---@field bg_light1 KanagawaColors CursorLine/TabLineSel background
+---@field bg_light2 KanagawaColors NonText foreground
+---@field bg_light3 KanagawaColors dimmed foreground (Conceal, Folded, TabLine)
 ---@field bg_menu KanagawaColors
 ---@field bg_menu_sel KanagawaColors
 ---@field bg_status KanagawaColors
@@ -111,43 +111,43 @@ return {
         ---@type ThemeColors
         return {
             bg = tostring(c(colors.fujiWhite):lighten(1.1):saturate(1.8)),
-            bg_dim = tostring(c(colors.fujiWhite):lighten(0.95)),
+            bg_dim = tostring(c(colors.fujiWhite):lighten(1.1):saturate(1.5):lighten(0.95)),
             bg_dark = tostring(c(colors.fujiWhite):lighten(0.9):saturate(0.8)),
-            bg_light0 = tostring(c(colors.oldWhite):lighten(1)),
-            bg_light1 = tostring(c(colors.oldWhite):lighten(1.15)),
-            bg_light2 = tostring(c(colors.springViolet1)),
+            bg_light0 = tostring(c(colors.oldWhite):lighten(1.1):saturate(1.15)),
+            bg_light1 = tostring(c(colors.oldWhite):lighten(1.17)),
+            bg_light2 = tostring(c(colors.springViolet1):lighten(1):saturate(0.5)),
             bg_light3 = tostring(c(colors.springViolet1):lighten(0.65)),
 
-            bg_menu = tostring(c(colors.waveBlue1):lighten(3.5):saturate(0.35)),
-            bg_menu_sel = tostring(c(colors.waveBlue1):lighten(3.9):saturate(0.5)),
+            bg_menu = tostring(c(colors.waveBlue1):lighten(4):saturate(0.30):hue(1)),
+            bg_menu_sel = tostring(c(colors.waveBlue1):lighten(4.25):saturate(0.5):hue(1)),
 
-            bg_status = tostring(c(colors.fujiWhite):lighten(0.85):saturate(0.7)),
-            bg_visual = tostring(c(colors.waveBlue1):lighten(3.9):saturate(0.25)),
-            bg_search = tostring(c(colors.waveBlue2):lighten(2.7)),
+            bg_status = tostring(c(colors.fujiWhite):lighten(1):saturate(1)),
+            bg_visual = tostring(c(colors.waveBlue1):lighten(4):saturate(0.20)),
+            bg_search = tostring(c(colors.waveBlue2):lighten(2.8):hue(1.17):saturate(0.5)),
 
-            fg_border = colors.sumiInk4,
-            fg_dark = colors.sumiInk0,
-            fg_reverse = colors.waveBlue1,
+            fg_border = tostring(c(colors.oldWhite):lighten(0.5):saturate(0.7)),
+            fg_dark = tostring(c(colors.sumiInk1):lighten(1.5):saturate(0.6)),
+            fg_reverse = colors.fujiWhite,
 
-            fg_comment = colors.fujiGray,
-            fg = tostring(c(colors.sumiInk1):lighten(1.9)),
+            fg_comment = tostring(c(colors.fujiGray):lighten(0.92)),
+            fg = tostring(c(colors.sumiInk1):lighten(2):saturate(0.8)),
             fg_menu = tostring(c(colors.sumiInk4):lighten(0.90)),
 
             co = tostring(c(colors.surimiOrange):lighten(0.5)),
-            st = tostring(c(colors.springGreen):lighten(0.5)),
+            st = tostring(c(colors.springGreen):lighten(0.48)),
             nu = tostring(c(colors.sakuraPink):lighten(0.5)),
-            id = tostring(c(colors.carpYellow):lighten(0.38)),
-            fn = tostring(c(colors.crystalBlue):lighten(0.5)),
-            sm = tostring(c(colors.oniViolet):lighten(0.5)),
-            kw = tostring(c(colors.oniViolet):lighten(0.5)),
-            op = tostring(c(colors.boatYellow2):lighten(0.5)),
+            id = tostring(c(colors.carpYellow):lighten(0.40):saturate(1.2)),
+            fn = tostring(c(colors.crystalBlue):lighten(0.5):saturate(1.1)),
+            sm = tostring(c(colors.oniViolet):lighten(0.5):saturate(1)),
+            kw = tostring(c(colors.oniViolet):lighten(0.5):saturate(1)),
+            op = tostring(c(colors.boatYellow2):lighten(0.65):saturate(1.2)),
             pp = tostring(c(colors.surimiOrange):lighten(0.5)),
-            ty = tostring(c(colors.waveAqua2):lighten(0.5)),
-            sp = tostring(c(colors.springBlue):lighten(0.43)),
-            sp2 = tostring(c(colors.waveRed):lighten(0.5)),
-            sp3 = tostring(c(colors.peachRed):lighten(0.5)),
-            br = tostring(c(colors.springViolet2):lighten(0.5)),
-            re = tostring(c(colors.boatYellow2):lighten(0.6)),
+            ty = tostring(c(colors.waveAqua2):lighten(0.5):saturate(1.3)),
+            sp = tostring(c(colors.springBlue):lighten(0.45):saturate(1.5)),
+            sp2 = tostring(c(colors.waveRed):lighten(0.5):saturate(1.1)),
+            sp3 = tostring(c(colors.peachRed):lighten(0.68):saturate(0.7):hue(0.98)),
+            br = tostring(c(colors.springViolet2):lighten(0.6)),
+            re = tostring(c(colors.boatYellow2):lighten(0.65):saturate(1.2)),
             dep = tostring(c(colors.katanaGray):lighten(0.5)),
 
             diag = {
@@ -159,15 +159,14 @@ return {
 
             diff = {
                 add = tostring(c(colors.winterGreen):lighten(3.5):saturate(1.1)),
-                delete = tostring(c(colors.winterRed):lighten(2.5):saturate(0.8)),
-                change = tostring(c(colors.winterBlue):lighten(2.5)),
-                text = tostring(c(colors.winterYellow):lighten(2.9):saturate(2.5)),
+                delete = tostring(c(colors.winterRed):lighten(3.5):saturate(1.3):hue(1.1)),
+                change = tostring(c(colors.winterBlue):lighten(4.7):saturate(0.7):hue(0.7)),
+                text = tostring(c(colors.winterYellow):lighten(2.99):saturate(5.5)),
             },
-
             git = {
-                added = tostring(c(colors.autumnGreen):lighten(1)),
-                removed = tostring(c(colors.autumnRed):lighten(1)),
-                changed = tostring(c(colors.autumnYellow):lighten(1)),
+                added = tostring(c(colors.autumnGreen):lighten(0.75):saturate(1.3)),
+                removed = tostring(c(colors.autumnRed):lighten(1):saturate(1)),
+                changed = tostring(c(colors.autumnYellow):lighten(0.95):saturate(1.5)),
             },
         }
     end,
