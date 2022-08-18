@@ -284,11 +284,10 @@ function M.setup(colors, config)
         -- Neogit
         -- NeogitBranch = {},
         -- NeogitRemote = {},
-        -- NeogitHunkHeader = {},
-        -- NeogitHunkHeaderHighlight = {},
-        -- NeogitDiffContextHighlight = {},
-        -- NeogitDiffDeleteHighlight = {},
-        -- NeogitDiffAddHighlight = {},
+        NeogitDiffDelete = { fg = colors.git.removed, bg = colors.diff.delete },
+        NeogitDiffAdd = { fg = colors.git.added, bg = colors.diff.add },
+        NeogitHunkHeader = { fg = colors.id },
+        NeogitDiffContextHighlight = { bg = colors.diff.change },
 
         -- GitGutter
         -- GitGutterAdd = {},
