@@ -87,6 +87,8 @@ function M.setup(colors, config)
         SpellRare = { undercurl = true, sp = colors.diag.warning },
         StatusLine = { fg = colors.fg_dark, bg = colors.bg_status },
         StatusLineNC = { fg = colors.fg_comment, bg = colors.bg_status },
+        Winbar = { fg = colors.fg_dark, bg = "NONE" },
+        WinbarNC = { fg = colors.fg_dark, bg = config.dimInactive and colors.bg_dim or "NONE" },
         TabLine = { bg = colors.bg_dark, fg = colors.bg_light3 },
         TabLineFill = { bg = colors.bg },
         TabLineSel = { fg = colors.fg_dark, bg = colors.bg_light1 },
