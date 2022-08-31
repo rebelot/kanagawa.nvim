@@ -85,6 +85,14 @@ require('kanagawa').setup({
 vim.cmd("colorscheme kanagawa")
 ```
 
+Light and default themes may also be changed by setting the `background` option.
+Note that if the option is set, its value will override and change the `theme` field the configuration.
+
+```vim
+:set background=dark " default theme
+:set background=light " light theme
+```
+
 ### Customize highlight groups and colors
 
 You can change the colors of existing hl-groups as well as creating new ones.
