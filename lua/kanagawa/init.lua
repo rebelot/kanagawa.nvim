@@ -78,6 +78,12 @@ function M.load()
     vim.g.colors_name = "kanagawa"
     vim.o.termguicolors = true
 
+    if vim.o.background == "light" then
+        M.config.theme = "light"
+    else
+        M.config.theme = "default"
+    end
+
     local colors = require("kanagawa.colors").setup()
     local hlgroups = require("kanagawa.hlgroups").setup(colors)
 
