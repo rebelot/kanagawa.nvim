@@ -80,7 +80,7 @@ function M.load()
 
     if vim.o.background == "light" then
         M.config.theme = "light"
-    else
+    elseif vim.o.background == "dark" then
         M.config.theme = "default"
     end
 
