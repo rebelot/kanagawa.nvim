@@ -106,6 +106,71 @@ return {
             },
         }
     end,
+    dragon = function(colors)
+        ---@type ThemeColors
+        return {
+            bg = "#181616",
+            bg_dim = "#1D1C19",
+            bg_dark = "#121111",
+            bg_light0 = "#282727",
+            bg_light1 = "#393836",
+            bg_light2 = "#524F4B",
+            bg_light3 = "#6E7675",
+
+            bg_menu = colors.waveBlue1,
+            bg_menu_sel = colors.waveBlue2,
+
+            bg_status = "#111115",
+            bg_visual = colors.waveBlue1,
+            bg_search = colors.waveBlue2,
+
+            fg_border = colors.sumiInk4,
+            fg_dark = colors.oldWhite,
+            fg_reverse = colors.waveBlue1,
+
+            fg_comment = "#646C64",
+            fg = "#B5BAB5",
+            fg_menu = colors.fujiWhite,
+
+            co = "#99745A",
+            st = "#698569",
+            nu = "#968497",
+            id = "#878982", --ok
+            fn = colors.dragonBlue,
+            sm = "#697185",
+            kw = "#697185",
+            op = "#9F4841",
+            pp = "#6B5F4F",
+            -- ty = "#5B7B79",
+            ty = "#677F7D",
+            sp = "#7685A1",
+            sp2 = "#9D8F77",
+            sp3 = "#9D8F77",
+            br = "#636059",
+            re = "#9F4841",
+            dep = colors.katanaGray,
+
+            diag = {
+                error = colors.samuraiRed,
+                warning = colors.roninYellow,
+                info = colors.dragonBlue,
+                hint = colors.waveAqua1,
+            },
+
+            diff = {
+                add = colors.winterGreen,
+                delete = colors.winterRed,
+                change = colors.winterBlue,
+                text = colors.winterYellow,
+            },
+
+            git = {
+                added = colors.autumnGreen,
+                removed = colors.autumnRed,
+                changed = colors.autumnYellow,
+            },
+        }
+    end,
     ---@param colors KanagawaColors
     light = function(colors)
         ---@type ThemeColors
