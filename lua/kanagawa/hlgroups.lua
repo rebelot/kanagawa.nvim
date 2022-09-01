@@ -46,11 +46,11 @@ function M.setup(colors, config)
         -- TermCursor = {},
         -- TermCursorNC = {},
         ErrorMsg = { fg = colors.diag.error },
-        VertSplit = { link = 'WinSeparator' },
         WinSeparator = {
             fg = tostring(c(colors.bg_dark):lighten(0.6)),
             bg = config.dimInactive and colors.bg_dim or "NONE",
         },
+        VertSplit = { link = 'WinSeparator' },
         Folded = { fg = colors.bg_light3, bg = colors.bg_light0 },
         FoldColumn = { fg = colors.bg_light2 },
         SignColumn = { fg = colors.bg_light2 },
