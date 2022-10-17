@@ -200,55 +200,55 @@ function M.setup(colors, config)
         -- ALEWarningSign = {},
 
         -- TSAnnotation = {},
-        TSAttribute = { link = "Constant" },
+        ["@attribute"] = { link = "Constant" },
         -- TSBoolean = {},
         -- TSCharacter = {},
         -- TSComment = {},
         -- TSNote = { fg = c.fg_dark, bg = c.diag.hint, nocombine = true, bold = true}, -- links to SpecialComment -> Special
-        TSWarning = { link = "Todo" }, --default
-        TSDanger = { link = "WarningMsg" }, --default
-        TSConstructor = { fg = colors.kw }, -- Function/Special/Statement/Keyword
+        ['@text.warning'] = { link = "Todo" }, --default
+        ['@text.danger'] = { link = "WarningMsg" }, --default
+        ['@constructor'] = { fg = colors.kw }, -- Function/Special/Statement/Keyword
         -- TSConditional = {},
         -- TSConstant = {},
         -- TSConstBuiltin = {},
         -- TSConstMacro = {},
         -- TSError = { fg = colors.diag.error },
         -- TSException = { link = 'Exception' }, -- default, -> statement
-        TSException = vim.tbl_extend("force", { fg = config.specialException and colors.sp3 or colors.sm }, config.statementStyle),
-        TSField = { link = "Identifier" }, -- default
+        ['@exception'] = vim.tbl_extend("force", { fg = config.specialException and colors.sp3 or colors.sm }, config.statementStyle),
+        ['@field'] = { link = "Identifier" }, -- default
         -- TSField = { link = 'Variable'},
         -- TSFloat = {},
         -- TSFunction = {},
         -- TSFuncBuiltin = {link = "Function" },
         -- TSFuncMacro = {},
         -- TSInclude = {},
-        TSKeyword = { link = "Keyword" },
+        ['@keyword'] = { link = "Keyword" },
         -- TSKeywordFunction = { link = "Keyword" }, -- default
         -- TSKeywordFunction = { link = "Function" },
-        TSKeywordReturn = vim.tbl_extend("force", { fg = config.specialReturn and colors.sp3 or colors.kw }, config.keywordStyle),
-        TSLabel = { link = "Label" },
-        TSMethod = { link = "Function" },
+        ['@keyword.return'] = vim.tbl_extend("force", { fg = config.specialReturn and colors.sp3 or colors.kw }, config.keywordStyle),
+        ['@label'] = { link = "Label" },
+        ['@method'] = { link = "Function" },
         -- TSNamespace = {},
         -- TSNone = {},
         -- TSNumber = {},
-        TSOperator = { link = "Operator" },
-        TSKeywordOperator = { fg = colors.op, bold = true },
-        TSParameter = { link = "Identifier" }, -- default
+        ['@operator'] = { link = "Operator" },
+        ['@keyword.operator'] = { fg = colors.op, bold = true },
+        ['@namespace'] = { link = "Identifier" }, -- default
         -- TSParameterReference = {},
-        TSProperty = { link = "Identifier" }, -- default
+        ['@property'] = { link = "Identifier" }, -- default
         -- TSPunctDelimiter = { fg = c.op },
-        TSPunctDelimiter = { fg = colors.br },
-        TSPunctBracket = { fg = colors.br },
-        TSPunctSpecial = { fg = colors.br },
+        ['@punctuation.delimiter'] = { fg = colors.br },
+        ['@punctuation.bracket'] = { fg = colors.br },
+        ['@punctuation.Special'] = { fg = colors.br },
         -- TSRepeat = {},
         -- TSString = {},
-        TSStringRegex = { fg = colors.re },
-        TSStringEscape = { fg = colors.re, bold = true },
+        ['@string.regex'] = { fg = colors.re },
+        ['@string.escape'] = { fg = colors.re, bold = true },
         -- TSSymbol = {},
         -- TSType = {},
         -- TSTypeBuiltin = {},
-        TSVariable = { fg = colors.fg },
-        TSVariableBuiltin = vim.tbl_extend("force", { fg = colors.sp2 }, config.variablebuiltinStyle),
+        ['@variable'] = { fg = colors.fg },
+        ['@variable.builtin'] = vim.tbl_extend("force", { fg = colors.sp2 }, config.variablebuiltinStyle),
 
         -- TSTag = {},
         -- TSTagDelimiter = {},
