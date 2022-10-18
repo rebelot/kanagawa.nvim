@@ -112,7 +112,7 @@ function M.setup(colors, config)
         Statement = vim.tbl_extend("force", { fg = colors.sm }, config.statementStyle),
         -- Conditional = {},
         -- Repeat = {},
-        -- Label = { link = 'Statement' }, --TODO: check default
+        -- Label = {},
         Operator = { fg = colors.op },
         Keyword = vim.tbl_extend("force", { fg = colors.kw }, config.keywordStyle),
         Exception = { fg = colors.sp2 },
@@ -196,9 +196,6 @@ function M.setup(colors, config)
         LspSignatureActiveParameter = { fg = colors.diag.warning },
         LspCodeLens = { fg = colors.fg_comment },
 
-        -- ALEErrorSign = {},
-        -- ALEWarningSign = {},
-
         -- TSAnnotation = {},
         ["@attribute"] = { link = "Constant" },
         -- TSBoolean = {},
@@ -206,6 +203,9 @@ function M.setup(colors, config)
         -- TSComment = {},
         -- TSNote = { fg = c.fg_dark, bg = c.diag.hint, nocombine = true, bold = true}, -- links to SpecialComment -> Special
         ['@text.warning'] = { link = "Todo" }, --default
+        ['@text.strong'] = { bold = true },
+        ['@text.emphasis'] = { italic = true },
+        ['@text.title'] = { link = 'Function' },
         ['@text.danger'] = { link = "WarningMsg" }, --default
         ['@constructor'] = { fg = colors.kw }, -- Function/Special/Statement/Keyword
         -- TSConditional = {},
@@ -326,17 +326,6 @@ function M.setup(colors, config)
         NvimTreeOpenedFile = { fg = colors.sp, italic = true },
         NvimTreeWinSeparator = { link = "WinSeparator" },
 
-        -- Fern
-        -- FernBranchText = {},
-
-        -- glyph = {},
-        -- GlyphPalette1 = {},
-        -- GlyphPalette2 = {},
-        -- GlyphPalette3 = {},
-        -- GlyphPalette4 = {},
-        -- GlyphPalette6 = {},
-        -- GlyphPalette7 = {},
-        -- GlyphPalette9 = {},
 
         -- Dashboard
         DashboardShortCut = { fg = colors.sp },
@@ -361,7 +350,7 @@ function M.setup(colors, config)
         NotifyINFOTitle = { link = "DiagnosticInfo" },
         NotifyDEBUGTitle = { link = "Debug" },
         NotifyTRACETitle = { link = "DiagnosticHint" },
-
+        
 
         -- Floaterm
         FloatermBorder = { fg = colors.fg_border, bg = colors.bg },
@@ -371,40 +360,6 @@ function M.setup(colors, config)
         healthSuccess = { fg = colors.springGreen },
         healthWarning = { fg = colors.diag.warning },
 
-        -- BufferLine
-        -- BufferLineIndicatorSelected = {},
-        -- BufferLineFill = {},
-
-        -- Barbar = {},
-        -- BufferCurrent = {},
-        -- BufferCurrentIndex = {},
-        -- BufferCurrentMod = {},
-        -- BufferCurrentSign = {},
-        -- BufferCurrentTarget = {},
-        -- BufferVisible = {},
-        -- BufferVisibleIndex = {},
-        -- BufferVisibleMod = {},
-        -- BufferVisibleSign = {},
-        -- BufferVisibleTarget = {},
-        -- BufferInactive = {},
-        -- BufferInactiveIndex = {},
-        -- BufferInactiveMod = {},
-        -- BufferInactiveSign = {},
-        -- BufferInactiveTarget = {},
-        -- BufferTabpages = {},
-        -- BufferTabpage = {},
-
-        -- Sneak
-        -- Sneak = {},
-        -- SneakScope = {},
-
-        -- Hop
-        -- HopNextKey = {},
-        -- HopNextKey1 = {},
-        -- HopNextKey2 = {},
-        -- HopUnmatched = {},
-
-        -- LightspeedGreyWash = {},
 
         -- Cmp
         CmpDocumentation = { link = "NormalFloat" },
