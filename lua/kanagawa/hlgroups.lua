@@ -207,6 +207,7 @@ function M.setup(colors, config)
         ["@text.emphasis"] = { italic = true },
         ["@text.title"] = { link = "Function" },
         ["@text.danger"] = { link = "WarningMsg" }, --default
+        ["@text.literal"] = { link = "String" },
         ["@constructor"] = { fg = colors.kw }, -- Function/Special/Statement/Keyword
         -- TSConditional = {},
         -- TSConstant = {},
