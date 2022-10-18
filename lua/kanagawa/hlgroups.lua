@@ -1,25 +1,25 @@
 local M = {}
-local c = require('kanagawa.color')
+local c = require("kanagawa.color")
 
 local function setup_terminal_colors(colors)
-    vim.g.terminal_color_0  = "#090618"             -- black
-    vim.g.terminal_color_1  = colors.autumnRed      -- red
-    vim.g.terminal_color_2  = colors.autumnGreen    -- green
-    vim.g.terminal_color_3  = colors.boatYellow2    -- yellow
-    vim.g.terminal_color_4  = colors.crystalBlue    -- blue
-    vim.g.terminal_color_5  = colors.oniViolet      -- magenta
-    vim.g.terminal_color_6  = colors.waveAqua1      -- cyan
-    vim.g.terminal_color_7  = colors.oldWhite       -- white
-    vim.g.terminal_color_8  = colors.fujiGray       -- bright black
-    vim.g.terminal_color_9  = colors.samuraiRed     -- bright red
-    vim.g.terminal_color_10 = colors.springGreen    -- bright green
-    vim.g.terminal_color_11 = colors.carpYellow     -- bright yellow
-    vim.g.terminal_color_12 = colors.springBlue     -- bright blue
-    vim.g.terminal_color_13 = colors.springViolet1  -- bright magenta
-    vim.g.terminal_color_14 = colors.waveAqua2      -- bright cyan
-    vim.g.terminal_color_15 = colors.fujiWhite      -- bright white
-    vim.g.terminal_color_16 = colors.surimiOrange   -- extended color 1
-    vim.g.terminal_color_17 = colors.peachRed       -- extended color 2
+    vim.g.terminal_color_0 = "#090618" -- black
+    vim.g.terminal_color_1 = colors.autumnRed -- red
+    vim.g.terminal_color_2 = colors.autumnGreen -- green
+    vim.g.terminal_color_3 = colors.boatYellow2 -- yellow
+    vim.g.terminal_color_4 = colors.crystalBlue -- blue
+    vim.g.terminal_color_5 = colors.oniViolet -- magenta
+    vim.g.terminal_color_6 = colors.waveAqua1 -- cyan
+    vim.g.terminal_color_7 = colors.oldWhite -- white
+    vim.g.terminal_color_8 = colors.fujiGray -- bright black
+    vim.g.terminal_color_9 = colors.samuraiRed -- bright red
+    vim.g.terminal_color_10 = colors.springGreen -- bright green
+    vim.g.terminal_color_11 = colors.carpYellow -- bright yellow
+    vim.g.terminal_color_12 = colors.springBlue -- bright blue
+    vim.g.terminal_color_13 = colors.springViolet1 -- bright magenta
+    vim.g.terminal_color_14 = colors.waveAqua2 -- bright cyan
+    vim.g.terminal_color_15 = colors.fujiWhite -- bright white
+    vim.g.terminal_color_16 = colors.surimiOrange -- extended color 1
+    vim.g.terminal_color_17 = colors.peachRed -- extended color 2
 end
 
 --- generate highlights table
@@ -50,7 +50,7 @@ function M.setup(colors, config)
             fg = tostring(c(colors.bg_dark):lighten(0.6)),
             bg = config.dimInactive and colors.bg_dim or "NONE",
         },
-        VertSplit = { link = 'WinSeparator' },
+        VertSplit = { link = "WinSeparator" },
         Folded = { fg = colors.bg_light3, bg = colors.bg_light0 },
         FoldColumn = { fg = colors.bg_light2 },
         SignColumn = { fg = colors.bg_light2 },
@@ -64,7 +64,7 @@ function M.setup(colors, config)
         -- MsgSeparator = {},
         MoreMsg = { fg = colors.diag.info, bg = colors.bg },
         NonText = { fg = colors.bg_light2 },
-        Normal = { fg = colors.fg, bg = not config.transparent and colors.bg or 'NONE' },
+        Normal = { fg = colors.fg, bg = not config.transparent and colors.bg or "NONE" },
         NormalNC = config.dimInactive and { fg = colors.fg_dark, bg = colors.bg_dim } or { link = "Normal" },
         NormalSB = { link = "Normal" },
         NormalFloat = { fg = colors.fg_dark, bg = colors.bg_dark },
@@ -202,53 +202,61 @@ function M.setup(colors, config)
         -- TSCharacter = {},
         -- TSComment = {},
         -- TSNote = { fg = c.fg_dark, bg = c.diag.hint, nocombine = true, bold = true}, -- links to SpecialComment -> Special
-        ['@text.warning'] = { link = "Todo" }, --default
-        ['@text.strong'] = { bold = true },
-        ['@text.emphasis'] = { italic = true },
-        ['@text.title'] = { link = 'Function' },
-        ['@text.danger'] = { link = "WarningMsg" }, --default
-        ['@constructor'] = { fg = colors.kw }, -- Function/Special/Statement/Keyword
+        ["@text.warning"] = { link = "Todo" }, --default
+        ["@text.strong"] = { bold = true },
+        ["@text.emphasis"] = { italic = true },
+        ["@text.title"] = { link = "Function" },
+        ["@text.danger"] = { link = "WarningMsg" }, --default
+        ["@constructor"] = { fg = colors.kw }, -- Function/Special/Statement/Keyword
         -- TSConditional = {},
         -- TSConstant = {},
         -- TSConstBuiltin = {},
         -- TSConstMacro = {},
         -- TSError = { fg = colors.diag.error },
         -- TSException = { link = 'Exception' }, -- default, -> statement
-        ['@exception'] = vim.tbl_extend("force", { fg = config.specialException and colors.sp3 or colors.sm }, config.statementStyle),
-        ['@field'] = { link = "Identifier" }, -- default
+        ["@exception"] = vim.tbl_extend(
+            "force",
+            { fg = config.specialException and colors.sp3 or colors.sm },
+            config.statementStyle
+        ),
+        ["@field"] = { link = "Identifier" }, -- default
         -- TSField = { link = 'Variable'},
         -- TSFloat = {},
         -- TSFunction = {},
         -- TSFuncBuiltin = {link = "Function" },
         -- TSFuncMacro = {},
         -- TSInclude = {},
-        ['@keyword'] = { link = "Keyword" },
+        ["@keyword"] = { link = "Keyword" },
         -- TSKeywordFunction = { link = "Keyword" }, -- default
         -- TSKeywordFunction = { link = "Function" },
-        ['@keyword.return'] = vim.tbl_extend("force", { fg = config.specialReturn and colors.sp3 or colors.kw }, config.keywordStyle),
-        ['@label'] = { link = "Label" },
-        ['@method'] = { link = "Function" },
+        ["@keyword.return"] = vim.tbl_extend(
+            "force",
+            { fg = config.specialReturn and colors.sp3 or colors.kw },
+            config.keywordStyle
+        ),
+        ["@label"] = { link = "Label" },
+        ["@method"] = { link = "Function" },
         -- TSNamespace = {},
         -- TSNone = {},
         -- TSNumber = {},
-        ['@operator'] = { link = "Operator" },
-        ['@keyword.operator'] = { fg = colors.op, bold = true },
-        ['@namespace'] = { link = "Identifier" }, -- default
+        ["@operator"] = { link = "Operator" },
+        ["@keyword.operator"] = { fg = colors.op, bold = true },
+        ["@namespace"] = { link = "Identifier" }, -- default
         -- TSParameterReference = {},
-        ['@property'] = { link = "Identifier" }, -- default
+        ["@property"] = { link = "Identifier" }, -- default
         -- TSPunctDelimiter = { fg = c.op },
-        ['@punctuation.delimiter'] = { fg = colors.br },
-        ['@punctuation.bracket'] = { fg = colors.br },
-        ['@punctuation.Special'] = { fg = colors.br },
+        ["@punctuation.delimiter"] = { fg = colors.br },
+        ["@punctuation.bracket"] = { fg = colors.br },
+        ["@punctuation.Special"] = { fg = colors.br },
         -- TSRepeat = {},
         -- TSString = {},
-        ['@string.regex'] = { fg = colors.re },
-        ['@string.escape'] = { fg = colors.re, bold = true },
+        ["@string.regex"] = { fg = colors.re },
+        ["@string.escape"] = { fg = colors.re, bold = true },
         -- TSSymbol = {},
         -- TSType = {},
         -- TSTypeBuiltin = {},
-        ['@variable'] = { fg = colors.fg },
-        ['@variable.builtin'] = vim.tbl_extend("force", { fg = colors.sp2 }, config.variablebuiltinStyle),
+        ["@variable"] = { fg = colors.fg },
+        ["@variable.builtin"] = vim.tbl_extend("force", { fg = colors.sp2 }, config.variablebuiltinStyle),
 
         -- TSTag = {},
         -- TSTagDelimiter = {},
@@ -326,13 +334,11 @@ function M.setup(colors, config)
         NvimTreeOpenedFile = { fg = colors.sp, italic = true },
         NvimTreeWinSeparator = { link = "WinSeparator" },
 
-
         -- Dashboard
         DashboardShortCut = { fg = colors.sp },
         DashboardHeader = { fg = colors.git.removed },
         DashboardCenter = { fg = colors.id },
         DashboardFooter = { fg = colors.fn },
-
 
         -- Notify
         NotifyERRORBorder = { link = "DiagnosticError" },
@@ -350,7 +356,6 @@ function M.setup(colors, config)
         NotifyINFOTitle = { link = "DiagnosticInfo" },
         NotifyDEBUGTitle = { link = "Debug" },
         NotifyTRACETitle = { link = "DiagnosticHint" },
-        
 
         -- Floaterm
         FloatermBorder = { fg = colors.fg_border, bg = colors.bg },
@@ -360,12 +365,11 @@ function M.setup(colors, config)
         healthSuccess = { fg = colors.springGreen },
         healthWarning = { fg = colors.diag.warning },
 
-
         -- Cmp
         CmpDocumentation = { link = "NormalFloat" },
         CmpDocumentationBorder = { link = "FloatBorder" },
         CmpCompletion = { link = "Pmenu" },
-        CmpCompletionSel = { fg = 'NONE', bg = colors.bg_menu_sel },
+        CmpCompletionSel = { fg = "NONE", bg = colors.bg_menu_sel },
         CmpCompletionBorder = { fg = colors.bg_search, bg = colors.bg_menu },
         CmpCompletionThumb = { link = "PmenuThumb" },
         CmpCompletionSbar = { link = "PmenuSbar" },
