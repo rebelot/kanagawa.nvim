@@ -364,6 +364,37 @@ function M.setup(colors, config)
         NotifyDEBUGTitle = { link = "Debug" },
         NotifyTRACETitle = { link = "Comment" },
 
+        -- Dap-UI
+        -- DapUIVariable = { link = "Normal" },
+        DapUIScope = { link = 'Special' }, -- guifg=#00F1F5"
+        DapUIType = { link = 'Type' }, -- guifg=#D484FF"
+        -- DapUIValue = { link = "Normal" },
+        DapUIModifiedValue = { fg = colors.sp, bold = true }, -- guifg=#00F1F5 gui=bold"
+        DapUIDecoration = { fg = colors.fg_border }, -- guifg=#00F1F5"
+        DapUIThread = { fg = colors.id }, --guifg=#A9FF68"
+        DapUIStoppedThread = { fg = colors.sp }, --guifg=#00f1f5"
+        -- DapUIFrameName = { link = "Normal"},
+        DapUISource = { fg = colors.sp2 }, -- guifg=#D484FF"
+        DapUILineNumber = { fg = colors.sp }, -- guifg=#00f1f5"
+        DapUIFloatBorder = { fg = colors.fg_border }, -- guifg=#00F1F5"
+        DapUIWatchesEmpty = { fg = colors.diag.error }, -- guifg=#F70067"
+        DapUIWatchesValue = { fg = colors.id }, -- guifg=#A9FF68"
+        DapUIWatchesError = { fg = colors.diag.error }, --guifg=#F70067"
+        DapUIBreakpointsPath = { link = 'Directory' }, --guifg=#00F1F5"
+        DapUIBreakpointsInfo = { fg = colors.diag.info }, --guifg=#A9FF68"
+        DapUIBreakpointsCurrentLine = { fg = colors.id, bold = true }, --guifg=#A9FF68 gui=bold"
+        -- DapUIBreakpointsLine = {}, -- DapUILineNumber"
+        DapUIBreakpointsDisabledLine = { link = 'Comment' }, --guifg=#424242"
+        -- DapUICurrentFrameName = {}, -- DapUIBreakpointsCurrentLine"
+        DapUIStepOver = { fg = colors.sp }, --guifg=#00f1f5"
+        DapUIStepInto = { fg = colors.sp }, --guifg=#00f1f5"
+        DapUIStepBack = { fg = colors.sp }, --guifg=#00f1f5"
+        DapUIStepOut = { fg = colors.sp }, --guifg=#00f1f5"
+        DapUIStop = { link = 'Error' }, --guifg=#F70067"
+        DapUIPlayPause = { fg = colors.st }, --guifg=#A9FF68"
+        DapUIRestart = { fg = colors.st }, --guifg=#A9FF68"
+        DapUIUnavailable = { link = 'Comment' }, --guifg=#424242"
+
         -- Floaterm
         FloatermBorder = { fg = colors.fg_border, bg = colors.bg },
 
