@@ -333,7 +333,7 @@ function M.setup(colors, config)
         NvimTreeImageFile = { fg = colors.sp2 },
         NvimTreeSymlink = { link = "Type" },
         NvimTreeFolderName = { link = "Directory" },
-        NvimTreeExecFile = { fg = colors.springGreen, bold = true },
+        NvimTreeExecFile = { fg = colors.st, bold = true },
         NvimTreeGitStaged = { fg = colors.git.added },
         NvimTreeOpenedFile = { fg = colors.sp, italic = true },
         NvimTreeWinSeparator = { link = "WinSeparator" },
@@ -369,7 +369,7 @@ function M.setup(colors, config)
 
         -- NeoVim                         = {},
         healthError = { fg = colors.diag.error },
-        healthSuccess = { fg = colors.springGreen },
+        healthSuccess = { fg = colors.st },
         healthWarning = { fg = colors.diag.warning },
 
         -- Cmp
