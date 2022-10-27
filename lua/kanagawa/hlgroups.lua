@@ -70,7 +70,7 @@ function M.setup(colors, config)
         NormalFloat = { fg = colors.fg_dark, bg = colors.bg_dark },
         FloatBorder = { fg = colors.fg_border, bg = colors.bg_dark },
         Pmenu = { fg = colors.fg_menu, bg = colors.bg_menu },
-        PmenuSel = { fg = colors.fg_menu, bg = colors.bg_menu_sel },
+        PmenuSel = { fg = "NONE", bg = colors.bg_menu_sel },
         PmenuSbar = { link = "Pmenu" },
         PmenuThumb = { bg = colors.bg_search },
         Question = { link = "MoreMsg" },
