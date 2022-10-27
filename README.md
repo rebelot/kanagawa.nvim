@@ -87,10 +87,13 @@ vim.cmd("colorscheme kanagawa")
 
 Light and default themes may also be changed by setting the `background` option.
 Note that if the option is set, its value will override and change the `theme` field the configuration.
+To set a theme other than `default` or `light` you must disable this setting.
 
 ```vim
 :set background=dark " default theme
 :set background=light " light theme
+" disable the setting
+:set background=
 ```
 
 ### Customize highlight groups and colors
