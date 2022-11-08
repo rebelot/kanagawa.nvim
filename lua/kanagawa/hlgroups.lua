@@ -69,6 +69,7 @@ function M.setup(colors, config)
         NormalSB = { link = "Normal" },
         NormalFloat = { fg = colors.fg_dark, bg = colors.bg_dark },
         FloatBorder = { fg = colors.fg_border, bg = colors.bg_dark },
+        FloatTitle = { fg = colors.bg_light3, bg = colors.bg_dark, bold = true },
         Pmenu = { fg = colors.fg_menu, bg = colors.bg_menu },
         PmenuSel = { fg = "NONE", bg = colors.bg_menu_sel },
         PmenuSbar = { link = "Pmenu" },
