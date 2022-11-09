@@ -43,7 +43,7 @@ vim.cmd("colorscheme kanagawa")
 
 ## Plugin Support
 
-- [Nvim cmp](https://github.com/hrsh7th/nvim-cmp)
+- [Cmp](https://github.com/hrsh7th/nvim-cmp)
 - [TreeSitter](https://github.com/nvim-treesitter/nvim-treesitter)
 - [LSP Diagnostics](https://neovim.io/doc/user/lsp.html)
 - [Git Signs](https://github.com/lewis6991/gitsigns.nvim)
@@ -53,6 +53,8 @@ vim.cmd("colorscheme kanagawa")
 - [Dashboard](https://github.com/glepnir/dashboard-nvim)
 - [Lualine](https://github.com/nvim-lualine/lualine.nvim)
 - [FloaTerm](https://github.com/voldikss/vim-floaterm)
+- [dap-ui](https://github.com/rcarriga/nvim-dap-ui.git)
+- [Notify](https://github.com/rcarriga/nvim-notify.git)
 
 And many others should _"just work"_!
 
