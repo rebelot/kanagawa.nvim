@@ -391,10 +391,10 @@ function M.setup(colors, config)
         DapUIStepInto = { fg = colors.sp }, --guifg=#00f1f5"
         DapUIStepBack = { fg = colors.sp }, --guifg=#00f1f5"
         DapUIStepOut = { fg = colors.sp }, --guifg=#00f1f5"
-        DapUIStop = { link = 'Error' }, --guifg=#F70067"
+        DapUIStop = { fg = colors.diag.error }, --guifg=#F70067"
         DapUIPlayPause = { fg = colors.st }, --guifg=#A9FF68"
         DapUIRestart = { fg = colors.st }, --guifg=#A9FF68"
-        DapUIUnavailable = { link = 'Comment' }, --guifg=#424242"
+        DapUIUnavailable = { fg = colors.fg_comment }, --guifg=#424242"
 
         -- Floaterm
         FloatermBorder = { fg = colors.fg_border, bg = colors.bg },
