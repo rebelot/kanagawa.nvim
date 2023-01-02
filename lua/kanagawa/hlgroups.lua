@@ -254,7 +254,7 @@ function M.setup(colors, config)
         -- TSString = {},
         ["@string.regex"] = { fg = colors.re },
         ["@string.escape"] = { fg = colors.re, bold = true },
-        -- TSSymbol = {},
+        ["@symbol"] = { fg = colors.id },
         -- TSType = {},
         -- TSTypeBuiltin = {},
         ["@variable"] = { fg = colors.fg },
