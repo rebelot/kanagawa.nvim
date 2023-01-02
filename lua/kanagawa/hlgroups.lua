@@ -264,7 +264,7 @@ function M.setup(colors, config)
         -- TSTagDelimiter = {},
         ["@tag"] = { link = "Tag" },
         ["@tag.delimiter"] = { fg = colors.br },
-        ["@tag.attribute"] = { link = "Constant" },
+        ["@tag.attribute"] = { fg = colors.id },
         -- TSText = {},
         -- TSTextReference = { fg = c.sp2 },
         -- TSEmphasis = {},
