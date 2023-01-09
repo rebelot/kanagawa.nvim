@@ -13,6 +13,11 @@ kanagawa.insert = {
   b = { bg = colors.bg, fg = colors.autumnGreen },
 }
 
+kanagawa.terminal = {
+  a = { bg = colors.waveAqua1, fg = colors.bg_dark },
+  b = { bg = colors.bg, fg = colors.waveAqua1 },
+}
+
 kanagawa.command = {
   a = { bg = colors.boatYellow2, fg = colors.bg_dark },
   b = { bg = colors.bg, fg = colors.boatYellow2 },
