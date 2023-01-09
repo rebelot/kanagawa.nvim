@@ -1,5 +1,5 @@
 # Default foreground
-set $fujiWhite       #DCD7BA
+set $fujiWhite      #DCD7BA
 
 # Dark foreground (statuslines)
 set $oldWhite 	    #C8C093
@@ -26,55 +26,55 @@ set $waveBlue1 	    #223249
 set $waveBlue2 	    #2D4F67
 
 # Diff Add (background)
-set $winterGreen     #2B3328
+set $winterGreen    #2B3328
 
 # Diff Change (background)
-set $winterYellow    #49443C
+set $winterYellow   #49443C
 
 # Diff Deleted (background)
 set $winterRed 	    #43242B
 
 # Diff Line (background)
-set $winterBlue 	    #252535
+set $winterBlue     #252535
 
 # Git Add
-set $autumnGreen     #76946A
+set $autumnGreen    #76946A
 
 # Git Delete
 set $autumnRed 	    #C34043
 
 # Git Change
-set $autumnYellow    #DCA561
+set $autumnYellow   #DCA561
 
 # Diagnostic Error
-set $samuraiRed 	    #E82424
+set $samuraiRed     #E82424
 
 # Diagnostic Warning
-set $roninYellow     #FF9E3B
+set $roninYellow    #FF9E3B
 
 # Diagnostic Info
 set $waveAqua1 	    #6A9589
 
 # Diagnostic Hint
-set $dragonBlue 	    #658594
+set $dragonBlue     #658594
 
 # Comments
 set $fujiGray 	    #727169
 
 # Light foreground
-set $springViolet1   #938AA9
+set $springViolet1  #938AA9
 
 # Statements and Keywords
 set $oniViolet 	    #957FB8
 
 # Functions and Titles
-set $crystalBlue     #7E9CD8
+set $crystalBlue    #7E9CD8
 
 # Brackets and punctuation
-set $springViolet2   #9CABCA
+set $springViolet2  #9CABCA
 
 # Specials and builtin functions
-set $springBlue 	    #7FB4CA
+set $springBlue     #7FB4CA
 
 # Not used
 set $lightBlue 	    #A3D4D5
@@ -83,19 +83,19 @@ set $lightBlue 	    #A3D4D5
 set $waveAqua2 	    #7AA89F
 
 # Strings
-set $springGreen     #98BB6C
+set $springGreen    #98BB6C
 
 # Not used
-set $boatYellow1     #938056
+set $boatYellow1    #938056
 
 # Operators, RegEx
-set $boatYellow2     #C0A36E
+set $boatYellow2    #C0A36E
 
 # Identifiers
-set $carpYellow 	    #E6C384
+set $carpYellow     #E6C384
 
 # Numbers
-set $sakuraPink 	    #D27E99
+set $sakuraPink     #D27E99
 
 # Standout specials 1 (builtin variables)
 set $waveRed 	    #E46876
@@ -104,7 +104,7 @@ set $waveRed 	    #E46876
 set $peachRed 	    #FF5D62
 
 # Constants, imports, booleans
-set $surimiOrange    #FFA066
+set $surimiOrange   #FFA066
 
 # Deprecated
-set $katanaGray 	    #717C7C
+set $katanaGray     #717C7C
