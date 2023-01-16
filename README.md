@@ -25,7 +25,7 @@ use "rebelot/kanagawa.nvim"
 
 ## Requirements
 
-- neovim >= 0.6
+- neovim latest
 - truecolor terminal support
 - undercurl terminal support (optional)
 
