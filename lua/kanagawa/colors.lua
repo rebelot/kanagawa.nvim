@@ -1,75 +1,93 @@
----@class KanagawaColors
+---@class PaletteColors
 local palette_colors = {
 
     -- Bg Shades
-    sumiInk0      = "#16161D",
-    sumiInk1b     = "#181820",
-    sumiInk1c     = "#1a1a22",
-    sumiInk1      = "#1F1F28",
-    sumiInk2      = "#2A2A37",
-    sumiInk3      = "#363646",
-    sumiInk4      = "#54546D",
+    sumiInk0 = "#16161D",
+    sumiInk1b = "#181820",
+    sumiInk1c = "#1a1a22",
+    sumiInk1 = "#1F1F28",
+    sumiInk2 = "#2A2A37",
+    sumiInk3 = "#363646",
+    sumiInk4 = "#54546D",
 
     -- Popup and Floats
-    waveBlue1     = "#223249",
-    waveBlue2     = "#2D4F67",
+    waveBlue1 = "#223249",
+    waveBlue2 = "#2D4F67",
 
     -- Diff and Git
-    winterGreen   = "#2B3328",
-    winterYellow  = "#49443C",
-    winterRed     = "#43242B",
-    winterBlue    = "#252535",
-    autumnGreen   = "#76946A",
-    autumnRed     = "#C34043",
-    autumnYellow  = "#DCA561",
+    winterGreen = "#2B3328",
+    winterYellow = "#49443C",
+    winterRed = "#43242B",
+    winterBlue = "#252535",
+    autumnGreen = "#76946A",
+    autumnRed = "#C34043",
+    autumnYellow = "#DCA561",
 
     -- Diag
-    samuraiRed    = "#E82424",
-    roninYellow   = "#FF9E3B",
-    waveAqua1     = "#6A9589",
-    dragonBlue    = "#658594",
+    samuraiRed = "#E82424",
+    roninYellow = "#FF9E3B",
+    waveAqua1 = "#6A9589",
+    dragonBlue = "#658594",
 
     -- Fg and Comments
-    oldWhite      = "#C8C093",
-    fujiWhite     = "#DCD7BA",
-    fujiGray      = "#727169",
+    oldWhite = "#C8C093",
+    fujiWhite = "#DCD7BA",
+    fujiGray = "#727169",
     springViolet1 = "#938AA9",
 
-    oniViolet     = "#957FB8",
-    crystalBlue   = "#7E9CD8",
+    oniViolet = "#957FB8",
+    crystalBlue = "#7E9CD8",
     springViolet2 = "#9CABCA",
-    springBlue    = "#7FB4CA",
-    lightBlue     = "#A3D4D5", -- unused yet
-    waveAqua2     = "#7AA89F", -- improve lightness: desaturated greenish Aqua
+    springBlue = "#7FB4CA",
+    lightBlue = "#A3D4D5", -- unused yet
+    waveAqua2 = "#7AA89F", -- improve lightness: desaturated greenish Aqua
 
     -- waveAqua2  = "#68AD99",
     -- waveAqua4  = "#7AA880",
     -- waveAqua5  = "#6CAF95",
     -- waveAqua3  = "#68AD99",
 
-    springGreen   = "#98BB6C",
-    boatYellow1   = "#938056",
-    boatYellow2   = "#C0A36E",
-    carpYellow    = "#E6C384",
+    springGreen = "#98BB6C",
+    boatYellow1 = "#938056",
+    boatYellow2 = "#C0A36E",
+    carpYellow = "#E6C384",
 
-    sakuraPink    = "#D27E99",
-    waveRed       = "#E46876",
-    peachRed      = "#FF5D62",
-    surimiOrange  = "#FFA066",
-    katanaGray    = "#717C7C",
+    sakuraPink = "#D27E99",
+    waveRed = "#E46876",
+    peachRed = "#FF5D62",
+    surimiOrange = "#FFA066",
+    katanaGray = "#717C7C",
 }
 
 local M = {}
+--- Generate colors table:
+--- * opts:
+---   - colors: Table of personalized colors and/or overrides of existing ones.
+---     Defaults to KanagawaConfig.colors.
+---   - theme: Use selected theme. Defaults to KanagawaConfig.theme
+---     according to the value of 'background' option.
+---@param opts? { colors?: KanagawaColors, theme?: string }
+---@return KanagawaColors
+function M.setup(opts)
+    opts = opts or {}
+    local tbl_extend = vim.tbl_extend
+    local override_colors = opts.colors or require("kanagawa").config.colors
+    local theme = opts.theme or require("kanagawa.utils").get_theme_from_bg_opt()
 
---- generate color table
----@param config table<string, string>? Config options containing colors and theme fields (optional)
----@return KanagawaColors # Palette colors and theme colors merged with config.colors
-function M.setup(config)
-    config = vim.tbl_extend("force", require("kanagawa").config, config or {})
-    local colors = vim.tbl_extend("force", palette_colors, config.colors)
-    local theme = require("kanagawa.themes")[config.theme](colors)
-    theme = vim.tbl_extend("force", theme, config.colors)
-    return vim.tbl_extend("force", theme, colors)
+    -- Add to and/or override palette_colors
+    local updated_palette_colors = tbl_extend("force", palette_colors, override_colors.palette)
+
+    -- Generate the theme according to the updated palette colors
+    local theme_colors = require("kanagawa.themes")[theme](updated_palette_colors)
+
+    -- Add to and/or override theme_colors
+    local updated_theme_colors = tbl_extend("force", theme_colors, override_colors.theme)
+    -- return palette_colors AND theme_colors
+
+    return {
+        theme = updated_theme_colors,
+        palette = updated_palette_colors,
+    }
 end
 
 return M

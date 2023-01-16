@@ -2,48 +2,48 @@ local c = require("kanagawa.color")
 --TODO: standardize theme color names
 
 ---@class ThemeColors
----@field bg KanagawaColors default background
----@field bg_dim KanagawaColors dimmed background
----@field bg_dark KanagawaColors dark background (float)
----@field bg_light0 KanagawaColors Fold/ColorColumn background
----@field bg_light1 KanagawaColors CursorLine/TabLineSel background
----@field bg_light2 KanagawaColors NonText foreground
----@field bg_light3 KanagawaColors dimmed foreground (Conceal, Folded, TabLine)
----@field bg_menu KanagawaColors
----@field bg_menu_sel KanagawaColors
----@field bg_status KanagawaColors
----@field bg_visual KanagawaColors
----@field bg_search KanagawaColors
----@field fg_border KanagawaColors
----@field fg_dark KanagawaColors
----@field fg_reverse KanagawaColors
----@field fg_comment KanagawaColors
----@field fg KanagawaColors
----@field fg_menu KanagawaColors
----@field co KanagawaColors
----@field st KanagawaColors
----@field nu KanagawaColors
----@field id KanagawaColors
----@field fn KanagawaColors
----@field sm KanagawaColors
----@field kw KanagawaColors
----@field op KanagawaColors
----@field pp KanagawaColors
----@field ty KanagawaColors
----@field sp KanagawaColors
----@field sp2 KanagawaColors
----@field sp3 KanagawaColors
----@field br KanagawaColors
----@field re KanagawaColors
----@field dep KanagawaColors
----@field diag { error: KanagawaColors, warning: KanagawaColors, info: KanagawaColors, hint: KanagawaColors }
----@field diff { add: KanagawaColors, delete: KanagawaColors, change: KanagawaColors, text: KanagawaColors }
----@field git { added: KanagawaColors, removed: KanagawaColors, changed: KanagawaColors }
+---@field bg Color default background
+---@field bg_dim Color dimmed background
+---@field bg_dark Color dark background (float)
+---@field bg_light0 Color Fold/ColorColumn background
+---@field bg_light1 Color CursorLine/TabLineSel background
+---@field bg_light2 Color NonText foreground
+---@field bg_light3 Color dimmed foreground (Conceal, Folded, TabLine)
+---@field bg_menu Color
+---@field bg_menu_sel Color
+---@field bg_status Color
+---@field bg_visual Color
+---@field bg_search Color
+---@field fg_border Color
+---@field fg_dark Color
+---@field fg_reverse Color
+---@field fg_comment Color
+---@field fg Color
+---@field fg_menu Color
+---@field co Color
+---@field st Color
+---@field nu Color
+---@field id Color
+---@field fn Color
+---@field sm Color
+---@field kw Color
+---@field op Color
+---@field pp Color
+---@field ty Color
+---@field sp Color
+---@field sp2 Color
+---@field sp3 Color
+---@field br Color
+---@field re Color
+---@field dep Color
+---@field diag { error: Color, warning: Color, info: Color, hint: Color }
+---@field diff { add: Color, delete: Color, change: Color, text: Color }
+---@field git { added: Color, removed: Color, changed: Color }
 
 return {
-    ---@param colors KanagawaColors
+    ---@param colors PaletteColors
+    ---@return ThemeColors
     default = function(colors)
-        ---@type ThemeColors
         return {
             bg = colors.sumiInk1,
             bg_dim = colors.sumiInk1b,
@@ -106,8 +106,9 @@ return {
             },
         }
     end,
+    ---@param colors PaletteColors
+    ---@return ThemeColors
     dragon = function(colors)
-        ---@type ThemeColors
         return {
             bg = "#181616",
             bg_dim = "#1D1C19",
@@ -171,9 +172,9 @@ return {
             },
         }
     end,
-    ---@param colors KanagawaColors
+    ---@param colors PaletteColors
+    ---@return ThemeColors
     light = function(colors)
-        ---@type ThemeColors
         return {
             bg = tostring(c(colors.fujiWhite):lighten(1.1):saturate(1.8)),
             bg_dim = tostring(c(colors.fujiWhite):lighten(1.1):saturate(1.5):lighten(0.97)),
