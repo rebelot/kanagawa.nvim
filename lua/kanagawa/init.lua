@@ -1,7 +1,8 @@
 local M = {}
 ---@alias Color string|integer
 ---@alias ColorTable table<string, Color>
----@alias KanagawaColors { palette: ColorTable, theme: ColorTable }
+---@alias KanagawaColorsSpec { palette: ColorTable, theme: ColorTable }
+---@alias KanagawaColors { palette: PaletteColors, theme: ThemeColors }
 
 --- default config
 ---@class KanagawaConfig
@@ -19,9 +20,9 @@ M.config = {
     dimInactive = false,
     globalStatus = false,
     terminalColors = true,
-    ---@type KanagawaColors
+    ---@type KanagawaColorsSpec
     colors = { theme = {}, palette = {} },
-    ---@type fun(colors: KanagawaColors): table<string, table>
+    ---@type fun(colors: KanagawaColorsSpec): table<string, table>
     overrides = function()
         return {}
     end,

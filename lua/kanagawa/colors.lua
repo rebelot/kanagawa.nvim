@@ -66,8 +66,8 @@ local M = {}
 ---     Defaults to KanagawaConfig.colors.
 ---   - theme: Use selected theme. Defaults to KanagawaConfig.theme
 ---     according to the value of 'background' option.
----@param opts? { colors?: KanagawaColors, theme?: string }
----@return KanagawaColors
+---@param opts? { colors?: KanagawaColorsSpec, theme?: string }
+---@return { theme: ThemeColors, palette: PaletteColors}
 function M.setup(opts)
     opts = opts or {}
     local tbl_extend = vim.tbl_extend

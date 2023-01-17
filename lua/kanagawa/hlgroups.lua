@@ -1,30 +1,17 @@
 local M = {}
 local c = require("kanagawa.color")
 
-local function setup_terminal_colors(colors)
-    vim.g.terminal_color_0 = "#090618" -- black
-    vim.g.terminal_color_1 = colors.autumnRed -- red
-    vim.g.terminal_color_2 = colors.autumnGreen -- green
-    vim.g.terminal_color_3 = colors.boatYellow2 -- yellow
-    vim.g.terminal_color_4 = colors.crystalBlue -- blue
-    vim.g.terminal_color_5 = colors.oniViolet -- magenta
-    vim.g.terminal_color_6 = colors.waveAqua1 -- cyan
-    vim.g.terminal_color_7 = colors.oldWhite -- white
-    vim.g.terminal_color_8 = colors.fujiGray -- bright black
-    vim.g.terminal_color_9 = colors.samuraiRed -- bright red
-    vim.g.terminal_color_10 = colors.springGreen -- bright green
-    vim.g.terminal_color_11 = colors.carpYellow -- bright yellow
-    vim.g.terminal_color_12 = colors.springBlue -- bright blue
-    vim.g.terminal_color_13 = colors.springViolet1 -- bright magenta
-    vim.g.terminal_color_14 = colors.waveAqua2 -- bright cyan
-    vim.g.terminal_color_15 = colors.fujiWhite -- bright white
-    vim.g.terminal_color_16 = colors.surimiOrange -- extended color 1
-    vim.g.terminal_color_17 = colors.peachRed -- extended color 2
+---@param termcolors Color[]
+local function setup_terminal_colors(termcolors)
+    local g = vim.g
+    for i = 0, 17 do
+        g["terminal_color_" .. i] = termcolors[i]
+    end
 end
 
 --- generate highlights table
 ---@param colors KanagawaColors
----@param config? table config options (optional)
+---@param config? KanagawaConfig
 function M.setup(colors, config)
     config = config or require("kanagawa").config
 
@@ -32,122 +19,122 @@ function M.setup(colors, config)
     local palette = colors.palette
 
     local hlgroups = {
-        Comment = vim.tbl_extend("force", { fg = theme.fg_comment }, config.commentStyle),
-        ColorColumn = { bg = theme.bg_light0 },
-        Conceal = { fg = theme.bg_light3, bold = true },
-        Cursor = { fg = theme.bg, bg = theme.fg },
+        Comment = vim.tbl_extend("force", { fg = theme.syn.comment }, config.commentStyle),
+        ColorColumn = { bg = theme.ui.shade1 },
+        Conceal = { fg = theme.ui.shade4, bold = true },
+        Cursor = { fg = theme.ui.bg, bg = theme.ui.fg },
         lCursor = { link = "Cursor" },
         CursorIM = { link = "Cursor" },
-        CursorLine = { bg = theme.bg_light1 },
+        CursorLine = { bg = theme.ui.shade2 },
         CursorColumn = { link = "CursorLine" },
-        Directory = { fg = theme.fn },
+        Directory = { fg = theme.syn.fun },
         DiffAdd = { bg = theme.diff.add },
         DiffChange = { bg = theme.diff.change },
-        DiffDelete = { fg = theme.git.removed, bg = theme.diff.delete },
+        DiffDelete = { fg = theme.vcs.removed, bg = theme.diff.delete },
         DiffText = { bg = theme.diff.text },
-        EndOfBuffer = { fg = theme.bg },
+        EndOfBuffer = { fg = theme.ui.bg },
         -- TermCursor = {},
         -- TermCursorNC = {},
         ErrorMsg = { fg = theme.diag.error },
         WinSeparator = {
-            fg = tostring(c(theme.bg_dark):lighten(0.6)),
-            bg = config.dimInactive and theme.bg_dim or "NONE",
+            fg = tostring(c(theme.ui.shade0):lighten(0.6)),
+            bg = config.dimInactive and theme.ui.bg_dim or "NONE",
         },
         VertSplit = { link = "WinSeparator" },
-        Folded = { fg = theme.bg_light3, bg = theme.bg_light0 },
-        FoldColumn = { fg = theme.bg_light2 },
-        SignColumn = { fg = theme.bg_light2 },
+        Folded = { fg = theme.ui.shade4, bg = theme.ui.shade1 },
+        FoldColumn = { fg = theme.ui.shade3 },
+        SignColumn = { fg = theme.ui.shade3 },
         SignColumnSB = { link = "SignColumn" },
-        Substitute = { fg = theme.fg, bg = theme.git.removed },
-        LineNr = { fg = theme.bg_light2 },
+        Substitute = { fg = theme.ui.fg, bg = theme.vcs.removed },
+        LineNr = { fg = theme.ui.shade3 },
         CursorLineNr = { fg = theme.diag.warning, bold = true },
         MatchParen = { fg = theme.diag.warning, bold = true },
         ModeMsg = { fg = theme.diag.warning, bold = true },
-        MsgArea = { fg = theme.fg_dark },
+        MsgArea = { fg = theme.ui.fg_dim },
         -- MsgSeparator = {},
-        MoreMsg = { fg = theme.diag.info, bg = theme.bg },
-        NonText = { fg = theme.bg_light2 },
-        Normal = { fg = theme.fg, bg = not config.transparent and theme.bg or "NONE" },
-        NormalNC = config.dimInactive and { fg = theme.fg_dark, bg = theme.bg_dim } or { link = "Normal" },
+        MoreMsg = { fg = theme.diag.info, bg = theme.ui.bg },
+        NonText = { fg = theme.ui.nontext },
+        Normal = { fg = theme.ui.fg, bg = not config.transparent and theme.ui.bg or "NONE" },
+        NormalNC = config.dimInactive and { fg = theme.ui.fg_dim, bg = theme.ui.bg_dim } or { link = "Normal" },
         NormalSB = { link = "Normal" },
-        NormalFloat = { fg = theme.fg_dark, bg = theme.bg_dark },
-        FloatBorder = { fg = theme.fg_border, bg = theme.bg_dark },
-        FloatTitle = { fg = theme.bg_light3, bg = theme.bg_dark, bold = true },
-        Pmenu = { fg = theme.fg_menu, bg = theme.bg_menu },
-        PmenuSel = { fg = "NONE", bg = theme.bg_menu_sel },
-        PmenuSbar = { link = "Pmenu" },
-        PmenuThumb = { bg = theme.bg_search },
+        NormalFloat = { fg = theme.ui.float.fg, bg = theme.ui.float.bg },
+        FloatBorder = { fg = theme.ui.float.fg_border, bg = theme.ui.float.bg_border },
+        FloatTitle = { fg = theme.ui.shade4, bg = theme.ui.float.bg_border, bold = true },
+        Pmenu = { fg = theme.ui.pmenu.fg, bg = theme.ui.pmenu.bg },
+        PmenuSel = { fg = "NONE", bg = theme.ui.pmenu.bg_sel },
+        PmenuSbar = { bg = theme.ui.pmenu.bg_sbar },
+        PmenuThumb = { bg = theme.ui.pmenu.bg_thumb },
         Question = { link = "MoreMsg" },
         QuickFixLine = { link = "CursorLine" },
-        Search = { fg = theme.fg, bg = theme.bg_search },
+        Search = { fg = theme.ui.fg, bg = theme.ui.bg_search },
         CurSearch = {
             link = "Search", --[[ IncSearch ]]
         },
-        IncSearch = { fg = theme.bg_visual, bg = theme.diag.warning },
+        IncSearch = { fg = theme.ui.fg_reverse, bg = theme.ui.bg_incsearch },
         SpecialKey = { link = "NonText" },
         SpellBad = { undercurl = true, sp = theme.diag.error },
         SpellCap = { undercurl = true, sp = theme.diag.warning },
         SpellLocal = { undercurl = true, sp = theme.diag.warning },
         SpellRare = { undercurl = true, sp = theme.diag.warning },
-        StatusLine = { fg = theme.fg_dark, bg = theme.bg_status },
-        StatusLineNC = { fg = theme.fg_comment, bg = theme.bg_status },
-        Winbar = { fg = theme.fg_dark, bg = "NONE" },
-        WinbarNC = { fg = theme.fg_dark, bg = config.dimInactive and theme.bg_dim or "NONE" },
-        TabLine = { bg = theme.bg_dark, fg = theme.bg_light3 },
-        TabLineFill = { bg = theme.bg },
-        TabLineSel = { fg = theme.fg_dark, bg = theme.bg_light1 },
-        Title = { fg = theme.fn, bold = true },
-        Visual = { bg = theme.bg_visual },
+        StatusLine = { fg = theme.ui.fg_dim, bg = theme.ui.shade0 },
+        StatusLineNC = { fg = theme.syn.comment, bg = theme.ui.shade0 },
+        Winbar = { fg = theme.ui.fg_dim, bg = "NONE" },
+        WinbarNC = { fg = theme.ui.fg_dim, bg = config.dimInactive and theme.ui.bg_dim or "NONE" },
+        TabLine = { bg = theme.ui.shade0, fg = theme.ui.shade4 },
+        TabLineFill = { bg = theme.ui.bg },
+        TabLineSel = { fg = theme.ui.fg_dim, bg = theme.ui.shade2 },
+        Title = { fg = theme.syn.fun, bold = true },
+        Visual = { bg = theme.ui.bg_visual },
         VisualNOS = { link = "Visual" },
         WarningMsg = { fg = theme.diag.warning },
-        Whitespace = { fg = theme.bg_light2 },
+        Whitespace = { fg = theme.ui.whitespace },
         WildMenu = { link = "Pmenu" },
 
-        Constant = { fg = theme.co },
-        String = { fg = theme.st },
+        Constant = { fg = theme.syn.constant },
+        String = { fg = theme.syn.string },
         Character = { link = "String" },
-        Number = { fg = theme.nu },
-        Boolean = { fg = theme.co, bold = true },
+        Number = { fg = theme.syn.number },
+        Boolean = { fg = theme.syn.constant, bold = true },
         Float = { link = "Number" },
 
-        Identifier = { fg = theme.id },
-        Function = vim.tbl_extend("force", { fg = theme.fn }, config.functionStyle),
+        Identifier = { fg = theme.syn.identifier },
+        Function = vim.tbl_extend("force", { fg = theme.syn.fun }, config.functionStyle),
         Method = { link = "Function" },
-        Statement = vim.tbl_extend("force", { fg = theme.sm }, config.statementStyle),
+        Statement = vim.tbl_extend("force", { fg = theme.syn.statement }, config.statementStyle),
         -- Conditional = {},
         -- Repeat = {},
         -- Label = {},
-        Operator = { fg = theme.op },
-        Keyword = vim.tbl_extend("force", { fg = theme.kw }, config.keywordStyle),
-        Exception = { fg = theme.sp2 },
+        Operator = { fg = theme.syn.operator },
+        Keyword = vim.tbl_extend("force", { fg = theme.syn.keyword }, config.keywordStyle),
+        Exception = { fg = theme.syn.special2 },
 
-        PreProc = { fg = theme.pp },
+        PreProc = { fg = theme.syn.preproc },
         -- Include = {},
         -- Define = {},
         -- Macro = {},
         -- PreCondit = {},
 
-        Type = vim.tbl_extend("force", { fg = theme.ty }, config.typeStyle),
+        Type = vim.tbl_extend("force", { fg = theme.syn.type }, config.typeStyle),
         Struct = { link = "Type" },
         -- StorageClass = {},
         -- Structure = {},
         -- Typedef = {},
 
-        Special = { fg = theme.sp },
+        Special = { fg = theme.syn.special1 },
         -- SpecialChar = {},
         -- Tag = {},
-        -- Delimiter = { fg = c.br},
+        -- Delimiter = {},
         -- SpecialComment = {},
         -- Debug = {},
 
-        Underlined = { fg = theme.sp, underline = true },
+        Underlined = { fg = theme.syn.special1, underline = true },
         Bold = { bold = true },
         Italic = { italic = true },
 
         Ignore = { link = "NonText" },
 
         Error = { fg = theme.diag.error },
-        Todo = { fg = theme.fg_reverse, bg = theme.diag.info, bold = true },
+        Todo = { fg = theme.ui.fg_reverse, bg = theme.diag.info, bold = true },
 
         qfLineNr = { link = "lineNr" },
         qfFileName = { link = "Directory" },
@@ -163,15 +150,15 @@ function M.setup(colors, config)
         -- mkdLink = {},
 
         -- markdownHeadingDelimiter = {},
-        markdownCode = { fg = theme.st },
-        markdownCodeBlock = { fg = theme.st },
+        markdownCode = { fg = theme.syn.string },
+        markdownCodeBlock = { fg = theme.syn.string },
         markdownEscape = { fg = "NONE" },
         -- markdownH1 = {},
         -- markdownH2 = {},
         -- markdownLinkText = {},
 
         debugPC = { bg = theme.diff.delete },
-        debugBreakpoint = { fg = theme.sp },
+        debugBreakpoint = { fg = theme.syn.special1 },
 
         LspReferenceText = { bg = theme.diff.text },
         LspReferenceRead = { link = "LspReferenceText" },
@@ -198,7 +185,7 @@ function M.setup(colors, config)
         DiagnosticUnderlineHint = { undercurl = true, sp = theme.diag.hint },
 
         LspSignatureActiveParameter = { fg = theme.diag.warning },
-        LspCodeLens = { fg = theme.fg_comment },
+        LspCodeLens = { fg = theme.syn.comment },
 
         -- TSAnnotation = {},
         ["@attribute"] = { link = "Constant" },
@@ -212,7 +199,7 @@ function M.setup(colors, config)
         ["@text.title"] = { link = "Function" },
         ["@text.danger"] = { link = "WarningMsg" }, --default
         ["@text.literal"] = { link = "String" },
-        ["@constructor"] = { fg = theme.kw }, -- Function/Special/Statement/Keyword
+        ["@constructor"] = { fg = theme.syn.keyword }, -- Function/Special/Statement/Keyword
         -- TSConditional = {},
         -- TSConstant = {},
         -- TSConstBuiltin = {},
@@ -221,7 +208,7 @@ function M.setup(colors, config)
         -- TSException = { link = 'Exception' }, -- default, -> statement
         ["@exception"] = vim.tbl_extend(
             "force",
-            { fg = config.specialException and theme.sp3 or theme.sm },
+            { fg = config.specialException and theme.syn.special3 or theme.syn.statement },
             config.statementStyle
         ),
         ["@field"] = { link = "Identifier" }, -- default
@@ -236,7 +223,7 @@ function M.setup(colors, config)
         -- TSKeywordFunction = { link = "Function" },
         ["@keyword.return"] = vim.tbl_extend(
             "force",
-            { fg = config.specialReturn and theme.sp3 or theme.kw },
+            { fg = config.specialReturn and theme.syn.special3 or theme.syn.keyword },
             config.keywordStyle
         ),
         ["@label"] = { link = "Label" },
@@ -245,29 +232,30 @@ function M.setup(colors, config)
         -- TSNone = {},
         -- TSNumber = {},
         ["@operator"] = { link = "Operator" },
-        ["@keyword.operator"] = { fg = theme.op, bold = true },
+        ["@keyword.operator"] = { fg = theme.syn.operator, bold = true },
         ["@namespace"] = { link = "Identifier" }, -- default
+        ["@parameter"] = { fg = theme.syn.parameter },
         -- TSParameterReference = {},
         ["@property"] = { link = "Identifier" }, -- default
         -- TSPunctDelimiter = { fg = c.op },
-        ["@punctuation.delimiter"] = { fg = theme.br },
-        ["@punctuation.bracket"] = { fg = theme.br },
-        ["@punctuation.Special"] = { fg = theme.br },
+        ["@punctuation.delimiter"] = { fg = theme.syn.punct1 },
+        ["@punctuation.bracket"] = { fg = theme.syn.punct1 },
+        ["@punctuation.Special"] = { fg = theme.syn.punct1 },
         -- TSRepeat = {},
         -- TSString = {},
-        ["@string.regex"] = { fg = theme.re },
-        ["@string.escape"] = { fg = theme.re, bold = true },
-        ["@symbol"] = { fg = theme.id },
+        ["@string.regex"] = { fg = theme.syn.regex },
+        ["@string.escape"] = { fg = theme.syn.regex, bold = true },
+        ["@symbol"] = { fg = theme.syn.identifier },
         -- TSType = {},
         -- TSTypeBuiltin = {},
-        ["@variable"] = { fg = theme.fg },
-        ["@variable.builtin"] = vim.tbl_extend("force", { fg = theme.sp2 }, config.variablebuiltinStyle),
+        ["@variable"] = { fg = theme.ui.fg },
+        ["@variable.builtin"] = vim.tbl_extend("force", { fg = theme.syn.special2 }, config.variablebuiltinStyle),
 
         -- TSTag = {},
         -- TSTagDelimiter = {},
         ["@tag"] = { link = "Tag" },
-        ["@tag.delimiter"] = { fg = theme.br },
-        ["@tag.attribute"] = { fg = theme.id },
+        ["@tag.delimiter"] = { fg = theme.syn.punct1 },
+        ["@tag.attribute"] = { fg = theme.syn.identifier },
         -- TSText = {},
         -- TSTextReference = { fg = c.sp2 },
         -- TSEmphasis = {},
@@ -289,38 +277,38 @@ function M.setup(colors, config)
         -- illuminatedWord = {},
         -- illuminatedCurWord = {},
 
-        -- Git
-        diffAdded = { fg = theme.git.added },
-        diffRemoved = { fg = theme.git.removed },
-        diffDeleted = { fg = theme.git.removed },
-        diffChanged = { fg = theme.git.changed },
-        diffOldFile = { fg = theme.git.removed },
-        diffNewFile = { fg = theme.git.added },
+        -- vcs
+        diffAdded = { fg = theme.vcs.added },
+        diffRemoved = { fg = theme.vcs.removed },
+        diffDeleted = { fg = theme.vcs.removed },
+        diffChanged = { fg = theme.vcs.changed },
+        diffOldFile = { fg = theme.vcs.removed },
+        diffNewFile = { fg = theme.vcs.added },
         -- diffFile = { fg = c.steelGray },
         -- diffLine = { fg = c.steelGray },
         -- diffIndexLine = { link = 'Identifier' },
 
-        -- Neogit
-        -- NeogitBranch = {},
-        -- NeogitRemote = {},
-        NeogitDiffDelete = { fg = theme.git.removed, bg = theme.diff.delete },
-        NeogitDiffAdd = { fg = theme.git.added, bg = theme.diff.add },
-        NeogitHunkHeader = { fg = theme.id },
-        NeogitDiffContextHighlight = { bg = theme.diff.change },
+        -- Neovcs
+        -- NeovcsBranch = {},
+        -- NeovcsRemote = {},
+        NeovcsDiffDelete = { fg = theme.vcs.removed, bg = theme.diff.delete },
+        NeovcsDiffAdd = { fg = theme.vcs.added, bg = theme.diff.add },
+        NeovcsHunkHeader = { fg = theme.syn.identifier },
+        NeovcsDiffContextHighlight = { bg = theme.diff.change },
 
-        -- GitGutter
-        -- GitGutterAdd = {},
-        -- GitGutterChange = {},
-        -- GitGutterDelete = {},
+        -- vcsGutter
+        -- vcsGutterAdd = {},
+        -- vcsGutterChange = {},
+        -- vcsGutterDelete = {},
 
-        -- GitSigns
-        GitSignsAdd = { link = "diffAdded" },
-        GitSignsChange = { link = "diffChanged" },
-        GitSignsDelete = { link = "diffDeleted" },
-        GitSignsDeleteLn = { bg = theme.diff.delete },
+        -- vcsSigns
+        vcsSignsAdd = { link = "diffAdded" },
+        vcsSignsChange = { link = "diffChanged" },
+        vcsSignsDelete = { link = "diffDeleted" },
+        vcsSignsDeleteLn = { bg = theme.diff.delete },
 
         -- Telescope                      = {},
-        TelescopeBorder = { fg = theme.fg_border, bg = theme.bg },
+        TelescopeBorder = { fg = theme.ui.float.fg_border, bg = theme.ui.bg },
         TelescopeResultsClass = { link = "TSType" },
         TelescopeResultsStruct = { link = "TSType" },
         TelescopeResultsVariable = { link = "TSVariable" },
@@ -328,25 +316,25 @@ function M.setup(colors, config)
         -- NvimTree                       = {},
         NvimTreeNormal = { link = "Normal" },
         NvimTreeNormalNC = { link = "NormalNC" },
-        NvimTreeRootFolder = { fg = theme.id, bold = true },
-        NvimTreeGitDirty = { fg = theme.git.changed },
-        NvimTreeGitNew = { fg = theme.git.added },
-        NvimTreeGitDeleted = { fg = theme.git.removed },
-        NvimTreeSpecialFile = { fg = theme.sp },
+        NvimTreeRootFolder = { fg = theme.syn.identifier, bold = true },
+        NvimTreevcsDirty = { fg = theme.vcs.changed },
+        NvimTreevcsNew = { fg = theme.vcs.added },
+        NvimTreevcsDeleted = { fg = theme.vcs.removed },
+        NvimTreeSpecialFile = { fg = theme.syn.special1 },
         -- NvimTreeIndentMarker           = {},
-        NvimTreeImageFile = { fg = theme.sp2 },
+        NvimTreeImageFile = { fg = theme.syn.special2 },
         NvimTreeSymlink = { link = "Type" },
         NvimTreeFolderName = { link = "Directory" },
-        NvimTreeExecFile = { fg = theme.st, bold = true },
-        NvimTreeGitStaged = { fg = theme.git.added },
-        NvimTreeOpenedFile = { fg = theme.sp, italic = true },
+        NvimTreeExecFile = { fg = theme.syn.string, bold = true },
+        NvimTreevcsStaged = { fg = theme.vcs.added },
+        NvimTreeOpenedFile = { fg = theme.syn.special1, italic = true },
         NvimTreeWinSeparator = { link = "WinSeparator" },
 
         -- Dashboard
-        DashboardShortCut = { fg = theme.sp },
-        DashboardHeader = { fg = theme.git.removed },
-        DashboardCenter = { fg = theme.id },
-        DashboardFooter = { fg = theme.fn },
+        DashboardShortCut = { fg = theme.syn.special1 },
+        DashboardHeader = { fg = theme.vcs.removed },
+        DashboardCenter = { fg = theme.syn.identifier },
+        DashboardFooter = { fg = theme.syn.fun },
 
         -- Notify
         NotifyERRORBorder = { link = "DiagnosticError" },
@@ -373,59 +361,59 @@ function M.setup(colors, config)
         DapUIScope = { link = 'Special' }, -- guifg=#00F1F5"
         DapUIType = { link = 'Type' }, -- guifg=#D484FF"
         -- DapUIValue = { link = "Normal" },
-        DapUIModifiedValue = { fg = theme.sp, bold = true }, -- guifg=#00F1F5 gui=bold"
-        DapUIDecoration = { fg = theme.fg_border }, -- guifg=#00F1F5"
-        DapUIThread = { fg = theme.id }, --guifg=#A9FF68"
-        DapUIStoppedThread = { fg = theme.sp }, --guifg=#00f1f5"
+        DapUIModifiedValue = { fg = theme.syn.special1, bold = true }, -- guifg=#00F1F5 gui=bold"
+        DapUIDecoration = { fg = theme.ui.float.fg_border }, -- guifg=#00F1F5"
+        DapUIThread = { fg = theme.syn.identifier }, --guifg=#A9FF68"
+        DapUIStoppedThread = { fg = theme.syn.special1 }, --guifg=#00f1f5"
         -- DapUIFrameName = { link = "Normal"},
-        DapUISource = { fg = theme.sp2 }, -- guifg=#D484FF"
-        DapUILineNumber = { fg = theme.sp }, -- guifg=#00f1f5"
-        DapUIFloatBorder = { fg = theme.fg_border }, -- guifg=#00F1F5"
+        DapUISource = { fg = theme.syn.special2 }, -- guifg=#D484FF"
+        DapUILineNumber = { fg = theme.syn.special1 }, -- guifg=#00f1f5"
+        DapUIFloatBorder = { fg = theme.ui.float.fg_border }, -- guifg=#00F1F5"
         DapUIWatchesEmpty = { fg = theme.diag.error }, -- guifg=#F70067"
-        DapUIWatchesValue = { fg = theme.id }, -- guifg=#A9FF68"
+        DapUIWatchesValue = { fg = theme.syn.identifier }, -- guifg=#A9FF68"
         DapUIWatchesError = { fg = theme.diag.error }, --guifg=#F70067"
         DapUIBreakpointsPath = { link = 'Directory' }, --guifg=#00F1F5"
         DapUIBreakpointsInfo = { fg = theme.diag.info }, --guifg=#A9FF68"
-        DapUIBreakpointsCurrentLine = { fg = theme.id, bold = true }, --guifg=#A9FF68 gui=bold"
+        DapUIBreakpointsCurrentLine = { fg = theme.syn.identifier, bold = true }, --guifg=#A9FF68 gui=bold"
         -- DapUIBreakpointsLine = {}, -- DapUILineNumber"
         DapUIBreakpointsDisabledLine = { link = 'Comment' }, --guifg=#424242"
         -- DapUICurrentFrameName = {}, -- DapUIBreakpointsCurrentLine"
-        DapUIStepOver = { fg = theme.sp }, --guifg=#00f1f5"
-        DapUIStepInto = { fg = theme.sp }, --guifg=#00f1f5"
-        DapUIStepBack = { fg = theme.sp }, --guifg=#00f1f5"
-        DapUIStepOut = { fg = theme.sp }, --guifg=#00f1f5"
+        DapUIStepOver = { fg = theme.syn.special1 }, --guifg=#00f1f5"
+        DapUIStepInto = { fg = theme.syn.special1 }, --guifg=#00f1f5"
+        DapUIStepBack = { fg = theme.syn.special1 }, --guifg=#00f1f5"
+        DapUIStepOut = { fg = theme.syn.special1 }, --guifg=#00f1f5"
         DapUIStop = { fg = theme.diag.error }, --guifg=#F70067"
-        DapUIPlayPause = { fg = theme.st }, --guifg=#A9FF68"
-        DapUIRestart = { fg = theme.st }, --guifg=#A9FF68"
-        DapUIUnavailable = { fg = theme.fg_comment }, --guifg=#424242"
+        DapUIPlayPause = { fg = theme.syn.string }, --guifg=#A9FF68"
+        DapUIRestart = { fg = theme.syn.string }, --guifg=#A9FF68"
+        DapUIUnavailable = { fg = theme.syn.comment }, --guifg=#424242"
 
         -- Floaterm
-        FloatermBorder = { fg = theme.fg_border, bg = theme.bg },
+        FloatermBorder = { fg = theme.ui.float.fg_border, bg = theme.ui.bg },
 
         -- NeoVim                         = {},
         healthError = { fg = theme.diag.error },
-        healthSuccess = { fg = theme.st },
+        healthSuccess = { fg = theme.diag.ok },
         healthWarning = { fg = theme.diag.warning },
 
         -- Cmp
         CmpDocumentation = { link = "NormalFloat" },
         CmpDocumentationBorder = { link = "FloatBorder" },
         CmpCompletion = { link = "Pmenu" },
-        CmpCompletionSel = { fg = "NONE", bg = theme.bg_menu_sel },
-        CmpCompletionBorder = { fg = theme.bg_search, bg = theme.bg_menu },
+        CmpCompletionSel = { fg = "NONE", bg = theme.ui.pmenu.bg_sel },
+        CmpCompletionBorder = { fg = theme.ui.bg_search, bg = theme.ui.pmenu.bg },
         CmpCompletionThumb = { link = "PmenuThumb" },
         CmpCompletionSbar = { link = "PmenuSbar" },
 
-        CmpItemAbbr = { fg = theme.fg_menu },
-        CmpItemAbbrDeprecated = { fg = theme.fg_comment, strikethrough = true },
+        CmpItemAbbr = { fg = theme.ui.pmenu.fg },
+        CmpItemAbbrDeprecated = { fg = theme.syn.comment, strikethrough = true },
 
-        CmpItemAbbrMatch = { fg = theme.fn },
+        CmpItemAbbrMatch = { fg = theme.syn.fun },
         CmpItemAbbrMatchFuzzy = { link = "CmpItemAbbrMatch" },
 
-        CmpItemKindDefault = { fg = theme.dep },
-        CmpItemMenu = { fg = theme.fg_comment },
+        CmpItemKindDefault = { fg = theme.syn.deprecated },
+        CmpItemMenu = { fg = theme.syn.comment },
 
-        CmpItemKindVariable = { fg = theme.fg_dark },
+        CmpItemKindVariable = { fg = theme.ui.fg_dim },
 
         CmpItemKindFunction = { link = "Function" },
         CmpItemKindMethod = { link = "Function" },
@@ -440,7 +428,7 @@ function M.setup(colors, config)
         CmpItemKindField = { link = "TSField" },
         CmpItemKindEnum = { link = "Identifier" },
 
-        CmpItemKindSnippet = { fg = theme.sp },
+        CmpItemKindSnippet = { fg = theme.syn.special1 },
 
         CmpItemKindText = { link = "TSText" },
 
@@ -464,11 +452,11 @@ function M.setup(colors, config)
         CmpItemKindCopilot = { link = "String" },
 
         -- IndentBlankline
-        IndentBlanklineChar = { fg = theme.bg_light2 },
-        IndentBlanklineSpaceChar = { fg = theme.bg_light2 },
-        IndentBlanklineSpaceCharBlankline = { fg = theme.bg_light2 },
-        IndentBlanklineContextChar = { fg = theme.bg_light3 },
-        IndentBlanklineContextStart = { sp = theme.bg_light3, underline = true },
+        IndentBlanklineChar = { fg = theme.ui.whitespace },
+        IndentBlanklineSpaceChar = { fg = theme.ui.whitespace },
+        IndentBlanklineSpaceCharBlankline = { fg = theme.ui.whitespace },
+        IndentBlanklineContextChar = { fg = theme.ui.shade4 },
+        IndentBlanklineContextStart = { sp = theme.ui.shade4, underline = true },
     }
 
     for hl, specs in pairs(config.overrides(colors)) do
@@ -479,7 +467,7 @@ function M.setup(colors, config)
     end
 
     if config.terminalColors then
-        setup_terminal_colors(colors)
+        setup_terminal_colors(colors.theme.term)
     end
 
     return hlgroups
