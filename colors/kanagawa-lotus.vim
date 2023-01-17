@@ -1,1 +1,1 @@
-lua require("kanagawa").load "light"
+lua require("kanagawa").load "lotus"

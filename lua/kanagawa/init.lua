@@ -74,9 +74,6 @@ end
 
 --- load the colorscheme
 function M.load(theme)
-    print(theme)
-    theme = theme or M.config.theme[vim.o.background] or M.config.theme.default
-    print(theme)
     if vim.g.colors_name then
         vim.cmd("hi clear")
     end
