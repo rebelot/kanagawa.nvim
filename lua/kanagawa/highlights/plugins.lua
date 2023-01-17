@@ -6,16 +6,6 @@ function M.setup(colors, config)
     config = config or require("kanagawa").config
     local theme = colors.theme
     return {
-        -- vcs
-        diffAdded = { fg = theme.vcs.added },
-        diffRemoved = { fg = theme.vcs.removed },
-        diffDeleted = { fg = theme.vcs.removed },
-        diffChanged = { fg = theme.vcs.changed },
-        diffOldFile = { fg = theme.vcs.removed },
-        diffNewFile = { fg = theme.vcs.added },
-        -- diffFile = { fg = c.steelGray },
-        -- diffLine = { fg = c.steelGray },
-        -- diffIndexLine = { link = 'Identifier' },
 
         -- Neovcs
         -- NeovcsBranch = {},
@@ -36,26 +26,26 @@ function M.setup(colors, config)
         vcsSignsDelete = { link = "diffDeleted" },
         vcsSignsDeleteLn = { bg = theme.diff.delete },
 
-        -- Telescope                      = {},
+        -- Telescope
         TelescopeBorder = { fg = theme.ui.float.fg_border, bg = theme.ui.bg },
         TelescopeResultsClass = { link = "TSType" },
         TelescopeResultsStruct = { link = "TSType" },
         TelescopeResultsVariable = { link = "TSVariable" },
 
-        -- NvimTree                       = {},
+        -- NvimTree
         NvimTreeNormal = { link = "Normal" },
         NvimTreeNormalNC = { link = "NormalNC" },
         NvimTreeRootFolder = { fg = theme.syn.identifier, bold = true },
-        NvimTreevcsDirty = { fg = theme.vcs.changed },
-        NvimTreevcsNew = { fg = theme.vcs.added },
-        NvimTreevcsDeleted = { fg = theme.vcs.removed },
+        NvimTreeGitDirty = { fg = theme.vcs.changed },
+        NvimTreeGitNew = { fg = theme.vcs.added },
+        NvimTreeGitDeleted = { fg = theme.vcs.removed },
+        NvimTreeGitStaged = { fg = theme.vcs.added },
         NvimTreeSpecialFile = { fg = theme.syn.special1 },
         -- NvimTreeIndentMarker           = {},
         NvimTreeImageFile = { fg = theme.syn.special2 },
         NvimTreeSymlink = { link = "Type" },
         NvimTreeFolderName = { link = "Directory" },
         NvimTreeExecFile = { fg = theme.syn.string, bold = true },
-        NvimTreevcsStaged = { fg = theme.vcs.added },
         NvimTreeOpenedFile = { fg = theme.syn.special1, italic = true },
         NvimTreeWinSeparator = { link = "WinSeparator" },
 
