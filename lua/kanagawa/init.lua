@@ -27,7 +27,7 @@ M.config = {
         return {}
     end,
     ---@type { dark: string, light: string, default: string}
-    theme = { dark = "default", light = "light", default = "default" },
+    theme = { dark = "wave", light = "lotus", default = "wave" },
 }
 
 local function check_config(config)
@@ -74,12 +74,14 @@ end
 
 --- load the colorscheme
 function M.load(theme)
+    print(theme)
     theme = theme or M.config.theme[vim.o.background] or M.config.theme.default
+    print(theme)
     if vim.g.colors_name then
         vim.cmd("hi clear")
     end
 
-    vim.g.colors_name = "kanagawa-" .. theme
+    vim.g.colors_name = "kanagawa"
     vim.o.termguicolors = true
 
     local colors = require("kanagawa.colors").setup({ theme = theme })

@@ -99,7 +99,7 @@ local c = require("kanagawa.color")
 return {
     ---@param palette PaletteColors
     ---@return ThemeColors
-    default = function(palette)
+    wave = function(palette)
         return {
             ui = {
                 fg = palette.fujiWhite,
@@ -222,6 +222,9 @@ return {
                 bg_visual = colors.waveBlue1,
                 bg_search = colors.waveBlue2,
 
+                whitespace ="#524F4B",
+                nontext = "#524F4B",
+
                 pmenu = {
                     fg = colors.fujiWhite,
                     fg_sel = "none",
@@ -279,11 +282,13 @@ return {
                 removed = colors.autumnRed,
                 changed = colors.autumnYellow,
             },
+
+            term = {}
         }
     end,
     ---@param palette PaletteColors
     ---@return ThemeColors
-    light = function(palette)
+    lotus = function(palette)
         return {
             ui = {
                 fg = tostring(c(palette.sumiInk1):lighten(3.0):saturate(0.9)),
