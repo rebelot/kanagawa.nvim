@@ -73,18 +73,19 @@ function M.setup(config)
 end
 
 --- load the colorscheme
-function M.load()
+function M.load(theme)
+    theme = theme or M.config.theme[vim.o.background] or M.config.theme.default
     if vim.g.colors_name then
         vim.cmd("hi clear")
     end
 
-    vim.g.colors_name = "kanagawa"
+    vim.g.colors_name = "kanagawa-" .. theme
     vim.o.termguicolors = true
 
-    local colors = require("kanagawa.colors").setup()
-    local hlgroups = require("kanagawa.hlgroups").setup(colors)
+    local colors = require("kanagawa.colors").setup({ theme = theme })
+    local highlights = require("kanagawa.highlights").setup(colors, M.config)
 
-    require("kanagawa.utils").make_highlights(hlgroups)
+    require("kanagawa.utils").make_highlights(highlights)
 end
 
 return M
