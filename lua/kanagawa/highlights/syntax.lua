@@ -28,7 +28,6 @@ function M.setup(colors, config)
         Identifier = { fg = theme.syn.identifier },
         --  Function	function name (also: methods for classes)
         Function = vim.tbl_extend("force", { fg = theme.syn.fun }, config.functionStyle),
-        Method = { link = "Function" },
 
         -- *Statement	any statement
         Statement = vim.tbl_extend("force", { fg = theme.syn.statement }, config.statementStyle),

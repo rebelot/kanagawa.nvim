@@ -8,7 +8,6 @@ local c = require("kanagawa.color")
 ---@field identifier Color
 ---@field parameter Color
 ---@field fun Color
----@field method Color
 ---@field statement Color
 ---@field keyword Color
 ---@field operator Color
@@ -133,7 +132,6 @@ return {
                 identifier = palette.carpYellow,
                 parameter = palette.carpYellow,
                 fun = palette.crystalBlue,
-                method = palette.crystalBlue,
                 statement = palette.oniViolet,
                 keyword = palette.oniViolet,
                 operator = palette.boatYellow2,
@@ -327,7 +325,6 @@ return {
                 identifier = "#8d7342",
                 parameter = "#e6c384",
                 fun = "#4f6fa8",
-                method = "#4f6fa8",
                 statement = "#7b5fa3",
                 keyword = "#7b5fa3",
                 operator = "#836f4a",

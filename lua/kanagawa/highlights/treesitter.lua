@@ -47,7 +47,6 @@ function M.setup(colors, config)
         -- @function.macro (Macro)                     ; preprocessor macros
 
         -- @method (Function)                          ; method definitions
-        ["@method"] = { link = "Method" },
         -- @method.call                                ; method calls
 
         -- @constructor (Special)                      ; constructor calls and definitions
