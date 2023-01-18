@@ -9,13 +9,11 @@ function M.setup(colors, config)
 
     return {
         -- ColorColumn	Used for the columns set with 'colorcolumn'.
-        ColorColumn = { bg = theme.ui.shade1 },
+        ColorColumn = { bg = theme.ui.bg_p1 },
         -- Conceal		Placeholder characters substituted for concealed text (see 'conceallevel').
-        Conceal = { fg = theme.ui.shade4, bold = true },
+        Conceal = { fg = theme.ui.special, bold = true },
         -- CurSearch	Used for highlighting a search pattern under the cursor (see 'hlsearch').
-        CurSearch = {
-            link = "Search", --[[ IncSearch ]]
-        },
+        CurSearch = { fg = theme.ui.fg, bg = theme.ui.bg_search, bold = true },
         -- Cursor		Character under the cursor.
         Cursor = { fg = theme.ui.bg, bg = theme.ui.fg },
         -- lCursor		Character under the cursor when |language-mapping| is used (see 'guicursor').
@@ -25,7 +23,7 @@ function M.setup(colors, config)
         -- CursorColumn	Screen-column at the cursor, when 'cursorcolumn' is set.
         CursorColumn = { link = "CursorLine" },
         -- CursorLine	Screen-line at the cursor, when 'cursorline' is set. Low-priority if foreground (ctermfg OR guifg) is not set.
-        CursorLine = { bg = theme.ui.shade2 },
+        CursorLine = { bg = theme.ui.bg_p2 },
         -- Directory	Directory names (and other special names in listings).
         Directory = { fg = theme.syn.fun },
         -- DiffAdd		Diff mode: Added line. |diff.txt|
@@ -43,27 +41,24 @@ function M.setup(colors, config)
         -- ErrorMsg	Error messages on the command line.
         ErrorMsg = { fg = theme.diag.error },
         -- WinSeparator	Separators between window splits.
-        WinSeparator = {
-            fg = tostring(c(theme.ui.shade0):lighten(0.6)),
-            bg = config.dimInactive and theme.ui.bg_dim or "NONE",
-        },
+        WinSeparator = { fg = theme.ui.bg_m3, bg = config.dimInactive and theme.ui.bg_dim or "NONE" },
         VertSplit = { link = "WinSeparator" },
         -- Folded		Line used for closed folds.
-        Folded = { fg = theme.ui.shade4, bg = theme.ui.shade1 },
+        Folded = { fg = theme.ui.special, bg = theme.ui.bg_p1 },
         -- FoldColumn	'foldcolumn'
-        FoldColumn = { fg = theme.ui.shade3 },
+        FoldColumn = { fg = theme.ui.nontext, bg = theme.ui.bg_gutter },
         -- SignColumn	Column where |signs| are displayed.
-        SignColumn = { fg = theme.ui.shade3 },
+        SignColumn = { fg = theme.ui.special, bg = theme.ui.bg_gutter },
         -- IncSearch	'incsearch' highlighting; also used for the text replaced with ":s///c".
-        IncSearch = { fg = theme.ui.fg_reverse, bg = theme.ui.bg_incsearch },
+        IncSearch = { fg = theme.ui.fg_reverse, bg = theme.diag.warning },
         -- Substitute	|:substitute| replacement text highlighting.
         Substitute = { fg = theme.ui.fg, bg = theme.vcs.removed },
         -- LineNr		Line number for ":number" and ":#" commands, and when 'number' or 'relativenumber' option is set.
-        LineNr = { fg = theme.ui.shade3 },
+        LineNr = { fg = theme.ui.nontext, bg = theme.ui.bg_gutter },
         -- LineNrAbove	Line number for when the 'relativenumber' option is set, above the cursor line.
         -- LineNrBelow	Line number for when the 'relativenumber' option is set, below the cursor line.
         -- CursorLineNr	Like LineNr when 'cursorline' is set and 'cursorlineopt' contains "number" or is "both", for the cursor line.
-        CursorLineNr = { fg = theme.diag.warning, bold = true },
+        CursorLineNr = { fg = theme.diag.warning, bg = theme.ui.bg_gutter, bold = true },
         -- CursorLineFold	Like FoldColumn when 'cursorline' is set for the cursor line.
         -- CursorLineSign	Like SignColumn when 'cursorline' is set for the cursor line.
         -- MatchParen	Character under the cursor or just before it, if it is a paired bracket, and its match. |pi_paren.txt|
@@ -82,13 +77,13 @@ function M.setup(colors, config)
         -- NormalFloat	Normal text in floating windows.
         NormalFloat = { fg = theme.ui.float.fg, bg = theme.ui.float.bg },
         FloatBorder = { fg = theme.ui.float.fg_border, bg = theme.ui.float.bg_border },
-        FloatTitle = { fg = theme.ui.shade4, bg = theme.ui.float.bg_border, bold = true },
+        FloatTitle = { fg = theme.ui.special, bg = theme.ui.float.bg_border, bold = true },
         -- NormalNC	Normal text in non-current windows.
         NormalNC = config.dimInactive and { fg = theme.ui.fg_dim, bg = theme.ui.bg_dim } or { link = "Normal" },
         -- Pmenu		Popup menu: Normal item.
         Pmenu = { fg = theme.ui.pmenu.fg, bg = theme.ui.pmenu.bg },
         -- PmenuSel	Popup menu: Selected item.
-        PmenuSel = { fg = "NONE", bg = theme.ui.pmenu.bg_sel },
+        PmenuSel = { fg = theme.ui.pmenu.fg_sel, bg = theme.ui.pmenu.bg_sel },
         -- PmenuSbar	Popup menu: Scrollbar.
         PmenuSbar = { bg = theme.ui.pmenu.bg_sbar },
         -- PmenuThumb	Popup menu: Thumb of the scrollbar.
@@ -96,11 +91,11 @@ function M.setup(colors, config)
         -- Question	|hit-enter| prompt and yes/no questions.
         Question = { link = "MoreMsg" },
         -- QuickFixLine	Current |quickfix| item in the quickfix window. Combined with |hl-CursorLine| when the cursor is there.
-        QuickFixLine = { link = "CursorLine" },
+        QuickFixLine = { bg = theme.ui.bg_p1 },
         -- Search		Last search pattern highlighting (see 'hlsearch'). Also used for similar items that need to stand out.
         Search = { fg = theme.ui.fg, bg = theme.ui.bg_search },
         -- SpecialKey	Unprintable characters: Text displayed differently from what it really is. But not 'listchars' whitespace. |hl-Whitespace|
-        SpecialKey = { link = "NonText" },
+        SpecialKey = { fg = theme.ui.special },
         -- SpellBad	Word that is not recognized by the spellchecker. |spell| Combined with the highlighting used otherwise.
         SpellBad = { undercurl = true, sp = theme.diag.error },
         -- SpellCap	Word that should start with a capital. |spell| Combined with the highlighting used otherwise.
@@ -110,15 +105,15 @@ function M.setup(colors, config)
         -- SpellRare	Word that is recognized by the spellchecker as one that is hardly ever used. |spell| Combined with the highlighting used otherwise.
         SpellRare = { undercurl = true, sp = theme.diag.warning },
         -- StatusLine	Status line of current window.
-        StatusLine = { fg = theme.ui.fg_dim, bg = theme.ui.shade0 },
+        StatusLine = { fg = theme.ui.fg_dim, bg = theme.ui.bg_m3 },
         -- StatusLineNC	Status lines of not-current windows. Note: If this is equal to "StatusLine", Vim will use "^^^" in the status line of the current window.
-        StatusLineNC = { fg = theme.syn.comment, bg = theme.ui.shade0 },
+        StatusLineNC = { fg = theme.ui.nontext, bg = theme.ui.bg_m3 },
         -- TabLine		Tab pages line, not active tab page label.
-        TabLine = { bg = theme.ui.shade0, fg = theme.ui.shade4 },
+        TabLine = { bg = theme.ui.bg_m3, fg = theme.ui.special },
         -- TabLineFill	Tab pages line, where there are no labels.
         TabLineFill = { bg = theme.ui.bg },
         -- TabLineSel	Tab pages line, active tab page label.
-        TabLineSel = { fg = theme.ui.fg_dim, bg = theme.ui.shade2 },
+        TabLineSel = { fg = theme.ui.fg_dim, bg = theme.ui.bg_m1 },
         -- Title		Titles for output from ":set all", ":autocmd" etc.
         Title = { fg = theme.syn.fun, bold = true },
         -- Visual		Visual mode selection.
@@ -140,11 +135,11 @@ function M.setup(colors, config)
         -- NormalSB = { link = "Normal" },
 
         debugPC = { bg = theme.diff.delete },
-        debugBreakpoint = { fg = theme.syn.special1 },
+        debugBreakpoint = { fg = theme.syn.special1, bg = theme.ui.bg_gutter },
 
         LspReferenceText = { bg = theme.diff.text },
         LspReferenceRead = { link = "LspReferenceText" },
-        LspReferenceWrite = { link = "LspReferenceText" },
+        LspReferenceWrite = { bg = theme.diff.text, underline = true },
 
         DiagnosticError = { fg = theme.diag.error },
         DiagnosticWarn = { fg = theme.diag.warning },
@@ -152,10 +147,10 @@ function M.setup(colors, config)
         DiagnosticHint = { fg = theme.diag.hint },
         DiagnosticOk = { fg = theme.diag.ok },
 
-        DiagnosticSignError = { link = "DiagnosticError" },
-        DiagnosticSignWarn = { link = "DiagnosticWarn" },
-        DiagnosticSignInfo = { link = "DiagnosticInfo" },
-        DiagnosticSignHint = { link = "DiagnosticHint" },
+        DiagnosticSignError = { fg = theme.diag.error, bg = theme.ui.bg_gutter },
+        DiagnosticSignWarn = { fg = theme.diag.warning, bg = theme.ui.bg_gutter },
+        DiagnosticSignInfo = { fg = theme.diag.info, bg = theme.ui.bg_gutter },
+        DiagnosticSignHint = { fg = theme.diag.hint, bg = theme.ui.bg_gutter },
 
         DiagnosticVirtualTextError = { link = "DiagnosticError" },
         DiagnosticVirtualTextWarn = { link = "DiagnosticWarn" },

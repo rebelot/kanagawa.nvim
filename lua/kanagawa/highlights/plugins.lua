@@ -26,6 +26,10 @@ function M.setup(colors, config)
         vcsSignsDelete = { link = "diffDeleted" },
         vcsSignsDeleteLn = { bg = theme.diff.delete },
 
+        GitSignsAdd = { fg = theme.vcs.added, bg = theme.ui.bg_gutter },
+        GitSignsChange = { fg = theme.vcs.changed, bg = theme.ui.bg_gutter },
+        GitSignsDelete = { fg = theme.vcs.removed, bg = theme.ui.bg_gutter },
+
         -- Telescope
         TelescopeBorder = { fg = theme.ui.float.fg_border, bg = theme.ui.bg },
         TelescopeResultsClass = { link = "TSType" },
@@ -174,8 +178,8 @@ function M.setup(colors, config)
         IndentBlanklineChar = { fg = theme.ui.whitespace },
         IndentBlanklineSpaceChar = { fg = theme.ui.whitespace },
         IndentBlanklineSpaceCharBlankline = { fg = theme.ui.whitespace },
-        IndentBlanklineContextChar = { fg = theme.ui.shade4 },
-        IndentBlanklineContextStart = { sp = theme.ui.shade4, underline = true },
+        IndentBlanklineContextChar = { fg = theme.ui.special },
+        IndentBlanklineContextStart = { sp = theme.ui.special, underline = true },
     }
 end
 

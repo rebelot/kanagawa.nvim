@@ -41,36 +41,23 @@ local c = require("kanagawa.color")
 ---@field removed Color
 ---@field changed Color
 
----foregrounds:
----LineNr
----EndOfBuffer
----NonText (listchars excluding whitespace " ")
----Conceal
----Whitespace
----SpecialKey (unprintable chars/control sequences ^M)
---
----backgrounds:
----Gutter, StatusLine{NC}, WinBar{NC}, TabLine{Sel,Fill}
----CursorLine, CursorColumn, Folded
 ---@class UiElements
 ---@field fg Color Default foreground
 ---@field fg_dim Color Dimmed foreground
 ---@field fg_reverse Color
----@field bg Color Default background
 ---@field bg_dim Color Dimmed background
----@field shade0 Color Darker background
----@field shade1 Color Lighter background ColorColumn, Folded, Gutter
----@field shade2 Color Lighter background CursorLine, TabLineSel (Selected Items)
----@field shade3 Color LineNr, NonText
----@field shade4 Color Whitespace
+---@field bg_m3 Color
+---@field bg_m2 Color
+---@field bg_m1 Color
+---@field bg Color Default background
+---@field bg_p1 Color Lighter background ColorColumn, Folded, Gutter
+---@field bg_p2 Color Lighter background Cursor{Line,Column}, TabLineSel (Selected Items)
+---@field bg_gutter Color {Sign,Fold}Column, LineNr
+---@field special Color SpecialKey
 ---@field nontext Color LineNr, NonText
 ---@field whitespace Color Whitespace
----@field special1 Color
----@field special2 Color
----@field special3 Color
 ---@field bg_search Color
 ---@field bg_visual Color
----@field bg_incsearch Color
 ---@field pmenu MenuElements
 ---@field float FloatElements
 
@@ -106,36 +93,35 @@ return {
                 fg_dim = palette.oldWhite,
                 fg_reverse = palette.waveBlue1,
 
-                bg = palette.sumiInk1,
-                bg_dim = palette.sumiInk1b,
+                bg_dim = palette.sumiInk1,
+                bg_gutter = palette.sumiInk4,
 
-                shade0 = palette.sumiInk0,
-                shade1 = palette.sumiInk2,
-                shade2 = palette.sumiInk3,
-                shade3 = palette.sumiInk4,
-                shade4 = palette.springViolet1,
+                bg_m3 = palette.sumiInk0,
+                bg_m2 = palette.sumiInk1,
+                bg_m1 = palette.sumiInk2,
+                bg = palette.sumiInk3,
+                bg_p1 = palette.sumiInk4,
+                bg_p2 = palette.sumiInk5,
 
-                nontext = palette.sumiInk4,
-                whitespace = palette.sumiInk4,
-                special2 = nil,
-                special3 = nil,
+                special = palette.springViolet1,
+                nontext = palette.sumiInk6,
+                whitespace = palette.sumiInk6,
 
                 bg_search = palette.waveBlue2,
                 bg_visual = palette.waveBlue1,
-                bg_incsearch = palette.roninYellow,
 
                 pmenu = {
+                    fg = palette.fujiWhite,
+                    fg_sel = "none", -- This is important to make highlights pass-through
                     bg = palette.waveBlue1,
                     bg_sel = palette.waveBlue2,
                     bg_sbar = palette.waveBlue1,
                     bg_thumb = palette.waveBlue2,
-                    fg = palette.fujiWhite,
-                    fg_sel = "none", -- This is important to make highlights pass-through
                 },
                 float = {
                     fg = palette.oldWhite,
                     bg = palette.sumiInk0,
-                    fg_border = palette.sumiInk4,
+                    fg_border = palette.sumiInk6,
                     bg_border = palette.sumiInk0,
                 },
             },
@@ -151,7 +137,7 @@ return {
                 statement = palette.oniViolet,
                 keyword = palette.oniViolet,
                 operator = palette.boatYellow2,
-                preproc = palette.surimiOrange,
+                preproc = palette.surimiOrange, --lightBlue? deserves its own color
                 type = palette.waveAqua2,
                 regex = palette.boatYellow2,
                 deprecated = palette.katanaGray,
@@ -208,58 +194,64 @@ return {
         return {
             ui = {
                 fg = "#c5c9c5",
+                fg_dim = colors.oldWhite,
                 fg_reverse = colors.waveBlue1,
 
-                bg = "#181616",
                 bg_dim = "#1D1C19",
+                bg_gutter = "#181616",
 
-                shade0 = "#121111",
-                shade1 = "#282727",
-                shade2 = "#393836",
-                shade3 = "#524F4B",
-                shade4 = "#6E7675",
+                bg_m3 = "#121111",
+                bg_m2 = "#1D1C19",
+                bg_m1 = "#1D1C19",
+                bg = "#181616",
+                bg_p1 = "#282727",
+                bg_p2 = "#393836",
+
+                special = "#6E7675",
+                whitespace = "#524F4B",
+                nontext = "#524F4B",
 
                 bg_visual = colors.waveBlue1,
                 bg_search = colors.waveBlue2,
-
-                whitespace ="#524F4B",
-                nontext = "#524F4B",
 
                 pmenu = {
                     fg = colors.fujiWhite,
                     fg_sel = "none",
                     bg = colors.waveBlue1,
+                    bg_sel = colors.waveBlue2,
                     bg_thumb = colors.waveBlue2,
                     bg_sbar = colors.waveBlue1,
-                    bg_sel = colors.waveBlue2,
                 },
 
                 float = {
-                    fg_border = colors.sumiInk4,
                     fg = colors.oldWhite,
                     bg = "#121111",
+                    fg_border = colors.sumiInk6,
+                    bg_border = "#121111",
                 },
             },
             syn = {
-                constant = "#b6927b",
                 string = "#87a987",
+                variable = "none",
                 number = "#a292a3",
+                constant = "#b6927b",
                 identifier = "#a6a69c", --ok
+                parameter = "#a6a69c",
                 fun = "#8ba4b0",
                 statement = "#8992a7",
                 keyword = "#8992a7",
                 operator = "#c4746e",
                 preproc = "#a99c8b",
-                -- ty = "#5B7B79",
+                -- type = "#5B7B79",
                 type = "#8ea4a2",
+                regex = "#c3746e",
+                deprecated = colors.katanaGray,
+                punct1 = "#9e9b93",
+                punct2 = "#9e9b93",
+                comment = "#737c73",
                 special1 = "#949fb5",
                 special2 = "#aa9e89",
                 special3 = "#aa9e89",
-                punct1 = "#9e9b93",
-                punct2 = "#9e9b93",
-                regex = "#c3746e",
-                deprecated = colors.katanaGray,
-                comment = "#737c73",
             },
 
             diag = {
@@ -283,7 +275,7 @@ return {
                 changed = colors.autumnYellow,
             },
 
-            term = {}
+            term = {},
         }
     end,
     ---@param palette PaletteColors
@@ -291,81 +283,82 @@ return {
     lotus = function(palette)
         return {
             ui = {
-                fg = tostring(c(palette.sumiInk1):lighten(3.0):saturate(0.9)),
-                fg_dim = tostring(c(palette.sumiInk1):lighten(2.5):saturate(2.5)),
-                fg_reverse = palette.fujiWhite,
+                fg = "#545464",
+                fg_dim = "#43436c",
+                fg_reverse = "#dcd7ba",
 
-                bg_dim = tostring(c(palette.fujiWhite):lighten(1.1):saturate(1.5):lighten(0.97)),
-                bg = tostring(c(palette.fujiWhite):lighten(1.1):saturate(1.8)),
+                bg_dim = "#e3daa8",
+                bg_gutter = "#eae0ac",
 
-                shade0 = tostring(c(palette.fujiWhite):lighten(0.96):saturate(1.5)),
-                shade1 = tostring(c(palette.oldWhite):lighten(1.12):saturate(0.99)),
-                shade2 = tostring(c(palette.oldWhite):lighten(1.15)),
-                shade3 = tostring(c(palette.springViolet1):lighten(1.1):saturate(0.6)),
-                shade4 = tostring(c(palette.springViolet1):lighten(0.8)),
+                bg_m3 = "#d5cea3",
+                bg_m2 = "#dcd5ac",
+                bg_m1 = "#e5ddb0",
+                bg = "#f2ecbc",
+                bg_p1 = "#e7dba0",
+                bg_p2 = "#e4d794",
 
-                nontext = tostring(c(palette.springViolet1):lighten(1.1):saturate(0.6)),
-                whitespace = tostring(c(palette.springViolet1):lighten(1.1):saturate(0.6)),
-                special2 = nil,
-                special3 = nil,
-                bg_visual = tostring(c(palette.waveBlue1):lighten(4):saturate(0.20)),
-                bg_search = tostring(c(palette.waveBlue2):lighten(2.5):hue(0.9):saturate(0.3)),
-                bg_incsearch = tostring(c(palette.roninYellow):lighten(0.9):saturate(1)),
+                nontext = "#a09cac",
+                whitespace = "#a09cac",
+                special = "#766b90",
+
+                bg_visual = "#c9cbd1",
+                bg_search = "#b5cbd2",
+
                 pmenu = {
-                    bg = tostring(c(palette.waveBlue2):lighten(2.65):saturate(0.4):hue(0.95)),
-                    bg_sel = tostring(c(palette.waveBlue1):lighten(3.55):saturate(0.5):hue(0.95)),
-                    bg_sbar = tostring(c(palette.waveBlue2):lighten(2.65):saturate(0.4):hue(0.95)),
-                    bg_thumb = tostring(c(palette.waveBlue2):lighten(2.5):hue(0.9):saturate(0.3)),
-                    fg_menu = tostring(c(palette.sumiInk4):lighten(0.90)),
+                    fg = "#4b4b64",
                     fg_sel = "none", -- This is important to make highlights pass-through
+                    bg = "#c7d7e0",
+                    bg_sel = "#9fb5c9",
+                    bg_sbar = "#c7d7e0",
+                    bg_thumb = "#b5cbd2",
                 },
                 float = {
-                    fg = tostring(c(palette.sumiInk1):lighten(2.5):saturate(2.5)),
-                    bg = tostring(c(palette.fujiWhite):lighten(0.96):saturate(1.5)),
-                    fg_border = tostring(c(palette.oldWhite):lighten(0.6):saturate(0.5)),
-                    bg_border = palette.sumiInk0,
+                    fg = "#43436c",
+                    bg = "#d5cea3",
+                    fg_border = "#716e61",
+                    bg_border = "#d5cea3",
                 },
             },
             syn = {
-                string = tostring(c(palette.springGreen):lighten(0.75)),
+                string = "#6f894e",
                 variable = "none",
-                number = tostring(c(palette.sakuraPink):lighten(0.8):saturate(0.9)),
-                constant = tostring(c(palette.surimiOrange):lighten(0.75)),
-                identifier = tostring(c(palette.carpYellow):lighten(0.65):saturate(1.2)),
-                parameter = palette.carpYellow,
-                fun = tostring(c(palette.crystalBlue):lighten(0.73):saturate(1)),
-                method = tostring(c(palette.crystalBlue):lighten(0.73):saturate(1)),
-                statement = tostring(c(palette.oniViolet):lighten(0.8):saturate(1)),
-                keyword = tostring(c(palette.oniViolet):lighten(0.8):saturate(1)),
-                operator = tostring(c(palette.boatYellow2):lighten(0.7):saturate(1)),
-                preproc = tostring(c(palette.surimiOrange):lighten(0.75)),
-                type = tostring(c(palette.waveAqua2):lighten(0.8):saturate(1)),
-                regex = tostring(c(palette.boatYellow2):lighten(0.7):saturate(1)),
-                deprecated = tostring(c(palette.katanaGray):lighten(0.5)),
-                comment = tostring(c(palette.fujiGray):lighten(1.2)),
-                punct1 = tostring(c(palette.springViolet2):lighten(0.7):saturate(0.9)),
-                punct2 = tostring(c(palette.springViolet2):lighten(0.7):saturate(0.9)),
-                special1 = tostring(c(palette.springBlue):lighten(0.78):saturate(1.34)),
-                special2 = tostring(c(palette.waveRed):lighten(0.80):saturate(1.0)),
-                special3 = tostring(c(palette.peachRed):lighten(0.8):saturate(1):hue(1)),
+                number = "#b35b79",
+                constant = "#cc6d00",
+                identifier = "#8d7342",
+                parameter = "#e6c384",
+                fun = "#4f6fa8",
+                method = "#4f6fa8",
+                statement = "#7b5fa3",
+                keyword = "#7b5fa3",
+                operator = "#836f4a",
+                preproc = "#cc6d00",
+                type = "#5f847d",
+                regex = "#836f4a",
+                deprecated = "#8a8980",
+                comment = "#8a8980",
+                punct1 = "#4e8ca2",
+                punct2 = "#4e8ca2",
+                special1 = "#6693bf",
+                special2 = "#c84053",
+                special3 = "#ec001c",
             },
             vcs = {
-                added = tostring(c(palette.autumnGreen):lighten(0.97):saturate(1.2)),
-                removed = tostring(c(palette.autumnRed):lighten(1.1):saturate(1)),
-                changed = tostring(c(palette.autumnYellow):lighten(0.95):saturate(1.5)),
+                added = "#6e915f",
+                removed = "#d7474b",
+                changed = "#de9800",
             },
             diff = {
-                add = tostring(c(palette.winterGreen):lighten(4):saturate(0.9)),
-                delete = tostring(c(palette.winterRed):lighten(3.9):saturate(1.3):hue(0.08)),
-                change = tostring(c(palette.winterBlue):lighten(5.8):saturate(0.5):hue(0.5)),
-                text = tostring(c(palette.winterYellow):lighten(3):saturate(4)),
+                add = "#b7d0ae",
+                delete = "#d9a594",
+                change = "#d7e3d8",
+                text = "#f9d791",
             },
             diag = {
-                error = tostring(c(palette.samuraiRed):lighten(1)),
-                ok = tostring(c(palette.springGreen):lighten(0.75)),
-                warning = tostring(c(palette.roninYellow):lighten(0.9):saturate(1)),
-                info = tostring(c(palette.dragonBlue):lighten(0.9)),
-                hint = tostring(c(palette.waveAqua1):lighten(0.9)),
+                error = "#e82424",
+                ok = "#6f894e",
+                warning = "#e98a00",
+                info = "#5a7785",
+                hint = "#5e857a",
             },
             term = {},
         }

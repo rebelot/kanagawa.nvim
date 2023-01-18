@@ -53,7 +53,6 @@ function M.setup(colors, config)
         Type = vim.tbl_extend("force", { fg = theme.syn.type }, config.typeStyle),
         --  StorageClass	static, register, volatile, etc.
         --  Structure	struct, union, enum, etc.
-        -- Structure = { link = "Type" },
         --  Typedef	A typedef
 
         -- *Special	any special symbol
@@ -61,6 +60,7 @@ function M.setup(colors, config)
         --  SpecialChar	special character in a constant
         --  Tag		you can use CTRL-] on this
         --  Delimiter	character that needs attention
+        Delimiter = { fg = theme.syn.punct1 },
         --  SpecialComment	special things inside a comment
         --  Debug		debugging statements
 
