@@ -18,7 +18,6 @@ M.config = {
     specialException = true,
     transparent = false,
     dimInactive = false,
-    globalStatus = false,
     terminalColors = true,
     ---@type KanagawaColorsSpec
     colors = { theme = {}, palette = {} },
