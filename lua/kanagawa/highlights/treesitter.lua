@@ -17,11 +17,11 @@ function M.setup(colors, config)
 
         -- Punctuation (Delimiter)
         -- @punctuation.delimiter                      ; delimiters (e.g. ` ; ` / `.` / `,`)
-        ["@punctuation.delimiter"] = { fg = theme.syn.punct1 },
+        ["@punctuation.delimiter"] = { fg = theme.syn.punct },
         -- @punctuation.bracket                        ; brackets (e.g. `()` / `{}` / `[]`)
-        ["@punctuation.bracket"] = { fg = theme.syn.punct1 },
+        ["@punctuation.bracket"] = { fg = theme.syn.punct },
         -- @punctuation.special                        ; special symbols (e.g. `{}` in string interpolation)
-        ["@punctuation.Special"] = { fg = theme.syn.punct1 },
+        ["@punctuation.special"] = { fg = theme.syn.special1 },
         -- }}}
 
         -- Literals {{{
@@ -50,7 +50,8 @@ function M.setup(colors, config)
         -- @method.call                                ; method calls
 
         -- @constructor (Special)                      ; constructor calls and definitions
-        ["@constructor"] = { fg = theme.syn.keyword }, -- Function/Special/Statement/Keyword
+        ["@constructor.lua"] = { fg = theme.syn.keyword },
+        ["@constructor"] = { fg = theme.syn.special1 },
         -- @parameter (Identifier)                     ; parameters of a function
         ["@parameter"] = { fg = theme.syn.parameter },
         -- }}}
@@ -61,11 +62,7 @@ function M.setup(colors, config)
         -- @keyword.operator                           ; operators that are English words (e.g. `and` / `or`)
         ["@keyword.operator"] = { fg = theme.syn.operator, bold = true },
         -- @keyword.return                             ; keywords like `return` and `yield`
-        ["@keyword.return"] = vim.tbl_extend(
-            "force",
-            { fg = config.specialReturn and theme.syn.special3 or theme.syn.keyword },
-            config.keywordStyle
-        ),
+        ["@keyword.return"] = vim.tbl_extend("force", { fg = theme.syn.special3 }, config.keywordStyle),
 
         -- @conditional (Conditional)                  ; keywords related to conditionals (e.g. `if` / `else`)
         -- @conditional.ternary                        ; Ternary operator: condition ? 1 : 2
@@ -74,11 +71,7 @@ function M.setup(colors, config)
         -- @label (Label)                              ; GOTO and other labels (e.g. `label:` in C)
         -- @include (Include)                          ; keywords for including modules (e.g. `import` / `from` in Python)
         -- @exception (Exception)                      ; keywords related to exceptions (e.g. `throw` / `catch`)
-        ["@exception"] = vim.tbl_extend(
-            "force",
-            { fg = config.specialException and theme.syn.special3 or theme.syn.statement },
-            config.statementStyle
-        ),
+        ["@exception"] = vim.tbl_extend("force", { fg = theme.syn.special3 }, config.statementStyle),
         -- }}}
 
         -- Types {{{
@@ -100,7 +93,7 @@ function M.setup(colors, config)
         -- @variable (Identifier)                      ; various variable names
         ["@variable"] = { fg = theme.ui.fg },
         -- @variable.builtin                           ; built-in variable names (e.g. `this`)
-        ["@variable.builtin"] = vim.tbl_extend("force", { fg = theme.syn.special2 }, config.variablebuiltinStyle),
+        ["@variable.builtin"] = { fg = theme.syn.special2, italic = true },
 
         -- @constant (Constant)                        ; constant identifiers
         -- @constant.builtin (Special)                 ; built-in constant values
@@ -146,7 +139,7 @@ function M.setup(colors, config)
         -- @tag.attribute                              ; XML tag attributes
         ["@tag.attribute"] = { fg = theme.syn.identifier },
         -- @tag.delimiter                              ; XML tag delimiter
-        ["@tag.delimiter"] = { fg = theme.syn.punct1 },
+        ["@tag.delimiter"] = { fg = theme.syn.punct },
         -- }}}
     }
 end

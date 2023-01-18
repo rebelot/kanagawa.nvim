@@ -59,7 +59,7 @@ function M.setup(colors, config)
         --  SpecialChar	special character in a constant
         --  Tag		you can use CTRL-] on this
         --  Delimiter	character that needs attention
-        Delimiter = { fg = theme.syn.punct1 },
+        Delimiter = { fg = theme.syn.punct },
         --  SpecialComment	special things inside a comment
         --  Debug		debugging statements
 

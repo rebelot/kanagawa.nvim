@@ -1,5 +1,8 @@
 local c = require("kanagawa.color")
 
+--TODO:
+--PreProc needs its own color
+--parameter and field should be different
 ---@class SyntaxElements
 ---@field string Color
 ---@field variable Color
@@ -16,8 +19,7 @@ local c = require("kanagawa.color")
 ---@field regex Color
 ---@field deprecated Color
 ---@field comment Color
----@field punct1 Color
----@field punct2 Color
+---@field punct Color
 ---@field special1 Color
 ---@field special2 Color
 ---@field special3 Color
@@ -140,8 +142,7 @@ return {
                 regex = palette.boatYellow2,
                 deprecated = palette.katanaGray,
                 comment = palette.fujiGray,
-                punct1 = palette.springViolet2,
-                punct2 = palette.springViolet2,
+                punct = palette.springViolet2,
                 special1 = palette.springBlue,
                 special2 = palette.waveRed,
                 special3 = palette.peachRed,
@@ -244,8 +245,7 @@ return {
                 type = "#8ea4a2",
                 regex = "#c3746e",
                 deprecated = colors.katanaGray,
-                punct1 = "#9e9b93",
-                punct2 = "#9e9b93",
+                punct = "#9e9b93",
                 comment = "#737c73",
                 special1 = "#949fb5",
                 special2 = "#aa9e89",
@@ -333,8 +333,7 @@ return {
                 regex = "#836f4a",
                 deprecated = "#8a8980",
                 comment = "#8a8980",
-                punct1 = "#4e8ca2",
-                punct2 = "#4e8ca2",
+                punct = "#4e8ca2",
                 special1 = "#6693bf",
                 special2 = "#c84053",
                 special3 = "#ec001c",
