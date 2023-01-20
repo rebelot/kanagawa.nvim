@@ -1,4 +1,4 @@
-local c = require("kanagawa.color")
+-- local c = require("kanagawa.color")
 
 --TODO:
 --PreProc needs its own color

@@ -1,4 +1,5 @@
 local M = {}
+
 ---@alias Color string|integer
 ---@alias ColorTable table<string, Color>
 ---@alias KanagawaColorsSpec { palette: ColorTable, theme: ColorTable }
@@ -70,6 +71,10 @@ end
 
 --- load the colorscheme
 function M.load(theme)
+    local utils = require("kanagawa.utils")
+
+    theme = theme or M.config.theme[vim.o.background] or M.config.theme.default
+
     if vim.g.colors_name then
         vim.cmd("hi clear")
     end
@@ -77,10 +82,26 @@ function M.load(theme)
     vim.g.colors_name = "kanagawa"
     vim.o.termguicolors = true
 
-    local colors = require("kanagawa.colors").setup({ theme = theme })
-    local highlights = require("kanagawa.highlights").setup(colors, M.config)
+    if utils.load_compiled(theme) then
+        return
+    end
 
-    require("kanagawa.utils").make_highlights(highlights)
+    M.compile(theme)
+    utils.load_compiled(theme)
 end
+
+function M.compile(theme)
+    theme = theme or M.config.theme[vim.o.background] or M.config.theme.default
+
+    local colors = require("kanagawa.colors").setup({ theme = theme, colors = M.config.colors })
+    local highlights = require("kanagawa.highlights").setup(colors, M.config)
+    require("kanagawa.utils").compile(theme, highlights)
+end
+
+vim.api.nvim_create_user_command("KanagawaCompile", function()
+    M.compile()
+    vim.notify("Kanagawa: compiled successfully!", vim.log.levels.INFO)
+    vim.cmd "colo kanagawa"
+end, {})
 
 return M
