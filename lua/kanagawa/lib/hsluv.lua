@@ -20,16 +20,16 @@ WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN 
 SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 ]]
 
-hsluv = {}
+local hsluv = {}
 
-hexChars = "0123456789abcdef"
+local hexChars = "0123456789abcdef"
 
 
-distance_line_from_origin = function(line)
+local distance_line_from_origin = function(line)
     return math.abs(line.intercept) / math.sqrt((line.slope ^ 2) + 1)
 end
 
-length_of_ray_until_intersect = function(theta, line)
+local length_of_ray_until_intersect = function(theta, line)
     return line.intercept / (math.sin(theta) - line.slope * math.cos(theta))
 end
 
