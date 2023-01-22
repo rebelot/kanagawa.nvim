@@ -70,10 +70,12 @@ function M.setup(config)
 end
 
 --- load the colorscheme
+---@param theme? string
 function M.load(theme)
     local utils = require("kanagawa.utils")
 
     theme = theme or M.config.theme[vim.o.background] or M.config.theme.default
+    M._CURRENT_THEME = theme
 
     if vim.g.colors_name then
         vim.cmd("hi clear")
@@ -86,22 +88,27 @@ function M.load(theme)
         return
     end
 
-    M.compile(theme)
+    M.compile()
     utils.load_compiled(theme)
 end
 
-function M.compile(theme)
-    theme = theme or M.config.theme[vim.o.background] or M.config.theme.default
-
-    local colors = require("kanagawa.colors").setup({ theme = theme, colors = M.config.colors })
-    local highlights = require("kanagawa.highlights").setup(colors, M.config)
-    require("kanagawa.utils").compile(theme, highlights)
+function M.compile()
+    for theme, _ in pairs(require("kanagawa.themes")) do
+        local colors = require("kanagawa.colors").setup({ theme = theme, colors = M.config.colors })
+        local highlights = require("kanagawa.highlights").setup(colors, M.config)
+        require("kanagawa.utils").compile(theme, highlights)
+    end
 end
 
 vim.api.nvim_create_user_command("KanagawaCompile", function()
+    for mod, _ in pairs(package.loaded) do
+        if mod:match("^kanagawa%.") then
+            package.loaded[mod] = nil
+        end
+    end
     M.compile()
     vim.notify("Kanagawa: compiled successfully!", vim.log.levels.INFO)
-    vim.cmd "colo kanagawa"
+    vim.cmd("colo kanagawa-" .. M._CURRENT_THEME)
 end, {})
 
 return M
