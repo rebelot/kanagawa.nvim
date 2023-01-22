@@ -32,9 +32,11 @@ function M.setup(colors, config)
 
         -- Telescope
         TelescopeBorder = { fg = theme.ui.float.fg_border, bg = theme.ui.bg },
-        TelescopeResultsClass = { link = "TSType" },
-        TelescopeResultsStruct = { link = "TSType" },
-        TelescopeResultsVariable = { link = "TSVariable" },
+        TelescopeResultsClass = { link = "Structure" },
+        TelescopeResultsStruct = { link = "Structure" },
+        TelescopeResultsField = { link = "@field" },
+        TelescopeResultsMethod = { link = "Function" },
+        TelescopeResultsVariable = { link = "@variable" },
 
         -- NvimTree
         NvimTreeNormal = { link = "Normal" },
@@ -180,6 +182,8 @@ function M.setup(colors, config)
         IndentBlanklineSpaceCharBlankline = { fg = theme.ui.whitespace },
         IndentBlanklineContextChar = { fg = theme.ui.special },
         IndentBlanklineContextStart = { sp = theme.ui.special, underline = true },
+
+        LazyProgressTodo = { fg = theme.ui.nontext }
     }
 end
 
