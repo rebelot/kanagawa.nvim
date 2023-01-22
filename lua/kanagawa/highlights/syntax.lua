@@ -1,4 +1,4 @@
-local c = require("kanagawa.color")
+-- local c = require("kanagawa.color")
 local M = {}
 
 ---@param colors KanagawaColors
