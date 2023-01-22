@@ -1,61 +1,61 @@
 local hsluv = require("kanagawa.lib.hsluv")
 
+---@class HSLuvColor
 local Color = {}
 local Color_mt = {
     __index = Color,
     __tostring = function(self)
-        return hsluv.hsluv_to_hex({ self.H, self.S, self.L })
+        return self:to_hex()
     end,
 }
 
-function Color.new(hex_or_tuple)
-    local H, S, L
-    if type(hex_or_tuple) == "string" then
-        H, S, L = unpack(hsluv.hex_to_hsluv(hex_or_tuple))
-    end
+---Create a new HSLuv color object from a RGB hex string
+---@param hex string Hex color
+---@return HSLuvColor
+function Color.new(hex)
+    local H, S, L = unpack(hsluv.hex_to_hsluv(hex))
     return setmetatable({ H = H, S = S, L = L }, Color_mt)
 end
 
-local function blend(a, b, t)
+function Color:to_rgb()
+    return hsluv.hsluv_to_rgb({ self.H, self.S, self.L })
+end
+
+function Color:to_hex()
+    return hsluv.hsluv_to_hex({ self.H, self.S, self.L })
+end
+
+local function blendRGB(a, b, r)
     local c = {}
     for i = 1, 3 do
-        c[i] = math.sqrt((1 - t) * a[i] * a[i] + t * b[i] * b[i])
+        c[i] = math.sqrt((1 - r) * math.pow(a[i], 2) + r * math.pow(b[i], 2))
     end
     return c
 end
 
-function Color:blend(b, t)
-    b = hsluv.hex_to_rgb(b)
-    local a = hsluv.hsluv_to_rgb({ self.H, self.S, self.L })
-    local c = blend(a, b, t)
+--- Blend Color with another color (hex)
+---@param b string Hex color
+---@param r number Blend ratio [0, 1]
+---@return HSLuvColor
+function Color:blend(b, r)
+    local c = blendRGB(self:to_rgb(), hsluv.hex_to_rgb(b), r)
     self.H, self.S, self.L = unpack(hsluv.rgb_to_hsluv(c))
     return self
 end
 
-function Color:lighten(r)
-    local L = self.L * r
-    if L > 100 then
-        L = 100
-    end
-    self.L = L
+---@param r number Brighten ratio [-1, 1]
+---@return HSLuvColor
+function Color:brighten(r)
+    local lspace = r > 0 and 100 - self.L or self.L
+    self.L = self.L + lspace * r
     return self
 end
 
+---@param r number Saturate ratio [-1, 1]
+---@return HSLuvColor
 function Color:saturate(r)
-    local S = self.S * r
-    if S > 100 then
-        S = 100
-    end
-    self.S = S
-    return self
-end
-
-function Color:hue(r)
-    local H = self.H * r
-    if H > 360 then
-        H = 360
-    end
-    self.H = H
+    local lspace = r > 0 and 100 - self.S or self.S
+    self.S = self.S + lspace * r
     return self
 end
 

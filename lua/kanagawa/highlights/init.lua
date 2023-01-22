@@ -1,6 +1,6 @@
 local M = {}
 
----@param termcolors Color[]
+---@param termcolors ColorSpec[]
 local function setup_terminal_colors(termcolors)
     local g = vim.g
     for i = 1, 18 do

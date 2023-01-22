@@ -1,7 +1,7 @@
 local M = {}
 
----@alias Color string|integer
----@alias ColorTable table<string, Color>
+---@alias ColorSpec string RGB Hex string
+---@alias ColorTable table<string, ColorSpec>
 ---@alias KanagawaColorsSpec { palette: ColorTable, theme: ColorTable }
 ---@alias KanagawaColors { palette: PaletteColors, theme: ThemeColors }
 

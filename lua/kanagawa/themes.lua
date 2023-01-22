@@ -4,77 +4,77 @@
 --PreProc needs its own color
 --parameter and field should be different
 ---@class SyntaxElements
----@field string Color
----@field variable Color
----@field number Color
----@field constant Color
----@field identifier Color
----@field parameter Color
----@field fun Color
----@field statement Color
----@field keyword Color
----@field operator Color
----@field preproc Color
----@field type Color
----@field regex Color
----@field deprecated Color
----@field comment Color
----@field punct Color
----@field special1 Color
----@field special2 Color
----@field special3 Color
+---@field string ColorSpec
+---@field variable ColorSpec
+---@field number ColorSpec
+---@field constant ColorSpec
+---@field identifier ColorSpec
+---@field parameter ColorSpec
+---@field fun ColorSpec
+---@field statement ColorSpec
+---@field keyword ColorSpec
+---@field operator ColorSpec
+---@field preproc ColorSpec
+---@field type ColorSpec
+---@field regex ColorSpec
+---@field deprecated ColorSpec
+---@field comment ColorSpec
+---@field punct ColorSpec
+---@field special1 ColorSpec
+---@field special2 ColorSpec
+---@field special3 ColorSpec
 
 ---@class DiagnosticsElements
----@field error Color
----@field ok Color
----@field warning Color
----@field info Color
----@field hint Color
+---@field error ColorSpec
+---@field ok ColorSpec
+---@field warning ColorSpec
+---@field info ColorSpec
+---@field hint ColorSpec
 --
 ---@class DiffElements
----@field add Color
----@field delete Color
----@field change Color
----@field text Color
+---@field add ColorSpec
+---@field delete ColorSpec
+---@field change ColorSpec
+---@field text ColorSpec
 
 ---@class VCSElements
----@field added Color
----@field removed Color
----@field changed Color
+---@field added ColorSpec
+---@field removed ColorSpec
+---@field changed ColorSpec
 
 ---@class UiElements
----@field fg Color Default foreground
----@field fg_dim Color Dimmed foreground
----@field fg_reverse Color
----@field bg_dim Color Dimmed background
----@field bg_m3 Color
----@field bg_m2 Color
----@field bg_m1 Color
----@field bg Color Default background
----@field bg_p1 Color Lighter background ColorColumn, Folded, Gutter
----@field bg_p2 Color Lighter background Cursor{Line,Column}, TabLineSel (Selected Items)
----@field bg_gutter Color {Sign,Fold}Column, LineNr
----@field special Color SpecialKey
----@field nontext Color LineNr, NonText
----@field whitespace Color Whitespace
----@field bg_search Color
----@field bg_visual Color
+---@field fg ColorSpec Default foreground
+---@field fg_dim ColorSpec Dimmed foreground
+---@field fg_reverse ColorSpec
+---@field bg_dim ColorSpec Dimmed background
+---@field bg_m3 ColorSpec
+---@field bg_m2 ColorSpec
+---@field bg_m1 ColorSpec
+---@field bg ColorSpec Default background
+---@field bg_p1 ColorSpec Lighter background ColorColumn, Folded, Gutter
+---@field bg_p2 ColorSpec Lighter background Cursor{Line,Column}, TabLineSel (Selected Items)
+---@field bg_gutter ColorSpec {Sign,Fold}Column, LineNr
+---@field special ColorSpec SpecialKey
+---@field nontext ColorSpec LineNr, NonText
+---@field whitespace ColorSpec Whitespace
+---@field bg_search ColorSpec
+---@field bg_visual ColorSpec
 ---@field pmenu MenuElements
 ---@field float FloatElements
 
 ---@class FloatElements
----@field fg Color
----@field bg Color
----@field fg_border Color
----@field bg_border Color
+---@field fg ColorSpec
+---@field bg ColorSpec
+---@field fg_border ColorSpec
+---@field bg_border ColorSpec
 
 ---@class MenuElements
----@field bg Color
----@field fg Color
----@field fg_sel Color
----@field bg_sel Color
----@field bg_sbar Color
----@field bg_thumb Color
+---@field bg ColorSpec
+---@field fg ColorSpec
+---@field fg_sel ColorSpec
+---@field bg_sel ColorSpec
+---@field bg_sbar ColorSpec
+---@field bg_thumb ColorSpec
 
 ---@class ThemeColors
 ---@field syn SyntaxElements
@@ -82,7 +82,7 @@
 ---@field vcs VCSElements
 ---@field diff DiffElements
 ---@field ui UiElements
----@field term Color[]
+---@field term ColorSpec[]
 
 return {
     ---@param palette PaletteColors
