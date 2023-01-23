@@ -62,6 +62,7 @@ function M.setup(colors, config)
         DashboardFooter = { fg = theme.syn.fun },
 
         -- Notify
+        NotifyBackground = { bg = theme.ui.bg },
         NotifyERRORBorder = { link = "DiagnosticError" },
         NotifyWARNBorder = { link = "DiagnosticWarn" },
         NotifyINFOBorder = { link = "DiagnosticInfo" },
