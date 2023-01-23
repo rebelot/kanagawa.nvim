@@ -23,6 +23,8 @@ M.config = {
     overrides = function()
         return {}
     end,
+    -- ---@type table<string, fun(palette: PaletteColors): ThemeColors>
+    -- themes = {},
     ---@type { dark: string, light: string, default: string}
     theme = { dark = "wave", light = "lotus", default = "wave" },
 }
