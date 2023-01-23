@@ -9,10 +9,17 @@ local Color_mt = {
     end,
 }
 
+local function none_to_hex()
+    return "NONE"
+end
+
 ---Create a new HSLuv color object from a RGB hex string
 ---@param hex string Hex color
 ---@return HSLuvColor
 function Color.new(hex)
+    if hex:lower() == "none" then
+        return setmetatable({ H = 0, S = 0, L = 0, to_hex = none_to_hex }, Color_mt)
+    end
     local H, S, L = unpack(hsluv.hex_to_hsluv(hex))
     return setmetatable({ H = H, S = S, L = L }, Color_mt)
 end
@@ -38,14 +45,24 @@ end
 ---@param r number Blend ratio [0, 1]
 ---@return HSLuvColor
 function Color:blend(b, r)
+    if b:lower() == "none" then
+        return self
+    end
     local c = blendRGB(self:to_rgb(), hsluv.hex_to_rgb(b), r)
     self.H, self.S, self.L = unpack(hsluv.rgb_to_hsluv(c))
     return self
 end
 
 ---@param r number Brighten ratio [-1, 1]
+---@param bg? string background color, if light, r = -r
 ---@return HSLuvColor
-function Color:brighten(r)
+function Color:brighten(r, bg)
+    if bg and bg:lower() == "none" then
+        return self
+    end
+    local bg_lightness = bg and hsluv.hex_to_hsluv(bg)[3] or 0
+    r = bg_lightness > 50 and -r or r
+
     local lspace = r > 0 and 100 - self.L or self.L
     self.L = self.L + lspace * r
     return self
