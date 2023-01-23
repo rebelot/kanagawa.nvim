@@ -72,7 +72,11 @@ function M.setup(opts)
     opts = opts or {}
     local tbl_extend = vim.tbl_extend
     local override_colors = opts.colors or require("kanagawa").config.colors
-    local theme = opts.theme or require("kanagawa")._CURRENT_THEME
+    local theme = opts.theme or require("kanagawa")._CURRENT_THEME -- WARN: this fails if called before kanagawa.load()
+
+    if not theme then
+        error("kanagawa.colors.setup(): No theme specified. Either specify a theme or call this funciton after ':colorscheme kanagawa'")
+    end
 
     -- Add to and/or override palette_colors
     local updated_palette_colors = tbl_extend("force", palette_colors, override_colors.palette)
