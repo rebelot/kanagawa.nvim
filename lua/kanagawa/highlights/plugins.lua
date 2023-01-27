@@ -59,7 +59,10 @@ function M.setup(colors, config)
         DashboardShortCut = { fg = theme.syn.special1 },
         DashboardHeader = { fg = theme.vcs.removed },
         DashboardCenter = { fg = theme.syn.identifier },
-        DashboardFooter = { fg = theme.syn.fun },
+        DashboardFooter = { fg = theme.syn.comment },
+        DashboardDesc = { fg = theme.syn.identifier },
+        DashboardKey = { fg = theme.syn.special1 },
+        DashboardIcon = { fg = theme.ui.special },
 
         -- Notify
         NotifyBackground = { bg = theme.ui.bg },
