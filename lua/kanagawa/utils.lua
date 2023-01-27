@@ -1,9 +1,8 @@
 local M = {}
-local PATH_SEP = vim.loop.os_uname().sysname:match("Windows") and "\\" or "/"
-local KANAGAWA_COMPILED_PATH = string.format("%s%skanagawa%s", vim.fn.stdpath("state"), PATH_SEP, PATH_SEP)
+local PATH_SEP = vim.loop.os_uname().version:match("Windows") and "\\" or "/"
 
 local KANAGAWA_COMPILED = function(theme)
-    return string.format("%s%s_compiled.lua", KANAGAWA_COMPILED_PATH, theme)
+    return table.concat({vim.fn.stdpath("state"), "kanagawa", theme .. "_compiled.lua"}, PATH_SEP)
 end
 
 ---@return string theme
@@ -15,7 +14,7 @@ end
 ---@param theme string
 ---@param highlights table
 function M.compile(theme, highlights)
-    vim.loop.fs_mkdir(KANAGAWA_COMPILED_PATH, 448)
+    vim.loop.fs_mkdir(vim.fn.stdpath("state") .. PATH_SEP .. "kanagawa", 448)
 
     local fname = KANAGAWA_COMPILED(theme)
     local file, err = io.open(fname, "wb")
