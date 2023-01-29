@@ -64,7 +64,7 @@ function M.setup(colors, config)
         -- @keyword.return                             ; keywords like `return` and `yield`
         ["@keyword.return"] = vim.tbl_extend("force", { fg = theme.syn.special3 }, config.keywordStyle),
 
-        -- @conditional (Conditional)                  ; keywords related to conditionals (e.g. `if` / `else`)
+        -- @conditional (Conditional -> Statement)     ; keywords related to conditionals (e.g. `if` / `else`)
         -- @conditional.ternary                        ; Ternary operator: condition ? 1 : 2
         -- @repeat (Repeat)                            ; keywords related to loops (e.g. `for` / `while`)
         -- @debug (Debug)                              ; keywords related to debugging

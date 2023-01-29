@@ -54,6 +54,7 @@ function M.setup(colors, config)
         NvimTreeExecFile = { fg = theme.syn.string, bold = true },
         NvimTreeOpenedFile = { fg = theme.syn.special1, italic = true },
         NvimTreeWinSeparator = { link = "WinSeparator" },
+        NvimTreeWindowPicker = { bg = theme.ui.bg_m1, fg = theme.syn.special1, bold = true },
 
         -- Dashboard
         DashboardShortCut = { fg = theme.syn.special1 },
@@ -187,7 +188,7 @@ function M.setup(colors, config)
         IndentBlanklineContextChar = { fg = theme.ui.special },
         IndentBlanklineContextStart = { sp = theme.ui.special, underline = true },
 
-        LazyProgressTodo = { fg = theme.ui.nontext }
+        LazyProgressTodo = { fg = theme.ui.nontext },
     }
 end
 
