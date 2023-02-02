@@ -97,7 +97,7 @@ function M.setup(colors, config)
 
         -- @constant (Constant)                        ; constant identifiers
         -- @constant.builtin (Special)                 ; built-in constant values
-        -- @constant.macro (Define)                    ; constants defined by the preprocessor
+        -- @constant.macro (Define -> PreProc)         ; constants defined by the preprocessor
 
         -- @namespace (Identifier)                     ; modules or namespaces
         -- @symbol                                     ; symbols or atoms
