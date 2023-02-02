@@ -10,28 +10,28 @@ function M.setup(colors, config)
         -- Neovcs
         -- NeovcsBranch = {},
         -- NeovcsRemote = {},
-        NeovcsDiffDelete = { fg = theme.vcs.removed, bg = theme.diff.delete },
-        NeovcsDiffAdd = { fg = theme.vcs.added, bg = theme.diff.add },
-        NeovcsHunkHeader = { fg = theme.syn.identifier },
-        NeovcsDiffContextHighlight = { bg = theme.diff.change },
+        -- NeovcsDiffDelete = { fg = theme.vcs.removed, bg = theme.diff.delete },
+        -- NeovcsDiffAdd = { fg = theme.vcs.added, bg = theme.diff.add },
+        -- NeovcsHunkHeader = { fg = theme.syn.identifier },
+        -- NeovcsDiffContextHighlight = { bg = theme.diff.change },
 
-        -- vcsGutter
-        -- vcsGutterAdd = {},
-        -- vcsGutterChange = {},
-        -- vcsGutterDelete = {},
 
         -- vcsSigns
-        vcsSignsAdd = { link = "diffAdded" },
-        vcsSignsChange = { link = "diffChanged" },
-        vcsSignsDelete = { link = "diffDeleted" },
-        vcsSignsDeleteLn = { bg = theme.diff.delete },
+        -- vcsSignsAdd = { link = "diffAdded" },
+        -- vcsSignsChange = { link = "diffChanged" },
+        -- vcsSignsDelete = { link = "diffDeleted" },
+        -- vcsSignsDeleteLn = { bg = theme.diff.delete },
 
         GitSignsAdd = { fg = theme.vcs.added, bg = theme.ui.bg_gutter },
         GitSignsChange = { fg = theme.vcs.changed, bg = theme.ui.bg_gutter },
         GitSignsDelete = { fg = theme.vcs.removed, bg = theme.ui.bg_gutter },
 
+        -- TreeSitter Extensions
+        TreesitterContext = { link = "Folded" },
+
         -- Telescope
         TelescopeBorder = { fg = theme.ui.float.fg_border, bg = theme.ui.bg },
+        TelescopeTitle = { fg = theme.ui.special },
         TelescopeResultsClass = { link = "Structure" },
         TelescopeResultsStruct = { link = "Structure" },
         TelescopeResultsField = { link = "@field" },
@@ -39,8 +39,8 @@ function M.setup(colors, config)
         TelescopeResultsVariable = { link = "@variable" },
 
         -- NvimTree
-        NvimTreeNormal = { link = "Normal" },
-        NvimTreeNormalNC = { link = "NormalNC" },
+        NvimTreeNormal = { bg = theme.ui.bg_m2 },
+        NvimTreeNormalNC = { link = config.dimInactive and "NormalNC" or "NvimTreeNormal" },
         NvimTreeRootFolder = { fg = theme.syn.identifier, bold = true },
         NvimTreeGitDirty = { fg = theme.vcs.changed },
         NvimTreeGitNew = { fg = theme.vcs.added },
@@ -188,6 +188,7 @@ function M.setup(colors, config)
         IndentBlanklineContextChar = { fg = theme.ui.special },
         IndentBlanklineContextStart = { sp = theme.ui.special, underline = true },
 
+        -- Lazy
         LazyProgressTodo = { fg = theme.ui.nontext },
     }
 end
