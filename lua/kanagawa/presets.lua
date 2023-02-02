@@ -2,7 +2,7 @@ return {
     telescopeBox = function(colors)
         local theme = colors.theme
         return {
-            TelescopeTitle = { fg = theme.ui.bg_p1, bold = true },
+            TelescopeTitle = { fg = theme.ui.special, bold = true },
 
             TelescopePromptNormal = { bg = theme.ui.bg_p1 },
             TelescopePromptBorder = { fg = theme.ui.bg_p1, bg = theme.ui.bg_p1 },
@@ -12,7 +12,6 @@ return {
 
             TelescopePreviewNormal = { bg = theme.ui.bg_dim },
             TelescopePreviewBorder = { bg = theme.ui.bg_dim, fg = theme.ui.bg_dim },
-            TreesitterContext = { link = "Folded" },
         }
     end,
     pmenu1 = function(colors)
