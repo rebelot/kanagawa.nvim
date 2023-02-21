@@ -1,4 +1,4 @@
--- local c = require("kanagawa.color")
+local c = require("kanagawa.lib.color")
 
 --TODO:
 --PreProc needs its own color
@@ -111,7 +111,7 @@ return {
                 bg_search  = palette.waveBlue2,
                 bg_visual  = palette.waveBlue1,
 
-                pmenu = {
+                pmenu      = {
                     fg       = palette.fujiWhite,
                     fg_sel   = "none", -- This is important to make highlights pass-through
                     bg       = palette.waveBlue1,
@@ -119,7 +119,7 @@ return {
                     bg_sbar  = palette.waveBlue1,
                     bg_thumb = palette.waveBlue2,
                 },
-                float = {
+                float      = {
                     fg        = palette.oldWhite,
                     bg        = palette.sumiInk0,
                     fg_border = palette.sumiInk6,
@@ -132,12 +132,18 @@ return {
                 number     = palette.sakuraPink,
                 constant   = palette.surimiOrange,
                 identifier = palette.carpYellow,
-                parameter  = palette.carpYellow,
+                -- parameter  = "#C3B1B1",
+                -- parameter  = "#B1ADC8",
+                -- parameter  = "#b8b4d0",
+                parameter  = palette.oniViolet2,
+                -- parameter = "#d5a4a6",
+                -- parameter  = "#C8ADAD",
+                -- parameter  = "#d7a8a8",
                 fun        = palette.crystalBlue,
                 statement  = palette.oniViolet,
                 keyword    = palette.oniViolet,
                 operator   = palette.boatYellow2,
-                preproc    = palette.surimiOrange, --lightBlue? deserves its own color
+                preproc    = palette.waveRed, --lightBlue? deserves its own color
                 type       = palette.waveAqua2,
                 regex      = palette.boatYellow2,
                 deprecated = palette.katanaGray,
@@ -192,28 +198,28 @@ return {
     dragon = function(palette)
         return {
             ui = {
-                fg         = "#c5c9c5",
+                fg         = palette.dragonWhite,
                 fg_dim     = palette.oldWhite,
                 fg_reverse = palette.waveBlue1,
 
-                bg_dim     = "#1D1C19",
-                bg_gutter  = "#181616",
+                bg_dim     = palette.dragonBlack1,
+                bg_gutter  = palette.dragonBlack4,
 
-                bg_m3      = "#121111",
-                bg_m2      = "#1D1C19",
-                bg_m1      = "#1D1C19",
-                bg         = "#181616",
-                bg_p1      = "#282727",
-                bg_p2      = "#393836",
+                bg_m3      = palette.dragonBlack0,
+                bg_m2      = palette.dragonBlack1,
+                bg_m1      = palette.dragonBlack2,
+                bg         = palette.dragonBlack3,
+                bg_p1      = palette.dragonBlack4,
+                bg_p2      = palette.dragonBlack5,
 
-                special    = "#6E7675",
-                whitespace = "#524F4B",
-                nontext    = "#524F4B",
+                special    = palette.dragonGray3,
+                whitespace = palette.dragonBlack6,
+                nontext    = palette.dragonBlack6,
 
                 bg_visual  = palette.waveBlue1,
                 bg_search  = palette.waveBlue2,
 
-                pmenu = {
+                pmenu      = {
                     fg       = palette.fujiWhite,
                     fg_sel   = "none",
                     bg       = palette.waveBlue1,
@@ -222,36 +228,34 @@ return {
                     bg_sbar  = palette.waveBlue1,
                 },
 
-                float = {
+                float      = {
                     fg        = palette.oldWhite,
-                    bg        = "#121111",
+                    bg        = palette.dragonBlack0,
                     fg_border = palette.sumiInk6,
-                    bg_border = "#121111",
+                    bg_border = palette.dragonBlack0,
                 },
             },
             syn = {
-                string     = "#87a987",
+                string     = palette.dragonGreen2,
                 variable   = "none",
-                number     = "#a292a3",
-                constant   = "#b6927b",
-                identifier = "#a6a69c", --ok
-                parameter  = "#a6a69c",
-                fun        = "#8ba4b0",
-                statement  = "#8992a7",
-                keyword    = "#8992a7",
-                operator   = "#c4746e",
-                preproc    = "#a99c8b",
-                -- type    = "#5B7B79",
-                type       = "#8ea4a2",
-                regex      = "#c3746e",
+                number     = palette.dragonPink,
+                constant   = palette.dragonOrange,
+                identifier = palette.dragonYellow,
+                parameter  = palette.dragonGray,
+                fun        = palette.dragonBlue2,
+                statement  = palette.dragonViolet,
+                keyword    = palette.dragonViolet,
+                operator   = palette.dragonRed,
+                preproc    = palette.dragonRed,
+                type       = palette.dragonAqua,
+                regex      = palette.dragonRed,
                 deprecated = palette.katanaGray,
-                punct      = "#9e9b93",
-                comment    = "#737c73",
-                special1   = "#949fb5",
-                special2   = "#aa9e89",
-                special3   = "#aa9e89",
+                punct      = palette.dragonGray2,
+                comment    = palette.dragonAsh,
+                special1   = palette.dragonTeal,
+                special2   = palette.dragonRed,
+                special3   = palette.dragonRed,
             },
-
             diag = {
                 error   = palette.samuraiRed,
                 ok      = palette.springGreen,
@@ -259,20 +263,17 @@ return {
                 info    = palette.dragonBlue,
                 hint    = palette.waveAqua1,
             },
-
             diff = {
                 add    = palette.winterGreen,
                 delete = palette.winterRed,
                 change = palette.winterBlue,
                 text   = palette.winterYellow,
             },
-
             vcs = {
                 added   = palette.autumnGreen,
                 removed = palette.autumnRed,
                 changed = palette.autumnYellow,
             },
-
             term = {
                 "#090618", -- black
                 palette.autumnRed, -- red
@@ -300,80 +301,80 @@ return {
     lotus = function(palette)
         return {
             ui = {
-                fg         = "#545464",
-                fg_dim     = "#43436c",
-                fg_reverse = "#dcd7ba",
+                fg         = palette.lotusInk1,
+                fg_dim     = palette.lotusInk2,
+                fg_reverse = palette.lotusGray,
 
-                bg_dim     = "#e3daa8",
-                bg_gutter  = "#eae0ac",
+                bg_dim     = palette.lotusWhite1,
+                bg_gutter  = palette.lotusWhite4,
 
-                bg_m3      = "#d5cea3",
-                bg_m2      = "#dcd5ac",
-                bg_m1      = "#e5ddb0",
-                bg         = "#f2ecbc",
-                bg_p1      = "#e7dba0",
-                bg_p2      = "#e4d794",
+                bg_m3      = palette.lotusWhite0,
+                bg_m2      = palette.lotusWhite1,
+                bg_m1      = palette.lotusWhite2,
+                bg         = palette.lotusWhite3,
+                bg_p1      = palette.lotusWhite4,
+                bg_p2      = palette.lotusWhite5,
 
-                nontext    = "#a09cac",
-                whitespace = "#a09cac",
-                special    = "#766b90",
+                nontext    = palette.lotusViolet1,
+                whitespace = palette.lotusViolet1,
+                special    = palette.lotusViolet2,
 
-                bg_visual  = "#c9cbd1",
-                bg_search  = "#b5cbd2",
+                bg_visual  = palette.lotusViolet3,
+                bg_search  = palette.lotusBlue2,
 
-                pmenu = {
-                    fg       = "#4b4b64",
+                pmenu      = {
+                    fg       = palette.lotusInk2,
                     fg_sel   = "none", -- This is important to make highlights pass-through
-                    bg       = "#c7d7e0",
-                    bg_sel   = "#9fb5c9",
-                    bg_sbar  = "#c7d7e0",
-                    bg_thumb = "#b5cbd2",
+                    bg       = palette.lotusBlue1,
+                    bg_sel   = palette.lotusBlue3,
+                    bg_sbar  = palette.lotusBlue1,
+                    bg_thumb = palette.lotusBlue2,
                 },
-                float = {
-                    fg        = "#43436c",
-                    bg        = "#d5cea3",
-                    fg_border = "#716e61",
-                    bg_border = "#d5cea3",
+                float      = {
+                    fg        = palette.lotusInk2,
+                    bg        = palette.lotusWhite0,
+                    fg_border = palette.lotusGray2,
+                    bg_border = palette.lotusWhite0,
                 },
             },
             syn = {
-                string     = "#6f894e",
+                string     = palette.lotusGreen,
                 variable   = "none",
-                number     = "#b35b79",
-                constant   = "#cc6d00",
-                identifier = "#8d7342",
-                parameter  = "#e6c384",
-                fun        = "#4f6fa8",
-                statement  = "#7b5fa3",
-                keyword    = "#7b5fa3",
-                operator   = "#836f4a",
-                preproc    = "#cc6d00",
-                type       = "#5f847d",
-                regex      = "#836f4a",
-                deprecated = "#8a8980",
-                comment    = "#8a8980",
-                punct      = "#4e8ca2",
-                special1   = "#6693bf",
-                special2   = "#c84053",
-                special3   = "#ec001c",
+                number     = palette.lotusPink,
+                constant   = palette.lotusOrange,
+                identifier = palette.lotusYellow,
+                parameter  = palette.lotusBlue5,
+                fun        = palette.lotusBlue4,
+                statement  = palette.lotusViolet4,
+                keyword    = palette.lotusViolet4,
+                operator   = palette.lotusYellow2,
+                preproc    = palette.lotusRed,
+                type       = palette.lotusAqua,
+                regex      = palette.lotusYellow2,
+                deprecated = palette.lotusGray3,
+                comment    = palette.lotusGray3,
+                punct      = palette.lotusTeal1,
+                special1   = palette.lotusTeal2,
+                special2   = palette.lotusRed,
+                special3   = palette.lotusRed,
             },
             vcs = {
-                added   = "#6e915f",
-                removed = "#d7474b",
-                changed = "#de9800",
+                added   = palette.lotusGreen2,
+                removed = palette.lotusRed2,
+                changed = palette.lotusYellow3,
             },
             diff = {
-                add    = "#b7d0ae",
-                delete = "#d9a594",
-                change = "#d7e3d8",
-                text   = "#f9d791",
+                add    = palette.lotusGreen3,
+                delete = palette.lotusRed4,
+                change = palette.lotusCyan,
+                text   = palette.lotusYellow4,
             },
             diag = {
-                error   = "#e82424",
-                ok      = "#6f894e",
-                warning = "#e98a00",
-                info    = "#5a7785",
-                hint    = "#5e857a",
+                error   = palette.lotusRed3,
+                ok      = palette.lotusGreen,
+                warning = palette.lotusOrange2,
+                info    = palette.lotusTeal3,
+                hint    = palette.lotusAqua2,
             },
             term = {
                 "#090618", -- black
