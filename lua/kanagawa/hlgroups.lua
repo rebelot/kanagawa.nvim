@@ -145,6 +145,7 @@ function M.setup(colors, config)
 
         Error = { fg = colors.diag.error },
         Todo = { fg = colors.fg_reverse, bg = colors.diag.info, bold = true },
+        Note = { fg = colors.fg_reverse, bg = colors.diag.info, bold = true },
 
         qfLineNr = { link = "lineNr" },
         qfFileName = { link = "Directory" },
@@ -203,6 +204,7 @@ function M.setup(colors, config)
         -- TSCharacter = {},
         -- TSComment = {},
         -- TSNote = { fg = c.fg_dark, bg = c.diag.hint, nocombine = true, bold = true}, -- links to SpecialComment -> Special
+        ["@text.note"] = { link = "Note" },
         ["@text.warning"] = { link = "Todo" }, --default
         ["@text.strong"] = { bold = true },
         ["@text.emphasis"] = { italic = true },
