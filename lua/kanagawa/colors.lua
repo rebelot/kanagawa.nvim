@@ -1,5 +1,5 @@
 ---@class PaletteColors
-local palette_colors = {
+local palette = {
 
     -- Bg Shades
     sumiInk0 = "#16161D",
@@ -143,11 +143,11 @@ function M.setup(opts)
     local theme = opts.theme or require("kanagawa")._CURRENT_THEME -- WARN: this fails if called before kanagawa.load()
 
     if not theme then
-        error("kanagawa.colors.setup(): No theme specified. Either specify a theme or call this funciton after ':colorscheme kanagawa'")
+        error("kanagawa.colors.setup(): Unable to infer `theme`. Either specify a theme or call this funciton after ':colorscheme kanagawa'")
     end
 
     -- Add to and/or override palette_colors
-    local updated_palette_colors = tbl_extend("force", palette_colors, override_colors.palette)
+    local updated_palette_colors = tbl_extend("force", palette, override_colors.palette)
 
     -- Generate the theme according to the updated palette colors
     local theme_colors = require("kanagawa.themes")[theme](updated_palette_colors)

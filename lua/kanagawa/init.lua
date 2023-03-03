@@ -23,10 +23,9 @@ M.config = {
     overrides = function()
         return {}
     end,
-    -- ---@type table<string, fun(palette: PaletteColors): ThemeColors>
-    -- themes = {},
     ---@type { dark: string, light: string, default: string}
-    theme = { dark = "wave", light = "lotus", default = "wave" },
+    background = { dark = "wave", light = "lotus" },
+    theme = "wave"
 }
 
 local function check_config(config)
@@ -76,7 +75,7 @@ end
 function M.load(theme)
     local utils = require("kanagawa.utils")
 
-    theme = theme or M.config.theme[vim.o.background] or M.config.theme.default
+    theme = theme or M.config.background[vim.o.background] or M.config.theme
     M._CURRENT_THEME = theme
 
     if vim.g.colors_name then
