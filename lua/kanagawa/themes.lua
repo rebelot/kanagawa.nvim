@@ -172,7 +172,7 @@ return {
                 hint    = palette.waveAqua1,
             },
             term = {
-                "#090618", -- black
+                palette.sumiInk0, -- black
                 palette.autumnRed, -- red
                 palette.autumnGreen, -- green
                 palette.boatYellow2, -- yellow
@@ -275,24 +275,24 @@ return {
                 changed = palette.autumnYellow,
             },
             term = {
-                "#090618", -- black
-                palette.autumnRed, -- red
-                palette.autumnGreen, -- green
-                palette.boatYellow2, -- yellow
-                palette.crystalBlue, -- blue
-                palette.oniViolet, -- magenta
-                palette.waveAqua1, -- cyan
+                palette.dragonBlack0, -- black
+                palette.dragonRed, -- red
+                palette.dragonGreen2, -- green
+                palette.dragonYellow, -- yellow
+                palette.dragonBlue2, -- blue
+                palette.dragonPink, -- magenta
+                palette.dragonAqua, -- cyan
                 palette.oldWhite, -- white
-                palette.fujiGray, -- bright black
-                palette.samuraiRed, -- bright red
-                palette.springGreen, -- bright green
+                palette.dragonGray, -- bright black
+                palette.waveRed, -- bright red
+                palette.dragonGreen, -- bright green
                 palette.carpYellow, -- bright yellow
                 palette.springBlue, -- bright blue
                 palette.springViolet1, -- bright magenta
                 palette.waveAqua2, -- bright cyan
-                palette.fujiWhite, -- bright white
-                palette.surimiOrange, -- extended color 1
-                palette.peachRed, -- extended color 2
+                palette.dragonWhite, -- bright white
+                palette.dragonOrange, -- extended color 1
+                palette.dragonOrange2, -- extended color 2
             },
         }
     end,
@@ -377,24 +377,24 @@ return {
                 hint    = palette.lotusAqua2,
             },
             term = {
-                "#090618", -- black
-                palette.autumnRed, -- red
-                palette.autumnGreen, -- green
-                palette.boatYellow2, -- yellow
-                palette.crystalBlue, -- blue
-                palette.oniViolet, -- magenta
-                palette.waveAqua1, -- cyan
-                palette.oldWhite, -- white
-                palette.fujiGray, -- bright black
-                palette.samuraiRed, -- bright red
-                palette.springGreen, -- bright green
-                palette.carpYellow, -- bright yellow
-                palette.springBlue, -- bright blue
-                palette.springViolet1, -- bright magenta
-                palette.waveAqua2, -- bright cyan
-                palette.fujiWhite, -- bright white
-                palette.surimiOrange, -- extended color 1
-                palette.peachRed, -- extended color 2
+                palette.sumiInk3, -- black
+                palette.lotusRed, -- red
+                palette.lotusGreen, -- green
+                palette.lotusYellow, -- yellow
+                palette.lotusBlue4, -- blue
+                palette.lotusPink, -- magenta
+                palette.lotusAqua, -- cyan
+                palette.lotusInk1, -- white
+                palette.lotusGray3 , -- bright black
+                palette.lotusRed2, -- bright red
+                palette.lotusGreen2, -- bright green
+                palette.lotusYellow2, -- bright yellow
+                palette.lotusTeal2, -- bright blue
+                palette.lotusViolet4, -- bright magenta
+                palette.lotusAqua2, -- bright cyan
+                palette.lotusInk2, -- bright white
+                palette.lotusOrange2, -- extended color 1
+                palette.lotusRed3, -- extended color 2
             },
         }
     end,
