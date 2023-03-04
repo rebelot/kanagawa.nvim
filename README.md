@@ -3,17 +3,14 @@
 </p>
 
 <p align="center">
-  <img src="kanagawa@2x.png" width="600" >
+  <img src="kanagawa@2x.png" width="500" >
 </p>
 
 <p align="center">NeoVim dark colorscheme inspired by the colors of the famous painting by Katsushika Hokusai.</p>
 
-<!-- <p align="center"> -->
-<!--   <h2 align="center"><img src="screenshot.png" width=1024></h2> -->
-<!-- </p> -->
-<!-- <p align="center"> -->
-<!--   <h2 align="center"><img alt="Screenshot" src="https://user-images.githubusercontent.com/36300441/159121961-7c72d6c2-0b1b-4775-81c4-b852afd0987d.png" width=1024></h2> -->
-<!-- </p> -->
+<p align="center">
+  <h2 align="center"><img alt="Preview" src="https://user-images.githubusercontent.com/36300441/222913073-22b95f11-8c08-4b2b-867c-19072c921de1.png" width=1000></h2>
+</p>
 
 ## Features
 
