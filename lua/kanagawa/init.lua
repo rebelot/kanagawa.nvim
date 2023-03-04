@@ -23,7 +23,7 @@ M.config = {
     overrides = function()
         return {}
     end,
-    ---@type { dark: string, light: string, default: string}
+    ---@type { dark: string, light: string }
     background = { dark = "wave", light = "lotus" },
     theme = "wave"
 }
