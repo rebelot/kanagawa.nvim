@@ -134,11 +134,10 @@ local M = {}
 ---     Defaults to KanagawaConfig.colors.
 ---   - theme: Use selected theme. Defaults to KanagawaConfig.theme
 ---     according to the value of 'background' option.
----@param opts? { colors?: KanagawaColorsSpec, theme?: string }
+---@param opts? { colors?: table, theme?: string }
 ---@return { theme: ThemeColors, palette: PaletteColors}
 function M.setup(opts)
     opts = opts or {}
-    local tbl_extend = vim.tbl_extend
     local override_colors = opts.colors or require("kanagawa").config.colors
     local theme = opts.theme or require("kanagawa")._CURRENT_THEME -- WARN: this fails if called before kanagawa.load()
 
@@ -147,13 +146,14 @@ function M.setup(opts)
     end
 
     -- Add to and/or override palette_colors
-    local updated_palette_colors = tbl_extend("force", palette, override_colors.palette)
+    local updated_palette_colors = vim.tbl_extend("force", palette, override_colors.palette or {})
 
     -- Generate the theme according to the updated palette colors
     local theme_colors = require("kanagawa.themes")[theme](updated_palette_colors)
 
     -- Add to and/or override theme_colors
-    local updated_theme_colors = tbl_extend("force", theme_colors, override_colors.theme)
+    local theme_overrides = vim.tbl_deep_extend("force", override_colors.theme["all"] or {}, override_colors.theme[theme] or {} )
+    local updated_theme_colors = vim.tbl_deep_extend("force", theme_colors, theme_overrides)
     -- return palette_colors AND theme_colors
 
     return {
