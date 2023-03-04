@@ -14,9 +14,8 @@
 
 ## Features
 
-* Extensive support for `TreeSitter` syntax highlighting, and _many_ popular plugins
-* Compilation to lua byte code for super fast startup times
-
+- Extensive support for `TreeSitter` syntax highlighting, and _many_ popular plugins
+- Compilation to lua byte code for super fast startup times
 
 ## Installation
 
@@ -187,7 +186,8 @@ local theme_colors = colors.theme
 local wave_colors = require("kanagawa.colors").setup({ theme = 'wave' })
 ```
 
-## Color palette
+<details>
+<summary><h2>Color palette</h2></summary>
 
 |                                                         | Name          |    Hex    | Usage                                                                             |
 | :-----------------------------------------------------: | :------------ | :-------: | :-------------------------------------------------------------------------------- |
@@ -228,6 +228,7 @@ local wave_colors = require("kanagawa.colors").setup({ theme = 'wave' })
 |   <img src="assets/circles/peachRed.svg" width="40">    | peachRed      | `#FF5D62` | Standout specials 2 (exception handling, return)                                  |
 | <img src="assets/circles/surimiOrange.svg" width="40">  | surimiOrange  | `#FFA066` | Constants, imports, booleans                                                      |
 |  <img src="assets/circles/katanaGray.svg" width="40">   | katanaGray    | `#717C7C` | Deprecated                                                                        |
+</details>
 
 ## Extras
 
@@ -249,11 +250,8 @@ local wave_colors = require("kanagawa.colors").setup({ theme = 'wave' })
 
 - [Tokyonight](https://github.com/folke/tokyonight.nvim)
 - [Gruvbox](https://github.com/morhetz/gruvbox)
+- [Catppuccin](https://github.com/catppuccin/nvim/#overwriting-colors)
 - [Affinity Designer](https://affinity.serif.com/designer/)
-
-## Related projects
-
-- [kanagawa.vim](https://github.com/guigui64/kanawaga.vim) - unaffiliated vimscript port of kanagawa.nvim
 
 ### Donate
 
