@@ -25,7 +25,7 @@ M.config = {
     end,
     ---@type { dark: string, light: string }
     background = { dark = "wave", light = "lotus" },
-    theme = "wave"
+    theme = "wave",
 }
 
 local function check_config(config)
@@ -97,7 +97,7 @@ function M.compile()
     for theme, _ in pairs(require("kanagawa.themes")) do
         local colors = require("kanagawa.colors").setup({ theme = theme, colors = M.config.colors })
         local highlights = require("kanagawa.highlights").setup(colors, M.config)
-        require("kanagawa.utils").compile(theme, highlights)
+        require("kanagawa.utils").compile(theme, highlights, M.config.terminalColors and colors.theme.term or {})
     end
 end
 

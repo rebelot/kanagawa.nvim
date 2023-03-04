@@ -1,13 +1,5 @@
 local M = {}
 
----@param termcolors ColorSpec[]
-local function setup_terminal_colors(termcolors)
-    local g = vim.g
-    for i = 1, 18 do
-        g["terminal_color_" .. i - 1] = termcolors[i]
-    end
-end
-
 ---@param colors KanagawaColors
 ---@param config? KanagawaConfig
 function M.setup(colors, config)
@@ -26,10 +18,6 @@ function M.setup(colors, config)
             highlights[hl].link = nil
         end
         highlights[hl] = vim.tbl_extend("force", highlights[hl] or {}, spec)
-    end
-
-    if config.terminalColors then
-        setup_terminal_colors(colors.theme.term)
     end
 
     return highlights
