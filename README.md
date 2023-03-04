@@ -8,12 +8,18 @@
 
 <p align="center">NeoVim dark colorscheme inspired by the colors of the famous painting by Katsushika Hokusai.</p>
 
-<p align="center">
-  <h2 align="center"><img src="screenshot.png" width=1024></h2>
-</p>
-<p align="center">
-  <h2 align="center"><img alt="Screenshot" src="https://user-images.githubusercontent.com/36300441/159121961-7c72d6c2-0b1b-4775-81c4-b852afd0987d.png" width=1024></h2>
-</p>
+<!-- <p align="center"> -->
+<!--   <h2 align="center"><img src="screenshot.png" width=1024></h2> -->
+<!-- </p> -->
+<!-- <p align="center"> -->
+<!--   <h2 align="center"><img alt="Screenshot" src="https://user-images.githubusercontent.com/36300441/159121961-7c72d6c2-0b1b-4775-81c4-b852afd0987d.png" width=1024></h2> -->
+<!-- </p> -->
+
+## Features
+
+* Extensive support for `TreeSitter` syntax highlighting, and _many_ popular plugins
+* Compilation to lua byte code for super fast startup times
+
 
 ## Installation
 
@@ -40,23 +46,6 @@ colorscheme kanagawa
 ```lua
 vim.cmd("colorscheme kanagawa")
 ```
-
-## Plugin Support
-
-- [Cmp](https://github.com/hrsh7th/nvim-cmp)
-- [TreeSitter](https://github.com/nvim-treesitter/nvim-treesitter)
-- [LSP Diagnostics](https://neovim.io/doc/user/lsp.html)
-- [Git Signs](https://github.com/lewis6991/gitsigns.nvim)
-- [Telescope](https://github.com/nvim-telescope/telescope.nvim)
-- [NvimTree](https://github.com/kyazdani42/nvim-tree.lua)
-- [Indent Blankline](https://github.com/lukas-reineke/indent-blankline.nvim)
-- [Dashboard](https://github.com/glepnir/dashboard-nvim)
-- [Lualine](https://github.com/nvim-lualine/lualine.nvim)
-- [FloaTerm](https://github.com/voldikss/vim-floaterm)
-- [dap-ui](https://github.com/rcarriga/nvim-dap-ui.git)
-- [Notify](https://github.com/rcarriga/nvim-notify.git)
-
-And many others should _"just work"_!
 
 ## Configuration
 
@@ -90,6 +79,12 @@ require('kanagawa').setup({
 
 -- setup must be called before loading
 vim.cmd("colorscheme kanagawa")
+```
+
+**_NOTE:_** Every time you update your config, make sure to run the command
+
+```vim
+:KanagawaCompile
 ```
 
 ## Themes
