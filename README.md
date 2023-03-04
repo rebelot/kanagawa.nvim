@@ -250,7 +250,7 @@ local wave_colors = require("kanagawa.colors").setup({ theme = 'wave' })
 
 - [Tokyonight](https://github.com/folke/tokyonight.nvim)
 - [Gruvbox](https://github.com/morhetz/gruvbox)
-- [Catppuccin](https://github.com/catppuccin/nvim/#overwriting-colors)
+- [Catppuccin](https://github.com/catppuccin/nvim)
 - [Affinity Designer](https://affinity.serif.com/designer/)
 
 ### Donate
