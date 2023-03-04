@@ -108,7 +108,7 @@ vim.api.nvim_create_user_command("KanagawaCompile", function()
     end
     M.compile()
     vim.notify("Kanagawa: compiled successfully!", vim.log.levels.INFO)
-    vim.cmd("colo kanagawa-" .. M._CURRENT_THEME)
+    M.load(M._CURRENT_THEME)
 end, {})
 
 return M
