@@ -1,14 +1,9 @@
 local M = {}
 
-local function set_highlights(hlgroups)
-    vim.cmd("highlight Normal guibg=" .. hlgroups.Normal.bg .. " guifg=" .. hlgroups.Normal.fg)
-    hlgroups.Normal = nil
-    for group, colors in pairs(hlgroups) do
-        if not vim.tbl_isempty(colors) then
-            vim.api.nvim_set_hl(0, group, colors)
-        end
-    end
-end
+---@alias ColorSpec string RGB Hex string
+---@alias ColorTable table<string, ColorSpec>
+---@alias KanagawaColorsSpec { palette: ColorTable, theme: ColorTable }
+---@alias KanagawaColors { palette: PaletteColors, theme: ThemeColors }
 
 --- default config
 ---@class KanagawaConfig
@@ -19,28 +14,69 @@ M.config = {
     keywordStyle = { italic = true },
     statementStyle = { bold = true },
     typeStyle = {},
-    variablebuiltinStyle = { italic = true },
-    specialReturn = true,
-    specialException = true,
     transparent = false,
     dimInactive = false,
-    globalStatus = false,
     terminalColors = true,
-    ---@type KanagawaColors
-    colors = {},
-    ---@type KanagawaColors
-    overrides = {},
-    theme = "default",
+    colors = { theme = { wave = {}, lotus = {}, dragon = {}, all = {} }, palette = {} },
+    ---@type fun(colors: KanagawaColorsSpec): table<string, table>
+    overrides = function()
+        return {}
+    end,
+    ---@type { dark: string, light: string }
+    background = { dark = "wave", light = "lotus" },
+    theme = "wave",
 }
 
+local function check_config(config)
+    local any
+    if config.overrides and type(config.overrides) ~= "function" then
+        any = true
+        vim.notify(
+            [[Kanagawa: config.overrides must be a function. fun(colors: KanagawaColors): OverridesTable]],
+            vim.log.levels.ERROR
+        )
+    end
+
+    if config.theme and type(config.theme) ~= "table" then
+        any = true
+        vim.notify(
+            [[Kanagawa: config.theme must be a table. { dark: string, light: string, default: string }]],
+            vim.log.levels.ERROR
+        )
+    end
+
+    if config.colors then
+        for key, _ in pairs(config.colors) do
+            if key ~= "palette" and key ~= "theme" then
+                any = true
+                vim.notify(
+                    ([[Kanagawa: colors "%s" is not a valid key. Valid keys are 'palette' and 'theme'.]]):format(key),
+                    vim.log.levels.ERROR
+                )
+            end
+        end
+    end
+    return not any
+end
+
 --- update global configuration with user settings
----@param config KanagawaConfig? user configuration
+---@param config? KanagawaConfig user configuration
 function M.setup(config)
-    M.config = vim.tbl_extend("force", M.config, config or {})
+    if check_config(config) then
+        M.config = vim.tbl_deep_extend("force", M.config, config or {})
+    else
+        vim.notify("Kanagawa: Errors found while loading user config. Using default config.", vim.log.levels.ERROR)
+    end
 end
 
 --- load the colorscheme
-function M.load()
+---@param theme? string
+function M.load(theme)
+    local utils = require("kanagawa.utils")
+
+    theme = theme or M.config.background[vim.o.background] or M.config.theme
+    M._CURRENT_THEME = theme
+
     if vim.g.colors_name then
         vim.cmd("hi clear")
     end
@@ -48,16 +84,31 @@ function M.load()
     vim.g.colors_name = "kanagawa"
     vim.o.termguicolors = true
 
-    if vim.o.background == "light" then
-        M.config.theme = "light"
-    elseif vim.o.background == "dark" then
-        M.config.theme = "default"
+    if utils.load_compiled(theme) then
+        return
     end
 
-    local colors = require("kanagawa.colors").setup()
-    local hlgroups = require("kanagawa.hlgroups").setup(colors)
-
-    set_highlights(hlgroups)
+    M.compile()
+    utils.load_compiled(theme)
 end
+
+function M.compile()
+    for theme, _ in pairs(require("kanagawa.themes")) do
+        local colors = require("kanagawa.colors").setup({ theme = theme, colors = M.config.colors })
+        local highlights = require("kanagawa.highlights").setup(colors, M.config)
+        require("kanagawa.utils").compile(theme, highlights, M.config.terminalColors and colors.theme.term or {})
+    end
+end
+
+vim.api.nvim_create_user_command("KanagawaCompile", function()
+    for mod, _ in pairs(package.loaded) do
+        if mod:match("^kanagawa%.") then
+            package.loaded[mod] = nil
+        end
+    end
+    M.compile()
+    vim.notify("Kanagawa: compiled successfully!", vim.log.levels.INFO)
+    M.load(M._CURRENT_THEME)
+end, {})
 
 return M

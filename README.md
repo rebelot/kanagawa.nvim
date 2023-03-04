@@ -3,17 +3,19 @@
 </p>
 
 <p align="center">
-  <img src="kanagawa@2x.png" width="600" >
+  <img src="kanagawa@2x.png" width="500" >
 </p>
 
 <p align="center">NeoVim dark colorscheme inspired by the colors of the famous painting by Katsushika Hokusai.</p>
 
 <p align="center">
-  <h2 align="center"><img src="screenshot.png" width=1024></h2>
+  <h2 align="center"><img alt="Preview" src="https://user-images.githubusercontent.com/36300441/222913073-22b95f11-8c08-4b2b-867c-19072c921de1.png" width=1000></h2>
 </p>
-<p align="center">
-  <h2 align="center"><img alt="Screenshot" src="https://user-images.githubusercontent.com/36300441/159121961-7c72d6c2-0b1b-4775-81c4-b852afd0987d.png" width=1024></h2>
-</p>
+
+## Features
+
+- Extensive support for `TreeSitter` syntax highlighting, and _many_ popular plugins
+- Compilation to lua byte code for super fast startup times
 
 ## Installation
 
@@ -41,23 +43,6 @@ colorscheme kanagawa
 vim.cmd("colorscheme kanagawa")
 ```
 
-## Plugin Support
-
-- [Cmp](https://github.com/hrsh7th/nvim-cmp)
-- [TreeSitter](https://github.com/nvim-treesitter/nvim-treesitter)
-- [LSP Diagnostics](https://neovim.io/doc/user/lsp.html)
-- [Git Signs](https://github.com/lewis6991/gitsigns.nvim)
-- [Telescope](https://github.com/nvim-telescope/telescope.nvim)
-- [NvimTree](https://github.com/kyazdani42/nvim-tree.lua)
-- [Indent Blankline](https://github.com/lukas-reineke/indent-blankline.nvim)
-- [Dashboard](https://github.com/glepnir/dashboard-nvim)
-- [Lualine](https://github.com/nvim-lualine/lualine.nvim)
-- [FloaTerm](https://github.com/voldikss/vim-floaterm)
-- [dap-ui](https://github.com/rcarriga/nvim-dap-ui.git)
-- [Notify](https://github.com/rcarriga/nvim-notify.git)
-
-And many others should _"just work"_!
-
 ## Configuration
 
 There is no need to call setup if you are ok with the defaults.
@@ -65,98 +50,144 @@ There is no need to call setup if you are ok with the defaults.
 ```lua
 -- Default options:
 require('kanagawa').setup({
-    undercurl = true,           -- enable undercurls
+    undercurl = true,            -- enable undercurls
     commentStyle = { italic = true },
     functionStyle = {},
     keywordStyle = { italic = true},
     statementStyle = { bold = true },
     typeStyle = {},
-    variablebuiltinStyle = { italic = true},
-    specialReturn = true,       -- special highlight for the return keyword
-    specialException = true,    -- special highlight for exception handling keywords
-    transparent = false,        -- do not set background color
-    dimInactive = false,        -- dim inactive window `:h hl-NormalNC`
-    globalStatus = false,       -- adjust window separators highlight for laststatus=3
-    terminalColors = true,      -- define vim.g.terminal_color_{0,17}
-    colors = {},
-    overrides = {},
-    theme = "default"           -- Load "default" theme or the experimental "light" theme
+    transparent = false,         -- do not set background color
+    dimInactive = false,         -- dim inactive window `:h hl-NormalNC`
+    terminalColors = true,       -- define vim.g.terminal_color_{0,17}
+    colors = {                   -- add/modify theme and palette colors
+        palette = {}
+        theme = { wave = {}, lotus = {}, dragon = {}, all = {} },
+    },
+    overrides = function(colors) -- add/modify highlights
+        return {}
+    end,
+    theme = "wave"               -- Load "wave" theme when 'background' option is not set
+    background = {               -- map the value of 'background' option to a theme
+        dark = "wave",           -- try "dragon" !
+        light = "lotus"
+    },
 })
 
 -- setup must be called before loading
 vim.cmd("colorscheme kanagawa")
 ```
 
-Light and default themes may also be changed by setting the `background` option.
-Note that if the option is set, its value will override and change the `theme` field the configuration.
-To set a theme other than `default` or `light` you must disable this setting.
+**_NOTE:_** Every time you update your config, make sure to run the command
 
 ```vim
-:set background=dark " default theme
-:set background=light " light theme
-" disable the setting
-:set background=
+:KanagawaCompile
 ```
 
-### Customize highlight groups and colors
+## Themes
 
-You can change the colors of existing hl-groups as well as creating new ones.
+Kanagawa comes in three variants:
+
+- `wave` the default heart-warming theme,
+- `dragon` for those late-night sessions
+- `lotus` for when you're out in the open.
+
+Themes can be changed in three ways:
+
+- Setting `config.theme` to the desired theme. Note that `vim.o.background` **must** be unset.
+- Using the `background` option:
+  Any change to the value of `vim.o.background` will select the theme mapped by `config.background`.
+  Use `vim.o.background = ""` to unset this option.
+- Loading the colorscheme directly with:
+  ```lua
+  vim.cmd("colorscheme kanagawa-wave")
+  vim.cmd("colorscheme kanagawa-dragon")
+  vim.cmd("colorscheme kanagawa-lotus")
+  ```
+  or
+  ```lua
+  require("kanagawa").load("wave")
+  ```
+
+## Customization
+
+In kanagawa, there are _two_ kinds of colors: `PaletteColors` and `ThemeColors`;
+`PaletteColors` are defined directly as RGB Hex strings, and have arbitrary names
+that recall their actual color. Conversely, `ThemeColors` are named and grouped _semantically_
+on the basis of their actual function.
+
+In short, a `palette` defines all the available colors, while a `theme` maps the `PaletteColors`
+to specific `ThemeColors` and the same palette color may be assigned to multiple theme colors.
+
+You can change _both_ theme or palette colors using `config.colors`.
+All the palette color names can be found [here](lua/kanagawa/colors.lua),
+while their usage by each theme can be found [here](lua/kanagawa/themes.lua).
+
+```lua
+require('kanagawa').setup({
+    ...,
+    colors = {
+        palette = {
+            -- change all usages of these colors
+            sumiInk0 = "#000000",
+            fujiWhite = "#FFFFFF",
+        },
+        theme = {
+            -- change specific usages for a certain theme or all of them
+            wave = {
+                ui = {
+                    float = {
+                        bg = "none",
+                    },
+                },
+            },
+            dragon = {
+                syn = {
+                    parameter = "yellow",
+                },
+            }
+            all = {
+                ui = {
+                    bg_gutter = "none"
+                }
+            }
+        }
+    },
+    ...
+})
+```
+
+You can also conveniently add/modify `hlgroups` using the `config.overrides` option.
 Supported keywords are the same for `:h nvim_set_hl` `{val}` parameter.
 
-You can define your own colors or use the theme colors (see example below).
-All the palette colors can be found [here](lua/kanagawa/colors.lua).
-
-Example:
-
 ```lua
-local default_colors = require("kanagawa.colors").setup()
-
--- this will affect all the hl-groups where the redefined colors are used
-local my_colors = {
-    -- use the palette color name...
-    sumiInk1 = "black",
-    fujiWhite = "#FFFFFF",
-    -- ...or the theme name
-    bg = "#272727",
-    -- you can also define new colors if you want
-    -- this will be accessible from require("kanagawa.colors").setup()
-    -- AFTER calling require("kanagawa").setup(config)
-    new_color = "teal"
-}
-
-local overrides = {
-    -- create a new hl-group using default palette colors and/or new ones
-    MyHlGroup1 = { fg = default_colors.waveRed, bg = "#AAAAAA", underline = true, bold = true, guisp="blue" },
-
-    -- override existing hl-groups, the new keywords are merged with existing ones
-    VertSplit  = { fg = default_colors.bg_dark, bg = "NONE" },
-    TSError    = { link = "Error" },
-    TSKeywordOperator = { bold = true},
-    StatusLine = { fg = my_colors.new_color }
-}
-
-require'kanagawa'.setup({ overrides = overrides, colors = my_colors })
-vim.cmd("colorscheme kanagawa")
-```
-
-Example for **Global Statusline**. Note: it works really nice with `dimInactive = true` option.
-
-```lua
-vim.opt.laststatus = 3
-vim.opt.fillchars:append({
-    horiz = '━',
-    horizup = '┻',
-    horizdown = '┳',
-    vert = '┃',
-    vertleft = '┨',
-    vertright = '┣',
-    verthoriz = '╋',
+require('kanagawa').setup({
+    ...,
+    overrides = function(colors)
+        return {
+            -- Assign a static color to strings
+            String = { fg = colors.palette.carpYellow, italic = true },
+            -- theme colors will update dynamically when you change theme!
+            SomePluginHl = { fg = colors.theme.syn.type, bold = true },
+        }
+    end,
+    ...
 })
-require'kanagawa'.setup({ globalStatus = true, ... })
-vim.cmd("colorscheme kanagawa")
 ```
 
-## Color palette
+## Integration
+
+```lua
+-- Get the colors for the current theme
+local colors = require("kanagawa.colors").setup()
+local palette_colors = colors.palette
+local theme_colors = colors.theme
+
+-- Get the colors for a specific theme
+local wave_colors = require("kanagawa.colors").setup({ theme = 'wave' })
+```
+
+<details>
+<summary><h2>Color palette</h2></summary>
 
 |                                                         | Name          |    Hex    | Usage                                                                             |
 | :-----------------------------------------------------: | :------------ | :-------: | :-------------------------------------------------------------------------------- |
@@ -197,6 +228,7 @@ vim.cmd("colorscheme kanagawa")
 |   <img src="assets/circles/peachRed.svg" width="40">    | peachRed      | `#FF5D62` | Standout specials 2 (exception handling, return)                                  |
 | <img src="assets/circles/surimiOrange.svg" width="40">  | surimiOrange  | `#FFA066` | Constants, imports, booleans                                                      |
 |  <img src="assets/circles/katanaGray.svg" width="40">   | katanaGray    | `#717C7C` | Deprecated                                                                        |
+</details>
 
 ## Extras
 
@@ -218,11 +250,8 @@ vim.cmd("colorscheme kanagawa")
 
 - [Tokyonight](https://github.com/folke/tokyonight.nvim)
 - [Gruvbox](https://github.com/morhetz/gruvbox)
+- [Catppuccin](https://github.com/catppuccin/nvim)
 - [Affinity Designer](https://affinity.serif.com/designer/)
-
-## Related projects
-
-- [kanagawa.vim](https://github.com/guigui64/kanawaga.vim) - unaffiliated vimscript port of kanagawa.nvim
 
 ### Donate
 
