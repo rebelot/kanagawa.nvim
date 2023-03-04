@@ -37,14 +37,6 @@ local function check_config(config)
         )
     end
 
-    if config.theme and type(config.theme) ~= "table" then
-        any = true
-        vim.notify(
-            [[Kanagawa: config.theme must be a table. { dark: string, light: string, default: string }]],
-            vim.log.levels.ERROR
-        )
-    end
-
     if config.colors then
         for key, _ in pairs(config.colors) do
             if key ~= "palette" and key ~= "theme" then
