@@ -50,6 +50,7 @@ There is no need to call setup if you are ok with the defaults.
 ```lua
 -- Default options:
 require('kanagawa').setup({
+    compile = true,              -- enable compiling the colorscheme
     undercurl = true,            -- enable undercurls
     commentStyle = { italic = true },
     functionStyle = {},
@@ -66,7 +67,7 @@ require('kanagawa').setup({
     overrides = function(colors) -- add/modify highlights
         return {}
     end,
-    theme = "wave"               -- Load "wave" theme when 'background' option is not set
+    theme = "wave",              -- Load "wave" theme when 'background' option is not set
     background = {               -- map the value of 'background' option to a theme
         dark = "wave",           -- try "dragon" !
         light = "lotus"
@@ -77,9 +78,12 @@ require('kanagawa').setup({
 vim.cmd("colorscheme kanagawa")
 ```
 
-**_NOTE:_** Every time you update your config, make sure to run the command
+**_NOTE:_** If you enable compilation (default), make sure to run this command every time you make changes to your config.
 
 ```vim
+" 1. Modify your config
+" 2. Restart nvim
+" 3. Run this command:
 :KanagawaCompile
 ```
 

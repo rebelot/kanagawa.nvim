@@ -19,8 +19,8 @@ kanagawa.command = {
 }
 
 kanagawa.visual = {
-  a = { bg = theme.syn.fun, fg = theme.ui.bg },
-  b = { bg = theme.ui.bg, fg = theme.syn.fun },
+  a = { bg = theme.syn.keyword, fg = theme.ui.bg },
+  b = { bg = theme.ui.bg, fg = theme.syn.keyword },
 }
 
 kanagawa.replace = {
