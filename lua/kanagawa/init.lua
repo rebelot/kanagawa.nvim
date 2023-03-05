@@ -25,6 +25,7 @@ M.config = {
     ---@type { dark: string, light: string }
     background = { dark = "wave", light = "lotus" },
     theme = "wave",
+    compile = true,
 }
 
 local function check_config(config)
@@ -76,12 +77,18 @@ function M.load(theme)
     vim.g.colors_name = "kanagawa"
     vim.o.termguicolors = true
 
-    if utils.load_compiled(theme) then
-        return
-    end
+    if M.config.compile then
+        if utils.load_compiled(theme) then
+            return
+        end
 
-    M.compile()
-    utils.load_compiled(theme)
+        M.compile()
+        utils.load_compiled(theme)
+    else
+        local colors = require("kanagawa.colors").setup({ theme = theme, colors = M.config.colors })
+        local highlights = require("kanagawa.highlights").setup(colors, M.config)
+        require("kanagawa.highlights").highlight(highlights, M.config.terminalColors and colors.theme.term or {})
+    end
 end
 
 function M.compile()

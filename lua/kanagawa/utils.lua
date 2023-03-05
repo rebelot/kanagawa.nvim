@@ -41,7 +41,7 @@ function M.compile(theme, highlights, termcolors)
     table.insert(lines, "end)")
 
     local blob = table.concat(lines, "\n")
-    assert(loadstring(blob, "="))()
+    assert(loadstring(blob, "=(compile)"))()
     file:write(require("kanagawa").compiled)
     file:close()
 end
