@@ -25,7 +25,7 @@ M.config = {
     ---@type { dark: string, light: string }
     background = { dark = "wave", light = "lotus" },
     theme = "wave",
-    compile = true,
+    compile = false,
 }
 
 local function check_config(config)

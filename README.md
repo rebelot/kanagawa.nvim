@@ -50,7 +50,7 @@ There is no need to call setup if you are ok with the defaults.
 ```lua
 -- Default options:
 require('kanagawa').setup({
-    compile = true,              -- enable compiling the colorscheme
+    compile = false,             -- enable compiling the colorscheme
     undercurl = true,            -- enable undercurls
     commentStyle = { italic = true },
     functionStyle = {},
@@ -78,7 +78,7 @@ require('kanagawa').setup({
 vim.cmd("colorscheme kanagawa")
 ```
 
-**_NOTE:_** If you enable compilation (default), make sure to run this command every time you make changes to your config.
+**_NOTE:_** If you enable compilation, make sure to run this command every time you make changes to your config.
 
 ```vim
 " 1. Modify your config
