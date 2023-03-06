@@ -136,7 +136,7 @@ require('kanagawa').setup({
             fujiWhite = "#FFFFFF",
         },
         theme = {
-            -- change specific usages for a certain theme or all of them
+            -- change specific usages for a certain theme, or for all of them
             wave = {
                 ui = {
                     float = {
@@ -176,6 +176,59 @@ require('kanagawa').setup({
     end,
     ...
 })
+```
+
+### Common customizations
+
+#### Remove _gutter_ background
+
+Remove the background of `LineNr`, `{Sign,Fold}Column` and friends
+
+```lua
+colors = {
+    theme = {
+        all = {
+            ui = {
+                bg_gutter = "none"
+            }
+        }
+    }
+}
+```
+
+#### Borderless Telescope
+
+Block-like _modern_ Telescope UI
+
+```lua
+overrides = function(colors)
+    local theme = colors.theme
+    return {
+        TelescopeTitle = { fg = theme.ui.special, bold = true },
+        TelescopePromptNormal = { bg = theme.ui.bg_p1 },
+        TelescopePromptBorder = { fg = theme.ui.bg_p1, bg = theme.ui.bg_p1 },
+        TelescopeResultsNormal = { fg = theme.ui.fg_dim, bg = theme.ui.bg_m1 },
+        TelescopeResultsBorder = { fg = theme.ui.bg_m1, bg = theme.ui.bg_m1 },
+        TelescopePreviewNormal = { bg = theme.ui.bg_dim },
+        TelescopePreviewBorder = { bg = theme.ui.bg_dim, fg = theme.ui.bg_dim },
+    }
+end,
+```
+
+#### Dark completion (popup) menu
+
+More uniform colors for the popup menu.
+
+```lua
+overrides = function(colors)
+    local theme = colors.theme
+    return {
+        Pmenu = { fg = theme.ui.shade0, bg = theme.ui.bg_p1 },
+        PmenuSel = { fg = "NONE", bg = theme.ui.bg_p2 },
+        PmenuSbar = { bg = theme.ui.bg_m1 },
+        PmenuThumb = { bg = theme.ui.bg_p2 },
+    }
+end,
 ```
 
 ## Integration
@@ -232,6 +285,7 @@ local wave_colors = require("kanagawa.colors").setup({ theme = 'wave' })
 |   <img src="assets/circles/peachRed.svg" width="40">    | peachRed      | `#FF5D62` | Standout specials 2 (exception handling, return)                                  |
 | <img src="assets/circles/surimiOrange.svg" width="40">  | surimiOrange  | `#FFA066` | Constants, imports, booleans                                                      |
 |  <img src="assets/circles/katanaGray.svg" width="40">   | katanaGray    | `#717C7C` | Deprecated                                                                        |
+
 </details>
 
 ## Extras
