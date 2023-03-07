@@ -63,6 +63,7 @@ function M.setup(colors, config)
         ["@keyword.operator"] = { fg = theme.syn.operator, bold = true },
         -- @keyword.return                             ; keywords like `return` and `yield`
         ["@keyword.return"] = vim.tbl_extend("force", { fg = theme.syn.special3 }, config.keywordStyle),
+        ["@keyword.luap"] = { link = "@string.regex" },
 
         -- @conditional (Conditional -> Statement)     ; keywords related to conditionals (e.g. `if` / `else`)
         -- @conditional.ternary                        ; Ternary operator: condition ? 1 : 2
