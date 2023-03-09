@@ -98,13 +98,13 @@ function M.setup(colors, config)
         -- SpecialKey	Unprintable characters: Text displayed differently from what it really is. But not 'listchars' whitespace. |hl-Whitespace|
         SpecialKey = { fg = theme.ui.special },
         -- SpellBad	Word that is not recognized by the spellchecker. |spell| Combined with the highlighting used otherwise.
-        SpellBad = { undercurl = true, sp = theme.diag.error },
+        SpellBad = { undercurl = config.undercurl, underline = not config.undercurl, sp = theme.diag.error },
         -- SpellCap	Word that should start with a capital. |spell| Combined with the highlighting used otherwise.
-        SpellCap = { undercurl = true, sp = theme.diag.warning },
+        SpellCap = { undercurl = config.undercurl, underline = not config.undercurl, sp = theme.diag.warning },
         -- SpellLocal	Word that is recognized by the spellchecker as one that is used in another region. |spell| Combined with the highlighting used otherwise.
-        SpellLocal = { undercurl = true, sp = theme.diag.warning },
+        SpellLocal = { undercurl = config.undercurl, underline = not config.undercurl, sp = theme.diag.warning },
         -- SpellRare	Word that is recognized by the spellchecker as one that is hardly ever used. |spell| Combined with the highlighting used otherwise.
-        SpellRare = { undercurl = true, sp = theme.diag.warning },
+        SpellRare = { undercurl = config.undercurl, underline = not config.undercurl, sp = theme.diag.warning },
         -- StatusLine	Status line of current window.
         StatusLine = { fg = theme.ui.fg_dim, bg = theme.ui.bg_m3 },
         -- StatusLineNC	Status lines of not-current windows. Note: If this is equal to "StatusLine", Vim will use "^^^" in the status line of the current window.
@@ -158,10 +158,10 @@ function M.setup(colors, config)
         DiagnosticVirtualTextInfo = { link = "DiagnosticInfo" },
         DiagnosticVirtualTextHint = { link = "DiagnosticHint" },
 
-        DiagnosticUnderlineError = { undercurl = true, sp = theme.diag.error },
-        DiagnosticUnderlineWarn = { undercurl = true, sp = theme.diag.warning },
-        DiagnosticUnderlineInfo = { undercurl = true, sp = theme.diag.info },
-        DiagnosticUnderlineHint = { undercurl = true, sp = theme.diag.hint },
+        DiagnosticUnderlineError = { undercurl = config.undercurl, underline = not config.undercurl, sp = theme.diag.error },
+        DiagnosticUnderlineWarn = { undercurl = config.undercurl, underline = not config.undercurl, sp = theme.diag.warning },
+        DiagnosticUnderlineInfo = { undercurl = config.undercurl, underline = not config.undercurl, sp = theme.diag.info },
+        DiagnosticUnderlineHint = { undercurl = config.undercurl, underline = not config.undercurl, sp = theme.diag.hint },
 
         LspSignatureActiveParameter = { fg = theme.diag.warning },
         LspCodeLens = { fg = theme.syn.comment },
