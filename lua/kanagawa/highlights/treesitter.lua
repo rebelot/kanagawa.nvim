@@ -127,9 +127,9 @@ function M.setup(colors, config)
         -- @text.todo (Todo)                           ; todo notes
         -- @text.note                                  ; info notes
         -- @text.warning                               ; warning notes
-        ["@text.warning"] = { link = "Todo" }, --default
+        ["@text.warning"] = { fg = theme.ui.fg_reverse, bg = theme.diag.warning, bold = true },
         -- @text.danger                                ; danger/error notes
-        ["@text.danger"] = { link = "WarningMsg" }, --default
+        ["@text.danger"] = { fg = theme.ui.fg, bg = theme.diag.error, bold = true },
 
         -- @text.diff.add                              ; added text (for diff files)
         -- @text.diff.delete                           ; deleted text (for diff files)
