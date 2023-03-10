@@ -303,6 +303,7 @@ local wave_colors = require("kanagawa.colors").setup({ theme = 'wave' })
 - [wezterm](extras/wezterm.lua)
 - [Windows Terminal](extras/windows_terminal.json)
 - [Xresources](extras/.Xresources)
+- [JSON compatible with many terminals](Kanagawa.json) Check [Gogh](https://github.com/Gogh-Co/Gogh#-terminals) for the list of supported terminals.
 - 🎉 Bonus! You win a tiny [python script](palette.py)🐍 to extract color palettes 🎨 from any image! 🥳
 
 ## Acknowledgements
