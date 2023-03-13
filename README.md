@@ -78,7 +78,8 @@ require('kanagawa').setup({
 vim.cmd("colorscheme kanagawa")
 ```
 
-**_NOTE:_** If you enable compilation, make sure to run this command every time you make changes to your config.
+**_NOTE 1:_** If you enable compilation, make sure to run this command every time you make changes to your config.
+**_NOTE 2:_** Kanagawa adjusts to the value of some options. Make sure that the options `'laststatus'` and `'cmdheight'` are set **_before_** calling `setup`.
 
 ```vim
 " 1. Modify your config
