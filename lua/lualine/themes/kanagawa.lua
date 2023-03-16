@@ -14,8 +14,8 @@ kanagawa.insert = {
 }
 
 kanagawa.command = {
-  a = { bg = theme.vcs.removed, fg = theme.ui.bg },
-  b = { bg = theme.ui.bg, fg = theme.vcs.removed },
+  a = { bg = theme.syn.operator, fg = theme.ui.bg },
+  b = { bg = theme.ui.bg, fg = theme.syn.operator },
 }
 
 kanagawa.visual = {
