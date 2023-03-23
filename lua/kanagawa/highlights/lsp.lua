@@ -43,7 +43,11 @@ function M.setup(colors, config)
 
             ["@lsp.typemod.function.builtin"] = { link = "@Function.builtin"},
             ["@lsp.typemod.function.defaultLibrary"] = { link = "@Function.builtin"},
-            ["@lsp.typemod.method.defaultLibrary"] = { link = "@Function.builtin"}
+            ["@lsp.typemod.method.defaultLibrary"] = { link = "@Function.builtin"},
+
+            ["@lsp.typemod.operator.injected"] = { link = "@operator" },
+            ["@lsp.typemod.string.injected"] = { link = "@string" },
+            ["@lsp.typemod.variable.injected"] = { link = "@variable" },
     }
 end
 
