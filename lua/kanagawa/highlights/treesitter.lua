@@ -126,6 +126,7 @@ function M.setup(colors, config)
 
         -- @text.todo (Todo)                           ; todo notes
         -- @text.note                                  ; info notes
+        ["@text.note"] = { fg = theme.ui.fg_reverse, bg = theme.diag.hint, bold = true },
         -- @text.warning                               ; warning notes
         ["@text.warning"] = { fg = theme.ui.fg_reverse, bg = theme.diag.warning, bold = true },
         -- @text.danger                                ; danger/error notes
