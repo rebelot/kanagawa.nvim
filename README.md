@@ -207,6 +207,7 @@ overrides = function(colors)
     return {
         NormalFloat = { bg = "none" },
         FloatBorder = { bg = "none" },
+        FloatTitle = { bg = "none" },
 
         -- Save an hlgroup with dark background and dimmed foreground
         -- so that you can use it where your still want darker windows.
