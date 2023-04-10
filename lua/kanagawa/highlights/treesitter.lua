@@ -133,7 +133,9 @@ function M.setup(colors, config)
         ["@text.danger"] = { fg = theme.ui.fg, bg = theme.diag.error, bold = true },
 
         -- @text.diff.add                              ; added text (for diff files)
+        ['@text.diff.add'] = { fg = theme.diff.add },
         -- @text.diff.delete                           ; deleted text (for diff files)
+        ['@text.diff.delete'] = { fg = theme.diff.delete },
         -- }}}
 
         -- Tags (Tag) {{{
