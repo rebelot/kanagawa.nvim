@@ -152,38 +152,29 @@ function M.setup(colors, config)
         CmpItemKindFunction = { link = "Function" },
         CmpItemKindMethod = { link = "Function" },
 
-        CmpItemKindConstructor = { link = "TSConstructor" },
-
+        CmpItemKindConstructor = { link = "@constructor" },
         CmpItemKindClass = { link = "Type" },
         CmpItemKindInterface = { link = "Type" },
         CmpItemKindStruct = { link = "Type" },
-
-        CmpItemKindProperty = { link = "TSProperty" },
-        CmpItemKindField = { link = "TSField" },
-        CmpItemKindEnum = { link = "Identifier" },
-
+        CmpItemKindProperty = { link = "@property" },
+        CmpItemKindField = { link = "@field" },
+        CmpItemKindEnum = { link = "Type" },
         CmpItemKindSnippet = { fg = theme.syn.special1 },
-
-        CmpItemKindText = { link = "TSText" },
-
-        CmpItemKindModule = { link = "TSInclude" },
-
+        CmpItemKindText = { fg = theme.ui.pmenu.fg },
+        CmpItemKindModule = { link = "@include" },
         CmpItemKindFile = { link = "Directory" },
         CmpItemKindFolder = { link = "Directory" },
-
-        CmpItemKindKeyword = { link = "TSKeyword" },
-        CmpItemKindTypeParameter = { link = "Identifier" },
+        CmpItemKindKeyword = { link = "@keyword" },
+        CmpItemKindTypeParameter = { link = "Type" },
         CmpItemKindConstant = { link = "Constant" },
         CmpItemKindOperator = { link = "Operator" },
-        CmpItemKindReference = { link = "TSParameterReference" },
-        CmpItemKindEnumMember = { link = "TSField" },
-
+        CmpItemKindReference = { link = "Type" },
+        CmpItemKindEnumMember = { link = "Constant" },
         CmpItemKindValue = { link = "String" },
+        CmpItemKindCopilot = { link = "String" },
         -- CmpItemKindUnit = {},
         -- CmpItemKindEvent = {},
         -- CmpItemKindColor = {},
-
-        CmpItemKindCopilot = { link = "String" },
 
         -- IndentBlankline
         IndentBlanklineChar = { fg = theme.ui.whitespace },
