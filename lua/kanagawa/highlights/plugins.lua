@@ -6,7 +6,6 @@ function M.setup(colors, config)
     config = config or require("kanagawa").config
     local theme = colors.theme
     return {
-
         -- Neovcs
         -- NeovcsBranch = {},
         -- NeovcsRemote = {},
@@ -14,7 +13,6 @@ function M.setup(colors, config)
         -- NeovcsDiffAdd = { fg = theme.vcs.added, bg = theme.diff.add },
         -- NeovcsHunkHeader = { fg = theme.syn.identifier },
         -- NeovcsDiffContextHighlight = { bg = theme.diff.change },
-
 
         -- vcsSigns
         -- vcsSignsAdd = { link = "diffAdded" },
@@ -32,7 +30,6 @@ function M.setup(colors, config)
         NeogitHunkHeaderHighlight = { fg = theme.syn.constant, bg = theme.diff.change }, --[[ guifg=#cccccc guibg=#4d4d4d ]]
         -- TreeSitter Extensions
         TreesitterContext = { link = "Folded" },
-
         -- Telescope
         TelescopeBorder = { fg = theme.ui.float.fg_border, bg = theme.ui.bg },
         TelescopeTitle = { fg = theme.ui.special },
@@ -41,9 +38,8 @@ function M.setup(colors, config)
         TelescopeResultsField = { link = "@field" },
         TelescopeResultsMethod = { link = "Function" },
         TelescopeResultsVariable = { link = "@variable" },
-
         -- NvimTree
-        NvimTreeNormal = { link = 'Normal' },
+        NvimTreeNormal = { link = "Normal" },
         NvimTreeNormalNC = { link = "NvimTreeNormal" },
         NvimTreeRootFolder = { fg = theme.syn.identifier, bold = true },
         NvimTreeGitDirty = { fg = theme.vcs.changed },
@@ -59,7 +55,6 @@ function M.setup(colors, config)
         NvimTreeOpenedFile = { fg = theme.syn.special1, italic = true },
         NvimTreeWinSeparator = { link = "WinSeparator" },
         NvimTreeWindowPicker = { bg = theme.ui.bg_m1, fg = theme.syn.special1, bold = true },
-
         -- Dashboard
         DashboardShortCut = { fg = theme.syn.special1 },
         DashboardHeader = { fg = theme.vcs.removed },
@@ -68,7 +63,6 @@ function M.setup(colors, config)
         DashboardDesc = { fg = theme.syn.identifier },
         DashboardKey = { fg = theme.syn.special1 },
         DashboardIcon = { fg = theme.ui.special },
-
         -- Notify
         NotifyBackground = { bg = theme.ui.bg },
         NotifyERRORBorder = { link = "DiagnosticError" },
@@ -89,7 +83,6 @@ function M.setup(colors, config)
         NotifyHINTTitle = { link = "DiagnosticHint" },
         NotifyDEBUGTitle = { link = "Debug" },
         NotifyTRACETitle = { link = "Comment" },
-
         -- Dap-UI
         -- DapUIVariable = { link = "Normal" },
         DapUIScope = { link = "Special" }, -- guifg=#00F1F5"
@@ -120,15 +113,12 @@ function M.setup(colors, config)
         DapUIPlayPause = { fg = theme.syn.string }, --guifg=#A9FF68"
         DapUIRestart = { fg = theme.syn.string }, --guifg=#A9FF68"
         DapUIUnavailable = { fg = theme.syn.comment }, --guifg=#424242"
-
         -- Floaterm
         FloatermBorder = { fg = theme.ui.float.fg_border, bg = theme.ui.bg },
-
         -- NeoVim                         = {},
         healthError = { fg = theme.diag.error },
         healthSuccess = { fg = theme.diag.ok },
         healthWarning = { fg = theme.diag.warning },
-
         -- Cmp
         CmpDocumentation = { link = "NormalFloat" },
         CmpDocumentationBorder = { link = "FloatBorder" },
@@ -137,21 +127,15 @@ function M.setup(colors, config)
         CmpCompletionBorder = { fg = theme.ui.bg_search, bg = theme.ui.pmenu.bg },
         CmpCompletionThumb = { link = "PmenuThumb" },
         CmpCompletionSbar = { link = "PmenuSbar" },
-
         CmpItemAbbr = { fg = theme.ui.pmenu.fg },
         CmpItemAbbrDeprecated = { fg = theme.syn.comment, strikethrough = true },
-
         CmpItemAbbrMatch = { fg = theme.syn.fun },
         CmpItemAbbrMatchFuzzy = { link = "CmpItemAbbrMatch" },
-
         CmpItemKindDefault = { fg = theme.syn.deprecated },
         CmpItemMenu = { fg = theme.syn.comment },
-
         CmpItemKindVariable = { fg = theme.ui.fg_dim },
-
         CmpItemKindFunction = { link = "Function" },
         CmpItemKindMethod = { link = "Function" },
-
         CmpItemKindConstructor = { link = "@constructor" },
         CmpItemKindClass = { link = "Type" },
         CmpItemKindInterface = { link = "Type" },
@@ -182,7 +166,6 @@ function M.setup(colors, config)
         IndentBlanklineSpaceCharBlankline = { fg = theme.ui.whitespace },
         IndentBlanklineContextChar = { fg = theme.ui.special },
         IndentBlanklineContextStart = { sp = theme.ui.special, underline = true },
-
         -- Lazy
         LazyProgressTodo = { fg = theme.ui.nontext },
     }
