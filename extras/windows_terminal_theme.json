@@ -1,0 +1,18 @@
+{
+    "name": "Kanagawa",
+    "tab": 
+    {
+        "background": "#32333EFF",
+        "showCloseButton": "always",
+        "unfocusedBackground": null
+    },
+    "tabRow": 
+    {
+        "background": "#1F1F28FF",
+        "unfocusedBackground": "#191920FF"
+    },
+    "window": 
+    {
+        "applicationTheme": "dark"
+    }
+}
