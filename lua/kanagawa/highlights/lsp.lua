@@ -30,7 +30,7 @@ function M.setup(colors, config)
 
 
             ["@lsp.mod.readonly"] = { link = "Constant" },
-            ["@lsp.mod.typeHint"] = { link = "Structure" },
+            ["@lsp.mod.typeHint"] = { link = "Type" },
             -- ["@lsp.mod.defaultLibrary"] = { link = "Special" },
             -- ["@lsp.mod.builtin"] = { link = "Special" },
 
@@ -42,12 +42,12 @@ function M.setup(colors, config)
             ["@lsp.typemod.variable.static"] = { link = "Constant" },
             ["@lsp.typemod.variable.defaultLibrary"] = { link = "Special" },
 
-            ["@lsp.typemod.function.builtin"] = { link = "@Function.builtin"},
-            ["@lsp.typemod.function.defaultLibrary"] = { link = "@Function.builtin"},
-            ["@lsp.typemod.method.defaultLibrary"] = { link = "@Function.builtin"},
+            ["@lsp.typemod.function.builtin"] = { link = "@function.builtin"},
+            ["@lsp.typemod.function.defaultLibrary"] = { link = "@function.builtin"},
+            ["@lsp.typemod.method.defaultLibrary"] = { link = "@function.builtin"},
 
-            ["@lsp.typemod.operator.injected"] = { link = "@operator" },
-            ["@lsp.typemod.string.injected"] = { link = "@string" },
+            ["@lsp.typemod.operator.injected"] = { link = "Operator" },
+            ["@lsp.typemod.string.injected"] = { link = "String" },
             ["@lsp.typemod.variable.injected"] = { link = "@variable" },
     }
 end
