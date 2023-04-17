@@ -55,6 +55,18 @@ function M.setup(colors, config)
         NvimTreeOpenedFile = { fg = theme.syn.special1, italic = true },
         NvimTreeWinSeparator = { link = "WinSeparator" },
         NvimTreeWindowPicker = { bg = theme.ui.bg_m1, fg = theme.syn.special1, bold = true },
+        -- NeoTree
+        NeoTreeTabInactive = { link = "TabLine" },
+        NeoTreeTabActive = { link = "TabLineSel" },
+        NeoTreeRootName = { fg = theme.syn.identifier, bold = true, italic = true},
+        NeoTreeModified = { link = "String" },
+        NeoTreeGitModified = { fg = theme.vcs.changed },
+        NeoTreeGitAdded = { fg = theme.vcs.added },
+        NeoTreeGitDeleted = { fg = theme.vcs.removed },
+        NeoTreeGitStaged = { fg = theme.vcs.added },
+        NeoTreeGitConflict = { fg = theme.diag.error },
+        NeoTreeGitUntracked = { link = 'NeoTreeGitModified', default = true },
+        NeoTreeGitUnstaged = { link = 'NeoTreeGitModified', default = true },
         -- Dashboard
         DashboardShortCut = { fg = theme.syn.special1 },
         DashboardHeader = { fg = theme.vcs.removed },
