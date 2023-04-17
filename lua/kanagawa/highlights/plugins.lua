@@ -58,6 +58,8 @@ function M.setup(colors, config)
         -- NeoTree
         NeoTreeTabInactive = { link = "TabLine" },
         NeoTreeTabActive = { link = "TabLineSel" },
+        NeoTreeTabSeparatorInactive = { link = 'NeoTreeTabInactive' },
+        NeoTreeTabSeparatorActive = { link = 'NeoTreeTabActive' },
         NeoTreeRootName = { fg = theme.syn.identifier, bold = true, italic = true},
         NeoTreeModified = { link = "String" },
         NeoTreeGitModified = { fg = theme.vcs.changed },
