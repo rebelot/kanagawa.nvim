@@ -29,27 +29,8 @@ M.config = {
 }
 
 local function check_config(config)
-    local any
-    if config.overrides and type(config.overrides) ~= "function" then
-        any = true
-        vim.notify(
-            [[Kanagawa: config.overrides must be a function. fun(colors: KanagawaColors): OverridesTable]],
-            vim.log.levels.ERROR
-        )
-    end
-
-    if config.colors then
-        for key, _ in pairs(config.colors) do
-            if key ~= "palette" and key ~= "theme" then
-                any = true
-                vim.notify(
-                    ([[Kanagawa: colors "%s" is not a valid key. Valid keys are 'palette' and 'theme'.]]):format(key),
-                    vim.log.levels.ERROR
-                )
-            end
-        end
-    end
-    return not any
+    local err
+    return not err
 end
 
 --- update global configuration with user settings
