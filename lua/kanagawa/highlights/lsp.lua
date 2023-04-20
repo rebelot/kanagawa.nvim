@@ -50,7 +50,7 @@ function M.setup(colors, config)
             ["@lsp.typemod.string.injected"] = { link = "String" },
             ["@lsp.typemod.variable.injected"] = { link = "@variable" },
 
-            ["@lsp.typemod.function.readonly.javascript"] = { fg = theme.syn.fun, bold = true }
+            ["@lsp.typemod.function.readonly"] = { fg = theme.syn.fun, bold = true }
     }
 end
 
