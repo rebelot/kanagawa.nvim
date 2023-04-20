@@ -30,6 +30,7 @@ function M.setup(colors, config)
         NeogitHunkHeaderHighlight = { fg = theme.syn.constant, bg = theme.diff.change }, --[[ guifg=#cccccc guibg=#4d4d4d ]]
         -- TreeSitter Extensions
         TreesitterContext = { link = "Folded" },
+        TreesitterContextLineNumber = { fg = theme.ui.special, bg = theme.ui.bg_gutter },
         -- Telescope
         TelescopeBorder = { fg = theme.ui.float.fg_border, bg = theme.ui.bg },
         TelescopeTitle = { fg = theme.ui.special },
