@@ -149,7 +149,7 @@ require('kanagawa').setup({
                 syn = {
                     parameter = "yellow",
                 },
-            }
+            },
             all = {
                 ui = {
                     bg_gutter = "none"
