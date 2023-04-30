@@ -36,6 +36,8 @@ function M.setup(colors, config)
         -- Telescope
         TelescopeBorder = { fg = theme.ui.float.fg_border, bg = theme.ui.bg },
         TelescopeTitle = { fg = theme.ui.special },
+        TelescopeSelection = { link = 'CursorLine' },
+        TelescopeSelectionCaret = { link = 'CursorLineNr' },
         TelescopeResultsClass = { link = "Structure" },
         TelescopeResultsStruct = { link = "Structure" },
         TelescopeResultsField = { link = "@field" },
