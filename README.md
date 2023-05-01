@@ -78,8 +78,7 @@ require('kanagawa').setup({
 vim.cmd("colorscheme kanagawa")
 ```
 
-**_NOTE 1:_** If you enable compilation, make sure to run this command every time you make changes to your config.
-**_NOTE 2:_** Kanagawa adjusts to the value of some options. Make sure that the options `'laststatus'` and `'cmdheight'` are set **_before_** calling `setup`.
+**_NOTE 1:_** If you enable compilation, make sure to run `:KanagawaCompile` command every time you make changes to your config.
 
 ```vim
 " 1. Modify your config
@@ -87,6 +86,8 @@ vim.cmd("colorscheme kanagawa")
 " 3. Run this command:
 :KanagawaCompile
 ```
+
+**_NOTE 2:_** Kanagawa adjusts to the value of some options. Make sure that the options `'laststatus'` and `'cmdheight'` are set **_before_** calling `setup`.
 
 ## Themes
 
@@ -149,7 +150,7 @@ require('kanagawa').setup({
                 syn = {
                     parameter = "yellow",
                 },
-            }
+            },
             all = {
                 ui = {
                     bg_gutter = "none"

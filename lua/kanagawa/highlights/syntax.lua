@@ -74,7 +74,7 @@ function M.setup(colors, config)
         -- *Error		any erroneous construct
         Error = { fg = theme.diag.error },
 
-        -- *Todo		anything that needs extra attention; mostly the keywords TODO FIXME and XXX
+        -- *Todo		anything that needs extra attention; mostly the keywords TODO FIXME WARNING and XXX
         Todo = { fg = theme.ui.fg_reverse, bg = theme.diag.info, bold = true },
 
         qfLineNr = { link = "lineNr" },
