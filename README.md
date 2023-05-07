@@ -268,6 +268,8 @@ end,
 
 ## Integration
 
+### Get palette and theme colors
+
 ```lua
 -- Get the colors for the current theme
 local colors = require("kanagawa.colors").setup()
@@ -276,6 +278,26 @@ local theme_colors = colors.theme
 
 -- Get the colors for a specific theme
 local wave_colors = require("kanagawa.colors").setup({ theme = 'wave' })
+```
+
+### Terminal integration
+
+The following example provides a snippet to automatically change the theme
+for the Kitty terminal emulator.
+
+```lua
+vim.api.nvim_create_autocmd("ColorScheme", {
+    pattern = "kanagawa",
+    callback = function()
+        if vim.o.background == "light" then
+            vim.fn.system("kitty +kitten themes Kanagawa_light")
+        elseif vim.o.background == "dark" then
+            vim.fn.system("kitty +kitten themes Kanagawa_dragon")
+        else
+            vim.fn.system("kitty +kitten themes Kanagawa")
+        end
+    end,
+})
 ```
 
 <details>
