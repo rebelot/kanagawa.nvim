@@ -118,10 +118,14 @@ function M.setup(colors, config)
         -- @text.literal (Comment)                     ; literal or verbatim text (e.g., inline code)
         ["@text.literal"] = { link = "String" },
         -- @text.quote                                 ; text quotations
+        ["@text.quote"] = { link = "@parameter" },
         -- @text.uri (Underlined)                      ; URIs (e.g. hyperlinks)
         -- @text.math                                  ; math environments (e.g. `$ ... $` in LaTeX)
+        ["@text.math"] = { link = "Constant" },
         -- @text.environment                           ; text environments of markup languages
+        ["@text.environment"] = { link = "Keyword" },
         -- @text.environment.name                      ; text indicating the type of an environment
+        ["@text.environment.name"] = { link = "String" },
         -- @text.reference (Identifier)                ; text references, footnotes, citations, etc.
 
         -- @text.todo (Todo)                           ; todo notes
