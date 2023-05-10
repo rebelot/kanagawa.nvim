@@ -63,6 +63,7 @@ function M.setup(colors, config)
         ["@keyword.operator"] = { fg = theme.syn.operator, bold = true },
         -- @keyword.return                             ; keywords like `return` and `yield`
         ["@keyword.return"] = vim.tbl_extend("force", { fg = theme.syn.special3 }, config.keywordStyle),
+        ["@keyword.luap"] = { link = "@string.regex" },
 
         -- @conditional (Conditional -> Statement)     ; keywords related to conditionals (e.g. `if` / `else`)
         -- @conditional.ternary                        ; Ternary operator: condition ? 1 : 2
@@ -117,21 +118,28 @@ function M.setup(colors, config)
         -- @text.literal (Comment)                     ; literal or verbatim text (e.g., inline code)
         ["@text.literal"] = { link = "String" },
         -- @text.quote                                 ; text quotations
+        ["@text.quote"] = { link = "@parameter" },
         -- @text.uri (Underlined)                      ; URIs (e.g. hyperlinks)
         -- @text.math                                  ; math environments (e.g. `$ ... $` in LaTeX)
+        ["@text.math"] = { link = "Constant" },
         -- @text.environment                           ; text environments of markup languages
+        ["@text.environment"] = { link = "Keyword" },
         -- @text.environment.name                      ; text indicating the type of an environment
+        ["@text.environment.name"] = { link = "String" },
         -- @text.reference (Identifier)                ; text references, footnotes, citations, etc.
 
         -- @text.todo (Todo)                           ; todo notes
         -- @text.note                                  ; info notes
+        ["@text.note"] = { fg = theme.ui.fg_reverse, bg = theme.diag.hint, bold = true },
         -- @text.warning                               ; warning notes
-        ["@text.warning"] = { link = "Todo" }, --default
+        ["@text.warning"] = { fg = theme.ui.fg_reverse, bg = theme.diag.warning, bold = true },
         -- @text.danger                                ; danger/error notes
-        ["@text.danger"] = { link = "WarningMsg" }, --default
+        ["@text.danger"] = { fg = theme.ui.fg, bg = theme.diag.error, bold = true },
 
         -- @text.diff.add                              ; added text (for diff files)
+        ['@text.diff.add'] = { fg = theme.vcs.added },
         -- @text.diff.delete                           ; deleted text (for diff files)
+        ['@text.diff.delete'] = { fg = theme.vcs.removed },
         -- }}}
 
         -- Tags (Tag) {{{

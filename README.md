@@ -50,7 +50,7 @@ There is no need to call setup if you are ok with the defaults.
 ```lua
 -- Default options:
 require('kanagawa').setup({
-    compile = true,              -- enable compiling the colorscheme
+    compile = false,             -- enable compiling the colorscheme
     undercurl = true,            -- enable undercurls
     commentStyle = { italic = true },
     functionStyle = {},
@@ -61,7 +61,7 @@ require('kanagawa').setup({
     dimInactive = false,         -- dim inactive window `:h hl-NormalNC`
     terminalColors = true,       -- define vim.g.terminal_color_{0,17}
     colors = {                   -- add/modify theme and palette colors
-        palette = {}
+        palette = {},
         theme = { wave = {}, lotus = {}, dragon = {}, all = {} },
     },
     overrides = function(colors) -- add/modify highlights
@@ -78,7 +78,7 @@ require('kanagawa').setup({
 vim.cmd("colorscheme kanagawa")
 ```
 
-**_NOTE:_** If you enable compilation (default), make sure to run this command every time you make changes to your config.
+**_NOTE 1:_** If you enable compilation, make sure to run `:KanagawaCompile` command every time you make changes to your config.
 
 ```vim
 " 1. Modify your config
@@ -86,6 +86,8 @@ vim.cmd("colorscheme kanagawa")
 " 3. Run this command:
 :KanagawaCompile
 ```
+
+**_NOTE 2:_** Kanagawa adjusts to the value of some options. Make sure that the options `'laststatus'` and `'cmdheight'` are set **_before_** calling `setup`.
 
 ## Themes
 
@@ -136,7 +138,7 @@ require('kanagawa').setup({
             fujiWhite = "#FFFFFF",
         },
         theme = {
-            -- change specific usages for a certain theme or all of them
+            -- change specific usages for a certain theme, or for all of them
             wave = {
                 ui = {
                     float = {
@@ -148,7 +150,7 @@ require('kanagawa').setup({
                 syn = {
                     parameter = "yellow",
                 },
-            }
+            },
             all = {
                 ui = {
                     bg_gutter = "none"
@@ -178,7 +180,95 @@ require('kanagawa').setup({
 })
 ```
 
+### Common customizations
+
+#### Remove _gutter_ background
+
+Remove the background of `LineNr`, `{Sign,Fold}Column` and friends
+
+```lua
+colors = {
+    theme = {
+        all = {
+            ui = {
+                bg_gutter = "none"
+            }
+        }
+    }
+}
+```
+
+#### Transparent Floating Windows
+
+This will make floating windows look nicer with default borders.
+
+```lua
+overrides = function(colors)
+    local theme = colors.theme
+    return {
+        NormalFloat = { bg = "none" },
+        FloatBorder = { bg = "none" },
+        FloatTitle = { bg = "none" },
+
+        -- Save an hlgroup with dark background and dimmed foreground
+        -- so that you can use it where your still want darker windows.
+        -- E.g.: autocmd TermOpen * setlocal winhighlight=Normal:NormalDark
+        NormalDark = { fg = theme.ui.fg_dim, bg = theme.ui.bg_m3 },
+
+        -- Popular plugins that open floats will link to NormalFloat by default;
+        -- set their background accordingly if you wish to keep them dark and borderless
+        LazyNormal = { bg = theme.ui.bg_m3, fg = theme.ui.fg_dim },
+        MasonNormal = { bg = theme.ui.bg_m3, fg = theme.ui.fg_dim },
+    }
+end,
+```
+
+If you'd like to keep the floating windows darker, but you're unhappy with how
+borders are rendered, consider using characters that are drawn at the edges of
+the box:
+
+```lua
+{ "🭽", "▔", "🭾", "▕", "🭿", "▁", "🭼", "▏" }
+```
+
+#### Borderless Telescope
+
+Block-like _modern_ Telescope UI
+
+```lua
+overrides = function(colors)
+    local theme = colors.theme
+    return {
+        TelescopeTitle = { fg = theme.ui.special, bold = true },
+        TelescopePromptNormal = { bg = theme.ui.bg_p1 },
+        TelescopePromptBorder = { fg = theme.ui.bg_p1, bg = theme.ui.bg_p1 },
+        TelescopeResultsNormal = { fg = theme.ui.fg_dim, bg = theme.ui.bg_m1 },
+        TelescopeResultsBorder = { fg = theme.ui.bg_m1, bg = theme.ui.bg_m1 },
+        TelescopePreviewNormal = { bg = theme.ui.bg_dim },
+        TelescopePreviewBorder = { bg = theme.ui.bg_dim, fg = theme.ui.bg_dim },
+    }
+end,
+```
+
+#### Dark completion (popup) menu
+
+More uniform colors for the popup menu.
+
+```lua
+overrides = function(colors)
+    local theme = colors.theme
+    return {
+        Pmenu = { fg = theme.ui.shade0, bg = theme.ui.bg_p1 },
+        PmenuSel = { fg = "NONE", bg = theme.ui.bg_p2 },
+        PmenuSbar = { bg = theme.ui.bg_m1 },
+        PmenuThumb = { bg = theme.ui.bg_p2 },
+    }
+end,
+```
+
 ## Integration
+
+### Get palette and theme colors
 
 ```lua
 -- Get the colors for the current theme
@@ -188,6 +278,26 @@ local theme_colors = colors.theme
 
 -- Get the colors for a specific theme
 local wave_colors = require("kanagawa.colors").setup({ theme = 'wave' })
+```
+
+### Terminal integration
+
+The following example provides a snippet to automatically change the theme
+for the Kitty terminal emulator.
+
+```lua
+vim.api.nvim_create_autocmd("ColorScheme", {
+    pattern = "kanagawa",
+    callback = function()
+        if vim.o.background == "light" then
+            vim.fn.system("kitty +kitten themes Kanagawa_light")
+        elseif vim.o.background == "dark" then
+            vim.fn.system("kitty +kitten themes Kanagawa_dragon")
+        else
+            vim.fn.system("kitty +kitten themes Kanagawa")
+        end
+    end,
+})
 ```
 
 <details>
@@ -232,6 +342,7 @@ local wave_colors = require("kanagawa.colors").setup({ theme = 'wave' })
 |   <img src="assets/circles/peachRed.svg" width="40">    | peachRed      | `#FF5D62` | Standout specials 2 (exception handling, return)                                  |
 | <img src="assets/circles/surimiOrange.svg" width="40">  | surimiOrange  | `#FFA066` | Constants, imports, booleans                                                      |
 |  <img src="assets/circles/katanaGray.svg" width="40">   | katanaGray    | `#717C7C` | Deprecated                                                                        |
+
 </details>
 
 ## Extras
@@ -239,15 +350,18 @@ local wave_colors = require("kanagawa.colors").setup({ theme = 'wave' })
 - [alacritty](extras/alacritty_kanagawa.yml)
 - [base16](extras/base16-theme.yaml)
 - [broot](extras/broot_kanagawa.toml)
+- [emacs, doom emacs](extras/kanagawa-theme.el)
 - [fish](extras/kanagawa.fish)
 - [foot](extras/foot_kanagawa.ini)
 - [iTerm](extras/kanagawa.itermcolors)
 - [kitty](extras/kanagawa.conf)
 - [mintty](extras/kanagawa.minttyrc)
 - [pywal](extras/pywal-theme.json)
+- [sway](extras/kanagawa.sway)
 - [wezterm](extras/wezterm.lua)
 - [Windows Terminal](extras/windows_terminal.json)
 - [Xresources](extras/.Xresources)
+- [JSON compatible with many terminals](extras/Kanagawa.json) Check [Gogh](https://github.com/Gogh-Co/Gogh#-terminals) for the list of supported terminals.
 - 🎉 Bonus! You win a tiny [python script](palette.py)🐍 to extract color palettes 🎨 from any image! 🥳
 
 ## Acknowledgements
