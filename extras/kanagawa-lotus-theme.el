@@ -29,7 +29,6 @@
   (lotusWhite3          "#f2ecbc" "#080808")
   (lotusWhite4          "#e7dba0" "#121212")
   (lotusWhite5          "#e4d794" "#303030")
-  (lotusGray2           "#716e61" "#303030")
 
   (lotusBlue1           "#c7d7e0" "#4e4e4e")
   (lotusBlue2           "#b5cbd2" "#585858")
@@ -49,6 +48,8 @@
   (lotusOrange2         "#e98a00" "#585858")
 
   (lotusTeal3           "#5a7785" "#5a7785")
+  (lotusGray            "#dcd7ba" "#8a8980")
+  (lotusGray2           "#716e61" "#8a8980")
   (lotusGray3           "#8a8980" "#8a8980")
 
   (lotusViolet1         "#a09cac" "#8a8980")
@@ -71,7 +72,7 @@
   (comet                "#b5cbd2" "#4e4e4e"))
 
   ;; Customize faces
-  (
+ (
   (default                                       (:background lotusWhite1 :foreground lotusInk2))
   (border                                        (:background lotusWhite1 :foreground lotusWhite0))
   (button                                        (:foreground lotusAqua))
@@ -339,6 +340,8 @@
   (lsp-headerline-breadcrumb-project-prefix-face (:background lotusWhite0))
   (lsp-headerline-breadcrumb-symbols-error-face  (:foreground lotusRed))
 
+  (lsp-flycheck-info-unnecessary-face            (:strike-through lotusGray2 :foreground lotusGray2))
+
   (lsp-ui-doc-background                         (:background lotusWhite0 :foreground lotusRed))
   (lsp-ui-doc-header                             (:background lotusWhite0 :foreground lotusRed))
   (lsp-ui-doc-border                             (:background nil :foreground nil))
@@ -438,7 +441,7 @@
   (centaur-tabs-close-unselected                 (:background lotusWhite0 :foreground lotusGray2))
 
   (centaur-tabs-close-mouse-face                 (:background nil :foreground lotusRed))
-  (centaur-tabs-default                          (:background lotusOrange2 ))
+  (centaur-tabs-default                          (:background lotusOrange2))
   (centaur-tabs-name-mouse-face                  (:foreground lotusTeal2 :bold t))
 
   (git-gutter:added                              (:foreground lotusGreen2))
@@ -463,7 +466,7 @@
   (ansi-color-bright-white                       (:foreground oldwhite))
   (ansi-color-bright-white                       (:foreground oldwhite))
 
-  (tree-sitter-hl-face:doc                 (:foreground lotusGreen))
+  (tree-sitter-hl-face:doc                       (:foreground lotusGreen))
 
   (tree-sitter-hl-face:attribute                 (:foreground lotusOrange))
   (tree-sitter-hl-face:escape                    (:foreground lotusRed))
@@ -513,8 +516,8 @@
   (tree-sitter-hl-face:variable.synthesized      (:foreground lotusRed))
   (tree-sitter-hl-face:keyword.compiler          (:foreground lotusRed :bold t :italic t))
 
-  (focus-unfocused (:foreground lotusGray2))
- ))
+  (focus-unfocused (:foreground lotusGray2))))
+ 
 
 ;;;###autoload
 (and load-file-name
@@ -523,5 +526,5 @@
                   (file-name-as-directory
                    (file-name-directory load-file-name))))
 
-(provide-theme 'kanagawa-lotut)
+(provide-theme 'kanagawa-lotus)
 ;;; kanagawa-lotus-theme.el ends here

@@ -66,7 +66,7 @@
   (comet                "#54536D" "#4e4e4e"))
 
   ;; Customize faces
-  (
+ (
   (default                                       (:background dragonBlack1 :foreground fujiWhite))
   (border                                        (:background dragonBlack1 :foreground dragonBlack0))
   (button                                        (:foreground dragonAqua))
@@ -127,6 +127,7 @@
   (minibuffer-prompt                             (:foreground dragonYellow :background winterYellow))
   (epa-mark                                      (:foreground dragonRed))
   (dired-mark                                    (:foreground dragonRed))
+  (diredfl-file-name                             (:foreground oldwhite))
   (trailing-whitespace                           (:background comet))
   (mode-line                                     (:background dragonBlack0 :foreground fujiWhite :bold t))
 
@@ -428,7 +429,7 @@
   (centaur-tabs-close-unselected                 (:background dragonBlack0 :foreground sumiInk6))
 
   (centaur-tabs-close-mouse-face                 (:background nil :foreground dragonRed))
-  (centaur-tabs-default                          (:background roninYellow ))
+  (centaur-tabs-default                          (:background roninYellow))
   (centaur-tabs-name-mouse-face                  (:foreground dragonTeal :bold t))
 
   (git-gutter:added                              (:foreground autumnGreen))
@@ -481,7 +482,7 @@
   (tree-sitter-hl-face:type.argument             (:foreground dragonOrange))
   (tree-sitter-hl-face:type.builtin              (:foreground autumnRed))
   (tree-sitter-hl-face:type.parameter            (:foreground dragonOrange))
-  (tree-sitter-hl-face:type.super                (:foreground samuraiRed :bold t))
+  (tree-sitter-hl-face:type.super                (:foreground autumnRed :bold t))
 
   (tree-sitter-hl-face:variable                  (:foreground dragonTeal :italic t))
   (tree-sitter-hl-face:variable.builtin          (:foreground dragonRed))
@@ -501,8 +502,8 @@
   (tree-sitter-hl-face:variable.synthesized      (:foreground dragonRed))
   (tree-sitter-hl-face:keyword.compiler          (:foreground dragonRed :bold t :italic t))
 
-  (focus-unfocused (:foreground sumiInk6))
- ))
+  (focus-unfocused (:foreground sumiInk6))))
+ 
 
 ;;;###autoload
 (and load-file-name
