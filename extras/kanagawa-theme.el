@@ -13,60 +13,60 @@
 
 
 (autothemer-deftheme
-	kanagawa "A theme inspired by the colors of the famous painting by Katsushika Hokusa"
+        kanagawa "A theme inspired by the colors of the famous painting by Katsushika Hokusa"
 
  ((((class color) (min-colors #xFFFFFF))        ; col 1 GUI/24bit
    ((class color) (min-colors #xFF)))           ; col 2 Xterm/256
 
   ;; Define our color palette
-  (fujiWhite		"#DCD7BA" "#ffffff")
-  (old-white		"#C8C093" "#ffffff")
+  (fujiWhite            "#DCD7BA" "#ffffff")
+  (old-white            "#C8C093" "#ffffff")
 
-  (sumiInk-0		"#16161D" "#000000")
-  (sumiInk-1b		"#181820" "#000000")
-  (sumiInk-1		"#1F1F28" "#080808")
-  (sumiInk-2		"#2A2A37" "#121212")
-  (sumiInk-3		"#363646" "#303030")
-  (sumiInk-4		"#54546D" "#303030")
+  (sumiInk-0            "#16161D" "#000000")
+  (sumiInk-1b           "#181820" "#000000")
+  (sumiInk-1            "#1F1F28" "#080808")
+  (sumiInk-2            "#2A2A37" "#121212")
+  (sumiInk-3            "#363646" "#303030")
+  (sumiInk-4            "#54546D" "#303030")
 
-  (waveBlue-1		"#223249" "#4e4e4e")
-  (waveBlue-2		"#2D4F67" "#585858")
-  (waveAqua1		"#6A9589" "#6a9589")
-  (waveAqua2		"#7AA89F" "#717C7C")
+  (waveBlue-1           "#223249" "#4e4e4e")
+  (waveBlue-2           "#2D4F67" "#585858")
+  (waveAqua1            "#6A9589" "#6a9589")
+  (waveAqua2            "#7AA89F" "#717C7C")
 
-  (winterGreen		"#2B3328" "#585858")
-  (winterYellow		"#49443C" "#585858")
-  (winterRed		"#43242B" "#585858")
-  (winterBlue		"#252535" "#585858")
+  (winterGreen          "#2B3328" "#585858")
+  (winterYellow         "#49443C" "#585858")
+  (winterRed            "#43242B" "#585858")
+  (winterBlue           "#252535" "#585858")
 
-  (autumnGreen		"#76946A" "#585858")
-  (autumnRed		"#C34043" "#585858")
-  (autumnYellow		"#DCA561" "#585858")
+  (autumnGreen          "#76946A" "#585858")
+  (autumnRed            "#C34043" "#585858")
+  (autumnYellow         "#DCA561" "#585858")
 
-  (samuraiRed		"#E82424" "#585858")
-  (roninYellow		"#FF9E3B" "#585858")
+  (samuraiRed           "#E82424" "#585858")
+  (roninYellow          "#FF9E3B" "#585858")
 
-  (dragonBlue		"#658594" "#658594")
-  (fujiGray         "#727169" "#717C7C")
-  (springViolet1	"#938AA9" "#717C7C")
-  (oniViolet		"#957FB8" "#717C7C")
-  (crystalBlue		"#7E9CD8" "#717C7C")
-  (springViolet2	"#9CABCA" "#717C7C")
-  (springBlue		"#7FB4CA" "#717C7C")
-  (lightBlue		"#A3D4D5" "#717C7C")
-  (springGreen		"#98BB6C" "#717C7C")
-  (boatYellow1		"#938056" "#717C7C")
-  (boatYellow2		"#C0A36E" "#717C7C")
-  (carpYellow		"#E6C384" "#717C7C")
-  (sakuraPink		"#D27E99" "#717C7C")
-  (waveRed          "#E46876" "#717C7C")
-  (peachRed         "#FF5D62" "#717C7C")
-  (surimiOrange		"#FFA066" "#717C7C")
-  (katanaGray		"#717C7C" "#717C7C")
-  (comet            "#54536D" "#4e4e4e"))
+  (dragonBlue           "#658594" "#658594")
+  (fujiGray             "#727169" "#717C7C")
+  (springViolet1        "#938AA9" "#717C7C")
+  (oniViolet            "#957FB8" "#717C7C")
+  (crystalBlue          "#7E9CD8" "#717C7C")
+  (springViolet2        "#9CABCA" "#717C7C")
+  (springBlue           "#7FB4CA" "#717C7C")
+  (lightBlue            "#A3D4D5" "#717C7C")
+  (springGreen          "#98BB6C" "#717C7C")
+  (boatYellow1          "#938056" "#717C7C")
+  (boatYellow2          "#C0A36E" "#717C7C")
+  (carpYellow           "#E6C384" "#717C7C")
+  (sakuraPink           "#D27E99" "#717C7C")
+  (waveRed              "#E46876" "#717C7C")
+  (peachRed             "#FF5D62" "#717C7C")
+  (surimiOrange         "#FFA066" "#717C7C")
+  (katanaGray           "#717C7C" "#717C7C")
+  (comet                "#54536D" "#4e4e4e"))
 
   ;; Customize faces
-  (
+ (
   (default                                       (:background sumiInk-1b :foreground fujiWhite))
   (border                                        (:background sumiInk-1b :foreground sumiInk-0))
   (button                                        (:foreground waveAqua2))
@@ -119,7 +119,7 @@
   (font-lock-comment-delimiter-face              (:foreground fujiGray :italic t))
   (font-lock-doc-face                            (:foreground comet))
   (font-lock-doc-markup-face                     (:foreground comet))
-  (font-lock-preprocessor-face	                 (:foreground boatYellow2))
+  (font-lock-preprocessor-face                   (:foreground boatYellow2))
   (elisp-shorthand-font-lock-face                (:foreground fujiWhite))
 
   (info-xref                                     (:foreground carpYellow))
@@ -179,7 +179,7 @@
   (org-meta-line                                 (:background winterGreen :foreground springGreen))
   (org-block                                     (:background sumiInk-0 :foreground sumiInk-4))
   (org-block-begin-line                          (:background winterBlue :foreground springBlue))
-  (org-block-end-line	                         (:background winterRed :foreground peachRed))
+  (org-block-end-line                            (:background winterRed :foreground peachRed))
   (org-headline-done                             (:foreground dragonBlue :strike-through t))
   (org-todo                                      (:foreground surimiOrange :bold t))
   (org-headline-todo                             (:foreground sumiInk-2))
@@ -205,7 +205,7 @@
   (which-key-command-description-face            (:foreground crystalBlue))
   (which-key-local-map-description-face          (:foreground carpYellow))
   (which-key-posframe                            (:background waveBlue-1))
-  (which-key-posframe-border	                 (:background waveBlue-1))
+  (which-key-posframe-border                     (:background waveBlue-1))
 
   ;; swiper
   (swiper-line-face                              (:foreground carpYellow))
@@ -241,7 +241,7 @@
 
   ;; show-paren
   (show-paren-match                              (:background waveAqua1 :foreground sumiInk-0 :bold t))
-  (show-paren-match-expression	                 (:background waveAqua1 :foreground sumiInk-0 :bold t))
+  (show-paren-match-expression                   (:background waveAqua1 :foreground sumiInk-0 :bold t))
   (show-paren-mismatch                           (:background peachRed :foreground old-white))
   (tooltip                                       (:foreground sumiInk-0 :background carpYellow :bold t))
   
@@ -385,7 +385,7 @@
   (anzu-match-3                                  (:foreground lightBlue :background sumiInk-2))
 
   (anzu-mode-line                                (:foreground sumiInk-0 :background springViolet2))
-  (anzu-mode-no-match	                         (:foreground fujiWhite :background peachRed))
+  (anzu-mode-no-match                            (:foreground fujiWhite :background peachRed))
   (anzu-replace-to                               (:foreground springBlue :background winterBlue))
   (anzu-replace-highlight                        (:foreground peachRed :background winterRed :strike-through t))
 
@@ -428,7 +428,7 @@
   (centaur-tabs-close-unselected                 (:background sumiInk-0 :foreground sumiInk-4))
 
   (centaur-tabs-close-mouse-face                 (:background nil :foreground peachRed))
-  (centaur-tabs-default                          (:background roninYellow ))
+  (centaur-tabs-default                          (:background roninYellow))
   (centaur-tabs-name-mouse-face                  (:foreground springBlue :bold t))
 
   (git-gutter:added                              (:foreground autumnGreen))
@@ -501,8 +501,8 @@
   (tree-sitter-hl-face:variable.synthesized      (:foreground waveRed))
   (tree-sitter-hl-face:keyword.compiler          (:foreground peachRed :bold t :italic t))
 
-  (focus-unfocused (:foreground sumiInk-4))
- ))
+  (focus-unfocused (:foreground sumiInk-4))))
+ 
 
 ;;;###autoload
 (and load-file-name

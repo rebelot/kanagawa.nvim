@@ -13,56 +13,56 @@
 
 
 (autothemer-deftheme
-	kanagawa-dragon "A theme inspired by the colors of the famous painting by Katsushika Hokusa"
+        kanagawa-dragon "A theme inspired by the colors of the famous painting by Katsushika Hokusa"
 
  ((((class color) (min-colors #xFFFFFF))        ; col 1 GUI/24bit
    ((class color) (min-colors #xFF)))           ; col 2 Xterm/256
 
   ;; Define our color palette
-  (fujiWhite		"#DCD7BA" "#ffffff")
-  (oldwhite		"#C8C093" "#ffffff")
+  (fujiWhite            "#DCD7BA" "#ffffff")
+  (oldwhite             "#C8C093" "#ffffff")
 
-  (dragonBlack0		"#0d0c0c" "#000000")
-  (dragonBlack1		"#12120f" "#000000")
-  (dragonBlack3		"#181616" "#080808")
-  (dragonBlack4		"#282727" "#121212")
-  (dragonBlack5		"#393836" "#303030")
-  (sumiInk6		"#54546D" "#303030")
+  (dragonBlack0         "#0d0c0c" "#000000")
+  (dragonBlack1         "#12120f" "#000000")
+  (dragonBlack3         "#181616" "#080808")
+  (dragonBlack4         "#282727" "#121212")
+  (dragonBlack5         "#393836" "#303030")
+  (sumiInk6             "#54546D" "#303030")
 
-  (waveBlue1		"#223249" "#4e4e4e")
-  (waveBlue2		"#2D4F67" "#585858")
-  (waveAqua1		"#6A9589" "#6a9589")
-  (dragonAqua		"#8ea4a2" "#717C7C")
+  (waveBlue1            "#223249" "#4e4e4e")
+  (waveBlue2            "#2D4F67" "#585858")
+  (waveAqua1            "#6A9589" "#6a9589")
+  (dragonAqua           "#8ea4a2" "#717C7C")
 
-  (winterGreen		"#2B3328" "#585858")
-  (winterYellow	"#49443C" "#585858")
-  (winterRed		"#43242B" "#585858")
-  (winterBlue		"#252535" "#585858")
+  (winterGreen          "#2B3328" "#585858")
+  (winterYellow         "#49443C" "#585858")
+  (winterRed            "#43242B" "#585858")
+  (winterBlue           "#252535" "#585858")
 
-  (autumnGreen		"#76946A" "#585858")
-  (autumnRed		"#C34043" "#585858")
-  (autumnYellow	"#DCA561" "#585858")
+  (autumnGreen          "#76946A" "#585858")
+  (autumnRed            "#C34043" "#585858")
+  (autumnYellow         "#DCA561" "#585858")
 
-  (samuraiRed		"#E82424" "#585858")
-  (roninYellow		"#FF9E3B" "#585858")
+  (samuraiRed           "#E82424" "#585858")
+  (roninYellow          "#FF9E3B" "#585858")
 
-  (dragonBlue		"#658594" "#658594")
-  (dragonAsh             "#737c73" "#717C7C")
-  (dragonGray3	"#7a8382" "#717C7C")
-  (dragonViolet		"#8992a7" "#717C7C")
-  (dragonBlue2		"#8ba4b0" "#717C7C")
-  (dragonGray2	"#9e9b93" "#717C7C")
-  (dragonTeal		"#949fb5" "#717C7C")
-  (lightBlue		"#A3D4D5" "#717C7C")
-  (springGreen		"#98BB6C" "#717C7C")
-  (boatYellow1		"#938056" "#717C7C")
-  (dragonRed		"#c4746e" "#717C7C")
-  (dragonYellow		"#c4b28a" "#717C7C")
-  (dragonPink		"#a292a3" "#717C7C")
-  (dragonRed              "#c4746e" "#717C7C")
-  (dragonRed             "#c4746e" "#717C7C")
-  (dragonOrange	"#b6927b" "#717C7C")
-  (katanaGray		"#717C7C" "#717C7C")
+  (dragonBlue           "#658594" "#658594")
+  (dragonAsh            "#737c73" "#717C7C")
+  (dragonGray3          "#7a8382" "#717C7C")
+  (dragonViolet         "#8992a7" "#717C7C")
+  (dragonBlue2          "#8ba4b0" "#717C7C")
+  (dragonGray2          "#9e9b93" "#717C7C")
+  (dragonTeal           "#949fb5" "#717C7C")
+  (lightBlue            "#A3D4D5" "#717C7C")
+  (springGreen          "#98BB6C" "#717C7C")
+  (boatYellow1          "#938056" "#717C7C")
+  (dragonRed            "#c4746e" "#717C7C")
+  (dragonYellow         "#c4b28a" "#717C7C")
+  (dragonPink           "#a292a3" "#717C7C")
+  (dragonRed            "#c4746e" "#717C7C")
+  (dragonRed            "#c4746e" "#717C7C")
+  (dragonOrange         "#b6927b" "#717C7C")
+  (katanaGray           "#717C7C" "#717C7C")
   (comet                "#54536D" "#4e4e4e"))
 
   ;; Customize faces
@@ -119,7 +119,7 @@
   (font-lock-comment-delimiter-face              (:foreground dragonAsh :italic t))
   (font-lock-doc-face                            (:foreground comet))
   (font-lock-doc-markup-face                     (:foreground comet))
-  (font-lock-preprocessor-face	                 (:foreground dragonRed))
+  (font-lock-preprocessor-face                   (:foreground dragonRed))
   (elisp-shorthand-font-lock-face                (:foreground fujiWhite))
 
   (info-xref                                     (:foreground dragonYellow))
@@ -179,7 +179,7 @@
   (org-meta-line                                 (:background winterGreen :foreground springGreen))
   (org-block                                     (:background dragonBlack0 :foreground sumiInk6))
   (org-block-begin-line                          (:background winterBlue :foreground dragonTeal))
-  (org-block-end-line	                         (:background winterRed :foreground dragonRed))
+  (org-block-end-line                            (:background winterRed :foreground dragonRed))
   (org-headline-done                             (:foreground dragonBlue :strike-through t))
   (org-todo                                      (:foreground dragonOrange :bold t))
   (org-headline-todo                             (:foreground dragonBlack4))
@@ -205,7 +205,7 @@
   (which-key-command-description-face            (:foreground dragonBlue2))
   (which-key-local-map-description-face          (:foreground dragonYellow))
   (which-key-posframe                            (:background waveBlue1))
-  (which-key-posframe-border	                 (:background waveBlue1))
+  (which-key-posframe-border                     (:background waveBlue1))
 
   ;; swiper
   (swiper-line-face                              (:foreground dragonYellow))
@@ -241,7 +241,7 @@
 
   ;; show-paren
   (show-paren-match                              (:background waveAqua1 :foreground dragonBlack0 :bold t))
-  (show-paren-match-expression	                 (:background waveAqua1 :foreground dragonBlack0 :bold t))
+  (show-paren-match-expression                   (:background waveAqua1 :foreground dragonBlack0 :bold t))
   (show-paren-mismatch                           (:background dragonRed :foreground oldwhite))
   (tooltip                                       (:foreground dragonBlack0 :background dragonYellow :bold t))
   
@@ -385,7 +385,7 @@
   (anzu-match-3                                  (:foreground lightBlue :background dragonBlack4))
 
   (anzu-mode-line                                (:foreground dragonBlack0 :background dragonGray2))
-  (anzu-mode-no-match	                         (:foreground fujiWhite :background dragonRed))
+  (anzu-mode-no-match                            (:foreground fujiWhite :background dragonRed))
   (anzu-replace-to                               (:foreground dragonTeal :background winterBlue))
   (anzu-replace-highlight                        (:foreground dragonRed :background winterRed :strike-through t))
 

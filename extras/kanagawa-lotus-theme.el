@@ -13,57 +13,62 @@
 
 
 (autothemer-deftheme
-	kanagawa-lotus "A theme inspired by the colors of the famous painting by Katsushika Hokusa"
+        kanagawa-lotus "A theme inspired by the colors of the famous painting by Katsushika Hokusa"
 
  ((((class color) (min-colors #xFFFFFF))        ; col 1 GUI/24bit
    ((class color) (min-colors #xFF)))           ; col 2 Xterm/256
 
   ;; Define our color palette
-  (lotusInk2		"#43436c" "#ffffff")
-  (oldwhite		"#43436c" "#ffffff")
 
-  (lotusWhite0		"#d5cea3" "#000000")
-  (lotusWhite1		"#dcd5ac" "#000000")
-  (lotusWhite3		"#f2ecbc" "#080808")
-  (lotusWhite4		"#e7dba0" "#121212")
-  (lotusWhite5		"#e4d794" "#303030")
-  (lotusGray2		"#716e61" "#303030")
+  (lotusInk1            "#545464" "#ffffff")
+  (lotusInk2            "#43436c" "#ffffff")
+  (oldwhite             "#43436c" "#ffffff")
 
-  (lotusBlue1		"#c7d7e0" "#4e4e4e")
-  (lotusBlue2		"#b5cbd2" "#585858")
-  (lotusAqua2		"#5e857a" "#6a9589")
-  (lotusAqua		"#597b75" "#8a8980")
+  (lotusWhite0          "#d5cea3" "#000000")
+  (lotusWhite1          "#dcd5ac" "#000000")
+  (lotusWhite3          "#f2ecbc" "#080808")
+  (lotusWhite4          "#e7dba0" "#121212")
+  (lotusWhite5          "#e4d794" "#303030")
+  (lotusGray2           "#716e61" "#303030")
 
-  (lotusGreen3		"#b7d0ae" "#585858")
-  (lotusYellow4	"#f9d791" "#585858")
-  (lotusRed4		"#d9a594" "#585858")
-  (lotusCyan		"#d7e3d8" "#585858")
+  (lotusBlue1           "#c7d7e0" "#4e4e4e")
+  (lotusBlue2           "#b5cbd2" "#585858")
+  (lotusAqua2           "#5e857a" "#6a9589")
+  (lotusAqua            "#597b75" "#8a8980")
 
-  (lotusGreen2		"#6e915f" "#585858")
-  (lotusRed2		"#d7474b" "#585858")
-  (lotusYellow3	"#de9800" "#585858")
+  (lotusGreen3          "#b7d0ae" "#585858")
+  (lotusYellow4         "#f9d791" "#585858")
+  (lotusRed4            "#d9a594" "#585858")
+  (lotusCyan            "#d7e3d8" "#585858")
 
-  (lotusRed3		"#e82424" "#585858")
-  (lotusOrange2		"#e98a00" "#585858")
+  (lotusGreen2          "#6e915f" "#585858")
+  (lotusRed2            "#d7474b" "#585858")
+  (lotusYellow3         "#de9800" "#585858")
 
-  (lotusTeal3		"#5a7785" "#5a7785")
-  (lotusGray3             "#8a8980" "#8a8980")
-  (lotusViolet2	"#766b90" "#8a8980")
-  (lotusViolet4		"#624c83" "#8a8980")
-  (lotusBlue4		"#4d699b" "#8a8980")
-  (lotusTeal1	"#4e8ca2" "#8a8980")
-  (lotusTeal2		"#6693bf" "#8a8980")
-  (lightBlue		"#A3D4D5" "#8a8980")
-  (lotusGreen		"#6f894e" "#8a8980")
-  (boatYellow1		"#938056" "#8a8980")
-  (lotusYellow2		"#836f4a" "#8a8980")
-  (lotusYellow		"#77713f" "#8a8980")
-  (lotusPink		"#b35b79" "#8a8980")
-  (lotusRed              "#c84053" "#8a8980")
+  (lotusRed3            "#e82424" "#585858")
+  (lotusOrange2         "#e98a00" "#585858")
+
+  (lotusTeal3           "#5a7785" "#5a7785")
+  (lotusGray3           "#8a8980" "#8a8980")
+
+  (lotusViolet1         "#a09cac" "#8a8980")
+  (lotusViolet2         "#766b90" "#8a8980")
+  (lotusViolet3         "#c9cbd1" "#8a8980")
+  (lotusViolet4         "#624c83" "#8a8980")
+  (lotusBlue4           "#4d699b" "#8a8980")
+  (lotusTeal1           "#4e8ca2" "#8a8980")
+  (lotusTeal2           "#6693bf" "#8a8980")
+  (lightBlue            "#A3D4D5" "#8a8980")
+  (lotusGreen           "#6f894e" "#8a8980")
+  (boatYellow1          "#938056" "#8a8980")
+  (lotusYellow2         "#836f4a" "#8a8980")
+  (lotusYellow          "#77713f" "#8a8980")
+  (lotusPink            "#b35b79" "#8a8980")
   (lotusRed             "#c84053" "#8a8980")
-  (lotusOrange	"#cc6d00" "#8a8980")
-  (lotusGray3		"#8a8980" "#8a8980")
-  (comet                "#54536D" "#4e4e4e"))
+  (lotusRed             "#c84053" "#8a8980")
+  (lotusOrange          "#cc6d00" "#8a8980")
+  (lotusGray3           "#8a8980" "#8a8980")
+  (comet                "#b5cbd2" "#4e4e4e"))
 
   ;; Customize faces
   (
@@ -117,9 +122,9 @@
   (font-lock-negation-char-face                  (:foreground lotusRed))
   (font-lock-comment-face                        (:foreground lotusGray3 :italic t))
   (font-lock-comment-delimiter-face              (:foreground lotusGray3 :italic t))
-  (font-lock-doc-face                            (:foreground comet))
-  (font-lock-doc-markup-face                     (:foreground comet))
-  (font-lock-preprocessor-face	                 (:foreground lotusYellow2))
+  (font-lock-doc-face                            (:foreground lotusGreen))
+  (font-lock-doc-markup-face                     (:foreground lotusGreen))
+  (font-lock-preprocessor-face                   (:foreground lotusYellow2))
   (elisp-shorthand-font-lock-face                (:foreground lotusInk2))
 
   (info-xref                                     (:foreground lotusYellow))
@@ -127,6 +132,7 @@
   (minibuffer-prompt                             (:foreground lotusYellow :background lotusYellow4))
   (epa-mark                                      (:foreground lotusRed))
   (dired-mark                                    (:foreground lotusRed))
+  (diredfl-file-name                             (:foreground lotusInk2))
   (trailing-whitespace                           (:background comet))
   (mode-line                                     (:background lotusWhite0 :foreground lotusInk2 :bold t))
 
@@ -174,12 +180,15 @@
   (link                                          (:foreground lotusBlue4))
 
   ;; org-mode
+  (org-drawer                                    (:foreground lotusTeal1))
+  (org-table                                     (:foreground lotusViolet2))
+  (org-link                                      (:underline (:color lotusBlue4) :foreground lotusBlue4))
   (org-done                                      (:foreground lotusTeal3))
   (org-code                                      (:background lotusWhite0))
   (org-meta-line                                 (:background lotusGreen3 :foreground lotusGreen))
   (org-block                                     (:background lotusWhite0 :foreground lotusGray2))
   (org-block-begin-line                          (:background lotusCyan :foreground lotusTeal2))
-  (org-block-end-line	                         (:background lotusRed4 :foreground lotusRed))
+  (org-block-end-line                            (:background lotusRed4 :foreground lotusRed))
   (org-headline-done                             (:foreground lotusTeal3 :strike-through t))
   (org-todo                                      (:foreground lotusOrange :bold t))
   (org-headline-todo                             (:foreground lotusWhite4))
@@ -187,7 +196,7 @@
   (org-footnote                                  (:foreground lotusAqua))
   (org-indent                                    (:background lotusWhite1 :foreground lotusWhite1))
   (org-hide                                      (:background lotusWhite1 :foreground lotusWhite1))
-  (org-date                                      (:foreground lotusBlue2))
+  (org-date                                      (:foreground lotusAqua2))
   (org-ellipsis                                  (:foreground lotusBlue2 :bold t))
   (org-level-1                                   (:foreground lotusRed :height 1.3 :bold t))
   (org-level-2                                   (:foreground lotusTeal1 :height 1.15 :bold t))
@@ -197,6 +206,7 @@
   (org-level-6                                   (:foreground lotusYellow))
   (org-level-7                                   (:foreground lotusOrange))
   (org-level-8                                   (:foreground lotusGreen))
+  (org-agenda-date-weekend                       (:foreground lotusViolet2))
 
   ;; which-key
   (which-key-key-face                            (:inherit 'font-lock-variable-name-face))
@@ -205,7 +215,7 @@
   (which-key-command-description-face            (:foreground lotusBlue4))
   (which-key-local-map-description-face          (:foreground lotusYellow))
   (which-key-posframe                            (:background lotusBlue1))
-  (which-key-posframe-border	                 (:background lotusBlue1))
+  (which-key-posframe-border                     (:background lotusBlue1))
 
   ;; swiper
   (swiper-line-face                              (:foreground lotusYellow))
@@ -241,7 +251,7 @@
 
   ;; show-paren
   (show-paren-match                              (:background lotusAqua2 :foreground lotusWhite0 :bold t))
-  (show-paren-match-expression	                 (:background lotusAqua2 :foreground lotusWhite0 :bold t))
+  (show-paren-match-expression                   (:background lotusAqua2 :foreground lotusWhite0 :bold t))
   (show-paren-mismatch                           (:background lotusRed :foreground oldwhite))
   (tooltip                                       (:foreground lotusWhite0 :background lotusYellow :bold t))
   
@@ -385,7 +395,7 @@
   (anzu-match-3                                  (:foreground lightBlue :background lotusWhite4))
 
   (anzu-mode-line                                (:foreground lotusWhite0 :background lotusTeal1))
-  (anzu-mode-no-match	                         (:foreground lotusInk2 :background lotusRed))
+  (anzu-mode-no-match                            (:foreground lotusInk2 :background lotusRed))
   (anzu-replace-to                               (:foreground lotusTeal2 :background lotusCyan))
   (anzu-replace-highlight                        (:foreground lotusRed :background lotusRed4 :strike-through t))
 
@@ -453,6 +463,8 @@
   (ansi-color-bright-white                       (:foreground oldwhite))
   (ansi-color-bright-white                       (:foreground oldwhite))
 
+  (tree-sitter-hl-face:doc                 (:foreground lotusGreen))
+
   (tree-sitter-hl-face:attribute                 (:foreground lotusOrange))
   (tree-sitter-hl-face:escape                    (:foreground lotusRed))
   (tree-sitter-hl-face:constructor               (:foreground lotusRed :weight 'semi-bold))
@@ -463,14 +475,14 @@
   (tree-sitter-hl-face:embedded                  (:foreground lotusYellow2))
   
   (tree-sitter-hl-face:function                  (:foreground lotusBlue4))
-  (tree-sitter-hl-face:function.builtin          (:foreground lotusRed :italic t :background lotusRed4))
+  (tree-sitter-hl-face:function.builtin          (:foreground lotusRed :italic t))
   (tree-sitter-hl-face:function.call             (:foreground lotusTeal1))
   (tree-sitter-hl-face:function.macro            (:foreground lotusRed3))
   (tree-sitter-hl-face:function.special          (:foreground lotusPink))
   (tree-sitter-hl-face:function.label            (:foreground lotusOrange))
  
-  (tree-sitter-hl-face:method                    (:foreground lightBlue))
-  (tree-sitter-hl-face:method.call               (:foreground lightBlue))
+  (tree-sitter-hl-face:method                    (:foreground lotusInk1 :bold t))
+  (tree-sitter-hl-face:method.call               (:foreground lotusInk1 :bold t))
 
   (tree-sitter-hl-face:property                  (:foreground lotusYellow))
   (tree-sitter-hl-face:property.definition       (:foreground oldwhite :italic t))
@@ -481,7 +493,7 @@
   (tree-sitter-hl-face:type.argument             (:foreground lotusOrange))
   (tree-sitter-hl-face:type.builtin              (:foreground lotusRed2))
   (tree-sitter-hl-face:type.parameter            (:foreground lotusOrange))
-  (tree-sitter-hl-face:type.super                (:foreground lotusRed3 :bold t))
+  (tree-sitter-hl-face:type.super                (:foreground lotusRed))
 
   (tree-sitter-hl-face:variable                  (:foreground lotusTeal2 :italic t))
   (tree-sitter-hl-face:variable.builtin          (:foreground lotusRed))
@@ -511,5 +523,5 @@
                   (file-name-as-directory
                    (file-name-directory load-file-name))))
 
-(provide-theme 'kanagawa-lotus)
+(provide-theme 'kanagawa-lotut)
 ;;; kanagawa-lotus-theme.el ends here
