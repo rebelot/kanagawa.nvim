@@ -348,6 +348,7 @@ vim.api.nvim_create_autocmd("ColorScheme", {
 ## Extras
 
 - [alacritty](extras/alacritty_kanagawa.yml)
+- [Alfred](extra/alfred.md)
 - [base16](extras/base16-theme.yaml)
 - [broot](extras/broot_kanagawa.toml)
 - [emacs, doom emacs](extras/kanagawa-theme.el)
