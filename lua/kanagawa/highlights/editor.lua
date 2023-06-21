@@ -143,6 +143,7 @@ function M.setup(colors, config)
         LspReferenceText = { bg = theme.diff.text },
         LspReferenceRead = { link = "LspReferenceText" },
         LspReferenceWrite = { bg = theme.diff.text, underline = true },
+        -- LspInlayHint = { link = "NonText"},
 
         DiagnosticError = { fg = theme.diag.error },
         DiagnosticWarn = { fg = theme.diag.warning },
