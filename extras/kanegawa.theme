@@ -1,0 +1,24 @@
+# Kanegawa
+
+# Syntax Highlighting Colors
+fish_color_normal DCD7BA
+fish_color_command 7AA89F
+fish_color_keyword D27E99
+fish_color_quote C0A36E
+fish_color_redirection DCD7BA
+fish_color_end FF9E64
+fish_color_error C34043
+fish_color_param 957FB8
+fish_color_comment 727169
+fish_color_selection --background=2D4F67
+fish_color_search_match --background=2D4F67
+fish_color_operator 76946A
+fish_color_escape D27E99
+fish_color_autosuggestion 727169
+
+# Completion Pager Colors
+fish_pager_color_progress 727169
+fish_pager_color_prefix 7AA89F
+fish_pager_color_completion DCD7BA
+fish_pager_color_description 727169
+fish_pager_color_selected_background --background=76946A
