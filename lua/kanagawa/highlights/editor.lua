@@ -81,6 +81,8 @@ function M.setup(colors, config)
         FloatBorder = { fg = theme.ui.float.fg_border, bg = theme.ui.float.bg_border },
         -- FloatTitle	Title of floating windows.
         FloatTitle = { fg = theme.ui.special, bg = theme.ui.float.bg_border, bold = true },
+        -- FloatFooter	Footer of floating windows.
+        FloatFooter = { fg = theme.ui.nontext, bg = theme.ui.float.bg_border },
         -- NormalNC	Normal text in non-current windows.
         NormalNC = config.dimInactive and { fg = theme.ui.fg_dim, bg = theme.ui.bg_dim } or { link = "Normal" },
         -- Pmenu		Popup menu: Normal item.
