@@ -191,6 +191,36 @@ function M.setup(colors, config)
         IndentBlanklineContextStart = { sp = theme.ui.special, underline = true },
         -- Lazy
         LazyProgressTodo = { fg = theme.ui.nontext },
+
+        -- Nvim-Navic
+        NavicIconsFile = { link = "Directory" },
+        NavicIconsModule = { link = "TSInclude" },
+        NavicIconsNamespace = { link = "TSInclude" },
+        NavicIconsPackage = { link = "TSInclude" },
+        NavicIconsClass = { link = "Structure" },
+        NavicIconsMethod = { link = "Function" },
+        NavicIconsProperty = { link = "TSProperty" },
+        NavicIconsField = { link = "TSField" },
+        NavicIconsConstructor = { link = "@constructor" },
+        NavicIconsEnum = { link = "Identifier" },
+        NavicIconsInterface = { link = "Type" },
+        NavicIconsFunction = { link = "Function" },
+        NavicIconsVariable = { link = "@variable" },
+        NavicIconsConstant = { link = "Constant" },
+        NavicIconsString = { link = "String" },
+        NavicIconsNumber = { link = "Number" },
+        NavicIconsBoolean = { link = "Boolean" },
+        NavicIconsArray = { link = "Type" },
+        NavicIconsObject = { link = "Type" },
+        NavicIconsKey = { link = "Keyword" },
+        NavicIconsNull = { link = "Type" },
+        NavicIconsEnumMember = { link = "TSField" },
+        NavicIconsStruct = { link = "Structure" },
+        NavicIconsEvent = { link = "Structure" },
+        NavicIconsOperator = { link = "Operator" },
+        NavicIconsTypeParameter = { link = "Identifier" },
+        NavicText = { fg = theme.ui.fg },
+        NavicSeparator = { fg = theme.ui.fg },
     }
 end
 
