@@ -179,7 +179,7 @@
   (org-meta-line                                 (:background winterGreen :foreground springGreen))
   (org-block                                     (:background sumiInk-0 :foreground sumiInk-4))
   (org-block-begin-line                          (:background winterBlue :foreground springBlue))
-  (org-block-end-line	                         (:background winterRed :foreground peachRed))
+  (org-block-end-line	                           (:background winterRed :foreground peachRed))
   (org-headline-done                             (:foreground dragonBlue :strike-through t))
   (org-todo                                      (:foreground surimiOrange :bold t))
   (org-headline-todo                             (:foreground sumiInk-2))
@@ -205,7 +205,7 @@
   (which-key-command-description-face            (:foreground crystalBlue))
   (which-key-local-map-description-face          (:foreground carpYellow))
   (which-key-posframe                            (:background waveBlue-1))
-  (which-key-posframe-border	                 (:background waveBlue-1))
+  (which-key-posframe-border	                   (:background waveBlue-1))
 
   ;; swiper
   (swiper-line-face                              (:foreground carpYellow))
@@ -385,7 +385,7 @@
   (anzu-match-3                                  (:foreground lightBlue :background sumiInk-2))
 
   (anzu-mode-line                                (:foreground sumiInk-0 :background springViolet2))
-  (anzu-mode-no-match	                         (:foreground fujiWhite :background peachRed))
+  (anzu-mode-no-match	                           (:foreground fujiWhite :background peachRed))
   (anzu-replace-to                               (:foreground springBlue :background winterBlue))
   (anzu-replace-highlight                        (:foreground peachRed :background winterRed :strike-through t))
 
@@ -405,6 +405,7 @@
   
   (comint-highlight-prompt                       (:background springViolet2 :foreground sumiInk-1))
   (completions-annotations                       (:background nil :foreground dragonBlue :italic t))
+  (marginalia-file-priv-no                       (:background nil))
   
   ;; hydra
   (hydra-face-amaranth                           (:foreground autumnRed))
@@ -501,7 +502,7 @@
   (tree-sitter-hl-face:variable.synthesized      (:foreground waveRed))
   (tree-sitter-hl-face:keyword.compiler          (:foreground peachRed :bold t :italic t))
 
-  (focus-unfocused (:foreground sumiInk-4))
+  (focus-unfocused                               (:foreground sumiInk-4))  
  ))
 
 ;;;###autoload
