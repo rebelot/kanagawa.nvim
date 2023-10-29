@@ -1,0 +1,30 @@
+---
+# Kanagawa Dragon Alacritty Colors
+colors:
+  primary:
+    background: '0xf2ecbc'
+    foreground: '0x545464'
+  normal:
+    black: '0x1F1F28'
+    red: '0xc84053'
+    green: '0x6f894e'
+    yellow: '0x77713f'
+    blue: '0x4d699b'
+    magenta: '0xb35b79'
+    cyan: '0x597b75'
+    white: '0x545464'
+  bright:
+    black: '0x8a8980'
+    red: '0xd7474b'
+    green: '0x6e915f'
+    yellow: '0x836f4a'
+    blue: '0x6693bf'
+    magenta: '0x624c83'
+    cyan: '0x5e857a'
+    white: '0x43436c'
+  selection:
+    background: '0x9fb5c9'
+    foreground: '0x43436c'
+  indexed_colors:
+    - {index: 16, color: '0xe98a00'}
+    - {index: 17, color: '0xe82424'}
