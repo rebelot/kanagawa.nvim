@@ -1,0 +1,23 @@
+{
+	"name": "kanagawa-dragon",
+	"cursorColor": "#C8C093",
+	"selectionBackground": "#223249",
+	"background": "#181616",
+	"foreground": "#c5c9c5",
+	"black": "#0d0c0c",
+	"red": "#c4746e",
+	"green": "#8a9a7b",
+	"yellow": "#c4b28a",
+	"blue": "#8ba4b0",
+	"purple": "#a292a3",
+	"cyan": "#8ea4a2",
+	"white": "#C8C093",
+	"brightBlack": "#a6a69c",
+	"brightRed": "#E46876",
+	"brightGreen": "#87a987",
+	"brightYellow": "#E6C384",
+	"brightBlue": "#7FB4CA",
+	"brightPurple": "#938AA9",
+	"brightCyan": "#7AA89F",
+	"brightWhite": "#c5c9c5"
+}
