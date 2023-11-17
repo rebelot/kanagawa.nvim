@@ -10,10 +10,15 @@ local M = {}
 M.config = {
     undercurl = true,
     styles = {
+        booleans = { bold = true },
+        builtinVariables = { italic = true },
         comments = { italic = true },
         functions = {},
         keywords = { italic = true },
+        operators = { bold = true },
+        readonlyFunctions = { bold = true },
         statements = { bold = true },
+        stringEscapes = { bold = true },
         types = {},
     },
     transparent = false,

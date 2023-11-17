@@ -55,11 +55,16 @@ require('kanagawa').setup({
     compile = false,             -- enable compiling the colorscheme
     undercurl = true,            -- enable undercurls
     styles = {
+        booleans = { bold = true },
+        builtinVariables = { italic = true },
         comments = { italic = true },
         functions = {},
-        keywords = { italic = true},
+        keywords = { italic = true },
+        operators = { bold = true },
+        semanticFunctions = { bold = true },
         statements = { bold = true },
-        typeStyle = {},
+        stringEscapes = { bold = true },
+        types = {},
     },
     transparent = false,         -- do not set background color
     dimInactive = false,         -- dim inactive window `:h hl-NormalNC`

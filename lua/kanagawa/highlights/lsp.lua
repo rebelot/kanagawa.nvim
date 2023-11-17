@@ -50,7 +50,7 @@ function M.setup(colors, config)
             ["@lsp.typemod.string.injected"] = { link = "String" },
             ["@lsp.typemod.variable.injected"] = { link = "@variable" },
 
-            ["@lsp.typemod.function.readonly"] = { fg = theme.syn.fun, bold = true }
+            ["@lsp.typemod.function.readonly"] = vim.tbl_extend("force", { fg = theme.syn.fun }, config.styles.readonlyFunctions)
     }
 end
 
