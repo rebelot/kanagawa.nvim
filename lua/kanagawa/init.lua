@@ -9,11 +9,13 @@ local M = {}
 ---@class KanagawaConfig
 M.config = {
     undercurl = true,
-    commentStyle = { italic = true },
-    functionStyle = {},
-    keywordStyle = { italic = true },
-    statementStyle = { bold = true },
-    typeStyle = {},
+    styles = {
+        comments = { italic = true },
+        functions = {},
+        keywords = { italic = true },
+        statements = { bold = true },
+        types = {},
+    },
     transparent = false,
     dimInactive = false,
     terminalColors = true,

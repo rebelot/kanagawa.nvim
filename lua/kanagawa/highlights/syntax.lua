@@ -9,7 +9,7 @@ function M.setup(colors, config)
 
     return {
         -- *Comment	any comment
-        Comment = vim.tbl_extend("force", { fg = theme.syn.comment }, config.commentStyle),
+        Comment = vim.tbl_extend("force", { fg = theme.syn.comment }, config.styles.comments),
 
         -- *Constant	any constant
         Constant = { fg = theme.syn.constant },
@@ -27,17 +27,17 @@ function M.setup(colors, config)
         -- *Identifier	any variable name
         Identifier = { fg = theme.syn.identifier },
         --  Function	function name (also: methods for classes)
-        Function = vim.tbl_extend("force", { fg = theme.syn.fun }, config.functionStyle),
+        Function = vim.tbl_extend("force", { fg = theme.syn.fun }, config.styles.functions),
 
         -- *Statement	any statement
-        Statement = vim.tbl_extend("force", { fg = theme.syn.statement }, config.statementStyle),
+        Statement = vim.tbl_extend("force", { fg = theme.syn.statement }, config.styles.statements),
         --  Conditional	if, then, else, endif, switch, etc.
         --  Repeat		for, do, while, etc.
         --  Label		case, default, etc.
         --  Operator	"sizeof", "+", "*", etc.
         Operator = { fg = theme.syn.operator },
         --  Keyword	any other keyword
-        Keyword = vim.tbl_extend("force", { fg = theme.syn.keyword }, config.keywordStyle),
+        Keyword = vim.tbl_extend("force", { fg = theme.syn.keyword }, config.styles.keywords),
         --  Exception	try, catch, throw
         Exception = { fg = theme.syn.special2 },
 
@@ -49,7 +49,7 @@ function M.setup(colors, config)
         --  PreCondit	preprocessor #if, #else, #endif, etc.
 
         -- *Type		int, long, char, etc.
-        Type = vim.tbl_extend("force", { fg = theme.syn.type }, config.typeStyle),
+        Type = vim.tbl_extend("force", { fg = theme.syn.type }, config.styles.types),
         --  StorageClass	static, register, volatile, etc.
         --  Structure	struct, union, enum, etc.
         --  Typedef	A typedef

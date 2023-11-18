@@ -83,10 +83,10 @@ function M.setup(colors, config)
         -- @keyword.storage (StorageClass)             ; modifiers that affect storage in memory or life-time
         -- @keyword.repeat  (Repeat)                   ; keywords related to loops (e.g. `for` / `while`)
         -- @keyword.return                             ; keywords like `return` and `yield`
-        ["@keyword.return"] = vim.tbl_extend("force", { fg = theme.syn.special3 }, config.keywordStyle),
+        ["@keyword.return"] = vim.tbl_extend("force", { fg = theme.syn.special3 }, config.styles.keywords),
         -- @keyword.debug  (Debug)                            ; keywords related to debugging
         -- @keyword.exception (Exception)              ; keywords related to exceptions (e.g. `throw` / `catch`)
-        ["keyword.exception"] = vim.tbl_extend("force", { fg = theme.syn.special3 }, config.statementStyle),
+        ["keyword.exception"] = vim.tbl_extend("force", { fg = theme.syn.special3 }, config.styles.statements),
 
         ["@keyword.luap"] = { link = "@string.regex" },
 
