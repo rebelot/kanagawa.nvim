@@ -1,78 +1,72 @@
-local config = {}
+return {
+  foreground = "#545464",
+  background = "#f2ecbc",
 
-config.force_reverse_video_cursor = true
+  cursor_bg = "#43436c",
+  cursor_fg = "#43436c",
+  cursor_border = "#43436c",
 
-config.colors = {
-	foreground = "#545464",
-	background = "#f2ecbc",
+  selection_fg = "#43436c",
+  selection_bg = "#9fb5c9",
 
-	cursor_bg = "#43436c",
-	cursor_fg = "#43436c",
-	cursor_border = "#43436c",
+  scrollbar_thumb = "#b5cbd2",
+  split = "#b5cbd2",
 
-	selection_fg = "#43436c",
-	selection_bg = "#9fb5c9",
+  ansi = {
+    "#1F1F28",
+    "#c84053",
+    "#6f894e",
+    "#77713f",
+    "#4d699b",
+    "#b35b79",
+    "#597b75",
+    "#545464",
+  },
 
-	scrollbar_thumb = "#b5cbd2",
-	split = "#b5cbd2",
+  brights = {
+    "#8a8980",
+    "#d7474b",
+    "#6e915f",
+    "#836f4a",
+    "#6693bf",
+    "#624c83",
+    "#5e857a",
+    "#43436c",
+  },
 
-	ansi = {
-		"#1F1F28",
-		"#c84053",
-		"#6f894e",
-		"#77713f",
-		"#4d699b",
-		"#b35b79",
-		"#597b75",
-		"#545464",
-	},
+  indexed = {
+    [16] = "#e98a00", -- extended color 1
+    [17] = "#e82424", -- extended color 2
+  },
 
-	brights = {
-		"#8a8980",
-		"#d7474b",
-		"#6e915f",
-		"#836f4a",
-		"#6693bf",
-		"#624c83",
-		"#5e857a",
-		"#43436c",
-	},
+  tab_bar = {
+    background = "#e4d794",
 
-	indexed = {
-		[16] = "#e98a00", -- extended color 1
-		[17] = "#e82424", -- extended color 2
-	},
+    active_tab = {
+      bg_color = "#b35b79",
+      fg_color = "#e4d794",
+    },
 
-	tab_bar = {
-		background = "#e4d794",
+    inactive_tab = {
+      bg_color = "#a6a69c",
+      fg_color = "#e4d794",
+    },
 
-		active_tab = {
-			bg_color = "#b35b79",
-			fg_color = "#f2ecbc",
-		},
+    inactive_tab_hover = {
+      bg_color = "#9fb5c9",
+      fg_color = "#43436c",
+      italic = true,
+    },
 
-		inactive_tab = {
-			bg_color = "#a6a69c",
-			fg_color = "#f2ecbc",
-		},
+    new_tab = {
+      bg_color = "#8a8980",
+      fg_color = "#e4d794",
+    },
 
-		inactive_tab_hover = {
-			bg_color = "#9fb5c9",
-			fg_color = "#43436c",
-			italic = true,
-		},
-
-		new_tab = {
-			bg_color = "#b35b79",
-			fg_color = "#f2ecbc",
-		},
-
-		new_tab_hover = {
-			bg_color = "#9fb5c9",
-			fg_color = "#43436c",
-			italic = true,
-		},
-	},
+    new_tab_hover = {
+      bg_color = "#9fb5c9",
+      fg_color = "#43436c",
+      italic = true,
+    },
+  },
 }
-
-return config
