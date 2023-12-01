@@ -1,30 +1,60 @@
 ---
-# Kanagawa Dragon Alacritty Colors
 colors:
+  dim_foreground: '#43436c'
+  bright_foreground: '#43436c'
+
   primary:
-    background: '0xf2ecbc'
-    foreground: '0x545464'
+    background: '#F2ECBC'
+    foreground: '#545464'
+
   normal:
-    black: '0x1F1F28'
-    red: '0xc84053'
-    green: '0x6f894e'
-    yellow: '0x77713f'
-    blue: '0x4d699b'
-    magenta: '0xb35b79'
-    cyan: '0x597b75'
-    white: '0x545464'
+    black: "#1F1F28"
+    red: "#C84053"
+    green: "#6F894E"
+    yellow: "#77713f"
+    blue: "#4D699B"
+    magenta: "#B35B79"
+    cyan: "#597B75"
+    white: "#545464"
+
   bright:
-    black: '0x8a8980'
-    red: '0xd7474b'
-    green: '0x6e915f'
-    yellow: '0x836f4a'
-    blue: '0x6693bf'
-    magenta: '0x624c83'
-    cyan: '0x5e857a'
-    white: '0x43436c'
+    black: "#8A8980"
+    red: "#D7474B"
+    green: "#6E915F"
+    yellow: "#836F4A"
+    blue: "#6693BF"
+    magenta: "#624C83"
+    cyan: "#5E857A"
+    white: "#43436C"
+
+  search:
+    matches:
+      foreground: '#545464'
+      background: '#B5CBD2'
+    focused_match:
+      foreground: '#DCD7BA'
+      background: '#E98A00'
+
+  hints:
+    start:
+      foreground: '#F2ECBC'
+      background: '#E82424'
+    end:
+      foreground: '#E82424'
+      background: '#F2ECBC'
+
+  line_indicator:
+    foreground: '#A09CAC'
+    background: '#F2ECBC'
+
+  footer_bar:
+    background: '#43436C'
+    foreground: '#D5CEA3'
+
   selection:
-    background: '0x9fb5c9'
-    foreground: '0x43436c'
+    text: '#DCD7BA'
+    background: '#C9CBD1'
+
   indexed_colors:
-    - {index: 16, color: '0xe98a00'}
-    - {index: 17, color: '0xe82424'}
+    - {index: 16, color: '#E98A00'}
+    - {index: 17, color: '#E82424'}
