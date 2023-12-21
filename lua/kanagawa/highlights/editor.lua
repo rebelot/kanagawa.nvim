@@ -170,6 +170,7 @@ function M.setup(colors, config)
 
         LspSignatureActiveParameter = { fg = theme.diag.warning },
         LspCodeLens = { fg = theme.syn.comment },
+        LspInfoBorder = { fg = theme.ui.float.fg_border, bg = theme.ui.float.bg_border },
 
         -- vcs
         diffAdded = { fg = theme.vcs.added },
