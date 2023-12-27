@@ -362,6 +362,7 @@ vim.api.nvim_create_autocmd("ColorScheme", {
 - [wezterm](extras/wezterm.lua)
 - [Windows Terminal](extras/windows_terminal.json)
 - [Xresources](extras/.Xresources)
+- [tmTheme (bat, delta and lazygit)](extras/kanagawa.tmTheme)
 - [JSON compatible with many terminals](extras/Kanagawa.json) Check [Gogh](https://github.com/Gogh-Co/Gogh#-terminals) for the list of supported terminals.
 - 🎉 Bonus! You win a tiny [python script](palette.py)🐍 to extract color palettes 🎨 from any image! 🥳
 
