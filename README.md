@@ -49,12 +49,12 @@ There is no need to call setup if you are ok with the defaults.
 
 ```lua
 -- Default options:
-require('kanagawa').setup({
+require("kanagawa").setup({
     compile = false,             -- enable compiling the colorscheme
     undercurl = true,            -- enable undercurls
     commentStyle = { italic = true },
     functionStyle = {},
-    keywordStyle = { italic = true},
+    keywordStyle = { italic = true },
     statementStyle = { bold = true },
     typeStyle = {},
     transparent = false,         -- do not set background color
@@ -70,7 +70,7 @@ require('kanagawa').setup({
     theme = "wave",              -- Load "wave" theme when 'background' option is not set
     background = {               -- map the value of 'background' option to a theme
         dark = "wave",           -- try "dragon" !
-        light = "lotus"
+        light = "lotus",
     },
 })
 
@@ -129,7 +129,7 @@ All the palette color names can be found [here](lua/kanagawa/colors.lua),
 while their usage by each theme can be found [here](lua/kanagawa/themes.lua).
 
 ```lua
-require('kanagawa').setup({
+require("kanagawa").setup({
     ...,
     colors = {
         palette = {
@@ -153,12 +153,12 @@ require('kanagawa').setup({
             },
             all = {
                 ui = {
-                    bg_gutter = "none"
-                }
-            }
-        }
+                    bg_gutter = "none",
+                },
+            },
+        },
     },
-    ...
+    ...,
 })
 ```
 
@@ -166,7 +166,7 @@ You can also conveniently add/modify `hlgroups` using the `config.overrides` opt
 Supported keywords are the same for `:h nvim_set_hl` `{val}` parameter.
 
 ```lua
-require('kanagawa').setup({
+require("kanagawa").setup({
     ...,
     overrides = function(colors)
         return {
@@ -176,7 +176,7 @@ require('kanagawa').setup({
             SomePluginHl = { fg = colors.theme.syn.type, bold = true },
         }
     end,
-    ...
+    ...,
 })
 ```
 
@@ -191,10 +191,10 @@ colors = {
     theme = {
         all = {
             ui = {
-                bg_gutter = "none"
-            }
-        }
-    }
+                bg_gutter = "none",
+            },
+        },
+    },
 }
 ```
 
@@ -277,7 +277,7 @@ local palette_colors = colors.palette
 local theme_colors = colors.theme
 
 -- Get the colors for a specific theme
-local wave_colors = require("kanagawa.colors").setup({ theme = 'wave' })
+local wave_colors = require("kanagawa.colors").setup({ theme = "wave" })
 ```
 
 ### Terminal integration
