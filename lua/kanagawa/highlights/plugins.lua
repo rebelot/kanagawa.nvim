@@ -224,6 +224,14 @@ function M.setup(colors, config)
         NavicIconsTypeParameter = { link = "Identifier" },
         NavicText = { fg = theme.ui.fg },
         NavicSeparator = { fg = theme.ui.fg },
+
+        -- Trouble
+        TroubleText = { fg = theme.ui.fg },
+        TroubleTextInformation = { link = "DiagnosticInfo" },
+        TroubleTextWarning = { link = "DiagnosticWarn" },
+        TroubleTextHint = { link = "DiagnosticHint" },
+        TroubleTextError = { link = "DiagnosticError" },
+
     }
 end
 
