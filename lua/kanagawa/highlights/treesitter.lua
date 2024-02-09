@@ -20,24 +20,24 @@ function M.setup(colors, config)
         ["@punctuation.delimiter"] = { fg = theme.syn.punct },
         -- @punctuation.bracket                        ; brackets (e.g. `()` / `{}` / `[]`)
         ["@punctuation.bracket"] = { fg = theme.syn.punct },
-        -- @punctuation.special                        ; special symbols (e.g. `{}` in string interpolation)
-        ["@punctuation.special"] = { fg = theme.syn.special1 },
+        -- @markup.list                                ; special symbols (e.g. `{}` in string interpolation)
+        ["@markup.list"] = { fg = theme.syn.special1 },
         -- }}}
 
         -- Literals {{{
         -- @string (String)                            ; string literals
-        -- @string.regex                               ; regular expressions
-        ["@string.regex"] = { fg = theme.syn.regex },
+        -- @string.regexp                              ; regular expressions
+        ["@string.regexp"] = { fg = theme.syn.regex },
         -- @string.escape (SpecialChar)                ; escape sequences
         ["@string.escape"] = { fg = theme.syn.regex, bold = true },
-        -- @string.special (SpecialChar)               ; other special strings (e.g. dates)
+        -- @markup.link.label (SpecialChar)            ; other special strings (e.g. dates)
 
         -- @character (Character)                      ; character literals
         -- @character.special (Special)                ; special characters (e.g. wildcards)
 
         -- @boolean (Boolean)                          ; boolean literals
         -- @number (Number)                            ; numeric literals
-        -- @float (Float)                              ; floating-point number literals
+        -- @number.float (Float)                       ; floating-point number literals
         -- }}}
 
         -- Functions {{{
@@ -52,8 +52,8 @@ function M.setup(colors, config)
         -- @constructor (Special)                      ; constructor calls and definitions
         ["@constructor.lua"] = { fg = theme.syn.keyword },
         ["@constructor"] = { fg = theme.syn.special1 },
-        -- @parameter (Identifier)                     ; parameters of a function
-        ["@parameter"] = { fg = theme.syn.parameter },
+        -- @variable.parameter (Identifier)            ; parameters of a function
+        ["@variable.parameter"] = { fg = theme.syn.parameter },
         -- }}}
 
         -- Keywords (Keyword) {{{
@@ -63,7 +63,7 @@ function M.setup(colors, config)
         ["@keyword.operator"] = { fg = theme.syn.operator, bold = true },
         -- @keyword.return                             ; keywords like `return` and `yield`
         ["@keyword.return"] = vim.tbl_extend("force", { fg = theme.syn.special3 }, config.keywordStyle),
-        ["@keyword.luap"] = { link = "@string.regex" },
+        ["@keyword.luap"] = { link = "@string.regexp" },
 
         -- @conditional (Conditional -> Statement)     ; keywords related to conditionals (e.g. `if` / `else`)
         -- @conditional.ternary                        ; Ternary operator: condition ? 1 : 2
@@ -86,8 +86,8 @@ function M.setup(colors, config)
         -- @storageclass (StorageClass)                ; modifiers that affect storage in memory or life-time
         -- @attribute                                  ; attribute annotations (e.g. Python decorators)
         ["@attribute"] = { link = "Constant" },
-        -- @field (Identifier)                         ; object and struct fields
-        -- @property (Identifier)                      ; similar to `@field`
+        -- @variable.member (Identifier)               ; object and struct fields
+        -- @property (Identifier)                      ; similar to `@variable.member`
         -- }}}
 
         --Identifiers {{{
@@ -100,46 +100,46 @@ function M.setup(colors, config)
         -- @constant.builtin (Special)                 ; built-in constant values
         -- @constant.macro (Define -> PreProc)         ; constants defined by the preprocessor
 
-        -- @namespace (Identifier)                     ; modules or namespaces
-        -- @symbol                                     ; symbols or atoms
-        ["@symbol"] = { fg = theme.syn.identifier },
+        -- @module (Identifier)                        ; modules or namespaces
+        -- @markup.link.label.symbol                                     ; symbols or atoms
+        ["@markup.link.label.symbol"] = { fg = theme.syn.identifier },
         -- }}}
 
         -- Text {{{
-        -- @text                                       ; non-structured text
-        -- @text.strong                                ; bold text
-        ["@text.strong"] = { bold = true },
-        -- @text.emphasis                              ; text with emphasis
-        ["@text.emphasis"] = { italic = true },
-        -- @text.underline (Underlined)                ; underlined text
-        -- @text.strike                                ; strikethrough text
-        -- @text.title (Title)                         ; text that is part of a title
-        ["@text.title"] = { link = "Function" },
-        -- @text.literal (Comment)                     ; literal or verbatim text (e.g., inline code)
-        ["@text.literal"] = { link = "String" },
-        -- @text.quote                                 ; text quotations
-        ["@text.quote"] = { link = "@parameter" },
-        -- @text.uri (Underlined)                      ; URIs (e.g. hyperlinks)
-        -- @text.math                                  ; math environments (e.g. `$ ... $` in LaTeX)
-        ["@text.math"] = { link = "Constant" },
-        -- @text.environment                           ; text environments of markup languages
-        ["@text.environment"] = { link = "Keyword" },
-        -- @text.environment.name                      ; text indicating the type of an environment
-        ["@text.environment.name"] = { link = "String" },
-        -- @text.reference (Identifier)                ; text references, footnotes, citations, etc.
+        -- @markup                                     ; non-structured text
+        -- @markup.strong                              ; bold text
+        ["@markup.strong"] = { bold = true },
+        -- @markup.emphasis                            ; text with emphasis
+        ["@markup.emphasis"] = { italic = true },
+        -- @markup.underline (Underlined)              ; underlined text
+        -- @markup.strike                              ; strikethrough text
+        -- @markup.heading (Title)                     ; text that is part of a title
+        ["@markup.heading"] = { link = "Function" },
+        -- @markup.raw (Comment)                       ; literal or verbatim text (e.g., inline code)
+        ["@markup.raw"] = { link = "String" },
+        -- @markup.quote                               ; text quotations
+        ["@markup.quote"] = { link = "@variable.parameter" },
+        -- @markup.link.url (Underlined)               ; URIs (e.g. hyperlinks)
+        -- @markup.math                                ; math environments (e.g. `$ ... $` in LaTeX)
+        ["@markup.math"] = { link = "Constant" },
+        -- @markup.environment                         ; text environments of markup languages
+        ["@markup.environment"] = { link = "Keyword" },
+        -- @markup.environment.name                    ; text indicating the type of an environment
+        ["@markup.environment.name"] = { link = "String" },
+        -- @markup.link (Identifier)                   ; text references, footnotes, citations, etc.
 
-        -- @text.todo (Todo)                           ; todo notes
-        -- @text.note                                  ; info notes
-        ["@text.note"] = { fg = theme.ui.fg_reverse, bg = theme.diag.hint, bold = true },
-        -- @text.warning                               ; warning notes
-        ["@text.warning"] = { fg = theme.ui.fg_reverse, bg = theme.diag.warning, bold = true },
-        -- @text.danger                                ; danger/error notes
-        ["@text.danger"] = { fg = theme.ui.fg, bg = theme.diag.error, bold = true },
+        -- @markup.todo (Todo)                         ; todo notes
+        -- @markup.note                                ; info notes
+        ["@markup.note"] = { fg = theme.ui.fg_reverse, bg = theme.diag.hint, bold = true },
+        -- @markup.warning                             ; warning notes
+        ["@markup.warning"] = { fg = theme.ui.fg_reverse, bg = theme.diag.warning, bold = true },
+        -- @markup.danger                              ; danger/error notes
+        ["@markup.danger"] = { fg = theme.ui.fg, bg = theme.diag.error, bold = true },
 
-        -- @text.diff.add                              ; added text (for diff files)
-        ['@text.diff.add'] = { fg = theme.vcs.added },
-        -- @text.diff.delete                           ; deleted text (for diff files)
-        ['@text.diff.delete'] = { fg = theme.vcs.removed },
+        -- @markup.diff.add                            ; added text (for diff files)
+        ['@markup.diff.add'] = { fg = theme.vcs.added },
+        -- @markup.diff.delete                         ; deleted text (for diff files)
+        ['@markup.diff.delete'] = { fg = theme.vcs.removed },
         -- }}}
 
         -- Tags (Tag) {{{
