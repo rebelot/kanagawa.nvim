@@ -20,17 +20,17 @@ function M.setup(colors, config)
         ["@punctuation.delimiter"] = { fg = theme.syn.punct },
         -- @punctuation.bracket                        ; brackets (e.g. `()` / `{}` / `[]`)
         ["@punctuation.bracket"] = { fg = theme.syn.punct },
-        -- @markup.list                        ; special symbols (e.g. `{}` in string interpolation)
+        -- @markup.list                                ; special symbols (e.g. `{}` in string interpolation)
         ["@markup.list"] = { fg = theme.syn.special1 },
         -- }}}
 
         -- Literals {{{
         -- @string (String)                            ; string literals
-        -- @string.regexp                               ; regular expressions
+        -- @string.regexp                              ; regular expressions
         ["@string.regexp"] = { fg = theme.syn.regex },
         -- @string.escape (SpecialChar)                ; escape sequences
         ["@string.escape"] = { fg = theme.syn.regex, bold = true },
-        -- @markup.link.label (SpecialChar)               ; other special strings (e.g. dates)
+        -- @markup.link.label (SpecialChar)            ; other special strings (e.g. dates)
 
         -- @character (Character)                      ; character literals
         -- @character.special (Special)                ; special characters (e.g. wildcards)
@@ -106,39 +106,39 @@ function M.setup(colors, config)
         -- }}}
 
         -- Text {{{
-        -- @markup                                       ; non-structured text
-        -- @markup.strong                                ; bold text
+        -- @markup                                     ; non-structured text
+        -- @markup.strong                              ; bold text
         ["@markup.strong"] = { bold = true },
-        -- @markup.emphasis                              ; text with emphasis
+        -- @markup.emphasis                            ; text with emphasis
         ["@markup.emphasis"] = { italic = true },
-        -- @markup.underline (Underlined)                ; underlined text
-        -- @markup.strike                                ; strikethrough text
-        -- @markup.heading (Title)                       ; text that is part of a title
+        -- @markup.underline (Underlined)              ; underlined text
+        -- @markup.strike                              ; strikethrough text
+        -- @markup.heading (Title)                     ; text that is part of a title
         ["@markup.heading"] = { link = "Function" },
-        -- @markup.raw (Comment)                         ; literal or verbatim text (e.g., inline code)
+        -- @markup.raw (Comment)                       ; literal or verbatim text (e.g., inline code)
         ["@markup.raw"] = { link = "String" },
-        -- @markup.quote                                 ; text quotations
+        -- @markup.quote                               ; text quotations
         ["@markup.quote"] = { link = "@variable.parameter" },
-        -- @markup.link.url (Underlined)                      ; URIs (e.g. hyperlinks)
-        -- @markup.math                                  ; math environments (e.g. `$ ... $` in LaTeX)
+        -- @markup.link.url (Underlined)               ; URIs (e.g. hyperlinks)
+        -- @markup.math                                ; math environments (e.g. `$ ... $` in LaTeX)
         ["@markup.math"] = { link = "Constant" },
-        -- @markup.environment                           ; text environments of markup languages
+        -- @markup.environment                         ; text environments of markup languages
         ["@markup.environment"] = { link = "Keyword" },
-        -- @markup.environment.name                      ; text indicating the type of an environment
+        -- @markup.environment.name                    ; text indicating the type of an environment
         ["@markup.environment.name"] = { link = "String" },
-        -- @markup.link (Identifier)                ; text references, footnotes, citations, etc.
+        -- @markup.link (Identifier)                   ; text references, footnotes, citations, etc.
 
-        -- @markup.todo (Todo)                           ; todo notes
-        -- @markup.note                                  ; info notes
+        -- @markup.todo (Todo)                         ; todo notes
+        -- @markup.note                                ; info notes
         ["@markup.note"] = { fg = theme.ui.fg_reverse, bg = theme.diag.hint, bold = true },
-        -- @markup.warning                               ; warning notes
+        -- @markup.warning                             ; warning notes
         ["@markup.warning"] = { fg = theme.ui.fg_reverse, bg = theme.diag.warning, bold = true },
-        -- @markup.danger                                ; danger/error notes
+        -- @markup.danger                              ; danger/error notes
         ["@markup.danger"] = { fg = theme.ui.fg, bg = theme.diag.error, bold = true },
 
-        -- @markup.diff.add                              ; added text (for diff files)
+        -- @markup.diff.add                            ; added text (for diff files)
         ['@markup.diff.add'] = { fg = theme.vcs.added },
-        -- @markup.diff.delete                           ; deleted text (for diff files)
+        -- @markup.diff.delete                         ; deleted text (for diff files)
         ['@markup.diff.delete'] = { fg = theme.vcs.removed },
         -- }}}
 
