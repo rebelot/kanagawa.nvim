@@ -12,9 +12,9 @@ function M.setup(colors, config)
             -- ["@lsp.type.function"] = { link = "Function" },
             -- ["@lsp.type.interface"] = { link = "Structure" },
             -- ["@lsp.type.macro"] = { link = "Macro" },
-            ["@lsp.type.method"] = { link = "@method" }, -- Function
-            ["@lsp.type.namespace"] = { link = "@namespace" }, -- Structure
-            ["@lsp.type.parameter"] = { link = "@parameter" }, -- Identifier
+            ["@lsp.type.method"] = { link = "@function.method" }, -- Function
+            ["@lsp.type.namespace"] = { link = "@module" }, -- Structure
+            ["@lsp.type.parameter"] = { link = "@variable.parameter" }, -- Identifier
             -- ["@lsp.type.property"] = { link = "Identifier" },
             -- ["@lsp.type.struct"] = { link = "Structure" },
             -- ["@lsp.type.type"] = { link = "Type" },
@@ -35,7 +35,7 @@ function M.setup(colors, config)
             -- ["@lsp.mod.builtin"] = { link = "Special" },
 
 
-            ["@lsp.typemod.operator.controlFlow"] = { link = "@exception" },
+            ["@lsp.typemod.operator.controlFlow"] = { link = "@keyword.exception" },
             ["@lsp.typemod.keyword.documentation"] = { link = "Special"},
 
             ["@lsp.typemod.variable.global"] = { link = "Constant" },
