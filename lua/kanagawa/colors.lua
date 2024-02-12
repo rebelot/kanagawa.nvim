@@ -142,7 +142,7 @@ function M.setup(opts)
     local theme = opts.theme or require("kanagawa")._CURRENT_THEME -- WARN: this fails if called before kanagawa.load()
 
     if not theme then
-        error("kanagawa.colors.setup(): Unable to infer `theme`. Either specify a theme or call this funciton after ':colorscheme kanagawa'")
+        error("kanagawa.colors.setup(): Unable to infer `theme`. Either specify a theme or call this function after ':colorscheme kanagawa'")
     end
 
     -- Add to and/or override palette_colors
