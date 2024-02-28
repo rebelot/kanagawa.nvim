@@ -124,7 +124,9 @@ function M.setup(colors, config)
         -- @markup.italic                              ; italic text
         ["@markup.italic"] = { italic = true },
         -- @markup.strikethrough                       ; strikethrough text
+        ["@markup.strikethrough"] = { strikethrough = true },
         -- @markup.underline (Underlined)              ; underlined text
+        ["@markup.underline"] = { underline = true },
 
         -- @markup.heading (Title)       ; headings, titles (including markers)
         ["@markup.heading"] = { link = "Function" },
