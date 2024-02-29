@@ -364,6 +364,7 @@ The colors maintain a `4.5:1` contrast ratio, complying with [WCAG 2.1 | Level A
 - [kitty](extras/kanagawa.conf)
 - [mintty](extras/kanagawa.minttyrc)
 - [pywal](extras/pywal-theme.json)
+- [qBittorrent](https://github.com/esstecc/kanagawa-qbtheme/)
 - [sway](extras/kanagawa.sway)
 - [wezterm](extras/wezterm.lua)
 - [Windows Terminal](extras/windows_terminal.json)
