@@ -357,6 +357,7 @@ The colors maintain a `4.5:1` contrast ratio, complying with [WCAG 2.1 | Level A
 - [Alfred](extra/alfred.md)
 - [base16](extras/base16-theme.yaml)
 - [broot](extras/broot_kanagawa.toml)
+- [cmus](extras/kanagawa.theme)
 - [emacs, doom emacs](extras/kanagawa-theme.el)
 - [fish](extras/kanagawa.fish)
 - [foot](extras/foot_kanagawa.ini)
