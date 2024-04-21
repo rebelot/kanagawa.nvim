@@ -392,9 +392,15 @@ The colors maintain a `4.5:1` contrast ratio, complying with [WCAG 2.1 | Level A
 - [Windows Terminal](extras/windows_terminal/)
 - [Ghostty](extras/ghostty)
 - [Xresources](extras/xresources/)
-- [tmTheme (Sublime Text, bat and delta)](extras/textmate/)
+- [tmTheme (Sublime Text, bat and delta)](extras/tmTheme/)
 - [JSON compatible with many terminals](extras/gogh/) Check [Gogh](https://github.com/Gogh-Co/Gogh#-terminals) for the list of supported terminals.
 - 🎉 Bonus! You win a tiny [python script](palette.py)🐍 to extract color palettes 🎨 from any image! 🥳
+
+Run the following command to generate new extra themes from the kanagawa plugin directory:
+
+```sh
+    nvim --headless "+lua require('kanagawa.extra').setup()" +qa
+```
 
 ## Acknowledgements
 
