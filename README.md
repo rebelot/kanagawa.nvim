@@ -200,6 +200,20 @@ colors = {
 }
 ```
 
+#### Add _gutter_ indications for treesitter-context.
+
+Italicize and dim the background of line numbers that belong to the [treesitter-context](https://github.com/nvim-treesitter/nvim-treesitter-context/) context.
+
+```lua
+overrides = function(colors)
+    local theme = colors.theme
+    return {
+          -- Dim gutter background for treesitter-context line numbers
+          TreesitterContextLineNumber = { bg = theme.ui.bg_dim, fg = theme.ui.nontext, italic = true }
+    }
+end,
+```
+
 #### Transparent Floating Windows
 
 This will make floating windows look nicer with default borders.
