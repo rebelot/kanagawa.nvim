@@ -108,34 +108,34 @@ function M.setup(colors, config)
         NotifyTRACETitle = { link = "Comment" },
         -- Dap-UI
         -- DapUIVariable = { link = "Normal" },
-        DapUIScope = { link = "Special" },                                        -- guifg=#00F1F5"
-        DapUIType = { link = "Type" },                                            -- guifg=#D484FF"
+        DapUIScope = { link = "Special" }, -- guifg=#00F1F5"
+        DapUIType = { link = "Type" }, -- guifg=#D484FF"
         -- DapUIValue = { link = "Normal" },
-        DapUIModifiedValue = { fg = theme.syn.special1, bold = true },            -- guifg=#00F1F5 gui=bold"
-        DapUIDecoration = { fg = theme.ui.float.fg_border },                      -- guifg=#00F1F5"
-        DapUIThread = { fg = theme.syn.identifier },                              --guifg=#A9FF68"
-        DapUIStoppedThread = { fg = theme.syn.special1 },                         --guifg=#00f1f5"
+        DapUIModifiedValue = { fg = theme.syn.special1, bold = true }, -- guifg=#00F1F5 gui=bold"
+        DapUIDecoration = { fg = theme.ui.float.fg_border }, -- guifg=#00F1F5"
+        DapUIThread = { fg = theme.syn.identifier }, --guifg=#A9FF68"
+        DapUIStoppedThread = { fg = theme.syn.special1 }, --guifg=#00f1f5"
         -- DapUIFrameName = { link = "Normal"},
-        DapUISource = { fg = theme.syn.special2 },                                -- guifg=#D484FF"
-        DapUILineNumber = { fg = theme.syn.special1 },                            -- guifg=#00f1f5"
-        DapUIFloatBorder = { fg = theme.ui.float.fg_border },                     -- guifg=#00F1F5"
-        DapUIWatchesEmpty = { fg = theme.diag.error },                            -- guifg=#F70067"
-        DapUIWatchesValue = { fg = theme.syn.identifier },                        -- guifg=#A9FF68"
-        DapUIWatchesError = { fg = theme.diag.error },                            --guifg=#F70067"
-        DapUIBreakpointsPath = { link = "Directory" },                            --guifg=#00F1F5"
-        DapUIBreakpointsInfo = { fg = theme.diag.info },                          --guifg=#A9FF68"
+        DapUISource = { fg = theme.syn.special2 }, -- guifg=#D484FF"
+        DapUILineNumber = { fg = theme.syn.special1 }, -- guifg=#00f1f5"
+        DapUIFloatBorder = { fg = theme.ui.float.fg_border }, -- guifg=#00F1F5"
+        DapUIWatchesEmpty = { fg = theme.diag.error }, -- guifg=#F70067"
+        DapUIWatchesValue = { fg = theme.syn.identifier }, -- guifg=#A9FF68"
+        DapUIWatchesError = { fg = theme.diag.error }, --guifg=#F70067"
+        DapUIBreakpointsPath = { link = "Directory" }, --guifg=#00F1F5"
+        DapUIBreakpointsInfo = { fg = theme.diag.info }, --guifg=#A9FF68"
         DapUIBreakpointsCurrentLine = { fg = theme.syn.identifier, bold = true }, --guifg=#A9FF68 gui=bold"
         -- DapUIBreakpointsLine = {}, -- DapUILineNumber"
-        DapUIBreakpointsDisabledLine = { link = "Comment" },                      --guifg=#424242"
+        DapUIBreakpointsDisabledLine = { link = "Comment" }, --guifg=#424242"
         -- DapUICurrentFrameName = {}, -- DapUIBreakpointsCurrentLine"
-        DapUIStepOver = { fg = theme.syn.special1 },                              --guifg=#00f1f5"
-        DapUIStepInto = { fg = theme.syn.special1 },                              --guifg=#00f1f5"
-        DapUIStepBack = { fg = theme.syn.special1 },                              --guifg=#00f1f5"
-        DapUIStepOut = { fg = theme.syn.special1 },                               --guifg=#00f1f5"
-        DapUIStop = { fg = theme.diag.error },                                    --guifg=#F70067"
-        DapUIPlayPause = { fg = theme.syn.string },                               --guifg=#A9FF68"
-        DapUIRestart = { fg = theme.syn.string },                                 --guifg=#A9FF68"
-        DapUIUnavailable = { fg = theme.syn.comment },                            --guifg=#424242"
+        DapUIStepOver = { fg = theme.syn.special1 }, --guifg=#00f1f5"
+        DapUIStepInto = { fg = theme.syn.special1 }, --guifg=#00f1f5"
+        DapUIStepBack = { fg = theme.syn.special1 }, --guifg=#00f1f5"
+        DapUIStepOut = { fg = theme.syn.special1 }, --guifg=#00f1f5"
+        DapUIStop = { fg = theme.diag.error }, --guifg=#F70067"
+        DapUIPlayPause = { fg = theme.syn.string }, --guifg=#A9FF68"
+        DapUIRestart = { fg = theme.syn.string }, --guifg=#A9FF68"
+        DapUIUnavailable = { fg = theme.syn.comment }, --guifg=#424242"
         -- Floaterm
         FloatermBorder = { fg = theme.ui.float.fg_border, bg = theme.ui.bg },
         -- NeoVim                         = {},
@@ -195,6 +195,10 @@ function M.setup(colors, config)
         IblScope = { fg = theme.ui.special },
         -- Lazy
         LazyProgressTodo = { fg = theme.ui.nontext },
+
+        -- Trouble
+        TroubleIndent = { fg = theme.ui.whitespace },
+        TroublePos = { fg = theme.ui.special },
 
         -- Nvim-Navic
         NavicIconsFile = { link = "Directory" },
