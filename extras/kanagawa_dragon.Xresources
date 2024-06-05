@@ -1,0 +1,29 @@
+! kanagawa-dragon .Xresources file
+
+*.foreground: #c5c9c5
+*.background: #181616
+
+*.color0: #090618
+*.color8: #A6A69C
+
+*.color1: #c4746e
+*.color9: #e46876
+
+*.color2: #8a9a7b
+*.color10: #87a987
+
+*.color3: #c4b28a
+*.color11: #e6c384
+
+*.color4: #8ba4b0
+*.color12: #7fb4ca
+
+*.color5: #a292a3
+*.color13: #938aa9
+
+*.color6: #8ea4a2
+*.color14: #7aa89f
+
+*.color7: #c8c093
+*.color15: #dcd7ba
+
