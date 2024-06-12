@@ -11,7 +11,7 @@ function M.setup(colors, config)
             -- ["@lsp.type.enumMember"] = { link = "Constant" },
             -- ["@lsp.type.function"] = { link = "Function" },
             -- ["@lsp.type.interface"] = { link = "Structure" },
-            -- ["@lsp.type.macro"] = { link = "Macro" },
+            ["@lsp.type.macro"] = { link = "Macro" },
             ["@lsp.type.method"] = { link = "@function.method" }, -- Function
             ["@lsp.type.namespace"] = { link = "@module" }, -- Structure
             ["@lsp.type.parameter"] = { link = "@variable.parameter" }, -- Identifier
