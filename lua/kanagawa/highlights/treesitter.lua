@@ -80,7 +80,7 @@ function M.setup(colors, config)
         ["@keyword.return"] = vim.tbl_extend("force", { fg = theme.syn.special3 }, config.keywordStyle),
         -- @keyword.debug          keywords related to debugging
         -- @keyword.exception      keywords related to exceptions (e.g. `throw`, `catch`)
-        ["keyword.exception"] = vim.tbl_extend("force", { fg = theme.syn.special3 }, config.statementStyle),
+        ["@keyword.exception"] = vim.tbl_extend("force", { fg = theme.syn.special3 }, config.statementStyle),
 
         ["@keyword.luap"] = { link = "@string.regex" },
         --
