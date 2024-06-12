@@ -154,8 +154,8 @@ function M.setup(colors, config)
         CmpItemAbbrDeprecated = { fg = theme.syn.comment, strikethrough = true },
         CmpItemAbbrMatch = { fg = theme.syn.fun },
         CmpItemAbbrMatchFuzzy = { link = "CmpItemAbbrMatch" },
-        CmpItemKindDefault = { fg = theme.syn.deprecated },
-        CmpItemMenu = { fg = theme.syn.comment },
+        CmpItemKindDefault = { fg = theme.ui.fg_dim },
+        CmpItemMenu = { fg = theme.ui.fg_dim },
 
         CmpItemKindText = { fg = theme.ui.fg },
         CmpItemKindMethod = { link = "@function.method" },
