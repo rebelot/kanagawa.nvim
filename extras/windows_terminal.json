@@ -44,5 +44,28 @@
         "foreground": "#C8C093",
         "name": "KanagawaDragon",
         "selectionBackground": "#223249"
+    },
+    {
+        "background": "#F2ECBC",
+        "black": "#1F1F28",
+        "blue": "#4D699B",
+        "brightBlack": "#8A8980",
+        "brightBlue": "#6693BF",
+        "brightCyan": "#5E857A",
+        "brightGreen": "#6E915F",
+        "brightPurple": "#624C83",
+        "brightRed": "#D7474B",
+        "brightWhite": "#43436C",
+        "brightYellow": "#836F4A",
+        "cursorColor": "#C9CBD1",
+        "cyan": "#597B75",
+        "foreground": "#545464",
+        "green": "#6F894E",
+        "name": "KanagawaLotus",
+        "purple": "#B35B79",
+        "red": "#C84053",
+        "selectionBackground": "#B5CBD2",
+        "white": "#545464",
+        "yellow": "#77713F"
     }
 ]
