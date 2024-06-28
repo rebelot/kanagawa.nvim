@@ -1,0 +1,60 @@
+# aerc kanagawa styleset
+#
+# This styleset uses the terminal defaults as its fallback.
+# More information on how to configure the styleset can be found in
+# the aerc-stylesets(7) manpage. Please read the manual before
+# modifying or creating a styleset.
+#
+
+*.default=true
+
+default.bg=#1f1f28
+
+title.reverse=true
+header.bold=true
+header.fg=#dcd7ba
+
+*error.bold=true
+error.fg=#e46876
+warning.fg=#e98a00
+success.fg=#98bb6c
+
+statusline*.default=true
+statusline_error.fg=#e46876
+statusline_default.fg=#de9800
+statusline_default.bg=#1f1f28
+
+dirlist_recent.selected.fg=#363646
+dirlist_unread.fg=#72a7bc
+dirlist_unread.selected.fg=#72a7bc
+dirlist_default.selected.bg=#363646
+dirlist_default.selected.fg=#dcd7ba
+
+msglist_default.selected.fg=#363646
+msglist_default.selected.bg=#e98a00
+msglist_unread.bold=true
+msglist_unread.fg=#72a7bc
+msglist_unread.selected.bg=#363646
+msglist_read.selected.fg=#dcd7ba
+msglist_read.selected.bg=#363646
+msglist_marked.fg=#e98a00
+msglist_marked.selected.fg=#dcd7ba
+msglist_marked.selected.bg=#363646
+msglist_deleted.fg=#e82424
+msglist_result.fg=#dcd7ba
+msglist_result.selected.bg=#363646
+
+msglist_deleted.selected.reverse=toggle
+
+completion_pill.reverse=true
+
+tab.reverse=true
+border.reverse=true
+tab.bg=#e98a00
+tab.fg=#363646
+tab.selected.bg=#363646
+tab.selected.fg=#e98a00
+border.fg=#363646
+
+selector_focused.reverse=true
+selector_chooser.bold=true
