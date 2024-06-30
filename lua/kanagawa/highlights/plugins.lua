@@ -390,6 +390,25 @@ function M.setup(colors, config)
         MiniTestPass = { fg = theme.diag.ok, bold = true },
 
         MiniTrailspace = { bg = theme.vcs.removed },
+
+        NeotestAdapterName = { fg = theme.syn.special3, },
+        NeotestDir = { fg = theme.syn.fun, },
+        NeotestExpandMarker = { fg = theme.syn.punct, bold = true, },
+        NeotestFailed = { fg = theme.diag.error },
+        NeotestFile = { fg = theme.syn.fun, },
+        NeotestFocused = { bold = true, underline = true, },
+        NeotestIndent = { fg = theme.ui.special, bold = true, },
+        NeotestMarked = { fg = theme.diag.warning, italic = true, },
+        NeotestNamespace = { fg = theme.syn.fun, },
+        NeotestPassed = { fg = theme.diag.ok },
+        NeotestRunning = { fg = theme.vcs.changed, },
+        NeotestWinSelect = { fg = theme.diag.hint },
+        NeotestSkipped = { fg = theme.syn.special1 },
+        NeotestTarget = { fg = theme.syn.special3 },
+        NeotestTest = { fg = theme.ui.float.fg },
+        NeotestUnknown = { fg = theme.syn.deprecated },
+        NeotestWatching = { fg = theme.vcs.changed, },
+
     }
 end
 
