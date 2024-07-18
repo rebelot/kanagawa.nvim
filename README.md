@@ -252,6 +252,39 @@ overrides = function(colors)
 end,
 ```
 
+#### Transparent Telescope
+
+Fully transparent telescope UI with borders
+
+Completely removes telescope background leaving only borders
+
+If there is a need to run `:KanagawaCompile` everytime on startup for settings to take place, consider automatic compilation (automatic compilation setup can be found below)
+
+```lua
+overrides = function(colors)
+    local theme = colors.theme
+    return {
+          TelescopeTitle = { fg = theme.ui.special, bold = true },
+          TelescopePromptNormal = { bg = "none" },
+          TelescopePromptBorder = { fg = "none", bg = "none" },
+          TelescopeResultsNormal = { fg = "none", bg = "none" },
+          TelescopeResultsBorder = { fg = "none", bg = "none" },
+          TelescopePreviewNormal = { bg = "none" },
+          TelescopePreviewBorder = { bg = "none", fg = "none" },
+    }
+end,
+```
+
+Place the following into `init.lua` for auto compilation
+
+```lua
+vim.api.nvim_create_autocmd("VimEnter", {
+  callback = function()
+    vim.cmd("KanagawaCompile")
+  end,
+})
+```
+
 #### Dark completion (popup) menu
 
 More uniform colors for the popup menu.
@@ -349,7 +382,7 @@ vim.api.nvim_create_autocmd("ColorScheme", {
 
 ## Accessibility
 
-The colors maintain a `4.5:1` contrast ratio, complying with [WCAG 2.1 | Level AA](https://www.w3.org/TR/WCAG21/#contrast-minimum).  
+The colors maintain a `4.5:1` contrast ratio, complying with [WCAG 2.1 | Level AA](https://www.w3.org/TR/WCAG21/#contrast-minimum).
 
 ## Extras
 
