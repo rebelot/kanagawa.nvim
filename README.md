@@ -254,8 +254,6 @@ end,
 
 #### Transparent Telescope
 
-Fully transparent telescope UI with borders
-
 Completely removes telescope background leaving only borders
 
 If there is a need to run `:KanagawaCompile` everytime on startup for settings to take place, consider automatic compilation (automatic compilation setup can be found below)
