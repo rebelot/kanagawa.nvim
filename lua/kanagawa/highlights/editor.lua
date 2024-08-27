@@ -140,9 +140,9 @@ function M.setup(colors, config)
         -- WildMenu	Current match in 'wildmenu' completion.
         WildMenu = { link = "Pmenu" },
         -- WinBar		Window bar of current window.
-        Winbar = { fg = theme.ui.fg_dim, bg = "NONE" },
+        WinBar = { fg = theme.ui.fg_dim, bg = "NONE" },
         -- WinBarNC	Window bar of not-current windows.
-        WinbarNC = { fg = theme.ui.fg_dim, bg = config.dimInactive and theme.ui.bg_dim or "NONE" },
+        WinBarNC = { fg = theme.ui.fg_dim, bg = config.dimInactive and theme.ui.bg_dim or "NONE" },
 
         -- SignColumnSB = { link = "SignColumn" },
         -- NormalSB = { link = "Normal" },
