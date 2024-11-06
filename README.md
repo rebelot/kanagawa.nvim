@@ -358,7 +358,7 @@ The colors maintain a `4.5:1` contrast ratio, complying with [WCAG 2.1 | Level A
 - [base16](extras/base16-theme.yaml)
 - [broot](extras/broot_kanagawa.toml)
 - [emacs, doom emacs](extras/kanagawa-theme.el)
-- [fish](extras/kanagawa.fish)
+- [fish](extras/kanagawa.fish) (also available as a [plugin](https://github.com/nakulj/kanagawa.fish))
 - [foot](extras/foot_kanagawa.ini)
 - [iTerm](extras/kanagawa.itermcolors)
 - [kitty](extras/kanagawa.conf)
