@@ -164,7 +164,7 @@ require('kanagawa').setup({
 })
 ```
 
-You can also conveniently add/modify `hlgroups` using the `config.overrides` option.
+You can also conveniently add/modify any `hlgroups` using the `config.overrides` option, allowing you to customize the looks of specific built-in elements, or any other external plugins that provides `hlgroups`. (See `:help highlight` for more information on `hlgroups`.)
 Supported keywords are the same for `:h nvim_set_hl` `{val}` parameter.
 
 ```lua
