@@ -105,6 +105,16 @@ Themes can be changed in three ways:
 - Using the `background` option:
   Any change to the value of `vim.o.background` will select the theme mapped by `config.background`.
   Use `vim.o.background = ""` to unset this option.
+  You can thus map the value of `vim.o.background` to all three kanagawa variants:
+  ```lua
+    {
+        ...
+        theme = "wave",              -- vim.o.background = ""
+        background = {               
+            dark = "dragon",         -- vim.o.background = "dark"
+            light = "lotus"          -- vim.o.background = "light"
+    }
+  ```
 - Loading the colorscheme directly with:
   ```lua
   vim.cmd("colorscheme kanagawa-wave")
