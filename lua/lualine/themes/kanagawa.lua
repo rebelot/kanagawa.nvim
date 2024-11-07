@@ -13,6 +13,11 @@ kanagawa.insert = {
   b = { bg = theme.ui.bg, fg = theme.diag.ok },
 }
 
+kanagawa.terminal = {
+  a = { bg = colors.waveAqua1, fg = colors.bg_dark },
+  b = { bg = colors.bg, fg = colors.waveAqua1 },
+}
+
 kanagawa.command = {
   a = { bg = theme.syn.operator, fg = theme.ui.bg },
   b = { bg = theme.ui.bg, fg = theme.syn.operator },
