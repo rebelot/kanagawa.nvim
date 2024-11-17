@@ -392,6 +392,7 @@ The colors maintain a `4.5:1` contrast ratio, complying with [WCAG 2.1 | Level A
 - [fish](extras/kanagawa.fish)
 - [foot](extras/foot_kanagawa.ini)
 - [iTerm](extras/kanagawa.itermcolors)
+- [iTerm kanagawa_dragon](extras/kanagawa_dragon.itermcolors)
 - [kitty](extras/kanagawa.conf)
 - [mintty](extras/kanagawa.minttyrc)
 - [pywal](extras/pywal-theme.json)
