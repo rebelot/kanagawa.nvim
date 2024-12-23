@@ -38,7 +38,9 @@ function M.setup(colors, config)
         -- ["@lsp.mod.builtin"] = { link = "Special" },
 
         ["@lsp.typemod.operator.controlFlow"] = { link = "@keyword.exception" }, -- rust ? operator
+        ["@lsp.type.lifetime"] = { link = "Operator" },
         ["@lsp.typemod.keyword.documentation"] = { link = "Special" },
+        ["@lsp.type.decorator.rust"] = { link = "PreProc" },
 
         ["@lsp.typemod.variable.global"] = { link = "Constant" },
         ["@lsp.typemod.variable.static"] = { link = "Constant" },
