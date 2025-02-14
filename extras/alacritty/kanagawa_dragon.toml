@@ -6,23 +6,23 @@ foreground = '#c5c9c5'
 
 [colors.normal]
 black = '#0d0c0c'
-blue = '#8ba4b0'
-cyan = '#8ea4a2'
-green = '#8a9a7b'
-magenta = '#a292a3'
 red = '#c4746e'
-white = '#c8c093'
+green = '#8a9a7b'
 yellow = '#c4b28a'
+blue = '#8ba4b0'
+magenta = '#a292a3'
+cyan = '#8ea4a2'
+white = '#c8c093'
 
 [colors.bright]
 black = '#a6a69c'
-blue = '#7fb4ca'
-cyan = '#7aa89f'
-green = '#87a987'
-magenta = '#938aa9'
 red = '#e46876'
-white = '#c5c9c5'
+green = '#87a987'
 yellow = '#e6c384'
+blue = '#7fb4ca'
+magenta = '#938aa9'
+cyan = '#7aa89f'
+white = '#c5c9c5'
 
 [colors.selection]
 background = '#2d4f67'
@@ -30,8 +30,8 @@ foreground = '#c8c093'
 
 [[colors.indexed_colors]]
 index = 16
-color = '#ffa066'
+color = '#b6927b'
 
 [[colors.indexed_colors]]
 index = 17
-color = '#ff5d62'
+color = '#b98d7b'
