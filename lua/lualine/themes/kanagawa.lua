@@ -1,11 +1,12 @@
 local theme = require("kanagawa.colors").setup().theme
+local opts = require("kanagawa").config
 
 local kanagawa = {}
 
 kanagawa.normal = {
   a = { bg = theme.syn.fun, fg = theme.ui.bg_m3 },
   b = { bg = theme.diff.change, fg = theme.syn.fun },
-  c = { bg = theme.ui.bg_p1, fg = theme.ui.fg },
+  c = { bg = opts.transparent and "NONE" or theme.ui.bg_p1, fg = theme.ui.fg },
 }
 
 kanagawa.insert = {
