@@ -136,6 +136,9 @@ function M.setup(colors, config)
         -- @markup.link            text references, footnotes, citations, etc.
         -- @markup.link.label      link, reference descriptions
         -- @markup.link.url        URL-style links
+        -- ["@markup.link"] = { link = "Tag" },
+        ["@markup.link.markdown_inline"] = {link = "Tag"},
+        ["@markup.link.label.markdown_inline"] = { link = "Tag" },
         ["@markup.link.url"] = { link = "@string.special.url" },
         -- @markup.raw             literal or verbatim text (e.g. inline code)
         ["@markup.raw"] = { link = "String" },
