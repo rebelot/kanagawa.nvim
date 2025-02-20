@@ -135,6 +135,27 @@ function M.setup(colors, config)
         SnacksNotifierInfo = { link = "DiagnosticInfo" },
         SnacksNotifierDebug = { link = "Debug" },
         SnacksNotifierTrace = { link = "Comment" },
+        -- SnacksProfiler
+        SnacksProfilerIconInfo = { bg = theme.ui.bg_search, fg = theme.syn.fun },
+        SnacksProfilerBadgeInfo = { bg = theme.ui.bg_visual, fg = theme.syn.fun },
+        SnacksScratchKey = "SnacksProfilerIconInfo",
+        SnacksScratchDesc = "SnacksProfilerBadgeInfo",
+        SnacksProfilerIconTrace = { bg = theme.syn.fun, fg = theme.ui.float.fg_border },
+        SnacksProfilerBadgeTrace = { bg = theme.syn.fun, fg = theme.ui.float.fg_border },
+        SnacksIndent = { fg = theme.ui.bg_p2, nocombine = true },
+        SnacksIndentScope = { fg = theme.ui.pmenu.bg, nocombine = true },
+        SnacksZenIcon = { fg = theme.syn.statement },
+        SnacksInputIcon = { fg = theme.ui.pmenu.bg },
+        SnacksInputBorder = { fg = theme.syn.identifier },
+        SnacksInputTitle = { fg = theme.syn.identifier },
+        -- SnacksPicker
+        SnacksPickerInputBorder = { fg = theme.syn.constant },
+        SnacksPickerInputTitle = { fg = theme.syn.constant },
+        SnacksPickerBoxTitle = { fg = theme.syn.constant },
+        SnacksPickerSelected = { fg = theme.syn.number },
+        SnacksPickerToggle = "SnacksProfilerBadgeInfo",
+        SnacksPickerPickWinCurrent = { fg = theme.ui.fg, bg = theme.syn.number, bold = true },
+        SnacksPickerPickWin = { fg = theme.ui.fg, bg = theme.ui.bg_search, bold = true },
         -- Dap-UI
         -- DapUIVariable = { link = "Normal" },
         DapUIScope = { link = "Special" }, -- guifg=#00F1F5"
