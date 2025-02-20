@@ -106,22 +106,27 @@ Themes can be changed in three ways:
   Any change to the value of `vim.o.background` will select the theme mapped by `config.background`.
   Use `vim.o.background = ""` to unset this option.
   You can thus map the value of `vim.o.background` to all three kanagawa variants:
+
   ```lua
     {
         ...
         theme = "wave",              -- vim.o.background = ""
-        background = {               
+        background = {
             dark = "dragon",         -- vim.o.background = "dark"
             light = "lotus"          -- vim.o.background = "light"
     }
   ```
+
 - Loading the colorscheme directly with:
+
   ```lua
   vim.cmd("colorscheme kanagawa-wave")
   vim.cmd("colorscheme kanagawa-dragon")
   vim.cmd("colorscheme kanagawa-lotus")
   ```
+
   or
+
   ```lua
   require("kanagawa").load("wave")
   ```
@@ -380,27 +385,28 @@ vim.api.nvim_create_autocmd("ColorScheme", {
 
 ## Accessibility
 
-The colors maintain a `4.5:1` contrast ratio, complying with [WCAG 2.1 | Level AA](https://www.w3.org/TR/WCAG21/#contrast-minimum).  
+The colors maintain a `4.5:1` contrast ratio, complying with [WCAG 2.1 | Level AA](https://www.w3.org/TR/WCAG21/#contrast-minimum).
 
 ## Extras
 
-- [alacritty](extras/alacritty_kanagawa.yml)
-- [Alfred](extra/alfred.md)
-- [base16](extras/base16-theme.yaml)
-- [broot](extras/broot_kanagawa.toml)
-- [emacs, doom emacs](extras/kanagawa-theme.el)
-- [fish](extras/kanagawa.fish)
-- [foot](extras/foot_kanagawa.ini)
-- [iTerm](extras/kanagawa.itermcolors)
-- [kitty](extras/kanagawa.conf)
-- [mintty](extras/kanagawa.minttyrc)
-- [pywal](extras/pywal-theme.json)
-- [sway](extras/kanagawa.sway)
-- [wezterm](extras/wezterm.lua)
-- [Windows Terminal](extras/windows_terminal.json)
-- [Xresources](extras/.Xresources)
-- [tmTheme (bat, delta and lazygit)](extras/kanagawa.tmTheme)
-- [JSON compatible with many terminals](extras/Kanagawa.json) Check [Gogh](https://github.com/Gogh-Co/Gogh#-terminals) for the list of supported terminals.
+- [Alacritty](extras/alacritty/)
+- [Alfred](extras/alfred.md)
+- [Base16](extras/base16/)
+- [Broot](extras/broot/)
+- [Emacs](extras/emacs/)
+- [Fish](extras/fish/)
+- [Foot](extras/foot/)
+- [iTerm](extras/iterm/)
+- [Kitty](extras/kitty/)
+- [Mintty](extras/mintty/)
+- [Pywal](extras/pywal/)
+- [Sway](extras/sway/)
+- [Wezterm](extras/wezterm/)
+- [Windows Terminal](extras/windows_terminal/)
+- [Ghostty](extras/ghostty)
+- [Xresources](extras/xresources/)
+- [tmTheme (Sublime Text, bat and delta)](extras/textmate/)
+- [JSON compatible with many terminals](extras/gogh/) Check [Gogh](https://github.com/Gogh-Co/Gogh#-terminals) for the list of supported terminals.
 - 🎉 Bonus! You win a tiny [python script](palette.py)🐍 to extract color palettes 🎨 from any image! 🥳
 
 ## Acknowledgements
