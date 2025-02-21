@@ -138,8 +138,8 @@ function M.setup(colors, config)
         -- SnacksProfiler
         SnacksProfilerIconInfo = { bg = theme.ui.bg_search, fg = theme.syn.fun },
         SnacksProfilerBadgeInfo = { bg = theme.ui.bg_visual, fg = theme.syn.fun },
-        SnacksScratchKey = "SnacksProfilerIconInfo",
-        SnacksScratchDesc = "SnacksProfilerBadgeInfo",
+        SnacksScratchKey = { link = "SnacksProfilerIconInfo" },
+        SnacksScratchDesc = { link = "SnacksProfilerBadgeInfo" },
         SnacksProfilerIconTrace = { bg = theme.syn.fun, fg = theme.ui.float.fg_border },
         SnacksProfilerBadgeTrace = { bg = theme.syn.fun, fg = theme.ui.float.fg_border },
         SnacksIndent = { fg = theme.ui.bg_p2, nocombine = true },
@@ -153,7 +153,7 @@ function M.setup(colors, config)
         SnacksPickerInputTitle = { fg = theme.syn.constant },
         SnacksPickerBoxTitle = { fg = theme.syn.constant },
         SnacksPickerSelected = { fg = theme.syn.number },
-        SnacksPickerToggle = "SnacksProfilerBadgeInfo",
+        SnacksPickerToggle = { link = "SnacksProfilerBadgeInfo" },
         SnacksPickerPickWinCurrent = { fg = theme.ui.fg, bg = theme.syn.number, bold = true },
         SnacksPickerPickWin = { fg = theme.ui.fg, bg = theme.ui.bg_search, bold = true },
         -- Dap-UI
