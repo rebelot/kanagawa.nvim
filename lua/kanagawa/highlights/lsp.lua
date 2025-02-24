@@ -20,7 +20,7 @@ function M.setup(colors, config)
         -- ["@lsp.type.type"] = { link = "Type" },
         -- ["@lsp.type.typeParameter"] = { link = "TypeDef" },
         ["@lsp.type.variable"] = { fg = "none" }, -- Identifier
-        ["@lsp.type.comment"] = { fg = "none" },  -- Comment
+        ["@lsp.type.comment"] = { link = "Comment" },  -- Comment
 
         ["@lsp.type.const"] = { link = "Constant" },
         ["@lsp.type.comparison"] = { link = "Operator" },
