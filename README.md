@@ -69,7 +69,7 @@ require('kanagawa').setup({
     overrides = function(colors) -- add/modify highlights
         return {}
     end,
-    theme = "wave",              -- Load "wave" theme when 'background' option is not set
+    theme = "wave",              -- Load "wave" theme
     background = {               -- map the value of 'background' option to a theme
         dark = "wave",           -- try "dragon" !
         light = "lotus"
@@ -101,22 +101,9 @@ Kanagawa comes in three variants:
 
 Themes can be changed in three ways:
 
-- Setting `config.theme` to the desired theme. Note that `vim.o.background` **must** be unset.
+- Setting `config.theme` to the desired theme.
 - Using the `background` option:
   Any change to the value of `vim.o.background` will select the theme mapped by `config.background`.
-  Use `vim.o.background = ""` to unset this option.
-  You can thus map the value of `vim.o.background` to all three kanagawa variants:
-
-  ```lua
-    {
-        ...
-        theme = "wave",              -- vim.o.background = ""
-        background = {
-            dark = "dragon",         -- vim.o.background = "dark"
-            light = "lotus"          -- vim.o.background = "light"
-    }
-  ```
-
 - Loading the colorscheme directly with:
 
   ```lua
