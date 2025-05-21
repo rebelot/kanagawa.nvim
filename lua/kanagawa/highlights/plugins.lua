@@ -456,6 +456,13 @@ function M.setup(colors, config)
         NeotestUnknown = { fg = theme.syn.deprecated },
         NeotestWatching = { fg = theme.vcs.changed, },
 
+        RainbowDelimiterRed = { fg = theme.syn.special3 },
+        RainbowDelimiterYellow = { fg = theme.syn.identifier },
+        RainbowDelimiterBlue = { fg = theme.syn.fun },
+        RainbowDelimiterOrange = { fg = theme.syn.constant },
+        RainbowDelimiterGreen = { fg = theme.syn.string },
+        RainbowDelimiterViolet = { fg = theme.syn.keyword },
+        RainbowDelimiterCyan = { fg = theme.syn.type },
     }
 end
 
