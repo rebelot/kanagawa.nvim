@@ -389,7 +389,7 @@ The colors maintain a `4.5:1` contrast ratio, complying with [WCAG 2.1 | Level A
 - [Pywal](extras/pywal/)
 - [Sway](extras/sway/)
 - [Wezterm](extras/wezterm/)
-- [Windows Terminal](extras/windows_terminal/)
+- [Windows Terminal](extras/windows-terminal/)
 - [Ghostty](extras/ghostty)
 - [Xresources](extras/xresources/)
 - [tmTheme (Sublime Text, bat and delta)](extras/textmate/)
