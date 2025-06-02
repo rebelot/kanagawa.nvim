@@ -69,7 +69,7 @@ require('kanagawa').setup({
     overrides = function(colors) -- add/modify highlights
         return {}
     end,
-    theme = "wave",              -- Load "wave" theme when 'background' option is not set
+    theme = "wave",              -- Load "wave" theme
     background = {               -- map the value of 'background' option to a theme
         dark = "wave",           -- try "dragon" !
         light = "lotus"
@@ -101,17 +101,19 @@ Kanagawa comes in three variants:
 
 Themes can be changed in three ways:
 
-- Setting `config.theme` to the desired theme. Note that `vim.o.background` **must** be unset.
+- Setting `config.theme` to the desired theme.
 - Using the `background` option:
   Any change to the value of `vim.o.background` will select the theme mapped by `config.background`.
-  Use `vim.o.background = ""` to unset this option.
 - Loading the colorscheme directly with:
+
   ```lua
   vim.cmd("colorscheme kanagawa-wave")
   vim.cmd("colorscheme kanagawa-dragon")
   vim.cmd("colorscheme kanagawa-lotus")
   ```
+
   or
+
   ```lua
   require("kanagawa").load("wave")
   ```
@@ -164,7 +166,7 @@ require('kanagawa').setup({
 })
 ```
 
-You can also conveniently add/modify `hlgroups` using the `config.overrides` option.
+You can also conveniently add/modify any `hlgroups` using the `config.overrides` option, allowing you to customize the looks of specific built-in elements, or any other external plugins that provides `hlgroups`. (See `:help highlight` for more information on `hlgroups`.)
 Supported keywords are the same for `:h nvim_set_hl` `{val}` parameter.
 
 ```lua
@@ -268,6 +270,27 @@ overrides = function(colors)
 end,
 ```
 
+#### Tint background of diagnostic messages with their foreground color
+
+This immitates a style of diagnostic messages seen, for example, in [tokyonight.nvim](https://github.com/folke/tokyonight.nvim).
+
+```lua
+overrides = function(colors)
+  local theme = colors.theme
+  local makeDiagnosticColor = function(color)
+    local c = require("kanagawa.lib.color")
+    return { fg = color, bg = c(color):blend(theme.ui.bg, 0.95):to_hex() }
+  end
+
+  return {
+    DiagnosticVirtualTextHint  = makeDiagnosticColor(theme.diag.hint),
+    DiagnosticVirtualTextInfo  = makeDiagnosticColor(theme.diag.info),
+    DiagnosticVirtualTextWarn  = makeDiagnosticColor(theme.diag.warning),
+    DiagnosticVirtualTextError = makeDiagnosticColor(theme.diag.error),
+  }
+end
+```
+
 ## Integration
 
 ### Get palette and theme colors
@@ -349,27 +372,28 @@ vim.api.nvim_create_autocmd("ColorScheme", {
 
 ## Accessibility
 
-The colors maintain a `4.5:1` contrast ratio, complying with [WCAG 2.1 | Level AA](https://www.w3.org/TR/WCAG21/#contrast-minimum).  
+The colors maintain a `4.5:1` contrast ratio, complying with [WCAG 2.1 | Level AA](https://www.w3.org/TR/WCAG21/#contrast-minimum).
 
 ## Extras
 
-- [alacritty](extras/alacritty_kanagawa.yml)
-- [Alfred](extra/alfred.md)
-- [base16](extras/base16-theme.yaml)
-- [broot](extras/broot_kanagawa.toml)
-- [emacs, doom emacs](extras/kanagawa-theme.el)
-- [fish](extras/kanagawa.fish)
-- [foot](extras/foot_kanagawa.ini)
-- [iTerm](extras/kanagawa.itermcolors)
-- [kitty](extras/kanagawa.conf)
-- [mintty](extras/kanagawa.minttyrc)
-- [pywal](extras/pywal-theme.json)
-- [sway](extras/kanagawa.sway)
-- [wezterm](extras/wezterm.lua)
-- [Windows Terminal](extras/windows_terminal.json)
-- [Xresources](extras/.Xresources)
-- [tmTheme (bat, delta and lazygit)](extras/kanagawa.tmTheme)
-- [JSON compatible with many terminals](extras/Kanagawa.json) Check [Gogh](https://github.com/Gogh-Co/Gogh#-terminals) for the list of supported terminals.
+- [Alacritty](extras/alacritty/)
+- [Alfred](extras/alfred.md)
+- [Base16](extras/base16/)
+- [Broot](extras/broot/)
+- [Emacs](extras/emacs/)
+- [Fish](extras/fish/)
+- [Foot](extras/foot/)
+- [iTerm](extras/iterm/)
+- [Kitty](extras/kitty/)
+- [Mintty](extras/mintty/)
+- [Pywal](extras/pywal/)
+- [Sway](extras/sway/)
+- [Wezterm](extras/wezterm/)
+- [Windows Terminal](extras/windows-terminal/)
+- [Ghostty](extras/ghostty)
+- [Xresources](extras/xresources/)
+- [tmTheme (Sublime Text, bat and delta)](extras/textmate/)
+- [JSON compatible with many terminals](extras/gogh/) Check [Gogh](https://github.com/Gogh-Co/Gogh#-terminals) for the list of supported terminals.
 - 🎉 Bonus! You win a tiny [python script](palette.py)🐍 to extract color palettes 🎨 from any image! 🥳
 
 ## Acknowledgements

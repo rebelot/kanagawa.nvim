@@ -89,6 +89,14 @@ function M.setup(colors, config)
         Pmenu = { fg = theme.ui.pmenu.fg, bg = theme.ui.pmenu.bg },
         -- PmenuSel	Popup menu: Selected item.
         PmenuSel = { fg = theme.ui.pmenu.fg_sel, bg = theme.ui.pmenu.bg_sel },
+        -- PmenuKind	Popup menu: Normal item "kind".
+        PmenuKind = { fg = theme.ui.fg_dim, bg = theme.ui.pmenu.bg },
+        -- PmenuKindSel	Popup menu: Selected item "kind".
+        PmenuKindSel = { fg = theme.ui.fg_dim, bg = theme.ui.pmenu.bg_sel },
+        -- PmenuExtra	Popup menu: Normal item "extra text".
+        PmenuExtra = { fg = theme.ui.special, bg = theme.ui.pmenu.bg },
+        -- PmenuExtraSel	Popup menu: Selected item "extra text".
+        PmenuExtraSel = { fg = theme.ui.special, bg = theme.ui.pmenu.bg_sel },
         -- PmenuSbar	Popup menu: Scrollbar.
         PmenuSbar = { bg = theme.ui.pmenu.bg_sbar },
         -- PmenuThumb	Popup menu: Thumb of the scrollbar.
@@ -132,9 +140,9 @@ function M.setup(colors, config)
         -- WildMenu	Current match in 'wildmenu' completion.
         WildMenu = { link = "Pmenu" },
         -- WinBar		Window bar of current window.
-        Winbar = { fg = theme.ui.fg_dim, bg = "NONE" },
+        WinBar = { fg = theme.ui.fg_dim, bg = "NONE" },
         -- WinBarNC	Window bar of not-current windows.
-        WinbarNC = { fg = theme.ui.fg_dim, bg = config.dimInactive and theme.ui.bg_dim or "NONE" },
+        WinBarNC = { fg = theme.ui.fg_dim, bg = config.dimInactive and theme.ui.bg_dim or "NONE" },
 
         -- SignColumnSB = { link = "SignColumn" },
         -- NormalSB = { link = "Normal" },
