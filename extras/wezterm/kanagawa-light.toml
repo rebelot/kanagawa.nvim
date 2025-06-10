@@ -1,0 +1,22 @@
+# Kanagawa light
+
+[colors]
+background = "#f2eccd"
+foreground = "#40404e"
+
+selection_bg = "#d3d5d9"
+selection_fg = "#313139"
+
+cursor_fg = "#f2eccd"
+cursor_bg = "#dc8a78"
+cursor_border = "#dc8a78"
+
+scrollbar_thumb = "#b5b093"
+split = "#b5b093"
+
+ansi = [ "#cac4a4", "#c34043", "#56744b", "#917034", "#1c5d78", "#5d5573", "#4a6860", "#40404e" ]
+brights = [ "#696861", "#aa1212", "#4a612d", "#82590f", "#234588", "#493764", "#355c54", "#313139" ]
+
+[colors.indexed]
+16 = "#b34400"
+17 = "#c9233c"
