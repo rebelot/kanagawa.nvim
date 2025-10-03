@@ -1,0 +1,70 @@
+/* Uses the `wave` variant, look into the `base16` variants if you want lotus or dragon */
+@define-color base00 #1F1F28;
+@define-color base01 #2A2A37;
+@define-color base02 #223249;
+@define-color base03 #727169;
+@define-color base04 #C8C093;
+@define-color base05 #DCD7BA;
+@define-color base06 #938AA9;
+@define-color base07 #363646;
+@define-color base08 #C34043;
+@define-color base09 #FFA066;
+@define-color base0A #DCA561;
+@define-color base0B #98BB6C;
+@define-color base0C #7FB4CA;
+@define-color base0D #7E9CD8;
+@define-color base0E #957FB8;
+@define-color base0F #D27E99;
+
+window {
+    border:  0px;
+    border-radius: 10px;
+    font-family: monospace;
+    font-size: 18px;
+}
+
+#input {
+	border-radius: 10px 10px 0px 0px;
+    border:  0px;
+    padding: 10px;
+    margin: 0px;
+    font-size: 28px;
+	color: @base0C;
+	background-color: @base01;
+}
+
+#inner-box {
+	margin: 0px;
+	color: @base05;
+	background-color: @base00;
+}
+
+#outer-box {
+	margin: 0px;
+	background-color: @base00;
+    border-radius: 10px;
+}
+
+#selected {
+	background-color: @base02;
+}
+
+#entry {
+	padding: 0px;
+    margin: 0px;
+	background-color: @base00;
+}
+
+#entry:focus {
+    outline-width: 0;
+}
+
+#scroll {
+	margin: 5px;
+	background-color: @base00;
+}
+
+#text {
+	margin: 0px;
+	padding: 2px 2px 2px 10px;
+}
