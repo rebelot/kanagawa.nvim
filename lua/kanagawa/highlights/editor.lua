@@ -68,7 +68,7 @@ function M.setup(colors, config)
         -- MsgArea		Area for messages and cmdline.
         MsgArea = vim.o.cmdheight == 0 and {link = 'StatusLine'} or { fg = theme.ui.fg_dim },
         -- MsgSeparator	Separator for scrolled messages |msgsep|.
-        MsgSeparator = { bg = vim.o.cmdheight == 0 and theme.ui.bg or theme.ui.bg_m3 },
+        MsgSeparator = { bg = vim.o.cmdheight == 0 and theme.ui.bg or theme.ui.bg_m3, fg = theme.ui.bg_m3 },
         -- MoreMsg		|more-prompt|
         MoreMsg = { fg = theme.diag.info },
         -- NonText		'@' at the end of the window, characters from 'showbreak' and other characters that do not really exist in the text (e.g., ">" displayed when a double-wide character doesn't fit at the end of the line). See also |hl-EndOfBuffer|.
