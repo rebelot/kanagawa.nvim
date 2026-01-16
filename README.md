@@ -386,6 +386,7 @@ The colors maintain a `4.5:1` contrast ratio, complying with [WCAG 2.1 | Level A
 - [iTerm](extras/iterm/)
 - [Kitty](extras/kitty/)
 - [Mintty](extras/mintty/)
+- [Ptyxis](extras/ptyxis/)
 - [Pywal](extras/pywal/)
 - [Sway](extras/sway/)
 - [Wezterm](extras/wezterm/)
