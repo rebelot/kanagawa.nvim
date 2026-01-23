@@ -24,7 +24,7 @@
           <key>findHighlight</key>
           <string>#2D4F67</string>
           <key>selectionBorder</key>
-          <string>#222218</string>
+          <string>#1A1A22</string>
           <key>gutterForeground</key>
           <string>#54546D</string>
         </dict>
@@ -414,7 +414,7 @@
         <key>settings</key>
         <dict>
           <key>foreground</key>
-          <string>#ffffff</string>
+          <string>#DCD7BA</string>
         </dict>
       </dict>
       <dict>
