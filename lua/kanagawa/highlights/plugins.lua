@@ -43,6 +43,18 @@ function M.setup(colors, config)
         TelescopeResultsField = { link = "@field" },
         TelescopeResultsMethod = { link = "Function" },
         TelescopeResultsVariable = { link = "@variable" },
+        -- FzfLua
+        FzfLuaHeaderBind = { fg = theme.syn.parameter }, -- *BlanchedAlmond
+        FzfLuaHeaderText = { fg = theme.syn.fun }, -- *Brown1
+        FzfLuaPathColNr = { fg = theme.syn.type }, -- *CadetBlue1
+        FzfLuaPathLineNr = { fg = theme.diag.ok }, -- *LightGreen
+        FzfLuaBufNr = { fg = theme.syn.parameter }, -- *BlanchedAlmond
+        FzfLuaBufFlagCur = { fg = theme.diag.ok }, -- *Brown1
+        FzfLuaBufFlagAlt = { fg = theme.syn.type }, -- *CadetBlue1
+        FzfLuaTabTitle = { fg = theme.diag.hint }, -- *LightSkyBlue1
+        FzfLuaTabMarker = { fg = theme.syn.parameter }, -- *BlanchedAlmond
+        FzfLuaLivePrompt = { fg = theme.syn.keyword }, -- *PaleVioletRed1
+        FzfLuaLiveSym = { fg = theme.syn.keyword }, -- *PaleVioletRed1
         -- NvimTree
         NvimTreeNormal = { link = "Normal" },
         NvimTreeNormalNC = { link = "NvimTreeNormal" },
