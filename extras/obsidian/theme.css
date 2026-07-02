@@ -314,12 +314,12 @@ body.theme-light {
    LINKS & BRACKETS
    ============================ */
 
-.cm-url {
-  color: var(--text-link) !important;
+body .cm-url {
+  color: var(--text-link);
 }
 
-.external-link {
-  color: var(--text-link) !important;
+body .external-link {
+  color: var(--text-link);
 }
 
 a:not(.internal-link) {
@@ -341,11 +341,11 @@ hr {
   border-color: var(--text-normal);
 }
 
-.markdown-embed {
-  padding-left: 8px !important;
-  padding-right: 4px !important;
-  margin-left: 8px !important;
-  margin-right: 4px !important;
+body .markdown-embed {
+  padding-left: 8px;
+  padding-right: 4px;
+  margin-left: 8px;
+  margin-right: 4px;
 }
 
 .markdown-embed-title {
@@ -361,63 +361,63 @@ hr {
   margin-bottom: 0;
 }
 
-.markdown-embed-link {
-  color: var(--text-a) !important;
-  right: 2px !important;
+body .markdown-embed-link {
+  color: var(--text-a);
+  right: 2px;
 }
 
-.markdown-embed-link:hover {
-  color: var(--text-link) !important;
+body .markdown-embed-link:hover {
+  color: var(--text-link);
 }
 
 /* ============================
    EMPTY STATE
    ============================ */
 
-.empty-state-title {
-  color: var(--text-title-h1) !important;
+body .empty-state-title {
+  color: var(--text-title-h1);
 }
 
-.empty-state-action {
-  color: var(--text-muted) !important;
+body .empty-state-action {
+  color: var(--text-muted);
 }
 
-.empty-state-action:hover {
-  color: var(--text-normal) !important;
+body .empty-state-action:hover {
+  color: var(--text-normal);
 }
 
 /* ============================
    GRAPH VIEW
    ============================ */
 
-#graph-view-canvas .links {
-  stroke: var(--interactive-accent-rgb) !important;
+body #graph-view-canvas .links {
+  stroke: var(--interactive-accent-rgb);
 }
 
 /* ============================
    CODE BLOCKS
    ============================ */
 
-pre code {
-  padding: 5px !important;
+body pre code {
+  padding: 5px;
   color: var(--kanagawa-foreground);
   line-height: normal;
   display: block;
   background-color: var(--code-background);
 }
 
-.markdown-preview-view pre {
-  padding: 0px !important;
+body .markdown-preview-view pre {
+  padding: 0px;
 }
 
-.cm-inline-code {
-  background-color: var(--background-primary-alt) !important;
-  color: var(--kanagawa-foreground) !important;
-  bottom: 0px !important;
+body .cm-inline-code {
+  background-color: var(--background-primary-alt);
+  color: var(--kanagawa-foreground);
+  bottom: 0px;
 }
 
-.CodeMirror-code span.cm-inline-code {
-  color: var(--markup-code) !important;
+body .CodeMirror-code span.cm-inline-code {
+  color: var(--markup-code);
 }
 
 .cm-hmd-codeblock {
@@ -486,10 +486,10 @@ code {
 }
 
 .cm-s-obsidian pre.HyperMD-codeblock {
-  color: var(--markup-code) !important;
+  color: var(--markup-code);
 }
 
-.cm-s-obsidian span.cm-inline-code {
+body .cm-s-obsidian span.cm-inline-code {
   border: 1px solid var(--color-base-35);
   border-radius: 4px;
 }
@@ -519,15 +519,15 @@ code {
    BLOCKQUOTES
    ============================ */
 
-.cm-quote {
-  color: var(--interactive-accent) !important;
+body .cm-quote {
+  color: var(--interactive-accent);
   font-style: italic;
 }
 
-blockquote {
-  color: var(--interactive-accent) !important;
+body blockquote {
+  color: var(--interactive-accent);
   font-style: italic;
-  border-color: var(--blockquote-border) !important;
+  border-color: var(--blockquote-border);
 }
 
 /* ============================
@@ -544,12 +544,12 @@ img {
    TABLES
    ============================ */
 
-th {
-  border: 1px solid var(--background-primary-alt) !important;
+body th {
+  border: 1px solid var(--background-primary-alt);
 }
 
-td {
-  border: 1px solid var(--background-primary-alt) !important;
+body td {
+  border: 1px solid var(--background-primary-alt);
 }
 
 thead {
@@ -569,35 +569,35 @@ thead {
    SIDEBAR & DOCK
    ============================ */
 
-.view-action {
-  color: var(--text-muted) !important;
-  text-decoration: none !important;
+body .view-action {
+  color: var(--text-muted);
+  text-decoration: none;
 }
 
-.view-action:hover,
-.view-action.is-active {
-  color: var(--text-normal) !important;
+body .view-action:hover,
+body .view-action.is-active {
+  color: var(--text-normal);
 }
 
 .status-bar {
   background-color: var(--background-secondary-alt);
 }
 
-.side-dock-ribbon-action {
-  color: var(--text-muted) !important;
+body .side-dock-ribbon-action {
+  color: var(--text-muted);
 }
 
-.side-dock-ribbon-action:hover {
-  color: var(--text-normal) !important;
+body .side-dock-ribbon-action:hover {
+  color: var(--text-normal);
 }
 
-.workspace-tab-header {
-  color: var(--text-muted) !important;
-  text-decoration: none !important;
+body .workspace-tab-header {
+  color: var(--text-muted);
+  text-decoration: none;
 }
 
-.workspace-tab-header:hover {
-  color: var(--text-normal) !important;
+body .workspace-tab-header:hover {
+  color: var(--text-normal);
 }
 
 button.mod-cta {
@@ -611,30 +611,29 @@ button.mod-cta {
   color: var(--text-normal);
 }
 
-.side-dock-panels-container {
-  background-color: var(--background-secondary-alt) !important;
+body .side-dock-panels-container {
+  background-color: var(--background-secondary-alt);
   color: var(background-secondary-alt);
 }
 
-.file-view-actions a {
-  color: var(--text-muted) !important;
+body .file-view-actions a {
+  color: var(--text-muted);
 }
 
-.file-view-actions a:hover {
-  color: var(--text-muted) !important;
+body .file-view-actions a:hover {
+  color: var(--text-muted);
 }
 
-.cm-tag {
-  color: var(--text-tag) !important;
+body .cm-tag {
+  color: var(--text-tag);
 }
 
-.side-dock-ribbon-tab.is-active {
-  color: var(--interactive-accent) !important;
+body .side-dock-ribbon-tab.is-active {
+  color: var(--interactive-accent);
 }
 
-.side-dock-ribbon-tab.is-active .side-dock-ribbon-tab-inner:hover {
-  color: var(--color-base-40) !important;
-  background-color: var(--background-secondary);
+body .side-dock-ribbon-tab.is-active .side-dock-ribbon-tab-inner:hover {
+  color: var(--color-base-40);  background-color: var(--background-secondary);
 }
 
 .is-translucent .nav-file-title:not(.is-active) {
@@ -645,20 +644,20 @@ button.mod-cta {
   background-color: transparent;
 }
 
-.nav-file-title:hover {
-  color: var(--text-normal) !important;
+body .nav-file-title:hover {
+  color: var(--text-normal);
 }
 
-.nav-folder-title:hover {
-  color: var(--text-normal) !important;
+body .nav-folder-title:hover {
+  color: var(--text-normal);
 }
 
 .nav-action-button.is-active {
   background-color: var(--background-secondary-alt);
 }
 
-.search-result-file-title {
-  color: var(--text-a) !important;
+body .search-result-file-title {
+  color: var(--text-a);
   background-color: var(--background-secondary);
 }
 
@@ -666,8 +665,8 @@ button.mod-cta {
   background-color: transparent;
 }
 
-.search-result-file-matched-text {
-  color: var(--text-link) !important;
+body .search-result-file-matched-text {
+  color: var(--text-link);
   background-color: var(--background-secondary);
 }
 
@@ -701,26 +700,26 @@ button.mod-cta {
 
 .markdown-preview-view {
   color: var(--text-normal);
-  padding-left: 8% !important;
-  padding-right: 4% !important;
+  padding-left: 8%;
+  padding-right: 4%;
 }
 
 .mod-single-child .markdown-preview-view {
   color: var(--text-normal);
-  padding-left: 10% !important;
-  padding-right: 10% !important;
+  padding-left: 10%;
+  padding-right: 10%;
 }
 
 .cm-s-obsidian {
   color: var(--text-normal);
-  padding-left: 8% !important;
-  padding-right: 4% !important;
+  padding-left: 8%;
+  padding-right: 4%;
 }
 
 .mod-single-child .cm-s-obsidian {
   color: var(--text-normal);
-  padding-left: 8% !important;
-  padding-right: 4% !important;
+  padding-left: 8%;
+  padding-right: 4%;
 }
 
 /* ============================
@@ -748,8 +747,8 @@ a.tag {
   color: var(--text-tag);
 }
 
-.cm-hashtag {
-  color: var(--text-tag) !important;
+body .cm-hashtag {
+  color: var(--text-tag);
 }
 
 /* ============================
@@ -779,9 +778,9 @@ mark {
   padding-bottom: 1px;
 }
 
-.cm-highlight {
-  color: var(--background-primary) !important;
-  background-color: var(--text-mark) !important;
+body .cm-highlight {
+  color: var(--background-primary);
+  background-color: var(--text-mark);
   padding-top: 1px;
   padding-bottom: 1px;
 }
@@ -790,25 +789,25 @@ mark {
    RIBBONS
    ============================ */
 
-.workspace-ribbon.is-collapsed {
-  background-color: var(--background-secondary-alt) !important;
+body .workspace-ribbon.is-collapsed {
+  background-color: var(--background-secondary-alt);
 }
 
-.workspace-ribbon.mod-right.is-collapsed {
-  background-color: var(--background-secondary-alt) !important;
+body .workspace-ribbon.mod-right.is-collapsed {
+  background-color: var(--background-secondary-alt);
 }
 
-.workspace-ribbon.mod-left.is-collapsed {
-  background-color: var(--background-secondary-alt) !important;
+body .workspace-ribbon.mod-left.is-collapsed {
+  background-color: var(--background-secondary-alt);
 }
 
 /* ============================
    NOTICES
    ============================ */
 
-.notice {
-  color: var(--text-normal) !important;
-  background-color: var(--blockquote-border) !important;
+body .notice {
+  color: var(--text-normal);
+  background-color: var(--blockquote-border);
 }
 
 /* ============================
@@ -817,8 +816,8 @@ mark {
 
 .markdown-preview-view .task-list-item-checkbox {
   -webkit-appearance: none;
-  top: 1.3px !important;
-  right: 5px !important;
+  top: 1.3px;
+  right: 5px;
   box-sizing: border-box;
   border: 1px solid var(--color-accent-2);
   position: relative;
@@ -937,12 +936,12 @@ ol {
    SUGGESTIONS
    ============================ */
 
-.suggestion-highlight {
-  color: var(--interactive-accent) !important;
+body .suggestion-highlight {
+  color: var(--interactive-accent);
 }
 
-.is-selected {
-  background-color: var(--blockquote-border) !important;
+body .is-selected {
+  background-color: var(--blockquote-border);
 }
 
 /* ============================
@@ -958,7 +957,7 @@ ol {
     background-color: var(--background-primary);
     color: var(--text-normal);
   }
-  .markdown-rendered code {
-    color: var(--code-normal) !important;
+  body .markdown-rendered code {
+    color: var(--code-normal);
   }
 }
