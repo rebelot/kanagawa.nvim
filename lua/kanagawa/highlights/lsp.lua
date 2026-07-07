@@ -19,7 +19,7 @@ function M.setup(colors, config)
         -- ["@lsp.type.struct"] = { link = "Structure" },
         -- ["@lsp.type.type"] = { link = "Type" },
         -- ["@lsp.type.typeParameter"] = { link = "TypeDef" },
-        ["@lsp.type.variable"] = { fg = "none" }, -- Identifier
+        ["@lsp.type.variable"] = { link = "@variable" }, -- Identifier
         ["@lsp.type.comment"] = { link = "Comment" },  -- Comment
 
         ["@lsp.type.const"] = { link = "Constant" },
