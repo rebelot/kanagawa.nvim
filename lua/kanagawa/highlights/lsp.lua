@@ -22,7 +22,7 @@ function M.setup(colors, config)
         ["@lsp.type.variable"] = { fg = "none" }, -- Identifier
         ["@lsp.type.comment"] = { link = "Comment" },  -- Comment
 
-        ["@lsp.type.const"] = { link = "Constant" },
+        -- ["@lsp.type.const"] = { link = "Constant" },
         ["@lsp.type.comparison"] = { link = "Operator" },
         ["@lsp.type.bitwise"] = { link = "Operator" },
         ["@lsp.type.punctuation"] = { link = "Delimiter" },
