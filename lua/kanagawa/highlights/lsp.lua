@@ -11,7 +11,8 @@ function M.setup(colors, config)
         -- ["@lsp.type.enumMember"] = { link = "Constant" },
         -- ["@lsp.type.function"] = { link = "Function" },
         -- ["@lsp.type.interface"] = { link = "Structure" },
-        ["@lsp.type.macro"] = { link = "Macro" },
+        ["@lsp.type.macro"] = { link = "@lsp" },
+        ["@lsp.type.keyword"] = { link = "@lsp"},
         ["@lsp.type.method"] = { link = "@function.method" },       -- Function
         ["@lsp.type.namespace"] = { link = "@module" },             -- Structure
         ["@lsp.type.parameter"] = { link = "@variable.parameter" }, -- Identifier
@@ -22,7 +23,7 @@ function M.setup(colors, config)
         ["@lsp.type.variable"] = { fg = "none" }, -- Identifier
         ["@lsp.type.comment"] = { link = "Comment" },  -- Comment
 
-        ["@lsp.type.const"] = { link = "Constant" },
+        -- ["@lsp.type.const"] = { link = "Constant" },
         ["@lsp.type.comparison"] = { link = "Operator" },
         ["@lsp.type.bitwise"] = { link = "Operator" },
         ["@lsp.type.punctuation"] = { link = "Delimiter" },
